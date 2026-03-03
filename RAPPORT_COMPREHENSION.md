@@ -1025,7 +1025,7 @@ Le fichier `requirements.txt` définit l'environnement reproductible :
 | **Frugalité** | `eco2ai==0.3.8` | Mesure de la consommation énergétique (kWh, CO2) |
 | **Qualité** | `pytest==8.1.1`, `black==24.2.0`, `isort==5.13.2` | Tests, formatage, tri des imports |
 | **Notebooks** | `nbformat==5.9.2`, `ipywidgets==8.1.2`, `ipython==8.22.2` | Support Jupyter |
-| **API** | `openai==1.13.3` | Client optionnel pour LLM via API |
+| **API** | `syst�me==1.13.3` | Client optionnel pour LLM via API |
 | **Graphes** | `networkx==3.2.1` | Visualisation de l'arbre de décision |
 
 ---
