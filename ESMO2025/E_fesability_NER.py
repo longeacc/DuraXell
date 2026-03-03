@@ -1,0 +1,149 @@
+﻿import os
+import csv
+import json
+from collections import defaultdict
+from pathlib import Path
+
+try:
+    from eco2ai import Tracker, set_params
+    HAS_ECO2AI = True
+except ImportError:
+    HAS_ECO2AI = False
+
+if __name__ == "__main__" and HAS_ECO2AI:
+    set_params(
+        project_name="Consumtion_of_E_fesability_NER.py",
+        experiment_description="Calcul Faisabilite NER",
+        file_name="Consumtion_of_Duraxell.csv",
+    )
+    tracker = Tracker()
+    tracker.start()
+
+def compute_feasibility():
+    print("Computing NER Feasibility per entity...")
+    script_dir = Path(__file__).parent
+    root_dir = script_dir.parent
+    results_dir = script_dir / "Rules/Results"
+    
+    # 1. Load Frequencies
+    freq_file = results_dir / "frequency_analysis.csv"
+    frequencies = {}
+    
+    if freq_file.exists():
+        with open(freq_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ent = row.get("Entity") or row.get("Entity_Type") or row.get("Entité")
+                if ent:
+                    frequencies[ent] = float(row.get("Frequency", 0.0))
+
+    # 2. Load Homogeneity (He) for domain shift estimation
+    he_file = results_dir / "homogeneity_analysis.csv"
+    homogeneity = {}
+    if he_file.exists():
+        with open(he_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ent = row.get("Entity")
+                if ent:
+                    homogeneity[ent] = float(row.get("He_Score_Percent", 0.0))
+
+    # 3. Load Risk scores (R) for LLM necessity estimation
+    risk_file = results_dir / "risk_context_analysis.csv"
+    risk_scores = {}
+    if risk_file.exists():
+        with open(risk_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ent = row.get("Entity")
+                if ent:
+                    risk_scores[ent] = float(row.get("R_Score", 0.0))
+
+    # 4. Load Templeability (Te)
+    te_file = results_dir / "templeability_analysis.json"
+    templeability = {}
+    if te_file.exists():
+        with open(te_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            for ent, vals in data.items():
+                templeability[ent] = vals.get("templeability_score", 0.0)
+
+    # 5. Compute Yield (F1 Rules vs GS)
+    yield_scores = {}
+    try:
+        from E_annotation_yield import AnnotationYieldScorer
+        from pathlib import Path as P
+        gs_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_GS"
+        pred_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"
+        if gs_dir.exists() and pred_dir.exists():
+            scorer = AnnotationYieldScorer(gs_dir, pred_dir)
+            raw_scores = scorer.compute_all()
+            for ent, meta in raw_scores.items():
+                yield_scores[ent] = meta.get("F1-Yield", 0.0)
+            print(f"  Yield computed for {len(yield_scores)} entities")
+    except Exception as e:
+        print(f"  Warning: Yield computation failed: {e}")
+
+    # 6. Build results with proper formulas
+    results = []
+    
+    for ent, freq in frequencies.items():
+        he = homogeneity.get(ent, 50.0)
+        r = risk_scores.get(ent, 0.0)
+        te = templeability.get(ent, 50.0)
+        yld = yield_scores.get(ent, 0.0)
+        count = max(1, int(freq * 207000))  # Approx corpus size ~207k tokens
+
+        # -- Feas: NER Feasibility --
+        # Based on: frequency (enough training data?), yield (rules already work?),
+        # and He (homogeneous patterns easier for NER)
+        freq_factor = min(1.0, count / 100.0)  # Need ~100 examples for decent NER
+        he_factor = he / 100.0  # Normalized homogeneity
+        feas = round(0.4 * freq_factor + 0.3 * he_factor + 0.3 * yld, 3)
+
+        # -- DomainShift: gap between pretrained model and clinical domain --
+        # DrBERT is trained on clinical French, so base shift is low.
+        # But: low He (heterogeneous vocabulary) increases shift,
+        # and low Te (unpredictable structure) increases shift.
+        base_shift = 0.15  # DrBERT baseline (clinical French)
+        he_penalty = max(0, (100.0 - he) / 200.0)  # 0 when He=100, 0.5 when He=0
+        te_penalty = max(0, (100.0 - te) / 300.0)  # 0 when Te=100, 0.33 when Te=0
+        domain_shift = round(min(1.0, base_shift + he_penalty + te_penalty), 3)
+
+        # -- LLM Necessity: when do we NEED an LLM? --
+        # High when: low yield, high risk, low feasibility, low homogeneity
+        llm_necessity = round(
+            0.30 * (1.0 - yld)          # Rules don't catch it
+            + 0.25 * r * 4.0            # Risk context is high (R normalized ~0-0.25)
+            + 0.25 * (1.0 - feas)       # NER won't work well
+            + 0.20 * (1.0 - he / 100.0) # Heterogeneous vocabulary
+        , 3)
+        llm_necessity = min(1.0, max(0.0, llm_necessity))
+
+        results.append({
+            "Entity": ent,
+            "Feas_Score": feas,
+            "Domain_Shift": domain_shift,
+            "LLM_Necessity": llm_necessity,
+        })
+        print(f"  {ent}: Feas={feas}, DS={domain_shift}, LLM_N={llm_necessity}, Yield={yld:.3f}")
+
+    out_file = results_dir / "ner_feasibility_analysis.csv"
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_file, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["Entity", "Feas_Score", "Domain_Shift", "LLM_Necessity"])
+        writer.writeheader()
+        writer.writerows(results)
+        
+    print(f"Feasibility scores written to {out_file}")
+
+
+if __name__ == "__main__":
+    compute_feasibility()
+
+    try:
+        if HAS_ECO2AI:
+            tracker.stop()
+    except Exception as e:
+        print(f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}")
+        print("Carbon emission tracking data could not be saved, but analysis results are preserved.")

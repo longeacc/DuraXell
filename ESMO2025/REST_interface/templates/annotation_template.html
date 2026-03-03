@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REST Annotation Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .document-view { border: 1px solid #ccc; padding: 20px; background-color: #f9f9f9; line-height: 1.6; }
+        .highlight { background-color: yellow; font-weight: bold; cursor: pointer; }
+        .controls { margin-top: 20px; }
+        .btn { padding: 10px 15px; margin-right: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Rapid Empirical Semantic Tool (REST) - Annotator</h1>
+    
+    <div>
+        <h3>Document #<span id="doc-id">MOCK-DOC-001</span></h3>
+        <div class="document-view" id="text-container">
+            Carcinoma infiltrant du sein avec récepteurs <span class="highlight" data-entity="Estrogen_receptor">ER positifs à 80%</span>. 
+            Le <span class="highlight" data-entity="Ki67">Ki67 est évalué à 15%</span>.
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn">Mark as Annotated</button>
+        <button class="btn">Next Document</button>
+    </div>
+</body>
+</html>

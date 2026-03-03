@@ -1,0 +1,43 @@
+# Environnements virtuels
+.venv/
+.venv_test/
+venv/
+env/
+
+# Fichiers temporaires et caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Données patients (STRICTEMENT INTERDIT)
+data/patients/
+ESMO2025/Breast/RCP/
+ESMO2025/Breast/CHIR/
+Evaluation/REST_Annotations/
+NER/data/
+**/*.ann
+**/*_GS/
+**/*_pred*/
+*.csv
+!Results/*.csv
+!breast_cancer_biomarker_eval_summary.csv
+!Consumtion_of_Duraxell.csv
+!NER/sweep_results*.csv
+
+# Modèles lourds
+models/
+*.pt
+*.bin
+*.h5
+*.safetensors
+
+# Fichiers de configuration locaux
+.env
+.env.local
+
+# Logs
+*.log
+eco2ai.db

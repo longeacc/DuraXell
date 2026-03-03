@@ -1,0 +1,255 @@
+"""
+Calculate Linguistic Homogeneity Scores (He).
+
+Homogeneity measures linguistic redundancy:
+- High He (near 100%): The entity is always expressed with the exact same words.
+- Low He (near 0%): Every time the entity appears, it uses different words.
+
+Formula: He = (Total_Words - Unique_Words) / Total_Words
+Normalization: Sigmoid transform to spread values between 0 and 1 (returned as %).
+"""
+
+import csv
+import json
+import math
+import re
+from collections import defaultdict
+from pathlib import Path
+from typing import Any, Dict, List
+
+# Eco2AI for energy tracking
+try:
+    from eco2ai import Tracker, set_params
+
+    HAS_ECO2AI = True
+except ImportError:
+    HAS_ECO2AI = False
+
+if __name__ == "__main__" and HAS_ECO2AI:
+    set_params(
+        project_name="Consumtion_of_E_homogeneity.py",
+        experiment_description="Calculating Linguistic Homogeneity",
+        file_name="Consumtion_of_Duraxell.csv",
+    )
+    tracker = Tracker()
+    tracker.start()
+
+
+class HomogeneityScorer:
+    """
+    Calcule le score d'Homogénéité (He) pour chaque entité.
+    He mesure la répétition du vocabulaire.
+    """
+
+    def __init__(self, corpus: List[Dict[str, Any]]):
+        """
+        Args:
+            corpus: List of documents containing text and annotations.
+        """
+        self.entities_values = defaultdict(list)
+        for doc in corpus:
+            annotations = doc.get("annotations", [])
+            for ann in annotations:
+                # Handle both object and dict access
+                if hasattr(ann, "text") and hasattr(ann, "entity_type"):
+                    text = ann.text
+                    etype = ann.entity_type
+                elif isinstance(ann, dict):
+                    text = ann.get("text", "")
+                    etype = ann.get("entity_type", "Unknown")
+                else:
+                    continue
+                self.entities_values[etype].append(text)
+
+        # Calibration for Sigmoid
+        # k=10, x0=0.5 means the transition from low to high happens around 0.5 redundancy
+        # "ER positif" repeated 100 times -> Raw=0.99 -> Sigmoid(0.99) ~ 1.0
+        # "ER positif" / "Recepteur Estro" (50/50 mix) -> Raw ~ 0.5 -> Sigmoid(0.5) = 0.5
+        self.k = 10
+        self.x0 = 0.5
+
+    def compute_from_list(self, values: List[str]) -> float:
+        """
+        Calcule le score He directement depuis une liste de valeurs textuelles.
+        """
+        # Reset internal storage for this computation
+        self.entities_values["TEMP_LIST"] = values
+        res = self.compute("TEMP_LIST")
+        return res
+
+    def _tokenize(self, text: str) -> List[str]:
+        """Split text into words, lowercase, remove noise."""
+        return [w.lower() for w in re.split(r"[^a-zA-Z0-9%]+", text) if w.strip()]
+
+    def _sigmoid(self, x: float) -> float:
+        """
+        Transforms raw redundancy (0-1) into a specialized score.
+        Spread values to make decision easier (Polarization).
+        """
+        try:
+            val = 1 / (1 + math.exp(-self.k * (x - self.x0)))
+            return val
+        except OverflowError:
+            return 0.0 if (-self.k * (x - self.x0)) > 0 else 1.0
+
+    def compute(self, entity_type: str) -> float:
+        """
+        Calculate He score in % [0, 100].
+        He = (Te_words - Ue_words) / Te_words
+        """
+        values = self.entities_values.get(entity_type, [])
+        if not values:
+            return 0.0
+
+        all_tokens = []
+        for val in values:
+            all_tokens.extend(self._tokenize(val))
+
+        N_total = len(all_tokens)  # Te_words
+        N_unique = len(set(all_tokens))  # Ue_words
+
+        # Edge case: Single occurrence or No words
+        if N_total <= 1:
+            # Convention: If seen only once, predictability is unknown/null for rules.
+            # We assume He=0 because we have no evidence of redundancy.
+            return 0.0
+
+        # Raw Redundancy (Compactness)
+        # If I say "ER+" 100 times: Total=100, Unique=1. Raw = 99/100 = 0.99
+        # If I say 100 different things: Total=100, Unique=100. Raw = 0/100 = 0.0
+        he_raw = (N_total - N_unique) / N_total
+
+        # Apply Sigmoid polarization
+        he_final = self._sigmoid(he_raw)
+
+        return he_final * 100.0
+
+    def compute_all(self) -> Dict[str, float]:
+        """Compute He for all entities."""
+        scores = {}
+        for entity in self.entities_values:
+            scores[entity] = self.compute(entity)
+        return scores
+
+    def to_csv(self, output_path: str):
+        """Save analysis to CSV."""
+        scores = self.compute_all()
+        rows = []
+        for entity, score in scores.items():
+            values = self.entities_values[entity]
+            all_tokens = []
+            for v in values:
+                all_tokens.extend(self._tokenize(v))
+
+            rows.append(
+                {
+                    "Entity": entity,
+                    "He_Score_Percent": round(score, 2),
+                    "Total_Occurrences": len(values),
+                    "Total_Words": len(all_tokens),
+                    "Unique_Words": len(set(all_tokens)),
+                }
+            )
+
+        rows.sort(key=lambda x: x["He_Score_Percent"], reverse=True)
+
+        with open(output_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=[
+                    "Entity",
+                    "He_Score_Percent",
+                    "Total_Occurrences",
+                    "Total_Words",
+                    "Unique_Words",
+                ],
+            )
+            writer.writeheader()
+            writer.writerows(rows)
+
+        print(f"Results saved to {output_path}")
+
+
+# ==================================================================================
+# MAIN EXECUTION
+# ==================================================================================
+def load_brat_corpus_simple(data_dirs):
+    """Simple loader reusing logic from templeability."""
+    corpus = []
+    processed_files = set()
+    for d in data_dirs:
+        path = Path(d)
+        if not path.exists():
+            continue
+        for ann in path.glob("*.ann"):
+            if ann.name in processed_files:
+                continue
+            processed_files.add(ann.name)
+
+            # Simplified parsing
+            anns = []
+            try:
+                with open(ann, "r", encoding="utf-8") as f:
+                    for line in f:
+                        if line.startswith("T"):
+                            parts = line.strip().split("\t")
+                            if len(parts) >= 3:
+                                etype = parts[1].split()[0]
+                                text = parts[2]
+                                anns.append({"entity_type": etype, "text": text})
+            except:
+                pass
+
+            corpus.append({"file_id": ann.name, "annotations": anns})
+    return corpus
+
+
+def main():
+    # RELATIVE PATHS
+    SCRIPT_DIR = Path(__file__).parent
+    DATA_DIRS = ["NER/data/Breast/train", "NER/data/Breast/val", "NER/data/Breast/test"]
+    # Paths relative to workspace root
+    ROOT_DIR = SCRIPT_DIR.parent
+    ABS_DATA_DIRS = [ROOT_DIR / d for d in DATA_DIRS]
+
+    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/homogeneity_analysis.csv"
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    # 1. Load context
+    print("Loading corpus...")
+    corpus = load_brat_corpus_simple(ABS_DATA_DIRS)
+
+    # 2. Compute
+    scorer = HomogeneityScorer(corpus)
+    scores = scorer.compute_all()
+
+    # 3. Print Top 5
+    print("\nTop 5 Homogeneity Scores (He):")
+    for entity, score in sorted(scores.items(), key=lambda x: x[1], reverse=True)[:5]:
+        print(f"{entity}: {score:.1f}%")
+
+    # 4. Save
+    scorer.to_csv(OUTPUT_FILE)
+
+    # 5. Canonical Test Verification
+    print("\n=== VERIFICATION TEST CANONIQUE ===")
+    test_corpus = [
+        {
+            "annotations": [
+                {"entity_type": "TEST_CANONIQUE", "text": "ER positif 80%"}
+                for _ in range(100)
+            ]
+        }
+    ]
+    test_scorer = HomogeneityScorer(test_corpus)
+    score_canon = test_scorer.compute("TEST_CANONIQUE")
+    print(
+        f"Test 'ER positif 80%' x 100 -> Score: {score_canon:.2f}% (Attendu: proche de 100%)"
+    )
+
+    if HAS_ECO2AI:
+        tracker.stop()
+
+
+if __name__ == "__main__":
+    main()

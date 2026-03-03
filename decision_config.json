@@ -1,0 +1,162 @@
+{
+    "version": "2.1",
+    "global_thresholds": {
+        "TE_HIGH": 70.0,
+        "TE_MED": 40.0,
+        "HE_HIGH": 70.0,
+        "RISK_HIGH": 0.5,
+        "FREQ_MIN": 0.001,
+        "YIELD_HIGH": 0.75,
+        "YIELD_MIN_RULES": 0.25,
+        "FEAS_NER": 0.6,
+        "DOMAIN_SHIFT_MAX": 0.5,
+        "LLM_NEC_HIGH": 0.5
+    },
+    "entities": {
+        "Estrogen_receptor": {
+            "metrics": {
+                "Te": 43.8,
+                "Te_count": 225,
+                "He": 97.35,
+                "R": 0.1109,
+                "Freq": 0.001084760798191101,
+                "Feas": 0.824,
+                "DomainShift": 0.351,
+                "LLM_Necessity": 0.328,
+                "Yield": 0.7515527950310559
+            },
+            "method": "R\u00c8GLES",
+            "justification": "He tr\u00e8s \u00e9lev\u00e9e (97.3%), risque faible (0.11), Yield=0.75 confirme l'efficacit\u00e9 des r\u00e8gles.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Oui (He=97.3%, R=0.11, Yield=0.75) -> [R\u00c8GLES]"
+            ]
+        },
+        "Progesterone_receptor": {
+            "metrics": {
+                "Te": 46.0,
+                "Te_count": 197,
+                "He": 96.96,
+                "R": 0.1668,
+                "Freq": 0.0009497683433050974,
+                "Feas": 0.839,
+                "DomainShift": 0.345,
+                "LLM_Necessity": 0.365,
+                "Yield": 0.7290969899665553
+            },
+            "method": "R\u00c8GLES",
+            "justification": "He tr\u00e8s \u00e9lev\u00e9e (97.0%), risque faible (0.17), Yield=0.73 confirme l'efficacit\u00e9 des r\u00e8gles.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Oui (He=97.0%, R=0.17, Yield=0.73) -> [R\u00c8GLES]"
+            ]
+        },
+        "HER2_status": {
+            "metrics": {
+                "Te": 41.1,
+                "Te_count": 106,
+                "He": 97.49,
+                "R": 0.1605,
+                "Freq": 0.0005110428649255854,
+                "Feas": 0.692,
+                "DomainShift": 0.359,
+                "LLM_Necessity": 0.543,
+                "Yield": 0.47058823529411764
+            },
+            "method": "R\u00c8GLES",
+            "justification": "He tr\u00e8s \u00e9lev\u00e9e (97.5%), risque faible (0.16), Yield=0.47 confirme l'efficacit\u00e9 des r\u00e8gles.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Oui (He=97.5%, R=0.16, Yield=0.47) -> [R\u00c8GLES]"
+            ]
+        },
+        "HER2_IHC": {
+            "metrics": {
+                "Te": 31.8,
+                "Te_count": 124,
+                "He": 97.44,
+                "R": 0.1547,
+                "Freq": 0.0005978237287808735,
+                "Feas": 0.692,
+                "DomainShift": 0.39,
+                "LLM_Necessity": 0.537,
+                "Yield": 0.7338129496402878
+            },
+            "method": "R\u00c8GLES",
+            "justification": "He tr\u00e8s \u00e9lev\u00e9e (97.4%), risque faible (0.15), Yield=0.73 confirme l'efficacit\u00e9 des r\u00e8gles.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Oui (He=97.4%, R=0.15, Yield=0.73) -> [R\u00c8GLES]"
+            ]
+        },
+        "Ki67": {
+            "metrics": {
+                "Te": 40.6,
+                "Te_count": 173,
+                "He": 98.06,
+                "R": 0.1173,
+                "Freq": 0.0008340605248313799,
+                "Feas": 0.904,
+                "DomainShift": 0.358,
+                "LLM_Necessity": 0.236,
+                "Yield": 0.9156626506024097
+            },
+            "method": "R\u00c8GLES",
+            "justification": "He tr\u00e8s \u00e9lev\u00e9e (98.1%), risque faible (0.12), Yield=0.92 confirme l'efficacit\u00e9 des r\u00e8gles.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Oui (He=98.1%, R=0.12, Yield=0.92) -> [R\u00c8GLES]"
+            ]
+        },
+        "HER2_FISH": {
+            "metrics": {
+                "Te": 30.7,
+                "Te_count": 29,
+                "He": 83.7,
+                "R": 0.249,
+                "Freq": 0.00013981361398907526,
+                "Feas": 0.363,
+                "DomainShift": 0.462,
+                "LLM_Necessity": 0.741,
+                "Yield": 0.19047619047619047
+            },
+            "method": "LLM",
+            "justification": "Forte complexit\u00e9/n\u00e9cessit\u00e9 d'utiliser un LLM lourd.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Non -> Templateabilit\u00e9 moyenne?",
+                "Non -> Faisabilit\u00e9 NER \u00e9lev\u00e9e?",
+                "Non -> N\u00e9cessit\u00e9 LLM \u00e9lev\u00e9e?",
+                "Oui -> [LLM]"
+            ]
+        },
+        "Genetic_mutation": {
+            "metrics": {
+                "Te": 100.0,
+                "Te_count": 2,
+                "He": 1.43,
+                "R": 0.0,
+                "Freq": 9.642318206143122e-06,
+                "Feas": 0.008,
+                "DomainShift": 0.643,
+                "LLM_Necessity": 0.745,
+                "Yield": 0.0
+            },
+            "method": "LLM",
+            "justification": "Forte complexit\u00e9/n\u00e9cessit\u00e9 d'utiliser un LLM lourd.",
+            "trace": [
+                "Templateabilit\u00e9 \u00e9lev\u00e9e?",
+                "Oui -> Variabilit\u00e9 lexicale faible?",
+                "Non (He faible) -> Faisabilit\u00e9 NER \u00e9lev\u00e9e?",
+                "Non -> N\u00e9cessit\u00e9 LLM \u00e9lev\u00e9e?",
+                "Oui -> [LLM]"
+            ]
+        }
+    }
+}

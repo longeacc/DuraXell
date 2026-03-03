@@ -1,0 +1,357 @@
+"""
+Calculate templeability of biomarkers and named entities.
+
+Templeability is the capacity of an entity to follow predictable structured patterns
+(formats, constant prefixes/suffixes).
+
+Example: TNM staging always follows the pattern T[0-4]N[0-3]M[0-1].
+"""
+
+import csv
+import json
+import math
+import os
+import re
+from collections import Counter, defaultdict
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Set, Tuple
+
+# eco2ai dependencies
+try:
+    from eco2ai import Tracker, set_params
+
+    HAS_ECO2AI = True
+except ImportError:
+    HAS_ECO2AI = False
+
+if __name__ == "__main__" and HAS_ECO2AI:
+    set_params(
+        project_name="Consumtion_of_E_templeability.py",
+        experiment_description="We Calculate...",
+        file_name="Consumtion_of_Duraxell.csv",
+    )
+    tracker = Tracker()
+    tracker.start()
+
+
+@dataclass
+class BratAnnotation:
+    """Represents a BRAT annotation."""
+
+    start: int
+    end: int
+    text: str
+    entity_type: str
+    file_id: Optional[str] = None
+
+
+class TempleabilityScorer:
+    """
+    Calcule le score de Templateabilité (Te) pour chaque entité biomédicale.
+    Te mesure le degré de prédictibilité structurelle des patterns d'expression.
+    """
+
+    def __init__(self, corpus: List[Dict[str, Any]]):
+        """
+        Initialize the scorer with a corpus of annotated documents.
+
+        Args:
+            corpus: liste de documents annotés {
+                'text': str,
+                'annotations': list[BratAnnotation] or list[dict],
+                'file_id': str (optional)
+            }
+        """
+        self.corpus = corpus
+        # Pre-process: group entity values by type
+        self.entities_values = defaultdict(list)
+        for doc in corpus:
+            annotations = doc.get("annotations", [])
+            for ann in annotations:
+                # Handle both object and dict access
+                if hasattr(ann, "text") and hasattr(ann, "entity_type"):
+                    text = ann.text
+                    etype = ann.entity_type
+                elif isinstance(ann, dict):
+                    text = ann.get("text", "")
+                    etype = ann.get("entity_type", "Unknown")
+                else:
+                    continue
+
+                self.entities_values[etype].append(text)
+
+        # Cache for compute results
+        self.results_cache = {}
+
+    def compute_from_list(self, values: List[str]) -> float:
+        """
+        Calcule le score Te directement depuis une liste de chaînes.
+        """
+        self.entities_values["TEMP_LIST"] = values
+        return self.compute("TEMP_LIST")
+
+    def normalize_pattern(self, text: str) -> str:
+        """
+        Normalise un texte d'entité en template abstrait.
+        Ex: "HER2 3+" -> "XXX D+"
+        Ex: "ER >80%" -> "XX >DD%"
+        Ex: "Ki67 15-20%" -> "XXDD DD-DD%"
+        """
+        # 1. Strip whitespace
+        pattern = text.strip()
+
+        # 2. Abstract Digits -> 'D'
+        pattern = re.sub(r"[0-9]", "D", pattern)
+
+        # 3. Abstract Uppercase -> 'X'
+        pattern = re.sub(r"[A-ZÀ-ÖØ-Þ]", "X", pattern)
+
+        # 4. Abstract Lowercase -> 'x'
+        pattern = re.sub(r"[a-zà-öø-ÿ]", "x", pattern)
+
+        # 5. Simplify repeated types (DD -> D+, XX -> X+) - OPTIONAL, let's keep exact count for now
+        # pattern = re.sub(r'D+', 'D+', pattern)
+        # pattern = re.sub(r'X+', 'X+', pattern)
+        # pattern = re.sub(r'x+', 'x+', pattern)
+
+        return pattern
+
+    def _calculate_entropy(self, patterns: List[str]) -> float:
+        """Calculate Shannon entropy of pattern distribution."""
+        if not patterns:
+            return 0.0
+
+        counter = Counter(patterns)
+        total = len(patterns)
+        entropy = 0.0
+
+        for count in counter.values():
+            p = count / total
+            entropy -= p * math.log(p)
+
+        return entropy
+
+    def compute(self, entity_type: str) -> float:
+        """
+        Retourne un score Te ∈ [0, 1].
+        Méthode :
+        1. Extraire toutes les mentions de entity_type dans le corpus
+        2. Normaliser les patterns : "HER2 3+" → "XXX D+" (regex abstraction)
+        3. Calculer l'entropie de la distribution des patterns normalisés
+        4. Te = 1 - (entropie_normalisée) + bonus_sémantique
+        """
+        values = self.entities_values.get(entity_type, [])
+        if not values:
+            return 0.0, {}
+
+        total_count = len(values)
+        normalized_patterns = [self.normalize_pattern(v) for v in values]
+
+        # Entropy calculation
+        H = self._calculate_entropy(normalized_patterns)
+
+        # Normalize entropy: H_max = log(N) where N is number of unique patterns observed
+        # Or better: N is count of items? No, entropy is maximized when uniform distribution over unique patterns
+        # Standard relative entropy usually divides by log(len(unique_patterns))
+        # But if unique_patterns is 1, log(1)=0 -> division by zero.
+        # Here we want a measure of predictability.
+        # If entropy is 0 -> perfectly predictable -> Te should be 1.
+        # If entropy is high -> unpredictable -> Te should be 0.
+
+        unique_patterns = set(normalized_patterns)
+        num_unique = len(unique_patterns)
+
+        if num_unique <= 1:
+            H_norm = 0.0
+        else:
+            # We normalize by log(total_count) giving a sense of "bits per symbol" relative to max possible
+            # or by log(num_unique) if we consider the observed alphabet.
+            # Let's normalize by min(log(total_count), 5.0) to have a soft ceiling.
+            # Actually, let's use a simpler heuristic for Te:
+            # High concentration in top patterns
+            pass
+
+        # Structure Score based on Top 3 coverage (similar to old method but cleaner)
+        pattern_counts = Counter(normalized_patterns)
+        top_3_count = sum(c for _, c in pattern_counts.most_common(3))
+        structure_consistency = top_3_count / total_count
+
+        # Semantic Bonus for standard markers
+        bonus_semantic = 0.0
+        # Check for numeric patterns, symbols
+        has_digit = any("D" in p for p in unique_patterns)
+        has_symbol = any(
+            c in p for p in unique_patterns for c in ["%", "+", "-", ">", "<"]
+        )
+        if has_symbol:
+            bonus_semantic += 0.1
+        if has_digit and structure_consistency > 0.6:
+            bonus_semantic += 0.1
+
+        # Te calculation
+        # Baseline is structure_consistency
+        raw_score = structure_consistency + bonus_semantic
+        raw_score = min(1.0, max(0.0, raw_score))
+
+        # Convert to percentage [0-100]
+        Te = raw_score * 100.0
+
+        # Store detailed stats for report
+        self.results_cache[entity_type] = {
+            "count": total_count,
+            "unique_patterns": num_unique,
+            "top_3_coverage": structure_consistency,
+            "entropy": H,
+            "templeability_score": Te,
+            "top_patterns": pattern_counts.most_common(5),
+        }
+
+        return Te
+
+    def compute_all(self) -> Dict[str, float]:
+        """Calcule Te pour toutes les entités du corpus (en %)."""
+        scores = {}
+        for entity_type in self.entities_values.keys():
+            scores[entity_type] = self.compute(entity_type)
+        return scores
+
+    def to_json(self, output_path: str) -> None:
+        """Sauvegarder les résultats dans templeability_analysis.json"""
+        output = {}
+        for entity_type, stats in self.results_cache.items():
+            # Convert stats to JSON serializable format
+            output[entity_type] = {
+                "count": stats["count"],
+                "unique_patterns": stats["unique_patterns"],
+                "templeability_score": round(
+                    stats["templeability_score"], 1
+                ),  # Round to 1 decimal place
+                "top_patterns": [f"{p} ({c})" for p, c in stats["top_patterns"]],
+            }
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, indent=4, ensure_ascii=False)
+        print(f"Results saved to {output_path}")
+
+
+# ==================================================================================
+# SCRIPT UTILS (Load Data & Run)
+# ==================================================================================
+
+
+def load_brat_corpus(data_dirs: List[str]) -> List[Dict[str, Any]]:
+    """
+    Load annotations from BRAT files (.ann + .txt) into a corpus list.
+    """
+    corpus = []
+    processed_files = set()
+
+    for d in data_dirs:
+        path = Path(d)
+        if not path.exists():
+            print(f"Warning: {path} does not exist.")
+            continue
+
+        for ann_file in path.glob("*.ann"):
+            if ann_file.name in processed_files:
+                continue
+            processed_files.add(ann_file.name)
+
+            # Read annotations
+            annotations = []
+            with open(ann_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line.startswith("T"):
+                        continue
+                    try:
+                        # T1  Entity 10 20  text
+                        parts = line.split("\t")
+                        info = parts[1].split()
+                        entity_type = info[0]
+                        start = int(info[1])
+                        # Handle discontinuous spans "10 20;30 40" -> take end of first span for simplicity or map properly
+                        end_str = info[-1]
+                        if ";" in parts[1]:
+                            # Simplification: take the last offset as end
+                            end_str = parts[1].replace(";", " ").split()[2]
+                        end = int(end_str)
+                        text = parts[2]
+
+                        annotations.append(
+                            BratAnnotation(
+                                start=start,
+                                end=end,
+                                text=text,
+                                entity_type=entity_type,
+                                file_id=ann_file.name,
+                            )
+                        )
+                    except:
+                        continue
+
+            # Read text (optional, not strictly needed for Te but good for corpus object)
+            txt_file = ann_file.with_suffix(".txt")
+            text_content = ""
+            if txt_file.exists():
+                with open(txt_file, "r", encoding="utf-8") as f:
+                    text_content = f.read()
+
+            corpus.append(
+                {
+                    "file_id": ann_file.name,
+                    "text": text_content,
+                    "annotations": annotations,
+                }
+            )
+
+    print(f"Loaded {len(corpus)} documents.")
+    return corpus
+
+
+def main():
+    # Configuration
+    # Paths relative to workspace root (where script is executed)
+    # But for robustness, we use path relative to this script
+    SCRIPT_DIR = Path(__file__).parent
+    ROOT_DIR = SCRIPT_DIR.parent
+
+    DATA_DIRS_REL = [
+        "NER/data/Breast/train",
+        "NER/data/Breast/val",
+        "NER/data/Breast/test",
+    ]
+
+    # Construct absolute paths
+    DATA_DIRS = [ROOT_DIR / d for d in DATA_DIRS_REL]
+
+    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/templeability_analysis.json"
+
+    # Ensure output directory exists
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    # 1. Load Data
+    corpus = load_brat_corpus([str(p) for p in DATA_DIRS])
+
+    # 2. Initialize Scorer
+    scorer = TempleabilityScorer(corpus)
+
+    # 3. Compute All
+    scores = scorer.compute_all()
+
+    # 4. Print & Save
+    scorer.to_json(OUTPUT_FILE)
+
+    # Optional: Print Top 5
+    print("\nTop 5 Templeability Scores:")
+    for entity, score in sorted(scores.items(), key=lambda x: x[1], reverse=True)[:5]:
+        # score is tuple? No, compute returns float. compute_all returns dict[str, float]
+        print(f"{entity}: {score:.3f}")
+
+    if HAS_ECO2AI:
+        tracker.stop()
+
+
+if __name__ == "__main__":
+    main()

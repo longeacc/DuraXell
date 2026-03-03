@@ -1,0 +1,360 @@
+"""
+Calculate 'Risk Context' (R) Score.
+Measures the complexity of the linguistic context surrounding an entity.
+
+R Score ranges from 0.0 (Simple) to 1.0 (Complex/Dangerous).
+High R indicates the entity is surrounded by:
+- Negations (simple adjustment needed)
+- Uncertainty (probabilistic language)
+- Contradictions (conflicting values in same doc)
+"""
+
+import csv
+import re
+from collections import defaultdict
+from pathlib import Path
+from typing import Any, Dict, List, Tuple
+
+# Eco2AI for energy tracking
+try:
+    from eco2ai import Tracker, set_params
+
+    HAS_ECO2AI = True
+except ImportError:
+    HAS_ECO2AI = False
+
+if __name__ == "__main__" and HAS_ECO2AI:
+    set_params(
+        project_name="Consumtion_of_E_risk_context.py",
+        experiment_description="Calculating Contextual Risk",
+        file_name="Consumtion_of_Duraxell.csv",
+    )
+    tracker = Tracker()
+    tracker.start()
+
+
+class RiskContextScorer:
+    """
+    Calcule le score de Risque Contextuel (R).
+    Analyse le texte autour de l'entité (fenêtre de tokens) pour détecter :
+    1. Négation (faible augmentation de R)
+    2. Incertitude (forte augmentation de R)
+    3. Contradiction (R maximal)
+    """
+
+    def __init__(self, data_dirs: List[Path] = None):
+        self.data_dirs = data_dirs or []
+        self.document_data = defaultdict(list)
+
+        # --- CONFIGURATION DES RADARS ---
+
+        # Fenêtre d'analyse : nombre de caractères autour de l'entité à lire
+        self.WINDOW_SIZE = 50
+
+        # 1. Patterns de Négation (Augmente R un peu)
+        self.NEGATION_PATTERNS = [
+            r"\bnon\b",
+            r"\bne\s+pas\b",
+            r"\babsent\b",
+            r"\bnégatif\b",
+            r"\bnegatif\b",
+            r"\baucun\b",
+            r"\bsans\b",
+            r"\bni\b",
+            r"\bpas\b",
+            r"\babsence\b",
+        ]
+
+        # 2. Patterns d'Incertitude (Augmente R beaucoup)
+        self.UNCERTAINTY_PATTERNS = [
+            r"\bprobable\b",
+            r"\bpossible\b",
+            r"\bà confirmer\b",
+            r"\ba confirmer\b",
+            r"\bsuspecté\b",
+            r"\bsuspecte\b",
+            r"\béquivoque\b",
+            r"\bequivoque\b",
+            r"\bdiscuté\b",
+            r"\bincertain\b",
+            r"\bhypothèse\b",
+            r"\?",
+            r"\bdiscordant\b",
+            r"\bdiscordance\b",
+        ]
+
+        # 3. Termes spécifiques pour détecter les contradictions (Positif vs Négatif)
+        self.VAL_POS = {r"positif", r"positive", r"\+", r"pos", r"exprimé", r"present"}
+        self.VAL_NEG = {
+            r"négatif",
+            r"negative",
+            r"\-",
+            r"neg",
+            r"absent",
+            r"non exprimé",
+        }
+
+    def has_negation(self, text: str, entity_type: str = "") -> bool:
+        """Vérifie si le texte contient une négation."""
+        text = text.lower()
+        return any(re.search(pat, text) for pat in self.NEGATION_PATTERNS)
+
+    def has_uncertainty(self, text: str, entity_type: str = "") -> bool:
+        """Vérifie si le texte contient une incertitude."""
+        text = text.lower()
+        return any(re.search(pat, text) for pat in self.UNCERTAINTY_PATTERNS)
+
+    def compute_score(self, texts: List[str], entity_type: str) -> float:
+        """
+        Calcule un score R sur une liste de textes (contextes).
+        """
+        if not texts:
+            return 0.0
+
+        total = len(texts)
+        negated = sum(1 for t in texts if self.has_negation(t))
+        uncertain = sum(1 for t in texts if self.has_uncertainty(t))
+
+        # Formule simple :
+        # R = (0.2 * neg_ratio) + (0.8 * uncertain_ratio)
+        # Contradiction non gérée ici car nécessite structure document
+
+        r_score = (0.2 * (negated / total)) + (0.8 * (uncertain / total))
+        return min(1.0, r_score)
+
+    def _load_data(self):
+        """Lit les fichiers .ann ET .txt pour avoir le contexte."""
+        print("Chargement des données (Annotations + Texte)...")
+        for d in self.data_dirs:
+            if not d.exists():
+                continue
+
+            # Pour chaque fichier .ann, on cherche le .txt correspondant
+            for ann_file in d.glob("*.ann"):
+                txt_file = ann_file.with_suffix(".txt")
+                if not txt_file.exists():
+                    continue
+
+                try:
+                    # Lire le texte complet
+                    with open(txt_file, "r", encoding="utf-8") as f:
+                        full_text = f.read()
+
+                    # Lire les annotations
+                    with open(ann_file, "r", encoding="utf-8") as f:
+                        for line in f:
+                            if line.startswith("T"):
+                                parts = line.strip().split("\t")
+                                if len(parts) >= 3:
+                                    # Parse: T1  Status 10 15  Her2+
+                                    meta = parts[1].split()
+                                    etype = meta[0]
+                                    start = int(meta[1])
+                                    end = int(
+                                        meta[-1]
+                                    )  # Parfois "10 15;20 25" -> on prend les extrêmes simplifiés
+
+                                    # Extraire le contexte (fenêtre)
+                                    ctx_start = max(0, start - self.WINDOW_SIZE)
+                                    ctx_end = min(
+                                        len(full_text), end + self.WINDOW_SIZE
+                                    )
+                                    context = full_text[
+                                        ctx_start:ctx_end
+                                    ].lower()  # Contexte normalisé
+
+                                    self.document_data[ann_file.name].append(
+                                        {
+                                            "type": etype,
+                                            "value_text": parts[2].lower(),
+                                            "context": context,
+                                        }
+                                    )
+                except Exception as e:
+                    # print(f"Erreur lecture {ann_file}: {e}")
+                    pass
+
+    def _check_contradiction(self, entries: List[Dict]) -> bool:
+        """Détecte si une entité a des valeurs contradictoires dans le MEME document."""
+        has_pos = False
+        has_neg = False
+
+        for e in entries:
+            txt = e["value_text"]
+            # Check POS
+            if any(re.search(p, txt) for p in self.VAL_POS):
+                has_pos = True
+            # Check NEG
+            if any(re.search(p, txt) for p in self.VAL_NEG):
+                has_neg = True
+
+        return has_pos and has_neg
+
+    def compute_all(self) -> List[Dict]:
+        """Calcule le score R agrégé par Type d'Entité."""
+        self._load_data()
+
+        # Regrouper tout par type d'entité pour stats globales
+        entity_stats = defaultdict(
+            lambda: {"total": 0, "negated": 0, "uncertain": 0, "contradicted_docs": 0}
+        )
+        entity_docs = defaultdict(lambda: defaultdict(list))  # type -> doc -> [entries]
+
+        # 1. Analyse Locale (Négation / Incertitude) pour chaque occurrence
+        for filename, entries in self.document_data.items():
+            for entry in entries:
+                etype = entry["type"]
+                ctx = entry["context"]
+
+                entity_stats[etype]["total"] += 1
+                entity_docs[etype][filename].append(entry)
+
+                # Check Négation
+                if any(re.search(pat, ctx) for pat in self.NEGATION_PATTERNS):
+                    entity_stats[etype]["negated"] += 1
+
+                # Check Incertitude
+                if any(re.search(pat, ctx) for pat in self.UNCERTAINTY_PATTERNS):
+                    entity_stats[etype]["uncertain"] += 1
+
+        # 2. Analyse Globale (Contradiction) par document
+        for etype, docs in entity_docs.items():
+            for filename, entries in docs.items():
+                if self._check_contradiction(entries):
+                    entity_stats[etype]["contradicted_docs"] += 1
+
+        # 3. Calcul du Score R Final
+        results = []
+        for etype, stats in entity_stats.items():
+            N = stats["total"]
+            if N == 0:
+                continue
+
+            # Fréquences relatives
+            f_neg = stats["negated"] / N
+            f_unc = stats["uncertain"] / N
+
+            # Pour la contradiction, c'est le ratio de documents contradictoires
+            # On approxime le nombre de docs total pour cette entité comme len(entity_docs[etype])
+            N_docs = len(entity_docs[etype])
+            f_cont = stats["contradicted_docs"] / N_docs if N_docs > 0 else 0
+
+            # --- FORMULE DE RISQUE (Heuristique Expert) ---
+            # R = 0.2 * Negation + 0.5 * Incertitude + 1.0 * Contradiction
+            # On plafonne à 1.0
+            # Justification:
+            # - Négation est gérable (faible poids)
+            # - Incertitude est dangereuse (poids moyen)
+            # - Contradiction est fatale (poids fort)
+
+            raw_risk = (0.2 * f_neg) + (0.5 * f_unc) + (1.0 * f_cont)
+            risk_score = min(1.0, raw_risk)
+
+            results.append(
+                {
+                    "Entity": etype,
+                    "R_Score": round(risk_score, 4),
+                    "Negation_Rate": round(f_neg, 2),
+                    "Uncertainty_Rate": round(f_unc, 2),
+                    "Contradiction_Rate": round(f_cont, 2),
+                    "Count": N,
+                }
+            )
+
+        return sorted(results, key=lambda x: x["R_Score"], reverse=True)
+
+    def to_csv(self, output_path: Path):
+        data = self.compute_all()
+        with open(output_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=[
+                    "Entity",
+                    "R_Score",
+                    "Negation_Rate",
+                    "Uncertainty_Rate",
+                    "Contradiction_Rate",
+                    "Count",
+                ],
+            )
+            writer.writeheader()
+            writer.writerows(data)
+        print(f"Sauvegardé dans {output_path}")
+
+
+# ==================================================================================
+# MAIN EXECUTION
+# ==================================================================================
+def main():
+    # RELATIVE PATHS
+    SCRIPT_DIR = Path(__file__).parent
+    ROOT_DIR = SCRIPT_DIR.parent
+
+    DATA_DIRS = [
+        ROOT_DIR / "NER/data/Breast/train",
+        ROOT_DIR / "NER/data/Breast/val",
+        ROOT_DIR / "NER/data/Breast/test",
+        # Fallback old paths if needed
+        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",
+    ]
+
+    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    print("=== Démarrage de l'analyse Risk Context (R) ===")
+    scorer = RiskContextScorer(DATA_DIRS)
+    scorer.to_csv(OUTPUT_FILE)
+
+    # === TESTS CRITIQUES (Demandés par l'utilisateur) ===
+    print("\n=== VERIFICATION TESTS CRITIQUES ===")
+
+    # Simulation de cas artificiels pour valider la logique
+    # On crée une instance vide et on injecte des données fake
+    test_scorer = RiskContextScorer([])
+
+    # Test 1: "HER2 non surexprimé" (Négation simple)
+    # Contexte: ... le statut est HER2 non surexprimé sur la lame ...
+    test_scorer.document_data["test1.txt"] = [
+        {
+            "type": "TEST_NEG",
+            "value_text": "her2",
+            "context": "le statut est her2 non surexprimé sur la lame",
+        }
+    ]
+
+    # Test 2: "statut HER2 discordant entre biopsie et pièce opératoire" (Contradiction/Conflit explicite)
+    # Ici simulons une contradiction logique: dans le même doc, une valeur POS et une valeur NEG
+    test_scorer.document_data["test2.txt"] = [
+        {
+            "type": "TEST_CONTRA",
+            "value_text": "her2 positif",
+            "context": "biopsie montre her2 positif",
+        },
+        {
+            "type": "TEST_CONTRA",
+            "value_text": "her2 negatif",
+            "context": "piece operatoire montre her2 negatif",
+        },
+    ]
+
+    # Test 3: "Incertitude"
+    test_scorer.document_data["test3.txt"] = [
+        {
+            "type": "TEST_UNCERT",
+            "value_text": "tumeur",
+            "context": "origine probable de la tumeur a confirmer",
+        }
+    ]
+
+    res = test_scorer.compute_all()
+    for r in res:
+        print(
+            f"Entité Test: {r['Entity']:<15} | Score R: {r['R_Score']:.2f} | (Neg={r['Negation_Rate']}, Unc={r['Uncertainty_Rate']}, Contra={r['Contradiction_Rate']})"
+        )
+
+    if HAS_ECO2AI:
+        tracker.stop()
+
+
+if __name__ == "__main__":
+    main()
