@@ -13,8 +13,6 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
 |-------------|---------------------|----------|---------------|-----------------|
 | ER          | Règles              | 0.95     | 0.000001      | 0.98            |
 | Ki67        | ML_CRF              | 0.82     | 0.000050      | 0.85            |
-| Grade       | Règles              | 0.70     | 0.000001      | 0.88            |
-| PD-L1       | LLM                 | 0.96     | 0.015000      | 0.45            |
 
 ## Installation et Exécution Reproductible
 
