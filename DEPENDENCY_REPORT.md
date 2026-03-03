@@ -1,0 +1,175 @@
+# DuraXELL — Import Dependency Report
+
+## ANALYSIS SUMMARY
+
+---
+
+### 1. MAIN ENTRY POINTS (files executed directly)
+
+| Entry Point | Type | Description |
+|---|---|---|
+| `main.py` | CLI hub | Central CLI dispatcher (`extract`, `metrics`, `tree`, `rest`, `evaluate`) |
+| `run_full_pipeline_report.py` | Pipeline | Full evaluation pipeline with figures |
+| `ESMO2025/REST_interface/demo_rest.py` | Demo | REST interface demonstration |
+| `ESMO2025/REST_interface/rest_pipeline.py` | Pipeline | REST annotation pipeline driver |
+| `ESMO2025/E_creation_arbre_decision.py` | Script | Decision tree builder (also importable) |
+| `ESMO2025/E_templeability.py` | Script | Templeability scorer (also importable) |
+| `ESMO2025/E_homogeneity.py` | Script | Homogeneity scorer (also importable) |
+| `ESMO2025/E_risk_context.py` | Script | Risk context scorer (also importable) |
+| `ESMO2025/E_frequency.py` | Script | Frequency scorer (also importable) |
+| `ESMO2025/E_annotation_yield.py` | Script | Annotation yield scorer (also importable) |
+| `ESMO2025/E_fesability_NER.py` | Script | NER feasibility calculator |
+| `ESMO2025/generate_*_report.py` (×3) | Script | HTML report generators |
+| `ESMO2025/Rules/src/Breast/lunch.py` | Script | Rule-based annotation runner |
+| `NER/src/2bis_train_hf_ner.py` | Script | NER training |
+| `NER/src/2sweep_ner.py` | Script | NER hyperparameter sweep |
+| `NER/src/3infer.py` | Script | NER inference |
+| `NER/src/4predict_to_brat.py` | Script | NER prediction to BRAT format |
+| `NER/src/5evaluate_ner.py` | Script | NER evaluation |
+| `NER/src/eval_best_model.py` | Script | Best model evaluation |
+
+---
+
+### 2. DEPENDENCY CLASSIFICATION
+
+#### LEAF MODULES (imported by others, import no project-internal files)
+
+These are the foundational modules with zero internal dependencies:
+
+| Module | Imported By |
+|---|---|
+| `ESMO2025/structs.py` | `cascade_orchestrator`, `rules_cascade_connector`, `ner_cascade_connector`, tests |
+| `ESMO2025/energy_tracker.py` | `__init__`, `run_full_pipeline_report`, tests |
+| `ESMO2025/E_composite_scorer.py` | `__init__`, `run_full_pipeline_report`, tests |
+| `ESMO2025/E_annotation_yield.py` | `__init__`, `E_creation_arbre_decision`, tests |
+| `ESMO2025/E_frequency.py` | `__init__`, `debug_freq`, tests |
+| `ESMO2025/E_homogeneity.py` | `__init__`, tests |
+| `ESMO2025/E_risk_context.py` | `__init__`, tests |
+| `ESMO2025/E_templeability.py` | `__init__`, tests |
+| `ESMO2025/visualize_decision_tree.py` | `run_full_pipeline_report` |
+| `ESMO2025/REST_interface/rest_annotator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `ESMO2025/REST_interface/rest_evaluator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `ESMO2025/REST_interface/rest_decision_bridge.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `ESMO2025/REST_interface/convergence_analyzer.py` | `__init__`, `demo_rest` |
+| `ESMO2025/REST_interface/yield_calculator.py` | `rest_pipeline` |
+| `ESMO2025/Rules/src/Breast/biomarker_brat_annotator.py` | `rules_cascade_connector`, `lunch.py` |
+| All `REST_modules/calculs/*.py` | via `calculs/__init__` |
+| All `REST_modules/extraction/*.py` | via `extraction/__init__` |
+| `REST_modules/visualization.py` | `__init__`, `ui.py` |
+
+#### ROOT MODULES (import other project files, never imported by anyone)
+
+These are the top-level entry points or standalone scripts:
+
+| Module | Depends On |
+|---|---|
+| `main.py` | `cascade_orchestrator` (+ subprocess calls to many scripts) |
+| `run_full_pipeline_report.py` | `E_composite_scorer`, `cascade_orchestrator`, `energy_tracker`, `visualize_decision_tree`, `sensitivity_analysis`, REST interface modules |
+| `ESMO2025/REST_interface/demo_rest.py` | REST interface modules |
+| `ESMO2025/REST_interface/rest_pipeline.py` | REST interface modules + `yield_calculator` |
+| `ESMO2025/Rules/src/Breast/lunch.py` | `biomarker_brat_annotator` |
+| `debug_freq.py` | `E_frequency` |
+| All `ESMO2025/tests/*.py` | Various ESMO2025 modules |
+| All `NER/src/*.py` (except `ner_cascade_connector`) | External only |
+
+#### HUB MODULES (both imported and import others)
+
+| Module | Imports | Imported By |
+|---|---|---|
+| `ESMO2025/__init__.py` | 9 internal modules | All external `ESMO2025.*` imports |
+| `ESMO2025/cascade_orchestrator.py` | `structs`, `rules_cascade_connector`, `ner_cascade_connector` | `__init__`, `main`, `run_full_pipeline_report`, tests |
+| `ESMO2025/E_creation_arbre_decision.py` | `E_annotation_yield` | `__init__`, `sensitivity_analysis`, tests |
+| `ESMO2025/sensitivity_analysis.py` | `E_creation_arbre_decision` | `run_full_pipeline_report` |
+| `ESMO2025/Rules/src/Breast/rules_cascade_connector.py` | `biomarker_brat_annotator`, `structs` | `cascade_orchestrator` |
+| `NER/src/ner_cascade_connector.py` | `structs` | `cascade_orchestrator` |
+| `REST_modules/ui.py` | all other REST_modules | `__init__` |
+| `REST_modules/loading.py` | `calculs`, `categorization`, `extraction` | `__init__`, `ui` |
+| `REST_modules/categorization.py` | `calculs`, `extraction.normalisation` | `__init__`, `loading`, `ui` |
+| `REST_modules/calculs/metrics.py` | `.regex` | `calculs/__init__` |
+| `REST_modules/calculs/ngram.py` | `.tfidf` | `calculs/__init__` |
+
+---
+
+### 3. CIRCULAR DEPENDENCY ANALYSIS
+
+**No true circular import dependencies found.**
+
+The closest potential issue:
+- `ESMO2025/__init__.py` imports `cascade_orchestrator`, which imports `rules_cascade_connector`, which imports `ESMO2025.structs`. But `structs` is loaded first by `__init__.py` order, so there's no cycle.
+- `ESMO2025/__init__.py` imports both `E_creation_arbre_decision` and `E_annotation_yield`. `E_creation_arbre_decision` also imports `E_annotation_yield`, but this is a DAG, not a cycle.
+- `REST_modules/__init__.py` → `categorization` → `.calculs` → (submodules). No back-references.
+
+**All dependency graphs are DAGs (Directed Acyclic Graphs). No circular imports exist.**
+
+---
+
+### 4. CORE DEPENDENCY CHAIN (Main Pipeline)
+
+```
+main.py
+  └── cascade_orchestrator.py
+        ├── structs.py                    [LEAF]
+        ├── rules_cascade_connector.py
+        │     ├── biomarker_brat_annotator.py  [LEAF]
+        │     └── structs.py                    [LEAF]
+        └── ner_cascade_connector.py
+              └── structs.py                    [LEAF]
+
+run_full_pipeline_report.py
+  ├── E_composite_scorer.py               [LEAF]
+  ├── cascade_orchestrator.py             (see above)
+  ├── energy_tracker.py                   [LEAF]
+  ├── visualize_decision_tree.py          [LEAF]
+  ├── sensitivity_analysis.py
+  │     └── E_creation_arbre_decision.py
+  │           └── E_annotation_yield.py   [LEAF]
+  ├── rest_annotator.py                   [LEAF]
+  ├── rest_evaluator.py                   [LEAF]
+  └── rest_decision_bridge.py             [LEAF]
+```
+
+---
+
+### 5. EXTERNAL DEPENDENCY SUMMARY
+
+| Library | Used By (count) | Category |
+|---|---|---|
+| `pandas` | 15+ files | Data manipulation |
+| `matplotlib` | 8+ files | Visualization |
+| `numpy` | 7+ files | Numerics |
+| `eco2ai` | 13 files | Energy tracking |
+| `json` (stdlib) | 15+ files | Config/serialization |
+| `re` (stdlib) | 12+ files | Regex |
+| `torch` | 3 files (NER) | Deep learning |
+| `transformers` | 5 files (NER) | HuggingFace models |
+| `seqeval` | 3 files (NER) | NER evaluation |
+| `datasets` | 3 files (NER) | HuggingFace datasets |
+| `networkx` | 1 file | Graph visualization |
+| `seaborn` | 2 files | Statistical plots |
+| `ipywidgets` | 4 files (REST_modules) | Jupyter UI |
+| `bqplot` | 3 files (REST_modules) | Jupyter plots |
+| `ipydatagrid` | 4 files (REST_modules) | Jupyter tables |
+| `plotly` | 2 files (REST_modules) | Interactive plots |
+| `spacy` | 1 file (normalisation) | NLP |
+| `Levenshtein` | 1 file (normalisation) | String distance |
+| `inflect` | 1 file (regex) | Pluralization |
+| `nltk` | 3 files (REST_modules) | NLP toolkit |
+| `nbformat` | 1 file | Notebook creation |
+| `psutil` | 1 file | Process monitoring |
+| `unidecode` | 3 files (REST_modules) | Unicode normalization |
+
+---
+
+### 6. WARNINGS & OBSERVATIONS
+
+1. **Hard eco2ai imports** in `generate_*_report.py` (×3) and `biomarker_brat_annotator.py` and `lunch.py` — these will crash if `eco2ai` is not installed (no try/except guard).
+
+2. **Inconsistent import styles** in tests: `test_homogeneity.py`, `test_risk_context.py`, and `test_templeability.py` use `sys.path.append` + bare module imports (`from E_homogeneity import ...`) instead of package-qualified imports (`from ESMO2025.E_homogeneity import ...`).
+
+3. **REST_interface/__init__.py** uses bare module imports (`from convergence_analyzer import ...`) instead of relative imports (`from .convergence_analyzer import ...`), which will fail when imported as a package from outside the directory.
+
+4. **graph_orchestrator.py** is an empty file — appears to be a placeholder.
+
+5. **E_fesability_NER.py** is a standalone script not imported by any other file.
+
+6. **NER/src/** pipeline scripts (2bis, 2sweep, 3infer, 4predict, 5evaluate, eval_best) are fully standalone — they have no internal project imports and are never imported by others. Only `ner_cascade_connector.py` bridges into the main DuraXELL system.
