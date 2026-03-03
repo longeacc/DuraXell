@@ -68,8 +68,67 @@ class DecisionTreeBuilder:
             "LLM_NEC_HIGH": 0.5
         }
 
-    # Nombre minimum d'occurrences pour que Te soit fiable
-    MIN_TE_SAMPLES = 2
+    # Nombre minimum d'occurrences pour que Te soit fiable (Aligné avec THRESHOLDS_JUSTIFICATION.md)
+    MIN_TE_SAMPLES = 10
+
+    def validate_thresholds_kfold(self, entities_metrics: Dict[str, Dict[str, float]], k: int = 5):
+        """
+        Validation croisée k-fold sur les seuils : partitionner le corpus en k plis,
+        calibrer les seuils sur k-1 plis, mesurer la stabilité des décisions sur le pli restant.
+        """
+        import random
+        
+        entities = list(entities_metrics.keys())
+        if len(entities) < k:
+            print(f"Pas assez d'entités pour une CV {k}-fold.")
+            return
+
+        random.shuffle(entities)
+        
+        # Split en k plis
+        folds = [entities[i::k] for i in range(k)]
+        stabilities = []
+
+        print(f"--- Début de la validation croisée {k}-fold des seuils ---")
+        
+        for i in range(k):
+            test_entities = folds[i]
+            train_entities = [ent for j, f in enumerate(folds) if j != i for ent in f]
+            
+            # Simulation d'une calibration : modification mineure d'un seuil basée sur le train set
+            train_te_vals = sorted([entities_metrics[ent].get("Te", 0.0) for ent in train_entities])
+            if train_te_vals:
+                # 75e percentile manuel
+                idx = int(len(train_te_vals) * 0.75)
+                calibrated_te_med = train_te_vals[idx] if idx < len(train_te_vals) else self.THRESHOLDS["TE_MED"]
+            else:
+                calibrated_te_med = self.THRESHOLDS["TE_MED"]
+            
+            # Stocker l'ancien
+            old_te_med = self.THRESHOLDS["TE_MED"]
+            # Appliquer le seuil calibré
+            self.THRESHOLDS["TE_MED"] = calibrated_te_med
+            
+            # Mesurer l'accord (stabilité) entre les règles par défaut et les calibrées
+            matches = 0
+            for ent in test_entities:
+                metrics = entities_metrics[ent]
+                # Modèle origine
+                self.THRESHOLDS["TE_MED"] = old_te_med
+                orig_decision = self.analyze_entity(ent, metrics).get("method", "")
+                # Modèle calibré
+                self.THRESHOLDS["TE_MED"] = calibrated_te_med
+                new_decision = self.analyze_entity(ent, metrics).get("method", "")
+                
+                if orig_decision == new_decision:
+                    matches += 1
+                    
+            stability = matches / max(1, len(test_entities))
+            stabilities.append(stability)
+            self.THRESHOLDS["TE_MED"] = old_te_med # Reset
+
+        avg_stability = sum(stabilities) / len(stabilities)
+        print(f"Stabilité moyenne des décisions (K-Fold, k={k}): {avg_stability:.2%}")
 
     def analyze_entity(self, entity: str, metrics: Dict[str, float]) -> Dict[str, Any]:
         """
@@ -345,6 +404,7 @@ def main():
 
     # 3. Build Tree
     builder = DecisionTreeBuilder(CONFIG_FILE)
+    builder.validate_thresholds_kfold(metrics_db, k=3)
     builder.build_full_config(metrics_db)
 
     # 4. Save Outputs

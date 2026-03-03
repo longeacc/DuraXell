@@ -33,8 +33,14 @@ class CompositeScorer:
         "LLM_API": 0.1,
     }
 
-    # Seuils de référence pour normaliser l'énergie (basés sur ordres de grandeur)
-    MAX_ENERGY_KWH = 0.01  # ~coût d'un appel API LLM lourd
+    def __init__(self, max_energy_kwh: float = 0.01):
+        """
+        Initialise le scorer.
+        Args:
+            max_energy_kwh: Seuil de référence pour normaliser l'énergie 
+                            (ex: 0.01 = coût estimé d'un appel API LLM lourd).
+        """
+        self.MAX_ENERGY_KWH = max_energy_kwh
 
     def compute(
         self,

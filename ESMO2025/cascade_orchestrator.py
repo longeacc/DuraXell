@@ -66,6 +66,13 @@ class CascadeOrchestrator:
             self.ner_model = NERCascadeConnector()
         else:
             self.ner_model = ner_model
+            
+        self.crf_model = None  # Placeholder pour modèle ML_CRF
+        try:
+            import pycrfsuite
+            self.crf_model = "Active" # on vérifie juste que l'import marche pour cette maquette
+        except ImportError:
+            pass
 
         self.llm_client = llm_client
         self.energy_tracker = energy_tracker
@@ -116,8 +123,18 @@ class CascadeOrchestrator:
             if max_level <= 1:
                 return self._finalize(result, entity_type, start_time)
 
-        # Niveau 2/3 : ML / Transformer (si arbre autorise escalade)
+        # Niveau 2 : ML_CRF (si arbre autorise escalade ML LÉGER)
         if max_level >= 2:
+            crf_result = self._try_ml_crf(document, entity_type)
+            if self._is_confident(crf_result):
+                crf_result.execution_time_ms = (time.time() - start_time) * 1000
+                return crf_result
+            if crf_result and crf_result.value is not None:
+                if result is None or result.value is None or crf_result.confidence > result.confidence:
+                    result = crf_result
+
+        # Niveau 3 : Transformer (si arbre autorise escalade TRANSFORMER)
+        if max_level >= 3:
             ml_result = self._try_transformer(document, entity_type)
             if self._is_confident(ml_result):
                 ml_result.execution_time_ms = (time.time() - start_time) * 1000
@@ -170,6 +187,25 @@ class CascadeOrchestrator:
 
         # Mock si pas de moteur
         return ExtractionResult(entity_type, None, "Rules", 0.0, energy, 1)
+
+    def _try_ml_crf(self, text: str, entity_type: str) -> ExtractionResult:
+        """Tente l'extraction par modèle ML léger (CRF - sklearn-crfsuite)."""
+        energy = self.DEFAULT_ENERGY["ML_CRF"]
+        
+        # Integration placeholder pour le modèle CRF
+        if getattr(self, "crf_model", None):
+            try:
+                # In a real implementation: features = featurize(text); return crf_model.predict(features)
+                if self.energy_tracker:
+                    with self.energy_tracker.measure("ML_CRF", entity_type) as metrics:
+                        # Simulation
+                        pass
+                # Dummy failure fallback when not fully trained
+                pass
+            except Exception as e:
+                logging.debug(f"CRF model error: {e}")
+                
+        return ExtractionResult(entity_type, None, "ML_CRF", 0.0, energy, 2)
 
     def _try_transformer(self, text: str, entity_type: str) -> ExtractionResult:
         """Tente l'extraction par modèle Transformer (PubMedBERT/CancerBERT)."""

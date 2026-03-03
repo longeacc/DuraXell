@@ -94,6 +94,35 @@ class RiskContextScorer:
             r"non exprimé",
         }
 
+        # Poids appris ou heuristiques (peuvent être calibrés via _learn_weights)
+        self.weights = {"negation": 0.2, "uncertainty": 0.5, "contradiction": 1.0}
+
+    def _learn_weights(self, annotated_data: List[Tuple[int, int, int, int]]):
+        """
+        Apprend les poids R via Régression Logistique sur un ensemble de validation
+        (Chapman et al., 2001 - approche type NegEx pondéré).
+        annotated_data : list de tuples (has_neg, has_uncert, has_contradiction, is_risky_ground_truth)
+        """
+        try:
+            from sklearn.linear_model import LogisticRegression
+            import numpy as np
+
+            X = np.array([[d[0], d[1], d[2]] for d in annotated_data])
+            y = np.array([d[3] for d in annotated_data])
+
+            # Contrainte de poids positifs
+            clf = LogisticRegression(fit_intercept=False, positive=True)
+            clf.fit(X, y)
+
+            self.weights["negation"] = float(clf.coef_[0][0])
+            self.weights["uncertainty"] = float(clf.coef_[0][1])
+            self.weights["contradiction"] = float(clf.coef_[0][2])
+            print(f"Poids R recalibrés via RL : {self.weights}")
+        except ImportError:
+            print("scikit-learn non disponible pour la R.L., utilisation des heuristiques.")
+        except Exception as e:
+            print(f"Erreur lors de l'apprentissage des poids : {e}")
+
     def has_negation(self, text: str, entity_type: str = "") -> bool:
         """Vérifie si le texte contient une négation."""
         text = text.lower()
@@ -104,9 +133,28 @@ class RiskContextScorer:
         text = text.lower()
         return any(re.search(pat, text) for pat in self.UNCERTAINTY_PATTERNS)
 
+    def compute_score_from_stats(self, negated_count: int, uncertain_count: int, total_count: int, contradicted_rate: float = 0.0) -> float:
+        """
+        Méthode unique pour calculer le score R à partir des statistiques de base.
+        Garantit la cohérence de la formule partout.
+        """
+        if total_count == 0:
+            return 0.0
+            
+        f_neg = negated_count / total_count
+        f_unc = uncertain_count / total_count
+        
+        raw_risk = (
+            (self.weights["negation"] * f_neg)
+            + (self.weights["uncertainty"] * f_unc)
+            + (self.weights["contradiction"] * contradicted_rate)
+        )
+        return min(1.0, raw_risk)
+
     def compute_score(self, texts: List[str], entity_type: str) -> float:
         """
-        Calcule un score R sur une liste de textes (contextes).
+        Calcule un score R sur une liste de courtes phrases (sans analyse document-level).
+        Fait désormais appel à compute_score_from_stats.
         """
         if not texts:
             return 0.0
@@ -115,12 +163,7 @@ class RiskContextScorer:
         negated = sum(1 for t in texts if self.has_negation(t))
         uncertain = sum(1 for t in texts if self.has_uncertainty(t))
 
-        # Formule simple :
-        # R = (0.2 * neg_ratio) + (0.8 * uncertain_ratio)
-        # Contradiction non gérée ici car nécessite structure document
-
-        r_score = (0.2 * (negated / total)) + (0.8 * (uncertain / total))
-        return min(1.0, r_score)
+        return self.compute_score_from_stats(negated, uncertain, total, contradicted_rate=0.0)
 
     def _load_data(self):
         """Lit les fichiers .ann ET .txt pour avoir le contexte."""
@@ -239,16 +282,13 @@ class RiskContextScorer:
             N_docs = len(entity_docs[etype])
             f_cont = stats["contradicted_docs"] / N_docs if N_docs > 0 else 0
 
-            # --- FORMULE DE RISQUE (Heuristique Expert) ---
-            # R = 0.2 * Negation + 0.5 * Incertitude + 1.0 * Contradiction
-            # On plafonne à 1.0
-            # Justification:
-            # - Négation est gérable (faible poids)
-            # - Incertitude est dangereuse (poids moyen)
-            # - Contradiction est fatale (poids fort)
-
-            raw_risk = (0.2 * f_neg) + (0.5 * f_unc) + (1.0 * f_cont)
-            risk_score = min(1.0, raw_risk)
+            # Utilisation de la méthode unifiée
+            risk_score = self.compute_score_from_stats(
+                negated_count=stats["negated"], 
+                uncertain_count=stats["uncertain"], 
+                total_count=N, 
+                contradicted_rate=f_cont
+            )
 
             results.append(
                 {

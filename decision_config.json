@@ -152,8 +152,9 @@
             "justification": "Forte complexit\u00e9/n\u00e9cessit\u00e9 d'utiliser un LLM lourd.",
             "trace": [
                 "Templateabilit\u00e9 \u00e9lev\u00e9e?",
-                "Oui -> Variabilit\u00e9 lexicale faible?",
-                "Non (He faible) -> Faisabilit\u00e9 NER \u00e9lev\u00e9e?",
+                "Non -> Homog\u00e9n\u00e9it\u00e9 \u00e9lev\u00e9e + Yield \u2265 seuil?",
+                "Non -> Templateabilit\u00e9 moyenne?",
+                "Non -> Faisabilit\u00e9 NER \u00e9lev\u00e9e?",
                 "Non -> N\u00e9cessit\u00e9 LLM \u00e9lev\u00e9e?",
                 "Oui -> [LLM]"
             ]

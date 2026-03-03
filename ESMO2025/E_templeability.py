@@ -134,12 +134,15 @@ class TempleabilityScorer:
 
     def compute(self, entity_type: str) -> float:
         """
-        Retourne un score Te ∈ [0, 1].
+        Retourne un score Te ∈ [0, 100].
         Méthode :
         1. Extraire toutes les mentions de entity_type dans le corpus
-        2. Normaliser les patterns : "HER2 3+" → "XXX D+" (regex abstraction)
-        3. Calculer l'entropie de la distribution des patterns normalisés
-        4. Te = 1 - (entropie_normalisée) + bonus_sémantique
+        2. Normaliser les patterns : "HER2 3+" → "XXXX D+" (regex abstraction)
+        3. Calculer l'entropie de la distribution des patterns normalisés (H)
+        4. Normaliser l'entropie par rapport au maximum possible (H_norm = H / ln(N_unique))
+        5. Calculer la cohérence structurelle: 1.0 - H_norm
+        6. Ajouter un bonus sémantique si présence de marqueurs standards (+ / - / % / > / <)
+        7. Te = (cohérence_structurelle + bonus_sémantique) * 100
         """
         values = self.entities_values.get(entity_type, [])
         if not values:
@@ -165,17 +168,11 @@ class TempleabilityScorer:
         if num_unique <= 1:
             H_norm = 0.0
         else:
-            # We normalize by log(total_count) giving a sense of "bits per symbol" relative to max possible
-            # or by log(num_unique) if we consider the observed alphabet.
-            # Let's normalize by min(log(total_count), 5.0) to have a soft ceiling.
-            # Actually, let's use a simpler heuristic for Te:
-            # High concentration in top patterns
-            pass
+            H_norm = H / math.log(num_unique)
 
-        # Structure Score based on Top 3 coverage (similar to old method but cleaner)
+        # Structure Score based on entropy (as per documentation: 1 - H_norm)
+        structure_consistency = 1.0 - H_norm
         pattern_counts = Counter(normalized_patterns)
-        top_3_count = sum(c for _, c in pattern_counts.most_common(3))
-        structure_consistency = top_3_count / total_count
 
         # Semantic Bonus for standard markers
         bonus_semantic = 0.0
