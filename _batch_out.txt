@@ -1,1147 +1,0 @@
-D:\1_CLEM\ESIEE SCHOOL\PARCOURS RECHERCHE\Le juste usage des LLM et méthode NLP en cancélorlogie\DuraXELL\.venv\Lib\site-packages\eco2ai\tools\tools_gpu.py:1: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   1%|          | 1/199 [00:00<?, ?it/s, Materializing param=bert.embeddings.LayerNorm.bias]Loading weights:   1%|          | 1/199 [00:00<00:00, 1321.87it/s, Materializing param=bert.embeddings.LayerNorm.bias]Loading weights:   1%|1         | 2/199 [00:00<00:00, 772.43it/s, Materializing param=bert.embeddings.LayerNorm.weight]Loading weights:   1%|1         | 2/199 [00:00<00:01, 130.84it/s, Materializing param=bert.embeddings.LayerNorm.weight]Loading weights:   2%|1         | 3/199 [00:00<00:00, 196.26it/s, Materializing param=bert.embeddings.position_embeddings.weight]Loading weights:   2%|1         | 3/199 [00:00<00:01, 172.14it/s, Materializing param=bert.embeddings.position_embeddings.weight]Loading weights:   2%|2         | 4/199 [00:00<00:01, 181.04it/s, Materializing param=bert.embeddings.token_type_embeddings.weight]Loading weights:   2%|2         | 4/199 [00:00<00:01, 181.04it/s, Materializing param=bert.embeddings.token_type_embeddings.weight]Loading weights:   3%|2         | 5/199 [00:00<00:01, 160.07it/s, Materializing param=bert.embeddings.word_embeddings.weight]      Loading weights:   3%|2         | 5/199 [00:00<00:01, 160.07it/s, Materializing param=bert.embeddings.word_embeddings.weight]Loading weights:   3%|3         | 6/199 [00:00<00:01, 166.98it/s, Materializing param=bert.encoder.layer.0.attention.output.LayerNorm.bias]Loading weights:   3%|3         | 6/199 [00:00<00:01, 166.98it/s, Materializing param=bert.encoder.layer.0.attention.output.LayerNorm.bias]Loading weights:   4%|3         | 7/199 [00:00<00:01, 176.87it/s, Materializing param=bert.encoder.layer.0.attention.output.LayerNorm.weight]Loading weights:   4%|3         | 7/199 [00:00<00:01, 176.87it/s, Materializing param=bert.encoder.layer.0.attention.output.LayerNorm.weight]Loading weights:   4%|4         | 8/199 [00:00<00:01, 186.40it/s, Materializing param=bert.encoder.layer.0.attention.output.dense.bias]      Loading weights:   4%|4         | 8/199 [00:00<00:01, 186.40it/s, Materializing param=bert.encoder.layer.0.attention.output.dense.bias]Loading weights:   5%|4         | 9/199 [00:00<00:01, 174.90it/s, Materializing param=bert.encoder.layer.0.attention.output.dense.weight]Loading weights:   5%|4         | 9/199 [00:00<00:01, 168.28it/s, Materializing param=bert.encoder.layer.0.attention.output.dense.weight]Loading weights:   5%|5         | 10/199 [00:00<00:01, 168.73it/s, Materializing param=bert.encoder.layer.0.attention.self.key.bias]     Loading weights:   5%|5         | 10/199 [00:00<00:01, 168.73it/s, Materializing param=bert.encoder.layer.0.attention.self.key.bias]Loading weights:   6%|5         | 11/199 [00:00<00:01, 185.60it/s, Materializing param=bert.encoder.layer.0.attention.self.key.weight]Loading weights:   6%|5         | 11/199 [00:00<00:01, 173.86it/s, Materializing param=bert.encoder.layer.0.attention.self.key.weight]Loading weights:   6%|6         | 12/199 [00:00<00:01, 182.25it/s, Materializing param=bert.encoder.layer.0.attention.self.query.bias]Loading weights:   6%|6         | 12/199 [00:00<00:01, 180.02it/s, Materializing param=bert.encoder.layer.0.attention.self.query.bias]Loading weights:   7%|6         | 13/199 [00:00<00:00, 195.03it/s, Materializing param=bert.encoder.layer.0.attention.self.query.weight]Loading weights:   7%|6         | 13/199 [00:00<00:01, 185.24it/s, Materializing param=bert.encoder.layer.0.attention.self.query.weight]Loading weights:   7%|7         | 14/199 [00:00<00:00, 192.36it/s, Materializing param=bert.encoder.layer.0.attention.self.value.bias]  Loading weights:   7%|7         | 14/199 [00:00<00:00, 192.36it/s, Materializing param=bert.encoder.layer.0.attention.self.value.bias]Loading weights:   8%|7         | 15/199 [00:00<00:00, 206.10it/s, Materializing param=bert.encoder.layer.0.attention.self.value.weight]Loading weights:   8%|7         | 15/199 [00:00<00:00, 206.10it/s, Materializing param=bert.encoder.layer.0.attention.self.value.weight]Loading weights:   8%|8         | 16/199 [00:00<00:00, 219.84it/s, Materializing param=bert.encoder.layer.0.intermediate.dense.bias]    Loading weights:   8%|8         | 16/199 [00:00<00:00, 207.80it/s, Materializing param=bert.encoder.layer.0.intermediate.dense.bias]Loading weights:   9%|8         | 17/199 [00:00<00:00, 220.79it/s, Materializing param=bert.encoder.layer.0.intermediate.dense.weight]Loading weights:   9%|8         | 17/199 [00:00<00:00, 216.65it/s, Materializing param=bert.encoder.layer.0.intermediate.dense.weight]Loading weights:   9%|9         | 18/199 [00:00<00:00, 229.39it/s, Materializing param=bert.encoder.layer.0.output.LayerNorm.bias]    Loading weights:   9%|9         | 18/199 [00:00<00:00, 229.39it/s, Materializing param=bert.encoder.layer.0.output.LayerNorm.bias]Loading weights:  10%|9         | 19/199 [00:00<00:00, 242.14it/s, Materializing param=bert.encoder.layer.0.output.LayerNorm.weight]Loading weights:  10%|9         | 19/199 [00:00<00:00, 242.14it/s, Materializing param=bert.encoder.layer.0.output.LayerNorm.weight]Loading weights:  10%|#         | 20/199 [00:00<00:00, 238.55it/s, Materializing param=bert.encoder.layer.0.output.dense.bias]      Loading weights:  10%|#         | 20/199 [00:00<00:00, 238.55it/s, Materializing param=bert.encoder.layer.0.output.dense.bias]Loading weights:  11%|#         | 21/199 [00:00<00:00, 247.27it/s, Materializing param=bert.encoder.layer.0.output.dense.weight]Loading weights:  11%|#         | 21/199 [00:00<00:00, 247.27it/s, Materializing param=bert.encoder.layer.0.output.dense.weight]Loading weights:  11%|#1        | 22/199 [00:00<00:00, 259.04it/s, Materializing param=bert.encoder.layer.1.attention.output.LayerNorm.bias]Loading weights:  11%|#1        | 22/199 [00:00<00:00, 259.04it/s, Materializing param=bert.encoder.layer.1.attention.output.LayerNorm.bias]Loading weights:  12%|#1        | 23/199 [00:00<00:00, 270.82it/s, Materializing param=bert.encoder.layer.1.attention.output.LayerNorm.weight]Loading weights:  12%|#1        | 23/199 [00:00<00:00, 270.82it/s, Materializing param=bert.encoder.layer.1.attention.output.LayerNorm.weight]Loading weights:  12%|#2        | 24/199 [00:00<00:00, 264.41it/s, Materializing param=bert.encoder.layer.1.attention.output.dense.bias]      Loading weights:  12%|#2        | 24/199 [00:00<00:00, 264.41it/s, Materializing param=bert.encoder.layer.1.attention.output.dense.bias]Loading weights:  13%|#2        | 25/199 [00:00<00:00, 275.42it/s, Materializing param=bert.encoder.layer.1.attention.output.dense.weight]Loading weights:  13%|#2        | 25/199 [00:00<00:00, 271.30it/s, Materializing param=bert.encoder.layer.1.attention.output.dense.weight]Loading weights:  13%|#3        | 26/199 [00:00<00:00, 282.15it/s, Materializing param=bert.encoder.layer.1.attention.self.key.bias]      Loading weights:  13%|#3        | 26/199 [00:00<00:00, 282.15it/s, Materializing param=bert.encoder.layer.1.attention.self.key.bias]Loading weights:  14%|#3        | 27/199 [00:00<00:00, 293.00it/s, Materializing param=bert.encoder.layer.1.attention.self.key.weight]Loading weights:  14%|#3        | 27/199 [00:00<00:00, 293.00it/s, Materializing param=bert.encoder.layer.1.attention.self.key.weight]Loading weights:  14%|#4        | 28/199 [00:00<00:00, 303.85it/s, Materializing param=bert.encoder.layer.1.attention.self.query.bias]Loading weights:  14%|#4        | 28/199 [00:00<00:00, 303.85it/s, Materializing param=bert.encoder.layer.1.attention.self.query.bias]Loading weights:  15%|#4        | 29/199 [00:00<00:00, 314.70it/s, Materializing param=bert.encoder.layer.1.attention.self.query.weight]Loading weights:  15%|#4        | 29/199 [00:00<00:00, 314.70it/s, Materializing param=bert.encoder.layer.1.attention.self.query.weight]Loading weights:  15%|#5        | 30/199 [00:00<00:00, 325.55it/s, Materializing param=bert.encoder.layer.1.attention.self.value.bias]  Loading weights:  15%|#5        | 30/199 [00:00<00:00, 325.55it/s, Materializing param=bert.encoder.layer.1.attention.self.value.bias]Loading weights:  16%|#5        | 31/199 [00:00<00:00, 336.41it/s, Materializing param=bert.encoder.layer.1.attention.self.value.weight]Loading weights:  16%|#5        | 31/199 [00:00<00:00, 336.41it/s, Materializing param=bert.encoder.layer.1.attention.self.value.weight]Loading weights:  16%|#6        | 32/199 [00:00<00:00, 347.26it/s, Materializing param=bert.encoder.layer.1.intermediate.dense.bias]    Loading weights:  16%|#6        | 32/199 [00:00<00:00, 347.26it/s, Materializing param=bert.encoder.layer.1.intermediate.dense.bias]Loading weights:  17%|#6        | 33/199 [00:00<00:00, 358.11it/s, Materializing param=bert.encoder.layer.1.intermediate.dense.weight]Loading weights:  17%|#6        | 33/199 [00:00<00:00, 358.11it/s, Materializing param=bert.encoder.layer.1.intermediate.dense.weight]Loading weights:  17%|#7        | 34/199 [00:00<00:00, 368.96it/s, Materializing param=bert.encoder.layer.1.output.LayerNorm.bias]    Loading weights:  17%|#7        | 34/199 [00:00<00:00, 368.96it/s, Materializing param=bert.encoder.layer.1.output.LayerNorm.bias]Loading weights:  18%|#7        | 35/199 [00:00<00:00, 379.81it/s, Materializing param=bert.encoder.layer.1.output.LayerNorm.weight]Loading weights:  18%|#7        | 35/199 [00:00<00:00, 358.09it/s, Materializing param=bert.encoder.layer.1.output.LayerNorm.weight]Loading weights:  18%|#8        | 36/199 [00:00<00:00, 368.33it/s, Materializing param=bert.encoder.layer.1.output.dense.bias]      Loading weights:  18%|#8        | 36/199 [00:00<00:00, 368.33it/s, Materializing param=bert.encoder.layer.1.output.dense.bias]Loading weights:  19%|#8        | 37/199 [00:00<00:00, 374.68it/s, Materializing param=bert.encoder.layer.1.output.dense.weight]Loading weights:  19%|#8        | 37/199 [00:00<00:00, 374.68it/s, Materializing param=bert.encoder.layer.1.output.dense.weight]Loading weights:  19%|#9        | 38/199 [00:00<00:00, 384.80it/s, Materializing param=bert.encoder.layer.2.attention.output.LayerNorm.bias]Loading weights:  19%|#9        | 38/199 [00:00<00:00, 384.80it/s, Materializing param=bert.encoder.layer.2.attention.output.LayerNorm.bias]Loading weights:  20%|#9        | 39/199 [00:00<00:00, 394.93it/s, Materializing param=bert.encoder.layer.2.attention.output.LayerNorm.weight]Loading weights:  20%|#9        | 39/199 [00:00<00:00, 394.93it/s, Materializing param=bert.encoder.layer.2.attention.output.LayerNorm.weight]Loading weights:  20%|##        | 40/199 [00:00<00:00, 405.06it/s, Materializing param=bert.encoder.layer.2.attention.output.dense.bias]      Loading weights:  20%|##        | 40/199 [00:00<00:00, 405.06it/s, Materializing param=bert.encoder.layer.2.attention.output.dense.bias]Loading weights:  21%|##        | 41/199 [00:00<00:00, 406.34it/s, Materializing param=bert.encoder.layer.2.attention.output.dense.weight]Loading weights:  21%|##        | 41/199 [00:00<00:00, 406.34it/s, Materializing param=bert.encoder.layer.2.attention.output.dense.weight]Loading weights:  21%|##1       | 42/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.output.dense.weight]Loading weights:  21%|##1       | 42/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.key.bias]      Loading weights:  21%|##1       | 42/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.key.bias]Loading weights:  22%|##1       | 43/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.key.weight]Loading weights:  22%|##1       | 43/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.key.weight]Loading weights:  22%|##2       | 44/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.query.bias]Loading weights:  22%|##2       | 44/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.query.bias]Loading weights:  23%|##2       | 45/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.query.weight]Loading weights:  23%|##2       | 45/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.query.weight]Loading weights:  23%|##3       | 46/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.value.bias]  Loading weights:  23%|##3       | 46/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.value.bias]Loading weights:  24%|##3       | 47/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.value.weight]Loading weights:  24%|##3       | 47/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.attention.self.value.weight]Loading weights:  24%|##4       | 48/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.intermediate.dense.bias]    Loading weights:  24%|##4       | 48/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.intermediate.dense.bias]Loading weights:  25%|##4       | 49/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.intermediate.dense.weight]Loading weights:  25%|##4       | 49/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.intermediate.dense.weight]Loading weights:  25%|##5       | 50/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.LayerNorm.bias]    Loading weights:  25%|##5       | 50/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.LayerNorm.bias]Loading weights:  26%|##5       | 51/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.LayerNorm.weight]Loading weights:  26%|##5       | 51/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.LayerNorm.weight]Loading weights:  26%|##6       | 52/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.dense.bias]      Loading weights:  26%|##6       | 52/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.dense.bias]Loading weights:  27%|##6       | 53/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.dense.weight]Loading weights:  27%|##6       | 53/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.2.output.dense.weight]Loading weights:  27%|##7       | 54/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.LayerNorm.bias]Loading weights:  27%|##7       | 54/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.LayerNorm.bias]Loading weights:  28%|##7       | 55/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.LayerNorm.weight]Loading weights:  28%|##7       | 55/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.LayerNorm.weight]Loading weights:  28%|##8       | 56/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.dense.bias]      Loading weights:  28%|##8       | 56/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.dense.bias]Loading weights:  29%|##8       | 57/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.dense.weight]Loading weights:  29%|##8       | 57/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.output.dense.weight]Loading weights:  29%|##9       | 58/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.key.bias]      Loading weights:  29%|##9       | 58/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.key.bias]Loading weights:  30%|##9       | 59/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.key.weight]Loading weights:  30%|##9       | 59/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.key.weight]Loading weights:  30%|###       | 60/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.query.bias]Loading weights:  30%|###       | 60/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.query.bias]Loading weights:  31%|###       | 61/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.query.weight]Loading weights:  31%|###       | 61/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.query.weight]Loading weights:  31%|###1      | 62/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.value.bias]  Loading weights:  31%|###1      | 62/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.value.bias]Loading weights:  32%|###1      | 63/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.value.weight]Loading weights:  32%|###1      | 63/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.attention.self.value.weight]Loading weights:  32%|###2      | 64/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.intermediate.dense.bias]    Loading weights:  32%|###2      | 64/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.intermediate.dense.bias]Loading weights:  33%|###2      | 65/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.intermediate.dense.weight]Loading weights:  33%|###2      | 65/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.intermediate.dense.weight]Loading weights:  33%|###3      | 66/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.LayerNorm.bias]    Loading weights:  33%|###3      | 66/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.LayerNorm.bias]Loading weights:  34%|###3      | 67/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.LayerNorm.weight]Loading weights:  34%|###3      | 67/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.LayerNorm.weight]Loading weights:  34%|###4      | 68/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.dense.bias]      Loading weights:  34%|###4      | 68/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.dense.bias]Loading weights:  35%|###4      | 69/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.dense.weight]Loading weights:  35%|###4      | 69/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.3.output.dense.weight]Loading weights:  35%|###5      | 70/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.LayerNorm.bias]Loading weights:  35%|###5      | 70/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.LayerNorm.bias]Loading weights:  36%|###5      | 71/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.LayerNorm.weight]Loading weights:  36%|###5      | 71/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.LayerNorm.weight]Loading weights:  36%|###6      | 72/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.dense.bias]      Loading weights:  36%|###6      | 72/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.dense.bias]Loading weights:  37%|###6      | 73/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.dense.weight]Loading weights:  37%|###6      | 73/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.output.dense.weight]Loading weights:  37%|###7      | 74/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.key.bias]      Loading weights:  37%|###7      | 74/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.key.bias]Loading weights:  38%|###7      | 75/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.key.weight]Loading weights:  38%|###7      | 75/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.key.weight]Loading weights:  38%|###8      | 76/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.query.bias]Loading weights:  38%|###8      | 76/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.query.bias]Loading weights:  39%|###8      | 77/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.query.weight]Loading weights:  39%|###8      | 77/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.query.weight]Loading weights:  39%|###9      | 78/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.value.bias]  Loading weights:  39%|###9      | 78/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.value.bias]Loading weights:  40%|###9      | 79/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.value.weight]Loading weights:  40%|###9      | 79/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.attention.self.value.weight]Loading weights:  40%|####      | 80/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.intermediate.dense.bias]    Loading weights:  40%|####      | 80/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.intermediate.dense.bias]Loading weights:  41%|####      | 81/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.intermediate.dense.weight]Loading weights:  41%|####      | 81/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.intermediate.dense.weight]Loading weights:  41%|####1     | 82/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.LayerNorm.bias]    Loading weights:  41%|####1     | 82/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.LayerNorm.bias]Loading weights:  42%|####1     | 83/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.LayerNorm.weight]Loading weights:  42%|####1     | 83/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.LayerNorm.weight]Loading weights:  42%|####2     | 84/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.dense.bias]      Loading weights:  42%|####2     | 84/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.dense.bias]Loading weights:  43%|####2     | 85/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.dense.weight]Loading weights:  43%|####2     | 85/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.4.output.dense.weight]Loading weights:  43%|####3     | 86/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.LayerNorm.bias]Loading weights:  43%|####3     | 86/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.LayerNorm.bias]Loading weights:  44%|####3     | 87/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.LayerNorm.weight]Loading weights:  44%|####3     | 87/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.LayerNorm.weight]Loading weights:  44%|####4     | 88/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.dense.bias]      Loading weights:  44%|####4     | 88/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.dense.bias]Loading weights:  45%|####4     | 89/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.dense.weight]Loading weights:  45%|####4     | 89/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.output.dense.weight]Loading weights:  45%|####5     | 90/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.key.bias]      Loading weights:  45%|####5     | 90/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.key.bias]Loading weights:  46%|####5     | 91/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.key.weight]Loading weights:  46%|####5     | 91/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.key.weight]Loading weights:  46%|####6     | 92/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.query.bias]Loading weights:  46%|####6     | 92/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.query.bias]Loading weights:  47%|####6     | 93/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.query.weight]Loading weights:  47%|####6     | 93/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.query.weight]Loading weights:  47%|####7     | 94/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.value.bias]  Loading weights:  47%|####7     | 94/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.value.bias]Loading weights:  48%|####7     | 95/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.value.weight]Loading weights:  48%|####7     | 95/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.attention.self.value.weight]Loading weights:  48%|####8     | 96/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.intermediate.dense.bias]    Loading weights:  48%|####8     | 96/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.intermediate.dense.bias]Loading weights:  49%|####8     | 97/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.intermediate.dense.weight]Loading weights:  49%|####8     | 97/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.intermediate.dense.weight]Loading weights:  49%|####9     | 98/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.LayerNorm.bias]    Loading weights:  49%|####9     | 98/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.LayerNorm.bias]Loading weights:  50%|####9     | 99/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.LayerNorm.weight]Loading weights:  50%|####9     | 99/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.LayerNorm.weight]Loading weights:  50%|#####     | 100/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.dense.bias]     Loading weights:  50%|#####     | 100/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.dense.bias]Loading weights:  51%|#####     | 101/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.dense.weight]Loading weights:  51%|#####     | 101/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.5.output.dense.weight]Loading weights:  51%|#####1    | 102/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.LayerNorm.bias]Loading weights:  51%|#####1    | 102/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.LayerNorm.bias]Loading weights:  52%|#####1    | 103/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.LayerNorm.weight]Loading weights:  52%|#####1    | 103/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.LayerNorm.weight]Loading weights:  52%|#####2    | 104/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.dense.bias]      Loading weights:  52%|#####2    | 104/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.dense.bias]Loading weights:  53%|#####2    | 105/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.dense.weight]Loading weights:  53%|#####2    | 105/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.output.dense.weight]Loading weights:  53%|#####3    | 106/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.key.bias]      Loading weights:  53%|#####3    | 106/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.key.bias]Loading weights:  54%|#####3    | 107/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.key.weight]Loading weights:  54%|#####3    | 107/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.key.weight]Loading weights:  54%|#####4    | 108/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.query.bias]Loading weights:  54%|#####4    | 108/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.query.bias]Loading weights:  55%|#####4    | 109/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.query.weight]Loading weights:  55%|#####4    | 109/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.query.weight]Loading weights:  55%|#####5    | 110/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.value.bias]  Loading weights:  55%|#####5    | 110/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.value.bias]Loading weights:  56%|#####5    | 111/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.value.weight]Loading weights:  56%|#####5    | 111/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.attention.self.value.weight]Loading weights:  56%|#####6    | 112/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.intermediate.dense.bias]    Loading weights:  56%|#####6    | 112/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.intermediate.dense.bias]Loading weights:  57%|#####6    | 113/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.intermediate.dense.weight]Loading weights:  57%|#####6    | 113/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.intermediate.dense.weight]Loading weights:  57%|#####7    | 114/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.LayerNorm.bias]    Loading weights:  57%|#####7    | 114/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.LayerNorm.bias]Loading weights:  58%|#####7    | 115/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.LayerNorm.weight]Loading weights:  58%|#####7    | 115/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.LayerNorm.weight]Loading weights:  58%|#####8    | 116/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.dense.bias]      Loading weights:  58%|#####8    | 116/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.dense.bias]Loading weights:  59%|#####8    | 117/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.dense.weight]Loading weights:  59%|#####8    | 117/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.6.output.dense.weight]Loading weights:  59%|#####9    | 118/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.LayerNorm.bias]Loading weights:  59%|#####9    | 118/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.LayerNorm.bias]Loading weights:  60%|#####9    | 119/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.LayerNorm.weight]Loading weights:  60%|#####9    | 119/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.LayerNorm.weight]Loading weights:  60%|######    | 120/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.dense.bias]      Loading weights:  60%|######    | 120/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.dense.bias]Loading weights:  61%|######    | 121/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.dense.weight]Loading weights:  61%|######    | 121/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.output.dense.weight]Loading weights:  61%|######1   | 122/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.key.bias]      Loading weights:  61%|######1   | 122/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.key.bias]Loading weights:  62%|######1   | 123/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.key.weight]Loading weights:  62%|######1   | 123/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.key.weight]Loading weights:  62%|######2   | 124/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.query.bias]Loading weights:  62%|######2   | 124/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.query.bias]Loading weights:  63%|######2   | 125/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.query.weight]Loading weights:  63%|######2   | 125/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.query.weight]Loading weights:  63%|######3   | 126/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.value.bias]  Loading weights:  63%|######3   | 126/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.value.bias]Loading weights:  64%|######3   | 127/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.value.weight]Loading weights:  64%|######3   | 127/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.attention.self.value.weight]Loading weights:  64%|######4   | 128/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.intermediate.dense.bias]    Loading weights:  64%|######4   | 128/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.intermediate.dense.bias]Loading weights:  65%|######4   | 129/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.intermediate.dense.weight]Loading weights:  65%|######4   | 129/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.intermediate.dense.weight]Loading weights:  65%|######5   | 130/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.LayerNorm.bias]    Loading weights:  65%|######5   | 130/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.LayerNorm.bias]Loading weights:  66%|######5   | 131/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.LayerNorm.weight]Loading weights:  66%|######5   | 131/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.LayerNorm.weight]Loading weights:  66%|######6   | 132/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.dense.bias]      Loading weights:  66%|######6   | 132/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.dense.bias]Loading weights:  67%|######6   | 133/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.dense.weight]Loading weights:  67%|######6   | 133/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.7.output.dense.weight]Loading weights:  67%|######7   | 134/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.LayerNorm.bias]Loading weights:  67%|######7   | 134/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.LayerNorm.bias]Loading weights:  68%|######7   | 135/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.LayerNorm.weight]Loading weights:  68%|######7   | 135/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.LayerNorm.weight]Loading weights:  68%|######8   | 136/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.dense.bias]      Loading weights:  68%|######8   | 136/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.dense.bias]Loading weights:  69%|######8   | 137/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.dense.weight]Loading weights:  69%|######8   | 137/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.output.dense.weight]Loading weights:  69%|######9   | 138/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.key.bias]      Loading weights:  69%|######9   | 138/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.key.bias]Loading weights:  70%|######9   | 139/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.key.weight]Loading weights:  70%|######9   | 139/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.key.weight]Loading weights:  70%|#######   | 140/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.query.bias]Loading weights:  70%|#######   | 140/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.query.bias]Loading weights:  71%|#######   | 141/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.query.weight]Loading weights:  71%|#######   | 141/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.query.weight]Loading weights:  71%|#######1  | 142/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.value.bias]  Loading weights:  71%|#######1  | 142/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.value.bias]Loading weights:  72%|#######1  | 143/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.value.weight]Loading weights:  72%|#######1  | 143/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.attention.self.value.weight]Loading weights:  72%|#######2  | 144/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.intermediate.dense.bias]    Loading weights:  72%|#######2  | 144/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.intermediate.dense.bias]Loading weights:  73%|#######2  | 145/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.intermediate.dense.weight]Loading weights:  73%|#######2  | 145/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.intermediate.dense.weight]Loading weights:  73%|#######3  | 146/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.LayerNorm.bias]    Loading weights:  73%|#######3  | 146/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.LayerNorm.bias]Loading weights:  74%|#######3  | 147/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.LayerNorm.weight]Loading weights:  74%|#######3  | 147/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.LayerNorm.weight]Loading weights:  74%|#######4  | 148/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.dense.bias]      Loading weights:  74%|#######4  | 148/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.dense.bias]Loading weights:  75%|#######4  | 149/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.dense.weight]Loading weights:  75%|#######4  | 149/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.8.output.dense.weight]Loading weights:  75%|#######5  | 150/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.LayerNorm.bias]Loading weights:  75%|#######5  | 150/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.LayerNorm.bias]Loading weights:  76%|#######5  | 151/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.LayerNorm.weight]Loading weights:  76%|#######5  | 151/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.LayerNorm.weight]Loading weights:  76%|#######6  | 152/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.dense.bias]      Loading weights:  76%|#######6  | 152/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.dense.bias]Loading weights:  77%|#######6  | 153/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.dense.weight]Loading weights:  77%|#######6  | 153/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.output.dense.weight]Loading weights:  77%|#######7  | 154/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.key.bias]      Loading weights:  77%|#######7  | 154/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.key.bias]Loading weights:  78%|#######7  | 155/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.key.weight]Loading weights:  78%|#######7  | 155/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.key.weight]Loading weights:  78%|#######8  | 156/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.query.bias]Loading weights:  78%|#######8  | 156/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.query.bias]Loading weights:  79%|#######8  | 157/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.query.weight]Loading weights:  79%|#######8  | 157/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.query.weight]Loading weights:  79%|#######9  | 158/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.value.bias]  Loading weights:  79%|#######9  | 158/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.value.bias]Loading weights:  80%|#######9  | 159/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.value.weight]Loading weights:  80%|#######9  | 159/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.attention.self.value.weight]Loading weights:  80%|########  | 160/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.intermediate.dense.bias]    Loading weights:  80%|########  | 160/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.intermediate.dense.bias]Loading weights:  81%|########  | 161/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.intermediate.dense.weight]Loading weights:  81%|########  | 161/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.intermediate.dense.weight]Loading weights:  81%|########1 | 162/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.LayerNorm.bias]    Loading weights:  81%|########1 | 162/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.LayerNorm.bias]Loading weights:  82%|########1 | 163/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.LayerNorm.weight]Loading weights:  82%|########1 | 163/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.LayerNorm.weight]Loading weights:  82%|########2 | 164/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.dense.bias]      Loading weights:  82%|########2 | 164/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.dense.bias]Loading weights:  83%|########2 | 165/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.dense.weight]Loading weights:  83%|########2 | 165/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.9.output.dense.weight]Loading weights:  83%|########3 | 166/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.LayerNorm.bias]Loading weights:  83%|########3 | 166/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.LayerNorm.bias]Loading weights:  84%|########3 | 167/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.LayerNorm.weight]Loading weights:  84%|########3 | 167/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.LayerNorm.weight]Loading weights:  84%|########4 | 168/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.dense.bias]      Loading weights:  84%|########4 | 168/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.dense.bias]Loading weights:  85%|########4 | 169/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.dense.weight]Loading weights:  85%|########4 | 169/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.output.dense.weight]Loading weights:  85%|########5 | 170/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.key.bias]      Loading weights:  85%|########5 | 170/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.key.bias]Loading weights:  86%|########5 | 171/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.key.weight]Loading weights:  86%|########5 | 171/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.key.weight]Loading weights:  86%|########6 | 172/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.query.bias]Loading weights:  86%|########6 | 172/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.query.bias]Loading weights:  87%|########6 | 173/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.query.weight]Loading weights:  87%|########6 | 173/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.query.weight]Loading weights:  87%|########7 | 174/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.value.bias]  Loading weights:  87%|########7 | 174/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.value.bias]Loading weights:  88%|########7 | 175/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.value.weight]Loading weights:  88%|########7 | 175/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.attention.self.value.weight]Loading weights:  88%|########8 | 176/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.intermediate.dense.bias]    Loading weights:  88%|########8 | 176/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.intermediate.dense.bias]Loading weights:  89%|########8 | 177/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.intermediate.dense.weight]Loading weights:  89%|########8 | 177/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.intermediate.dense.weight]Loading weights:  89%|########9 | 178/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.LayerNorm.bias]    Loading weights:  89%|########9 | 178/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.LayerNorm.bias]Loading weights:  90%|########9 | 179/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.LayerNorm.weight]Loading weights:  90%|########9 | 179/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.LayerNorm.weight]Loading weights:  90%|######### | 180/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.dense.bias]      Loading weights:  90%|######### | 180/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.dense.bias]Loading weights:  91%|######### | 181/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.dense.weight]Loading weights:  91%|######### | 181/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.10.output.dense.weight]Loading weights:  91%|#########1| 182/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.LayerNorm.bias]Loading weights:  91%|#########1| 182/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.LayerNorm.bias]Loading weights:  92%|#########1| 183/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.LayerNorm.weight]Loading weights:  92%|#########1| 183/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.LayerNorm.weight]Loading weights:  92%|#########2| 184/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.dense.bias]      Loading weights:  92%|#########2| 184/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.dense.bias]Loading weights:  93%|#########2| 185/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.dense.weight]Loading weights:  93%|#########2| 185/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.output.dense.weight]Loading weights:  93%|#########3| 186/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.key.bias]      Loading weights:  93%|#########3| 186/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.key.bias]Loading weights:  94%|#########3| 187/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.key.weight]Loading weights:  94%|#########3| 187/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.key.weight]Loading weights:  94%|#########4| 188/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.query.bias]Loading weights:  94%|#########4| 188/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.query.bias]Loading weights:  95%|#########4| 189/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.query.weight]Loading weights:  95%|#########4| 189/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.query.weight]Loading weights:  95%|#########5| 190/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.value.bias]  Loading weights:  95%|#########5| 190/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.value.bias]Loading weights:  96%|#########5| 191/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.value.weight]Loading weights:  96%|#########5| 191/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.attention.self.value.weight]Loading weights:  96%|#########6| 192/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.intermediate.dense.bias]    Loading weights:  96%|#########6| 192/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.intermediate.dense.bias]Loading weights:  97%|#########6| 193/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.intermediate.dense.weight]Loading weights:  97%|#########6| 193/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.intermediate.dense.weight]Loading weights:  97%|#########7| 194/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.LayerNorm.bias]    Loading weights:  97%|#########7| 194/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.LayerNorm.bias]Loading weights:  98%|#########7| 195/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.LayerNorm.weight]Loading weights:  98%|#########7| 195/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.LayerNorm.weight]Loading weights:  98%|#########8| 196/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.dense.bias]      Loading weights:  98%|#########8| 196/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.dense.bias]Loading weights:  99%|#########8| 197/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.dense.weight]Loading weights:  99%|#########8| 197/199 [00:00<00:00, 416.25it/s, Materializing param=bert.encoder.layer.11.output.dense.weight]Loading weights:  99%|#########9| 198/199 [00:00<00:00, 416.25it/s, Materializing param=classifier.bias]                          Loading weights:  99%|#########9| 198/199 [00:00<00:00, 416.25it/s, Materializing param=classifier.bias]Loading weights: 100%|##########| 199/199 [00:00<00:00, 416.25it/s, Materializing param=classifier.weight]Loading weights: 100%|##########| 199/199 [00:00<00:00, 416.25it/s, Materializing param=classifier.weight]Loading weights: 100%|##########| 199/199 [00:00<00:00, 1249.19it/s, Materializing param=classifier.weight]
-Batch : 94 fichiers × 7 entités
-==========================================================================================
-
---- -1105862981203549451.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-Error in NER model: The size of tensor a (5057) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (5057) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (5057) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1178901424184013773.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 90%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (904) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (904) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1185093888724122470.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1760) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1760) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1760) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1760) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1760) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1227868667231506253.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-  HER2_FISH                 => en_cours             | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1865) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1250298109838241966.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2068) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2068) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2068) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1612376341821530055.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2649) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2649) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -1927693394438203247.txt ---
-Error in NER model: The size of tensor a (545) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (545) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (545) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 35%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (545) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (545) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -2193637585399279866.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1077) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1077) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 12%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1077) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1077) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -2582192858298304495.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2010) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2010) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 15%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2010) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2010) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -2607682442592665144.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -279146819233313868.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1772) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 60%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1772) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1772) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -342373794378374089.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3281) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (3281) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -384900909141942018.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1546) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1546) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 8%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1546) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1546) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -3927209878740866860.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -3929326430490955193.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 3+                   | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1943) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1943) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -4384981829755613533.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (862) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (862) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (862) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (862) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (862) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -443237909313330871.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => -                    | None         | conf=0.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -4478013275202082781.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 60%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1343) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -5292204671584964562.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-  Ki67                      => 70%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (556) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (556) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -5353837625048177370.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1364) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1364) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1364) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1364) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -5767988780070397064.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1447) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1447) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1447) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 60%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1447) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1447) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -5834349030546601661.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (549) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (549) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -5915527515244304540.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 70%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2220) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2220) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -6006580032116902372.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2191) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2191) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -6265128759881198818.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (586) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (586) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (586) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-  HER2_FISH                 => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (586) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -6636600998002089402.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1340) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 25%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1340) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1340) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -6791525859604465232.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -6802593059341421595.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 3+                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (539) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (539) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (539) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -7014305168125293809.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (852) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (852) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 0%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (852) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (852) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -7100416862687238440.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (567) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (567) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (567) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -7212669882564062981.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (861) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (861) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 7%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (861) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (861) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -7834927746183846869.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -7961522750894924079.txt ---
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1321) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -8214563835212988254.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 15%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -8417625976460672442.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 3+                   | Rules        | conf=1.00
-  Ki67                      => 60%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2061) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2061) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -8436134175976669239.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1773) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1773) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1773) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -8675437020037929897.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (695) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (695) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (695) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (695) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -9033198761482084185.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (650) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (650) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (650) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (650) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -9103843188987724637.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1066) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1066) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 80%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1066) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1066) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- -935037516884133198.txt ---
-  Estrogen_receptor         => non_disponible       | Rules        | conf=1.00
-  Progesterone_receptor     => non_disponible       | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2780) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2780) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2780) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2780) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2780) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 103648522094095723.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1411) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1411) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1411) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 1358973338985180216.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1819) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1819) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 1523227563767905312.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1552) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1552) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 2%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1552) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1552) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2017625012636760019.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1771) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1771) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1771) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1771) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2480896743480859523.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (529) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 50%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (529) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (529) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2521102519333505274.txt ---
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (942) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2642918968851533144.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1221) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1221) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1221) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1221) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2815912361481007668.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (525) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (525) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (525) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (525) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 2850909481457034264.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1807) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1807) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1807) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1807) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 3044169938635876561.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1403) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1403) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 75%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1403) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1403) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 3127620624882041384.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1146) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1146) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1146) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1146) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 332443906780308038.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (532) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (532) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (532) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (532) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 3910014711846673580.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 15%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 3994039730840665580.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (590) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (590) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 25%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (590) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (590) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 4109215685197183090.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3243) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3243) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (3243) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 4134648000888841673.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 427836910590930682.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 40%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 4330692125361216349.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (578) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (578) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (578) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (578) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (578) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 4902684938550293499.txt ---
-  Estrogen_receptor         => -                    | None         | conf=0.00
-  Progesterone_receptor     => -                    | None         | conf=0.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => -                    | None         | conf=0.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5550825688901483490.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (655) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (655) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 2%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (655) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (655) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5725861496841420923.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2102) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2102) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 40%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2102) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2102) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5771585063620916171.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3272) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (3272) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5893060697273029527.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2552) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 5%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2552) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2552) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5919033811279789986.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1448) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 25%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1448) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1448) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 5974256630106266783.txt ---
-Error in NER model: The size of tensor a (522) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (522) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (522) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (522) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6016237990118584101.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 3+                   | Rules        | conf=1.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (536) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (536) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 605716408892807465.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (587) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (587) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (587) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6082332715254349021.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (822) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (822) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 7%                   | Rules        | conf=1.00
-  HER2_FISH                 => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (822) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6243283528403431726.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 60%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1088) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1088) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6428002454874219298.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1477) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1477) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1477) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1477) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6691684527719878244.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 6803343865446411201.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (632) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (632) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (632) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (632) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7083326377096393936.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (943) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (943) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (943) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (943) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7230273511945043938.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-  Ki67                      => 50%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1767) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1767) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7276784385668195265.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2694) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2694) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 50%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2694) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2694) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7420804351344301686.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 90%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7529396523444757585.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2553) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2553) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 70%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (2553) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (2553) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7649513247768889879.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1524) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1524) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1524) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1524) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7738350475450766818.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (947) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7814200264163079174.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 25%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (643) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (643) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7968741162953710828.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (538) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (538) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 30%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (538) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (538) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 7992320057579609259.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-  Ki67                      => 6%                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (663) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 8353517156531176913.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1981) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1981) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1981) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 8547588660422676703.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-  HER2_status               => positif              | Rules        | conf=1.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-  HER2_FISH                 => en_cours             | Rules        | conf=1.00
-Error in NER model: The size of tensor a (668) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- 9157287355277497598.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3691) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (3691) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (3691) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat1.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1385) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1385) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1385) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat100.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1060) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1060) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-  Ki67                      => 10%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (1060) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (1060) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat101.txt ---
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (530) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat102.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 2+                   | Rules        | conf=1.00
-  Ki67                      => 20%                  | Rules        | conf=1.00
-  HER2_FISH                 => -                    | None         | conf=0.00
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat93.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-  HER2_status               => negatif              | Rules        | conf=1.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 25%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (969) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (969) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat94.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (554) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (554) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (554) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat95.txt ---
-  Estrogen_receptor         => negatif              | Rules        | conf=1.00
-  Progesterone_receptor     => negatif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (834) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 0                    | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (834) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (834) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat97.txt ---
-  Estrogen_receptor         => positif              | Rules        | conf=1.00
-  Progesterone_receptor     => positif              | Rules        | conf=1.00
-Error in NER model: The size of tensor a (639) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-  HER2_IHC                  => 1+                   | Rules        | conf=1.00
-  Ki67                      => 67%                  | Rules        | conf=1.00
-Error in NER model: The size of tensor a (639) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (639) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
---- Pat99.txt ---
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  Estrogen_receptor         => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  Progesterone_receptor     => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_status               => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_IHC                  => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  Ki67                      => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  HER2_FISH                 => -                    | None         | conf=0.00
-Error in NER model: The size of tensor a (725) must match the size of tensor b (512) at non-singleton dimension 1
-  Genetic_mutation          => -                    | None         | conf=0.00
-
-==========================================================================================
-Terminé.

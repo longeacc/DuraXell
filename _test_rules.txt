@@ -1,2 +1,0 @@
-Test1 len=1: [('ER positif', 0, 10, 'Estrogen_receptor', 'positif')]
-Test2 len=1: [('recepteur aux oestrogenes positif', 0, 33, 'Estrogen_receptor', 'positif')]
