@@ -2,11 +2,10 @@
 
 DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) conçu pour optimiser le **Trilemme : Performance, Explicabilité, Frugalité**. Au lieu d'utiliser systématiquement des LLM très coûteux en énergie, DuraXELL utilise un arbre de décision pour router chaque entité vers la méthode la plus légère possible (Règles > ML > Transformer > LLM).
 
-## Architecture en Cascade
-```
-<img width="750" height="628" alt="image" src="https://github.com/user-attachments/assets/a1eb2d82-b719-4ee3-9703-ca913cb9bef2" />
+## Architecture arbre de décision
 
-```
+![Pipeline de Décision LEAF NER](https://github.com/user-attachments/assets/a1eb2d82-b719-4ee3-9703-ca913cb9bef2)
+*Arbre de Décision pour la Sélection Optimale de Méthodes d'Extraction d'Entités*
 
 ## Résultats Principaux (Front de Pareto)
 
