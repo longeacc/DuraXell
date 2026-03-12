@@ -1,0 +1,1181 @@
+NIVEAU 2
+Formalismes Mathématiques
+des Métriques DuraXELL
+Analyse Exhaustive
+Justication terme par terme de chaque expression
+Pour chaque métrique : dénition formelle, signication concrète,
+justication de chaque terme et de chaque poids,
+alternatives écartées avec argumentation,
+domaine de validité, limites, et seuils.
+Mars 2026
+
+Table des matières
+1
+Templateabilité (Te)
+3
+1.1
+Ce que Te mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.2
+Pipeline de calcul . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+1.2.1
+Étape 1 : Normalisation en patterns abstraits  fonction φ . . . . . . . .
+3
+1.2.2
+Étape 2 : Calcul de l'entropie de Shannon . . . . . . . . . . . . . . . . . .
+3
+1.2.3
+Étape 3 : Normalisation relative Hnorm . . . . . . . . . . . . . . . . . . . .
+4
+1.2.4
+Étape 4 : Cohérence structurelle
+. . . . . . . . . . . . . . . . . . . . . . .
+4
+1.2.5
+Étape 5 : Bonus sémantique Bsem . . . . . . . . . . . . . . . . . . . . . . .
+4
+1.2.6
+Étape 6 : Score nal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+1.3
+Seuils et garde-fou
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2
+Homogénéité (He)
+6
+2.1
+Ce que He mesure concrètement
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2
+Pipeline de calcul . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.1
+Étape 1 : Tokenisation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.2
+Étape 2 : Comptage
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.3
+Étape 3 : Redondance brute . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.2.4
+Étape 4 : Transformation sigmoid . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.3
+Cas particulier
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.4
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+3
+Risque Contextuel (R)
+8
+3.1
+Ce que R mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.2
+Architecture du calcul . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.2.1
+Signal 1 : Négation (fneg) . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.2.2
+Signal 2 : Incertitude (func) . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.2.3
+Signal 3 : Contradiction (fcont) . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.3
+Formule uniée . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+3.4
+Justication des poids  terme par terme . . . . . . . . . . . . . . . . . . . . . .
+9
+3.5
+Fenêtre de contexte : pourquoi ±50 caractères . . . . . . . . . . . . . . . . . . . .
+9
+3.6
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+4
+Fréquence (Freq)
+11
+4.1
+Ce que Freq mesure concrètement
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+4.2
+Dénition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+4.3
+Seuils
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+5
+Rendement d'Annotation (Y ield)
+12
+5.1
+Ce que Y ield mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+5.2
+Dénition formelle complète . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+5.2.1
+Annotation comme span . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+5.2.2
+Intersection over Union (IoU) . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+5.2.3
+Seuil d'IoU : pourquoi θ = 0.5 . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+5.2.4
+Matching Greedy One-to-One . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+5.2.5
+Calcul de F1
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+5.3
+Seuils
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+6
+Faisabilité NER (Feas)
+14
+6.1
+Ce que Feas mesure concrètement
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+6.2
+Dénition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+6.3
+Justication terme par terme
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+1
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+6.4
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15
+7
+Décalage de Domaine (DomainShift)
+16
+7.1
+Ce que DS mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+7.2
+Dénition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+7.3
+Justication terme par terme
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+7.4
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+8
+Nécessité LLM (LLM_Necessity)
+18
+8.1
+Ce que LLM_N mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . .
+18
+8.2
+Dénition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+8.3
+Justication terme par terme
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+8.4
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+9
+Score Composite (C)
+20
+9.1
+Ce que C mesure concrètement . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+9.2
+Dénition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+9.3
+Justication terme par terme
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+9.3.1
+Terme 1 : Performance (α = 0.4) . . . . . . . . . . . . . . . . . . . . . . .
+20
+9.3.2
+Terme 2 : Explicabilité (β = 0.3) . . . . . . . . . . . . . . . . . . . . . . .
+20
+9.3.3
+Terme 3 : Frugalité (γ = 0.3)
+. . . . . . . . . . . . . . . . . . . . . . . . .
+21
+9.4
+Analyse de Pareto
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+9.5
+Seuil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+10 Synthèse et Chaîne de Dépendance des Métriques
+22
+10.1 Graphe de dépendance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+10.2 Tableau récapitulatif complet . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+11 Références
+22
+2
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+1
+Templateabilité (Te)
+ESMO2025/E_templeability.py  Classe TempleabilityScorer
+1.1
+Ce que Te mesure concrètement
+Concrètement : Te répond à la question :  Les mentions d'une entité dans le corpus suivent-
+elles des schémas structurels prévisibles ? 
+Un biomarqueur comme le stade TNM s'écrit toujours sous la forme T[0-4]N[0-3]M[0-1] : il est
+hautement  templateable . En revanche, une mutation génétique peut prendre des formes très
+variées ( BRCA1 muté ,  délétion BRCA2 exon 11 ,  variant pathogène c.5266dupC ) : sa
+templateabilité est faible. Si Te est élevée, de simples règles regex suront à capturer l'entité.
+Si Te est faible, il faudra un modèle plus complexe.
+1.2
+Pipeline de calcul
+1.2.1
+Étape 1 : Normalisation en patterns abstraits  fonction φ
+Chaque mention textuelle vi est transformée en un pattern abstrait φ(vi) par 3 règles de substi-
+tution appliquées dans l'ordre :
+1. Tout chire →D
+(ex :  3  → D )
+2. Toute majuscule (y compris accentuées) →X
+3. Toute minuscule (y compris accentuées) →x
+Les symboles (+, -, %, >, <, espaces) sont conservés tels quels. Exemples :
+Mention originale
+Pattern φ(v)
+Explication
+ HER2 3+ 
+XXXX D+
+Lettres→X, chire→D, symbole conservé
+ ER positif 80% 
+XX xxxxxxx DD%
+Espaces et % conservés
+ Ki67 15-20% 
+XxDD DD-DD%
+K→X, i→x, tiret et % conservés
+ BRCA1 
+XXXXD
+Format compact
+ délétion exon 11 
+xxxxxxxx xxxx DD
+Tout en minuscules
+Pourquoi ce choix ? La normalisation supprime le contenu sémantique (les valeurs numériques
+exactes, les noms propres) pour ne conserver que la structure syntaxique. Deux mentions qui
+ont la même structure (même alternance de lettres, chires, symboles) génèrent le même pattern,
+même si leurs valeurs dièrent.
+Alternative écartée : On pourrait simplier davantage en remplaçant les séquences répétées
+(XXXX →X+, DD →D+). Le code contient cette option (commentée, lignes 112114) mais elle est
+désactivée : la simplication ferait fusionner  HER2  (4 lettres) et  ER  (2 lettres) dans le
+même pattern X+ D+, perdant de l'information structurelle utile.
+1.2.2
+Étape 2 : Calcul de l'entropie de Shannon
+Soit P = {φ(v1), . . . , φ(vn)} l'ensemble (avec répétitions) des patterns normalisés, et U =
+{u1, . . . , uK} les K patterns uniques. La probabilité empirique de chaque pattern est pk = |{i :
+φ(vi) = uk}|/n. L'entropie de Shannon est :
+3
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+H(P) = −
+K
+X
+k=1
+pk ln pk
+(1)
+Pourquoi ce choix ? L'entropie de Shannon est la mesure canonique de l'incertitude d'une
+distribution. Si tous les patterns sont identiques (K = 1), H = 0 : incertitude nulle, prédictibilité
+parfaite. Si les patterns sont uniformément distribués, H est maximale : chaque observation est
+une surprise. H utilise le logarithme naturel (ln) par convention informationnelle.
+Alternative écartée : L'indice de Gini G = 1 −P p2
+k mesure aussi la concentration d'une
+distribution. Mais Gini est moins discriminant pour les distributions à queue lourde :
+avec 50 patterns uniques dont 1 dominant à 80%, Gini≈0.34 tandis que H/Hmax ≈0.52.
+L'entropie capture mieux la diversité résiduelle.
+Alternative écartée : L'ancien code utilisait le Top3Coverage (proportion des 3 patterns les
+plus fréquents). Ce choix est plus intuitif mais ignore la distribution complète : avec 4 patterns
+équiprobables, Top3Coverage= 0.75 suggère une forte prédictibilité alors que la distribution est
+en réalité quasi-uniforme.
+1.2.3
+Étape 3 : Normalisation relative Hnorm
+Hnorm = H(P)
+ln K ∈[0, 1]
+(2)
+Le dénominateur ln K est l'entropie maximale possible pour K catégories (atteinte quand la
+distribution est uniforme).
+Pourquoi ce choix ? Sans normalisation, H dépendrait du nombre de patterns uniques : une
+entité avec 100 patterns uniques aurait automatiquement un H plus élevé qu'une entité avec
+5 patterns, même si les deux sont équidistribuées. La normalisation par ln K rend la mesure
+comparable entre entités ayant des vocabulaires de tailles diérentes.
+Cas particulier K = 1 : si un seul pattern unique existe, ln 1 = 0 (division par zéro). Le code
+traite ce cas explicitement en posant Hnorm = 0, ce qui est sémantiquement correct : un seul
+pattern = prédictibilité parfaite.
+1.2.4
+Étape 4 : Cohérence structurelle
+CS(E) = 1 −Hnorm ∈[0, 1]
+(3)
+Pourquoi ce choix ? On inverse Hnorm pour que le score augmente avec la prédictibilité :
+CS = 1 signie  parfaitement prévisible , CS = 0 signie  totalement imprévisible . Cette
+convention est conforme à l'usage dans l'arbre de décision où un score élevé route vers les règles.
+1.2.5
+Étape 5 : Bonus sémantique Bsem
+Bsem = 0.1 · ⊮
+
+∃p ∈U : p ∋{+, −, %, >, <}
+
++ 0.1 · ⊮
+
+∃p ∈U : p ∋D
+
+· ⊮[CS > 0.6]
+(4)
+Concrètement : Le bonus récompense la présence de marqueurs cliniques standards :
+4
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+ Premier terme (symboles +0.1) : si l'entité utilise des symboles comme +, -, %, c'est
+un indicateur fort de format normalisé (ex :  ER+ ,  Ki67 >20% ). Ces entités sont
+particulièrement capturables par regex car les symboles sont des ancres ables.
+ Second terme (chires + haute CS, +0.1) : si l'entité contient des chires et que la
+cohérence structurelle est déjà > 0.6, les chires renforcent la prédictibilité car ils délimiteront
+les patterns numériques. La condition CS > 0.6 évite de bonier une entité dont les patterns
+numériques sont en réalité très variables.
+Pourquoi ce choix ? Le bonus est de 0.1 (et non 0.2 ou 0.5) car il s'agit d'un ajustement
+marginal : la structure des patterns (capturée par l'entropie) reste le facteur dominant. Le
+bonus total est plafonné à 0.2 (soit 20 points sur 100), ce qui ne peut pas transformer une entité
+non-templateable (CS < 0.3) en templateable.
+Alternative écartée : On pourrait dénir un bonus plus complexe (pondération par la fré-
+quence de chaque symbole, bonus diérencié par type de symbole). Mais cela ajouterait des
+hyperparamètres sans justication empirique.
+1.2.6
+Étape 6 : Score nal
+Te(E) = min
+ 1, max
+ 0, CS(E) + Bsem
+
+× 100
+(5)
+Le min/max borne le score dans [0, 100].
+1.3
+Seuils et garde-fou
+ TE_HIGH = 70 (CS ≥0.5 + bonus maximal) : route vers RÈGLES si He et R aussi favorables.
+ TE_MED = 40 : route vers ML LÉGER si Freq et Y ield susants.
+ MIN_TE_SAMPLES = 10 : si l'entité a <10 mentions, Te est ramené à 0 (non able). La
+distribution des patterns avec <10 échantillons a une variance trop élevée pour que H soit
+signicatif.
+5
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+2
+Homogénéité (He)
+ESMO2025/E_homogeneity.py  Classe HomogeneityScorer
+2.1
+Ce que He mesure concrètement
+Concrètement : He répond à :  Le vocabulaire utilisé pour exprimer cette entité est-il toujours
+le même, ou chaque mention utilise-t-elle des mots diérents ? 
+Si les cliniciens écrivent systématiquement  ER positif  (ou  ER+ ), le vocabulaire est très
+restreint et un dictionnaire exhaustif sura. Si les mentions sont  récepteur aux ÷strogènes
+fortement exprimé ,  ER positive avec score Allred de 8 ,  Estrogen receptor overexpressed ,
+le vocabulaire est riche et un dictionnaire sera insusant.
+Diérence avec Te : Te mesure la prédictibilité de la structure (alternance lettres/chires/symboles).
+He mesure la prédictibilité du vocabulaire (les mots eux-mêmes). Une entité peut avoir une
+structure variable mais un vocabulaire restreint, ou inversement.
+2.2
+Pipeline de calcul
+2.2.1
+Étape 1 : Tokenisation
+Chaque mention vi est découpée en tokens par re.split(r"[a-zA-Z0-9%]+", text) : tout
+caractère non alphanumérique (sauf %) sert de séparateur. Les tokens sont mis en minuscules.
+Pourquoi ce choix ? Un tokeniseur simpliste est délibéré : la métrique mesure la diversité lexi-
+cale brute. Un tokeniseur plus sophistiqué (lemmatisation, racinisation) réduirait articiellement
+la diversité en fusionnant des formes diérentes.
+2.2.2
+Étape 2 : Comptage
+Soit T = P
+i |tokens(vi)| le nombre total de tokens et U = |{tokens uniques}|.
+2.2.3
+Étape 3 : Redondance brute
+Heraw = T −U
+T
+∈[0, 1]
+(6)
+Concrètement : Heraw représente la proportion de tokens qui sont des répétitions. Si
+T = 100 tokens et U = 3 mots uniques, alors Heraw = 97/100 = 0.97 : 97% des mots apparaissant
+sont des répétitions de seulement 3 mots.
+Pourquoi ce choix ? Cette formule est la mesure de compacité lexicale la plus simple : le
+ratio (T −U)/T = 1−U/T où U/T est le  Type-Token Ratio  (TTR) inversé, mesure classique
+en linguistique computationnelle. Heraw = 0 signie que chaque token est unique (diversité
+maximale). Heraw = 1 signie qu'un seul mot est répété (redondance parfaite).
+Alternative écartée : Le TTR (U/T) est la mesure standard mais il décroît naturellement avec
+la taille du texte (loi de Heaps). DuraXELL n'utilise pas une correction type Brunet ou Guiraud
+car les mentions d'entités sont courtes (15 mots) et de taille comparable, rendant la comparaison
+directe légitime.
+6
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+Alternative écartée : L'entropie lexicale Hlex = −P fw
+T ln fw
+T capturerait mieux la distribution
+complète du vocabulaire. Mais Heraw est directement interprétable pour un clinicien :  97%
+des mots sont des répétitions  est immédiatement compréhensible, contrairement à  entropie
+lexicale = 0.3 nats .
+2.2.4
+Étape 4 : Transformation sigmoid
+He(E) = σ
+ Heraw
+
+× 100
+où
+σ(x) =
+1
+1 + e−k(x−x0)
+(7)
+avec k = 10 et x0 = 0.5.
+Pourquoi ce choix ? La redondance brute a une distribution qui tend à se concentrer aux
+extrêmes (valeurs très hautes ou très basses). La sigmoid introduit un eet de polarisation
+autour du point d'inexion x0 = 0.5 : les valeurs proches de 0.5 sont séparées abruptement en
+ haute homogénéité  ou  basse homogénéité .
+Pourquoi k = 10 ?
+Le paramètre k contrôle la raideur de la transition. Avec k = 10, la sigmoid passe de 10% à 90%
+sur l'intervalle ≈[0.28, 0.72] de Heraw. Un k plus faible (ex : k = 5) donnerait une transition
+plus douce (intervalle ≈[0.15, 0.85]), créant une zone d'indécision plus large. Un k plus élevé
+(ex : k = 20) serait quasi-binaire. La valeur k = 10 est un compromis : transition nette mais pas
+brutale.
+Pourquoi x0 = 0.5 ?
+Le point d'inexion est placé au milieu de la plage [0, 1]. Cela signie que Heraw = 0.5 (un
+mot sur deux est répété) est considéré comme le seuil naturel : en dessous, la diversité lexicale
+domine ; au-dessus, la redondance domine.
+Alternative écartée : Une normalisation Min-Max (Henorm = Heraw−min
+max −min ) serait linéaire et ne
+créerait pas de zone de décision nette. L'arbre de décision a besoin de seuils discrets, et la sigmoid
+fournit naturellement cette binarisation progressive.
+2.3
+Cas particulier
+Si T ≤1 (une seule occurrence d'un seul token), He = 0 : on n'a aucune évidence de redon-
+dance. C'est une convention prudente qui évite de surestimer l'homogénéité sur un échantillon
+unique.
+2.4
+Seuil
+HE_HIGH = 70.0 (soit σ−1(0.7) ≈Heraw = 0.58). Observation empirique : ER (He = 97.3%),
+PR (97.0%), Ki67 (98.1%) sont tous très au-dessus, conrmant la pertinence du seuil.
+7
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+3
+Risque Contextuel (R)
+ESMO2025/E_risk_context.py  Classe RiskContextScorer
+3.1
+Ce que R mesure concrètement
+Concrètement : R répond à :  Le contexte linguistique autour de cette entité est-il dangereux
+pour une extraction automatique ? 
+Un contexte  simple  serait :  ER positif à 80% . Un contexte  dangereux  serait :  ER
+initialement considéré comme positif, mais le contrôle montre un résultat négatif, à conrmer 
+ qui contient à la fois une négation, une incertitude, et une contradiction. Une règle regex
+capturant  ER positif  retournerait un faux positif sur ce texte.
+3.2
+Architecture du calcul
+Pour chaque mention d'une entité, le scorer extrait une fenêtre de contexte de ±50 caractères
+autour de l'entité et y détecte 3 types de signaux :
+3.2.1
+Signal 1 : Négation (fneg)
+Détectée par 10 patterns regex :  non ,  ne pas ,  absent ,  négatif ,  aucun ,  sans ,
+ ni ,  pas ,  absence ,  negatif .
+fneg = |mentions avec négation dans la fenêtre|
+N
+Concrètement : fneg = 0.15 signie que 15% des mentions de l'entité sont précédées ou suivies
+d'un mot de négation.
+3.2.2
+Signal 2 : Incertitude (func)
+Détectée par 14 patterns :  probable ,  possible ,  à conrmer ,  suspecté ,  équivoque ,
+ discuté ,  incertain ,  hypothèse ,  ? ,  discordant ,  discordance , etc.
+func = |mentions avec incertitude dans la fenêtre|
+N
+3.2.3
+Signal 3 : Contradiction (fcont)
+Détectée au niveau document (pas au niveau mention) : un document est contradictoire si, pour
+une même entité, il contient à la fois une valeur positive ( positif ,  + ,  exprimé ) et une
+valeur négative ( négatif ,  - ,  absent ).
+fcont = |documents contradictoires|
+|documents contenant E|
+8
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+3.3
+Formule uniée
+R(E) = min
+
+1, 0.2 · fneg
+|
+{z
+}
+négation
++ 0.5 · func
+|
+{z
+}
+incertitude
++ 1.0 · fcont
+|
+{z
+}
+contradiction
+
+(8)
+3.4
+Justication des poids  terme par terme
+Pourquoi wneg = 0.2 (faible) ?
+La négation est le cas le plus gérable par des règles. L'algorithme NegEx (Chapman et al., 2001)
+détecte les négations avec >95% de précision en utilisant une simple liste de déclencheurs et une
+fenêtre de portée. Une règle regex augmentée d'un module NegEx peut traiter la grande majorité
+des négations sans recourir à un modèle coûteux. Le poids 0.2 reète ce faible risque résiduel.
+Pourquoi wunc = 0.5 (moyen) ?
+L'incertitude est plus dangereuse que la négation car elle n'inverse pas la valeur mais la rend
+ambiguë.  Probable ER+  n'est ni  ER+  ni  ER- . Les règles regex ne peuvent pas évaluer
+un degré de certitude : il faut un modèle contextuel (Transformer) ou un raisonnement sémantique
+(LLM). Le poids 0.5 reète cette augmentation signicative du risque.
+Pourquoi wcont = 1.0 (maximal) ?
+La contradiction est  fatale  pour toute méthode locale (règles ou NER). Si un même document
+dit  HER2 positif  dans un paragraphe et  HER2 négatif  dans un autre, seul un raisonnement
+sur le document entier peut résoudre la contradiction (en identiant quelle valeur est la plus
+récente, ou laquelle se rapporte au bon prélèvement). Seul un LLM peut réaliser ce type de
+raisonnement. Le poids 1.0 signie que même un seul document contradictoire sur un petit
+corpus sut à atteindre le seuil de risque.
+Pourquoi une somme pondérée et pas un max ?
+Le max ne capturerait qu'un seul type de risque. La somme pondérée permet l'accumulation :
+une entité avec beaucoup de négations (fneg = 0.8) ET de l'incertitude (func = 0.3) a un risque
+total de 0.2 × 0.8 + 0.5 × 0.3 = 0.31, plus élevé que chaque risque isolé.
+Pourquoi min(1, ·) ?
+Le plafonnement à 1.0 évite que le score dépasse la borne supérieure (ce qui arriverait si fneg = 1
+et func = 1 et fcont = 1, donnant 0.2 + 0.5 + 1.0 = 1.7).
+3.5
+Fenêtre de contexte : pourquoi ±50 caractères
+La fenêtre de ±50 caractères (≈810 mots) est calibrée empiriquement : les modicateurs de
+négation et d'incertitude dans les textes cliniques français sont généralement à moins de 5 mots
+9
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+de l'entité. Une fenêtre plus large (ex : 200 caractères) capturerait des négations non liées à
+l'entité, générant des faux positifs.
+3.6
+Seuil
+RISK_HIGH = 0.50. Si plus de la moitié du contexte est ambigu, les méthodes simples risquent
+des erreurs systématiques. Observation empirique : R ∈[0.11, 0.25] pour toutes les entités
+du corpus  le seuil n'est jamais atteint, ce qui signie que R ne contribue pas directement au
+routage pour ce corpus.
+10
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+4
+Fréquence (Freq)
+ESMO2025/E_frequency.py  Classe FrequencyScorer
+4.1
+Ce que Freq mesure concrètement
+Concrètement : Freq répond à :  Y a-t-il susamment d'exemples de cette entité dans le
+corpus pour entraîner un modèle statistique ? 
+Un modèle NER supervisé (CRF, Transformer) a besoin d'exemples d'entraînement. Si une entité
+n'apparaît que 3 fois dans tout le corpus, aucun modèle ML ne convergera. Si elle apparaît
+500 fois, un CRF ou un Transformer ne-tuné aura susamment de données.
+4.2
+Dénition
+Freq(E) = |occurrences de E (annotations BRAT)|
+|tokens totaux du corpus|
+(9)
+Le numérateur compte les annotations (lignes T dans les chiers .ann). Le dénominateur compte
+les tokens par tokenisation naïve (text.split()).
+Pourquoi ce choix ? La fréquence relative (et non le comptage absolu) permet la comparaison
+inter-corpus. Un corpus de 10 000 tokens avec 10 mentions et un corpus de 1 000 000 tokens avec
+1 000 mentions ont la même densité d'information (Freq = 0.001), mais des comptages absolus
+très diérents.
+Alternative écartée : Le TF-IDF donnerait une pondération par la spécicité documentaire,
+mais DuraXELL ne cherche pas à distinguer les entités discriminantes  il cherche juste à savoir
+s'il y a assez d'exemples pour un modèle. La fréquence brute répond directement à cette
+question.
+4.3
+Seuils
+ FREQ_MIN = 0.001 : avec un corpus de ∼207 000 tokens, cela correspond à ∼207 occurrences.
+La littérature NER recommande ∼100 exemples pour un CRF séquentiel (Augenstein et al.,
+2017), ∼200500 pour un Transformer ne-tuné.
+ RARE_THRESHOLD_COUNT = 10 : garde-fou absolu. En dessous de 10 occurrences, même les
+règles regex ne sont pas testables de manière signicative.
+11
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+5
+Rendement d'Annotation (Y ield)
+ESMO2025/E_annotation_yield.py  Classe AnnotationYieldScorer
+5.1
+Ce que Y ield mesure concrètement
+Concrètement : Y ield répond à la question la plus directe :  Quand j'applique mes règles regex
+sur le corpus, quel pourcentage du Gold Standard (annotations humaines) est-ce que je récupère
+correctement ? 
+C'est la mesure empirique de performance des règles. Si Y ield = 0.92 (Ki67), les règles
+capturent 92% du Gold Standard avec une précision susante : il n'y a aucune raison d'utiliser
+un modèle plus coûteux. Si Y ield = 0.19 (HER2_FISH), les règles échouent massivement : il
+faut escalader.
+Y ield est la métrique pivot de l'arbre de décision car elle est la seule à mesurer directement la
+performance réelle (et non un proxy théorique).
+5.2
+Dénition formelle complète
+5.2.1
+Annotation comme span
+Chaque annotation BRAT est un triplet (E, s, e) où E est le type d'entité, s la position de début
+(caractère), et e la position de n. Les règles génèrent un ensemble de prédictions Pred, le Gold
+Standard un ensemble GS.
+5.2.2
+Intersection over Union (IoU)
+Pour deux spans (s1, e1) et (s2, e2) :
+IoU
+ (s1, e1), (s2, e2)
+
+=
+max
+ 0, min(e1, e2) −max(s1, s2)
+
+(e1 −s1) + (e2 −s2) −max
+ 0, min(e1, e2) −max(s1, s2)
+
+(10)
+Concrètement : L'IoU mesure le recouvrement entre deux intervalles de texte. Si la règle
+capture  ER positif  (positions 1021) et le Gold Standard annote  ER positif 80%  (positions
+1026), l'intersection est 11 caractères, l'union est 16, et IoU= 11/16 = 0.69.
+Pourquoi ce choix ? L'IoU est préférée au matching exact car les règles regex capturent souvent
+des bornes légèrement diérentes du Gold Standard (un espace en trop, une valeur numérique
+omise, etc.). Un matching exact pénaliserait injustement des extractions partiellement correctes.
+Alternative écartée : Le matching exact ( spans identiques au caractère près ) est trop
+strict pour l'évaluation de regex : une règle capturant  Ki67 15%  au lieu de  Ki67 15 %  (avec
+un espace) serait comptée comme un échec total malgré la capture correcte de l'information.
+Alternative écartée : Le matching par token ( au moins un token en commun ) serait
+trop laxiste : une règle capturant un seul mot commun serait comptée comme un succès.
+5.2.3
+Seuil d'IoU : pourquoi θ = 0.5
+Deux spans sont considérés comme matchés si et seulement si :
+12
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+1. Ils ont le même type d'entité E ;
+2. IoU ≥θ = 0.5.
+Pourquoi ce choix ? Le seuil θ = 0.5 est le standard en NER et en détection d'objets
+(SemEval, CoNLL evaluations, PASCAL VOC). Il signie que la prédiction doit recouvrir au
+moins la moitié du Gold Standard pour être considérée correcte. Ce choix équilibre la tolérance
+aux bornes imprécises et la sévérité contre les captures trop partielles.
+5.2.4
+Matching Greedy One-to-One
+L'algorithme d'appariement est :
+1. Pour un type d'entité donné, calculer l'IoU entre chaque paire (GS, Pred) ;
+2. Trier les paires par IoU décroissant ;
+3. Parcourir dans l'ordre : si ni le span GS ni le span Pred n'est déjà apparié, les apparier (TP) ;
+4. Les spans GS non appariés sont des FN, les spans Pred non appariés sont des FP.
+Pourquoi ce choix ? L'approche greedy (gloutonne) est choisie pour sa simplicité (O(n2 log n)
+au lieu de O(n3) pour le matching hongrois) et parce qu'elle donne des résultats quasi-identiques
+au matching optimal pour des distributions typiques d'annotations NER (peu de chevauche-
+ments).
+Alternative écartée : Le matching hongrois (assignation optimale) maximiserait la somme
+globale des IoU mais est plus complexe à implémenter et produit des résultats équivalents dans
+la pratique.
+5.2.5
+Calcul de F1
+P =
+TP
+TP + FP ,
+R =
+TP
+TP + FN ,
+Y ield = F1 = 2 · P · R
+P + R
+(11)
+Pourquoi ce choix ? Le F1 est la moyenne harmonique de la précision et du rappel. La
+moyenne harmonique pénalise plus sévèrement les déséquilibres que la moyenne arithmétique :
+un système avec P = 1.0, R = 0.1 a un F1 = 0.18, reétant son inutilité clinique. Un système
+avec P = 0.5, R = 0.5 a un F1 = 0.50, meilleur car équilibré.
+Alternative écartée : La précision seule favoriserait les règles très restrictives (qui ne capturent
+qu'un cas sur dix mais correctement). Le rappel seul favoriserait les règles trop larges (qui
+capturent tout mais avec beaucoup de bruit). Le F1 équilibre les deux.
+Alternative écartée : Le Fβ avec β ̸= 1 permettrait de privilégier le rappel (β > 1) ou la
+précision (β < 1). β = 1 est choisi car en clinique, les faux négatifs (biomarqueur manqué) et les
+faux positifs (biomarqueur inventé) sont également dangereux.
+5.3
+Seuils
+ YIELD_HIGH = 0.75 : au-dessus, les règles sont susamment performantes pour justier le
+ML Léger (qui pourrait améliorer les 25% restants).
+ YIELD_MIN_RULES = 0.25 : au-dessus, les règles  trouvent quelque chose   conrmation
+minimale de leur utilité. En dessous, les règles échouent si massivement que même le routage
+vers RÈGLES est remis en question.
+13
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+6
+Faisabilité NER (Feas)
+ESMO2025/E_fesability_NER.py  Fonction compute_feasibility()
+6.1
+Ce que Feas mesure concrètement
+Concrètement : Feas répond à :  Si j'entraîne un modèle NER supervisé (CRF ou Transfor-
+mer) sur cette entité, a-t-il des chances raisonnables de fonctionner ? 
+C'est un pronostic de succès de l'entraînement NER, synthétisant 3 prérequis : assez de don-
+nées ? vocabulaire susamment homogène ? les règles ont-elles déjà de bons résultats (indiquant
+un problème structuré) ?
+6.2
+Dénition
+Feas(E) = 0.4 · min
+
+1, count
+100
+
+|
+{z
+}
+volume de données
++
+0.3 · He
+100
+|
+{z
+}
+homogénéité lexicale
++
+0.3 · Y ield
+|
+{z
+}
+performance baseline
+(12)
+6.3
+Justication terme par terme
+Terme 1 : Volume (w = 0.4, poids dominant)
+min(1, count/100) est une saturation linéaire : le facteur croît linéairement de 0 à 1 quand le
+comptage va de 0 à 100, puis plafonne à 1. Le seuil de 100 exemples est le minimum reconnu
+dans la littérature pour un CRF (Augenstein et al., 2017). Le poids 0.4 est le plus élevé car sans
+données, rien n'est possible : même un vocabulaire homogène et un bon Yield ne compensent
+pas l'absence d'exemples d'entraînement.
+Terme 2 : Homogénéité (w = 0.3)
+Un vocabulaire homogène (He élevé) signie des patterns récurrents, facilement appris par un
+modèle séquentiel. Un vocabulaire hétérogène (He faible) signie que le modèle devra mémoriser
+de nombreuses formes, nécessitant plus de données.
+Terme 3 : Yield (w = 0.3)
+Si les règles ont déjà un bon Y ield, le problème est structurellement bien posé : les entités
+suivent des patterns identiables, et un modèle NER pourra les aner. Un Y ield faible suggère
+un problème non structuré (expressions libres, contextes variables), plus dicile pour le NER
+supervisé.
+Pourquoi ce choix ? Les poids (0.4, 0.3, 0.3) donnent la priorité au volume de données tout en
+maintenant un équilibre signicatif entre les deux autres facteurs. Le volume est le prérequis le
+plus strict (pas de données = pas de modèle), les deux autres sont des modérateurs.
+14
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+Alternative écartée : Des poids égaux (0.33, 0.33, 0.33) sous-estimeraient l'importance critique
+du volume. Un score appris (par méta-apprentissage sur plusieurs corpus) serait idéal mais né-
+cessiterait un benchmark multi-corpus inexistant.
+6.4
+Seuil
+FEAS_NER = 0.6 : au-dessus, le NER est jugé faisable. Ce seuil est atteint, par exemple, avec
+count = 100 (freq_factor = 1), He = 70% (he_factor = 0.7), Y ield = 0.3, donnant Feas =
+0.4 + 0.21 + 0.09 = 0.70.
+15
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+7
+Décalage de Domaine (DomainShift)
+ESMO2025/E_fesability_NER.py  Fonction _compute_mmd() et calcul dans compute_feasibility()
+7.1
+Ce que DS mesure concrètement
+Concrètement : DS répond à :  À quel point le vocabulaire et la structure de cette entité dans
+mon corpus clinique dièrent-ils du domaine sur lequel le modèle Transformer (DrBERT) a été
+pré-entraîné ? 
+Si le modèle pré-entraîné a vu des textes similaires, le ne-tuning sera ecace. Si le vocabulaire
+est très spécique (abréviations non standard, terminologie ultra-spécialisée), le modèle partira
+d'une représentation inadaptée et nécessitera plus de données.
+7.2
+Dénition
+DS(E) = min
+
+1,
+0.15
+|{z}
+biais de base
++
+100 −He
+200
+|
+{z
+}
+pénalité vocabulaire
++
+100 −Te
+300
+|
+{z
+}
+pénalité structure
++
+0.1 · MMD(S, T)
+|
+{z
+}
+distance distributionnelle
+
+(13)
+7.3
+Justication terme par terme
+Terme 1 : Biais de base (0.15)
+Même DrBERT (pré-entraîné sur du français clinique) a un décalage résiduel par rapport à un
+corpus spécique d'oncologie mammaire. Le terme 0.15 représente ce décalage irréductible :
+diérences d'institution, de période, de spécialité.
+Terme 2 : Pénalité vocabulaire ( 100−He
+200
+)
+Si He = 100% (vocabulaire parfaitement répétitif), la pénalité est 0 : DrBERT a très probable-
+ment vu ces quelques mots fréquents. Si He = 0% (vocabulaire entièrement nouveau à chaque
+mention), la pénalité est 0.5 : le modèle n'a aucune familiarité avec ce vocabulaire. Le diviseur
+200 normalise la pénalité dans [0, 0.5].
+Pourquoi ce choix ? He est utilisé comme proxy de la familiarité lexicale. Un vocabu-
+laire homogène est composé de mots fréquents (et donc probablement vus par DrBERT). Un
+vocabulaire hétérogène contient des mots rares ou spéciques.
+Terme 3 : Pénalité structure ( 100−Te
+300
+)
+Si Te = 100% (structure parfaitement prévisible), la pénalité est 0 : les patterns réguliers sont
+facilement appris. Si Te = 0%, la pénalité est 0.33 : les patterns sont imprévisibles. Le diviseur
+300 (plus grand que 200) reète le fait que la structure est moins déterminante que le
+vocabulaire pour le décalage de domaine.
+16
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+Terme 4 : MMD (0.1 · MMD)
+La Maximum Mean Discrepancy (Gretton et al., 2012) est une mesure non paramétrique de la
+distance entre deux distributions :
+MMD2(S, T) = E[k(s, s′)] + E[k(t, t′)] −2 E[k(s, t)]
+(14)
+où k est un noyau RBF : k(x, y) = exp
+ −γ∥x −y∥2
+.
+Concrètement : La MMD compare les distributions d'embeddings du corpus source (entraîne-
+ment) et du corpus cible (application). Si les distributions sont similaires, MMD ≈0 ; si elles
+sont très diérentes, MMD est élevée.
+Limitation actuelle : l'implémentation utilise des embeddings synthétiques (np.random.randn(100,
+768)), modulés par (100 −He)/100. Cela signie que la MMD est en fait un proxy de He, pas
+une vraie mesure de distance distributionnelle. En production, il faudrait encoder les deux corpus
+avec DrBERT et calculer la MMD réelle.
+Pourquoi ce choix ? Le coecient 0.1 devant MMD est intentionnellement faible : tant que
+les embeddings sont synthétiques, la MMD ne doit pas dominer le score. Quand des embeddings
+réels seront disponibles, ce coecient pourra être augmenté.
+7.4
+Seuil
+DOMAIN_SHIFT_MAX = 0.5. Au-delà, le ne-tuning d'un Transformer est jugé trop risqué (le
+modèle partirait de représentations trop inadaptées).
+17
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+8
+Nécessité LLM (LLM_Necessity)
+ESMO2025/E_fesability_NER.py
+8.1
+Ce que LLM_N mesure concrètement
+Concrètement : LLM_N répond à :  Est-ce que cette entité est si complexe qu'elle nécessite
+inévitablement un LLM (modèle de langage génératif lourd) ? 
+Un LLM coûte ∼10 000× plus cher qu'une règle regex. LLM_N ne doit être élevé que lorsque
+toutes les alternatives légères ont échoué. C'est un agrégateur de signaux d'échec.
+8.2
+Dénition
+LLM_N(E) = min
+
+1, 0.30 · (1 −Y ield)
+|
+{z
+}
+échec des règles
++ 0.25 · (R × 4)
+|
+{z
+}
+contexte dangereux
++ 0.25 · (1 −Feas)
+|
+{z
+}
+NER non faisable
++ 0.20 ·
+ 1 −He
+100
+
+|
+{z
+}
+vocabulaire hétérogène
+
+(15)
+8.3
+Justication terme par terme
+Terme 1 : Échec des règles (w = 0.30, poids dominant)
+(1 −Y ield) mesure directement l'échec des règles. Si Y ield = 0, la contribution est 0.30 : les
+règles ne trouvent rien, signal fort pour le LLM. Ce terme a le poids le plus élevé car il est la
+mesure la plus directe de l'échec du niveau 1.
+Terme 2 : Contexte dangereux (w = 0.25, avec facteur ×4)
+R × 4 amplie le score de risque. Pourquoi ce choix ? R est typiquement faible dans les
+corpus cliniques (R ∈[0, 0.25]). Le facteur ×4 recalibre R dans l'intervalle [0, 1] pour qu'il
+ait un impact comparable aux autres termes. Sans ce facteur, R = 0.25 ne contribuerait que
+0.25 × 0.25 = 0.0625 au score, une contribution négligeable. Avec le facteur, la contribution est
+0.25 × (0.25 × 4) = 0.25, proportionnée.
+Terme 3 : NER non faisable (w = 0.25)
+(1 −Feas) mesure l'inverse de la faisabilité NER. Si le NER n'est pas faisable (données insu-
+santes, vocabulaire hétérogène), le LLM devient nécessaire car les niveaux intermédiaires (CRF,
+Transformer) ne sont pas viables.
+Terme 4 : Vocabulaire hétérogène (w = 0.20)
+(1 −He/100) est inclus malgré le chevauchement partiel avec Feas (qui inclut déjà He). Pour-
+quoi ce choix ? Le poids 0.20 (le plus faible) reète que He est déjà partiellement capturé dans
+18
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+Feas. Son inclusion directe ajoute un signal indépendant : même si Feas est moyen, un voca-
+bulaire très hétérogène est un indicateur spécique que le problème nécessite de la compréhension
+sémantique (capacité du LLM).
+Pourquoi les poids somment à 1.0 ?
+0.30 + 0.25 + 0.25 + 0.20 = 1.00. Cela garantit que si tous les signaux d'échec sont maximaux
+(Y ield = 0, R = 0.25, Feas = 0, He = 0), le score atteint LLM_N ≈0.30+0.25+0.25+0.20 =
+1.0  nécessité absolue du LLM.
+8.4
+Seuil
+LLM_NEC_HIGH = 0.5. Observation : HER2_FISH (LLM_N = 0.74) et Genetic_mutation
+(LLM_N = 0.75) sont les seules entités au-dessus du seuil, conrmées comme nécessitant un
+LLM.
+19
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+9
+Score Composite (C)
+ESMO2025/E_composite_scorer.py  Classe CompositeScorer
+9.1
+Ce que C mesure concrètement
+Concrètement : C répond à :  Quelle est la valeur globale d'une conguration (méthode ×
+entité) en tenant compte simultanément de sa performance, de son explicabilité, et de son coût
+énergétique ? 
+C est la fonction objectif du trilemme DuraXELL. Il permet de comparer  Rules avec F1 = 0.75
+et 10−6 kWh  à  LLM avec F1 = 0.90 et 10−2 kWh  sur un même axe.
+9.2
+Dénition
+C =
+α · F1
+| {z }
+performance
++ β · Expl(m)
+|
+{z
+}
+explicabilité
++ γ ·
+ 1 −
+EkWh
+MAX_ENERGY
+
+|
+{z
+}
+frugalité
+(16)
+avec (α, β, γ) = (0.4, 0.3, 0.3) par défaut.
+9.3
+Justication terme par terme
+9.3.1
+Terme 1 : Performance (α = 0.4)
+F1 est le score de performance mesuré sur un corpus de validation.
+Pourquoi ce choix ? α = 0.4 est le poids le plus élevé car la performance clinique est priori-
+taire. Un biomarqueur mal extrait peut conduire à un traitement inadapté (ex : un ER faus-
+sement négatif pourrait priver une patiente d'hormonothérapie). Cependant, α < 0.5 car une
+performance marginalement supérieure ne justie pas un modèle totalement opaque ou énergé-
+tiquement ruineux.
+9.3.2
+Terme 2 : Explicabilité (β = 0.3)
+Expl(m) est un score ordinal xe par méthode :
+Méthode
+Expl
+Justication
+Rules
+1.0
+Chaque décision est une règle lisible par un humain
+CRF
+0.7
+Les poids de features sont interprétables
+Transformer
+0.3
+Attention maps partiellement interprétables
+LLM
+0.1
+Boîte noire (mais >0 grâce au chain-of-thought)
+Pourquoi ce choix ? β = 0.3 reète l'importance croissante de l'explicabilité dans le contexte
+médical réglementé (EU AI Act, article 14 : obligation de transparence pour les systèmes à
+haut risque). Ce n'est pas un simple bonus éthique mais une exigence réglementaire pour le
+déploiement en milieu hospitalier.
+20
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+Alternative écartée : Un score d'explicabilité continu (basé sur des métriques comme SHAP
+ou LIME) serait plus précis mais coûteux à calculer et dépendant de l'implémentation. Le score
+ordinal est un proxy pragmatique.
+9.3.3
+Terme 3 : Frugalité (γ = 0.3)
+1 −EkWh/MAX_ENERGY est le score énergétique inversé.
+Pourquoi normaliser par MAX_ENERGY ? L'énergie brute (en kWh) varie sur 4 ordres de gran-
+deur (10−6 à 10−2). Sans normalisation, les règles auraient un score de frugalité de ≈1.0 et le
+LLM de ≈0.0, ce qui écraserait les autres termes. La normalisation par MAX_ENERGY ramène
+tout dans [0, 1].
+Pourquoi ce choix ? MAX_ENERGY est désormais congurable (correction C7) : 0.01 kWh pour un
+LLM via API, 0.001 pour un LLM local 7B. Ce choix a un impact majeur : avec MAX_ENERGY =
+0.01, un LLM local (0.001 kWh) obtient une frugalité de 1−0.1 = 0.9 ; avec MAX_ENERGY = 0.001,
+le même LLM obtient 1 −1.0 = 0.0.
+Pourquoi ce choix ? γ = 0.3 (égal à β) reète la parité entre explicabilité et frugalité.
+Les deux sont des contraintes non négociables : un système opaque mais frugal est inacceptable
+réglementairement ; un système explicable mais énergétiquement catastrophique est inacceptable
+écologiquement.
+Alternative écartée : Des poids égaux (1/3, 1/3, 1/3) donneraient une importance légèrement
+inférieure à la performance. Des poids (0.5, 0.25, 0.25) privilégieraient davantage la performance.
+Le choix (0.4, 0.3, 0.3) est un compromis délibéré.
+9.4
+Analyse de Pareto
+Le CompositeScorer implémente aussi une analyse de dominance de Pareto : une conguration
+A domine B si A est meilleure ou égale sur les 3 axes et strictement meilleure sur au moins
+un. Les congurations non dominées forment le front de Pareto  l'ensemble des compromis
+optimaux.
+Concrètement : Si Rules (F1 = 0.75, Expl = 1.0, E = 10−6) et Transformer (F1 = 0.80,
+Expl = 0.3, E = 10−4) coexistent, aucune ne domine l'autre : les deux sont Pareto-optimales.
+Le score C permet de les départager selon les poids choisis.
+9.5
+Seuil
+Pas de seuil xe : C sert à classer les congurations, pas à déclencher une décision. Le classement
+est utilisé pour le reporting et la visualisation (radar chart).
+21
+
+DuraXELL  Formalismes Mathématiques des Métriques
+Mars 2026
+10
+Synthèse et Chaîne de Dépendance des Métriques
+10.1
+Graphe de dépendance
+Les métriques ne sont pas indépendantes : Feas, DS, et LLM_N sont des métriques dérivées
+qui combinent les métriques primaires.
+Te
+He
+R
+Freq
+Y ield
+Feas
+DS
+LLM_N
+Arbre
+C
+10.2
+Tableau récapitulatif complet
+Table 1  Récapitulatif exhaustif des 9 métriques DuraXELL
+Métr.
+Question concrète
+Formule
+Seuil
+Alternative
+écar-
+tée
+Te
+Patterns structurels pré-
+visibles ?
+(1 −H/Hmax + Bsem)×100
+70/40
+Top3Coverage, Gini
+He
+Vocabulaire toujours le
+même ?
+σ( T −U
+T
+)×100
+70
+Min-Max, TTR, en-
+tropie lex.
+R
+Contexte dangereux ?
+0.2fn + 0.5fu + 1.0fc
+0.50
+Classif.
+supervisé,
+max
+Freq
+Assez d'exemples ?
+count/tokens
+0.001
+TF-IDF
+Y ield
+Règles performantes ?
+F1(Rules,GS) IoU≥0.5
+0.75/0.25
+Matching exact, hon-
+grois
+Feas
+NER entraînable ?
+0.4·freq + 0.3·He + 0.3·Y
+0.60
+Poids
+égaux,
+score
+appris
+DS
+Domaine trop diérent ?
+0.15 + pen.(He, Te) + 0.1·MMD
+0.50
+KL div., Wasserstein
+LLM_N
+LLM inévitable ?
+0.3(1−Y ) + 0.25(R×4) + . . .
+0.50
+Décision apprise
+C
+Meilleur compromis glo-
+bal ?
+0.4·F1 + 0.3·Expl + 0.3·Frug
+Pareto
+AHP, TOPSIS, PRO-
+METHEE
+11
+Références
+[1] Shannon, C.E. (1948). A mathematical theory of communication. Bell System Technical Jour-
+nal, 27(3), 379423.
+[2] Chapman, W.W., et al. (2001). A simple algorithm for identifying negated ndings. J. Bio-
+med. Inform., 34(5), 301310.
+[3] Gretton, A., et al. (2012). A kernel two-sample test. JMLR, 13, 723773.
+[4] Augenstein, I., et al. (2017). Generalisation in NER : A quantitative analysis. ACL.
+[5] Saaty, T.L. (1980). The Analytic Hierarchy Process. McGraw-Hill.
+[6] Hwang, C.L., Yoon, K. (1981). Multiple Attribute Decision Making. Springer.
+[7] Règlement EU 2024/1689 (EU AI Act), Article 14 : Contrôle humain.
+[8] Heaps, H.S. (1978). Information Retrieval. Academic Press. (Loi de Heaps sur le TTR.)
+22

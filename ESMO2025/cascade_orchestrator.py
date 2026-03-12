@@ -192,22 +192,59 @@ class CascadeOrchestrator:
         """Tente l'extraction par modèle ML léger (CRF - sklearn-crfsuite)."""
         energy = self.DEFAULT_ENERGY["ML_CRF"]
         
-        # Integration placeholder pour le modèle CRF
-        if getattr(self, "crf_model", None):
-            try:
-                # In a real implementation: features = featurize(text); return crf_model.predict(features)
-                if self.energy_tracker:
-                    with self.energy_tracker.measure("ML_CRF", entity_type) as metrics:
-                        # Simulation
-                        pass
-                # Dummy failure fallback when not fully trained
-                pass
-            except Exception as e:
-                logging.debug(f"CRF model error: {e}")
-                
-        return ExtractionResult(entity_type, None, "ML_CRF", 0.0, energy, 2)
+        try:
+            import pycrfsuite
+            from ESMO2025.train_crf import tokenize_with_spans, word2features
+            
+            # Lazy load the CRF model if not already loaded
+            if getattr(self, "crf_model", None) is None:
+                crf_path = os.path.join(os.path.dirname(__file__), "crf_model.crfsuite")
+                if os.path.exists(crf_path):
+                    tagger = pycrfsuite.Tagger()
+                    tagger.open(crf_path)
+                    self.crf_model = tagger
+                else:
+                    self.crf_model = None
 
-    def _try_transformer(self, text: str, entity_type: str) -> ExtractionResult:
+            if self.crf_model:
+                tokens = list(tokenize_with_spans(text))
+                if tokens:
+                    features = [word2features(tokens, i) for i in range(len(tokens))]
+                    
+                    if self.energy_tracker:
+                        with self.energy_tracker.measure("ML_CRF", entity_type) as metrics:
+                            predictions = self.crf_model.tag(features)
+                    else:
+                        predictions = self.crf_model.tag(features)
+                        
+                    # Extract joined token values for the matched entity type
+                    extracted_values = []
+                    current_val = []
+                    for i, tag in enumerate(predictions):
+                        if tag == f"B-{entity_type}":
+                            if current_val:
+                                extracted_values.append(" ".join(current_val))
+                            current_val = [tokens[i][0]]
+                        elif tag == f"I-{entity_type}" and current_val:
+                            current_val.append(tokens[i][0])
+                        else:
+                            if current_val:
+                                extracted_values.append(" ".join(current_val))
+                                current_val = []
+                    if current_val:
+                        extracted_values.append(" ".join(current_val))
+                        
+                    if extracted_values:
+                        return ExtractionResult(
+                            entity_type=entity_type,
+                            value=", ".join(extracted_values),
+                            method_used="ML_CRF",
+                            confidence=0.85, # arbitrary high confidence when CRF predicts
+                            energy_kwh=energy,
+                            cascade_level=2
+                        )
+        except Exception as e:
+            logging.debug(f"CRF model error: {e}")
         """Tente l'extraction par modèle Transformer (PubMedBERT/CancerBERT)."""
         energy = self.DEFAULT_ENERGY["Transformer"]
 

@@ -198,7 +198,7 @@ class TempleabilityScorer:
         self.results_cache[entity_type] = {
             "count": total_count,
             "unique_patterns": num_unique,
-            "top_3_coverage": structure_consistency,
+            "entropy_consistency": structure_consistency,
             "entropy": H,
             "templeability_score": Te,
             "top_patterns": pattern_counts.most_common(5),

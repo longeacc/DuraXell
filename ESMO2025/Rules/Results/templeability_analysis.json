@@ -2,7 +2,7 @@
     "Estrogen_receptor": {
         "count": 225,
         "unique_patterns": 68,
-        "templeability_score": 43.8,
+        "templeability_score": 27.7,
         "top_patterns": [
             "XX+ (42)",
             "XX XXX% (19)",
@@ -14,7 +14,7 @@
     "Progesterone_receptor": {
         "count": 197,
         "unique_patterns": 65,
-        "templeability_score": 46.0,
+        "templeability_score": 27.0,
         "top_patterns": [
             "XX- (29)",
             "XX+ (24)",
@@ -26,7 +26,7 @@
     "HER2_status": {
         "count": 106,
         "unique_patterns": 49,
-        "templeability_score": 41.1,
+        "templeability_score": 21.5,
         "top_patterns": [
             "XxxX- (15)",
             "XXXX- (11)",
@@ -38,7 +38,7 @@
     "HER2_IHC": {
         "count": 124,
         "unique_patterns": 64,
-        "templeability_score": 31.8,
+        "templeability_score": 18.8,
         "top_patterns": [
             "XXXX xxxxx X (11)",
             "XxxX : X+ (9)",
@@ -50,7 +50,7 @@
     "Ki67": {
         "count": 173,
         "unique_patterns": 74,
-        "templeability_score": 40.6,
+        "templeability_score": 24.6,
         "top_patterns": [
             "XxXX XX% (35)",
             "XxXX XX % (10)",
@@ -62,7 +62,7 @@
     "HER2_FISH": {
         "count": 29,
         "unique_patterns": 26,
-        "templeability_score": 30.7,
+        "templeability_score": 11.6,
         "top_patterns": [
             "XXXX XXX XXXXXXXX (3)",
             "Xxxx + (2)",
@@ -74,7 +74,7 @@
     "Genetic_mutation": {
         "count": 2,
         "unique_patterns": 2,
-        "templeability_score": 100.0,
+        "templeability_score": 0.0,
         "top_patterns": [
             "xxxxxxxx xxxxxxxxx XXXXX (1)",
             "Xxxxxxxx xxxxxxxxx xxxx x'xxxxXX xx XXXXXX (1)"

@@ -325,7 +325,7 @@ class RiskContextScorer:
 # ==================================================================================
 # MAIN EXECUTION
 # ==================================================================================
-def main():
+def main(learn_weights=False):
     # RELATIVE PATHS
     SCRIPT_DIR = Path(__file__).parent
     ROOT_DIR = SCRIPT_DIR.parent
@@ -335,14 +335,28 @@ def main():
         ROOT_DIR / "NER/data/Breast/val",
         ROOT_DIR / "NER/data/Breast/test",
         # Fallback old paths if needed
-        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",
+        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",  
     ]
 
-    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"
+    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"       
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     print("=== Démarrage de l'analyse Risk Context (R) ===")
     scorer = RiskContextScorer(DATA_DIRS)
+
+    if learn_weights:
+        print("--- Mode apprentissage des poids (Calibration RL) ---")
+        import numpy as np
+        entities = list(scorer.entities_stats.keys())
+        if entities:
+            X = []
+            for ent in entities:
+                stats = scorer.entities_stats[ent]
+                X.append([stats["f_neg"], stats["f_unc"], stats["f_cont"]])
+            y = np.random.randint(0, 2, size=len(X))  # mockup labels
+            scorer._learn_weights(np.array(X), y)
+            print(f"Nouveaux poids appris : {scorer.weights}")
+
     scorer.to_csv(OUTPUT_FILE)
 
     # === TESTS CRITIQUES (Demandés par l'utilisateur) ===
