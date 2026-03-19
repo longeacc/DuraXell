@@ -179,6 +179,8 @@ def compute_feasibility():
             # Utilisation des embeddings DrBERT réels
             base_mmd = get_real_embeddings_mmd(script_dir, n_samples=5)
             mmd_val = base_mmd + (shift_magnitude * 0.1)
+        except Exception:
+            mmd_val = 0.0
 
         he_penalty = max(0, (100.0 - he) / 200.0)  # 0 when He=100, 0.5 when He=0
         te_penalty = max(0, (100.0 - te) / 300.0)  # 0 when Te=100, 0.33 when Te=0

@@ -8,23 +8,30 @@ from eco2ai import Tracker, set_params
 
 
 
+import os
+import sys
+
+# Calcul du chemin racine du projet pour obtenir les vrais chemins de données
+# _current_file = ESMO2025/Rules/src/Breast/lunch.py
+_base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../ESMO2025"))
+
 # New scheme (with Value attributes)
 annotate_txt_folder_new_scheme(
-    "./Breast/RCP/training_set_breast_cancer/",
-    out_dir="./Breast/RCP/training_set_breast_cancer_pred/",
+    os.path.join(_base_dir, "Breast/RCP/training_set_breast_cancer/"),
+    out_dir=os.path.join(_base_dir, "Breast/RCP/training_set_breast_cancer_pred/"),
     recursive=True,
 )
 
 
 annotate_txt_folder_new_scheme(
-    "./Breast/RCP/evaluation_set_breast_cancer_GS/",
-    out_dir="./Breast/RCP/evaluation_set_breast_cancer_pred_rules/",
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_GS/"),
+    out_dir=os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_pred_rules/"),
     recursive=True,
 )
 
 annotate_txt_folder_new_scheme(
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_GS/",
-    out_dir="./Breast/CHIR/evaluation_set_breast_cancer_chir_pred_rules/",
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_GS/"),
+    out_dir=os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_pred_rules/"),
     recursive=True,
 )
 
@@ -313,8 +320,8 @@ def evaluate_ann_folders(
 
 
 resRCPrules = evaluate_ann_folders(
-    "./Breast/RCP/evaluation_set_breast_cancer_GS",
-    "./Breast/RCP/evaluation_set_breast_cancer_pred_rules",
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_GS"),
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_pred_rules"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,
@@ -325,8 +332,8 @@ resRCPrules = evaluate_ann_folders(
 # pprint(resRCPrules["per_label"])
 
 resRCPner = evaluate_ann_folders(
-    "./Breast/RCP/evaluation_set_breast_cancer_GS",
-    "./Breast/RCP/evaluation_set_breast_cancer_pred_ner",
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_GS"),
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_pred_ner"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,
@@ -336,8 +343,8 @@ resRCPner = evaluate_ann_folders(
 
 
 resRCPllm = evaluate_ann_folders(
-    "./Breast/RCP/evaluation_set_breast_cancer_GS",
-    "./Breast/RCP/evaluation_set_breast_cancer_pred_Mistral8x7b",
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_GS"),
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_pred_Mistral8x7b"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.20,
@@ -346,8 +353,8 @@ resRCPllm = evaluate_ann_folders(
 )
 
 resRCPllm_finetunned = evaluate_ann_folders(
-    "./Breast/RCP/evaluation_set_breast_cancer_GS",
-    "./Breast/RCP/evaluation_set_breast_cancer_pred_Mistral8x7b_finetunned",
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_GS"),
+    os.path.join(_base_dir, "Breast/RCP/evaluation_set_breast_cancer_pred_Mistral8x7b_finetunned"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.20,
@@ -358,8 +365,8 @@ resRCPllm_finetunned = evaluate_ann_folders(
 # pprint(resRCPner["per_label"])
 
 resCHIRrules = evaluate_ann_folders(
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_GS",
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_pred_rules",
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_GS"),
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_pred_rules"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,
@@ -370,8 +377,8 @@ resCHIRrules = evaluate_ann_folders(
 # pprint(resCHIRrules["per_label"])
 
 resCHIRner = evaluate_ann_folders(
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_GS",
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_pred_ner",
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_GS"),
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_pred_ner"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,
@@ -381,8 +388,8 @@ resCHIRner = evaluate_ann_folders(
 
 
 resCHIRllm = evaluate_ann_folders(
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_GS",
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_pred_Mistral8x7b",
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_GS"),
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_pred_Mistral8x7b"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,
@@ -391,8 +398,8 @@ resCHIRllm = evaluate_ann_folders(
 )
 
 resCHIRllm_finetunned = evaluate_ann_folders(
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_GS",
-    "./Breast/CHIR/evaluation_set_breast_cancer_chir_pred_Mistral8x7b_finetunned",
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_GS"),
+    os.path.join(_base_dir, "Breast/CHIR/evaluation_set_breast_cancer_chir_pred_Mistral8x7b_finetunned"),
     recursive=True,
     overlap_metric="min",
     overlap_threshold=0.80,

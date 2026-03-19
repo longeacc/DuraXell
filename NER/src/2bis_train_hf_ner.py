@@ -50,7 +50,7 @@ def read_conll_file(file_path):
 
 def load_conll_splits():
     # Use absolute paths or correct relative paths based on workspace root
-    base_path = "ESMO2025/NER/data/conll"
+    base_path = "NER/data/conll"
     train_path = os.path.join(base_path, "train.conll")
     dev_path = os.path.join(base_path, "dev.conll")
     
@@ -63,6 +63,9 @@ def load_conll_splits():
     })
 
 def main():
+    tracker = Tracker(project_name="DuraXELL_NER", experiment_description="Train HF NER")
+    tracker.start()
+    
     ds = load_conll_splits()
     # replace the labels line with this:
     labels = sorted({
@@ -80,7 +83,7 @@ def main():
     def encode_batch(ex):
         # ex["tokens"] est une liste de listes de tokens (batch)
         # ex["ner_tags_str"] est une liste de listes de tags (batch)
-        enc = tok(ex["tokens"], is_split_into_words=True, truncation=True, padding=True, max_length=512)
+        enc = tok(ex["tokens"], is_split_into_words=True, truncation=True, max_length=256)
         all_labs = []
         
         for i, tags in enumerate(ex["ner_tags_str"]):
@@ -105,13 +108,16 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir="ESMO2025/NER/models/output/bc_ner",
-        learning_rate=3e-5,
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=16,
-        gradient_accumulation_steps=2,
-        num_train_epochs=10,
+        output_dir="NER/models/output/bc_ner",
+        learning_rate=5e-5,
+        per_device_train_batch_size=2,
+        per_device_eval_batch_size=4,
+        gradient_accumulation_steps=8,
+        num_train_epochs=4,
         weight_decay=0.01,
+        warmup_ratio=0.1,
+        fp16=False,  # Désactivé car la GTX 1650 n'a pas de Tensor Cores physiques
+        lr_scheduler_type="cosine",
         eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=True,
@@ -140,26 +146,35 @@ def main():
     trainer = Trainer(
         model=model, args=args,
         train_dataset=enc["train"], eval_dataset=enc["dev"],
-        tokenizer=tok, data_collator=data_collator,
+        processing_class=tok, data_collator=data_collator,
         compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]
     )
 
-    # Light layer freezing for tiny data
-    for name, p in model.named_parameters():
-        if name.startswith(("bert.embeddings", "bert.encoder.layer.0", "bert.encoder.layer.1")):
-            p.requires_grad = False
+    # # Light layer freezing for tiny data
+    # for name, p in model.named_parameters():
+    #     if name.startswith(("bert.embeddings", "bert.encoder.layer.0", "bert.encoder.layer.1")):
+    #         p.requires_grad = False
+    # trainer.train()
+    # for p in model.parameters(): p.requires_grad = True
+    # try:
+    #     trainer.train(resume_from_checkpoint=True)
+    # except ValueError:
+    #     trainer.train()
     trainer.train()
-    for p in model.parameters(): p.requires_grad = True
-    trainer.train(resume_from_checkpoint=True)
 
     print(trainer.evaluate(enc["dev"]))
-    trainer.save_model("ESMO2025/NER/models/output/bc_ner/best")
+    trainer.save_model("NER/models/output/bc_ner/best")
+    
+    try:
+        tracker.stop()
+    except Exception as e:
+        print(f"\nWarning: Generalized error in Eco2AI tracking: {e}")
 
 if __name__ == "__main__":
     main()
-try:
-    tracker.stop()
-except Exception as e:
-    print(f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}")
-    print("Carbon emission tracking data could not be saved, but analysis results are preserved.")
+# try:
+#     tracker.stop()
+# except Exception as e:
+#     print(f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}")
+#     print("Carbon emission tracking data could not be saved, but analysis results are preserved.")
