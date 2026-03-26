@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 2547 2593	Récepteurs des œstrogènes R.O. (6 F 11) : 70 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2635 2684	Récepteurs de la progestérone R.P. (1 A 6) : 20 %
+A2	RP_values T2 positive
+T3	Ki67 2734 2755	Ki67 est estimé à 80%
+T4	HER2_IHC 2784 2811;2812 2813;2814 2904;2905 2922	HER2 PAR IMMUNOHISTOCHIMIE    Plus de 10% de cellules sont marquées au niveau membranaire, le marquage étant intense et  complet (score 3+
+A3	HER2_values T4 3+
+

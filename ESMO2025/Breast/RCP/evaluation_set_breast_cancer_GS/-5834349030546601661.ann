@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 1667 1670	RE+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1672 1675	RP+
+A2	RP_values T2 positive
+T3	HER2_IHC 1677 1686	Her2 : 2+
+A3	HER2_values T3 2+
+T4	HER2_FISH 1677 1700	Her2 : 2+ DDISH positif
+A4	FISH_values T4 positif
+T5	Ki67 1702 1710	Ki67 20%
+

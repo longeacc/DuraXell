@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 1696 1701	RE + 
+A1	Value T1 positif
+T2	Progesterone_receptor 2028 2033	RP + 
+A2	Value T2 positif
+T3	Ki67 2915 2925	Ki67 15 %.
+A3	Value T3 15%
+T4	Estrogen_receptor 4185 4190	RE + 
+A4	Value T4 positif
+T5	Progesterone_receptor 4519 4524	RP + 
+A5	Value T5 positif
+T6	Ki67 5406 5416	Ki67 10 %.
+A6	Value T6 10%
+T7	HER2_FISH 5944 5967	     FISH HER2 en cours
+A7	Value T7 en_cours

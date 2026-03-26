@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 4024 4027	RE+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 4029 4032	RP+
+A2	RP_values T2 positive
+T3	HER2_status 4034 4051	Cerb-, B2 négatif
+A3	HER2_status_values T3 negatif
+

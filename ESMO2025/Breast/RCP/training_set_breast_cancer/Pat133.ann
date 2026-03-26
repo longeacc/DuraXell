@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 865 868	RE-
+T2	Progesterone_receptor 869 872	RP-
+T3	HER2_IHC 873 887	cerbB2 score 3
+T4	Ki67 888 898	Ki67 à 60%
+A1	RO_values T1 negative
+A2	RP_values T2 negative
+A3	HER2_values T3 3+

@@ -1,0 +1,4 @@
+T1	HER2_IHC 1663 1705	 HER2 positif, score 2+ amplifié          
+A1	Value T1 2+
+T2	HER2_status 1663 1705	 HER2 positif, score 2+ amplifié          
+A2	Value T2 positif

@@ -1,0 +1,6 @@
+T1	Estrogen_receptor 1855 1863	RO  (0%)
+A1	Value T1 negatif
+T2	Progesterone_receptor 1865 1871	RP(0%)
+A2	Value T2 negatif
+T3	HER2_IHC 1872 1896	 HER2 (score 0)         
+A3	Value T3 0

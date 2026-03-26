@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 2208 2212	RH +
+A1	Value T1 positif
+T2	Progesterone_receptor 2208 2212	RH +
+A2	Value T2 positif
+T3	Ki67 2222 2228	Ki67  
+A3	Value T3 67%
+T4	Estrogen_receptor 3607 3610	RO+
+A4	Value T4 positif
+T5	Progesterone_receptor 3612 3615	RP+
+A5	Value T5 positif
+T6	Ki67 3617 3622	Ki67 
+A6	Value T6 67%

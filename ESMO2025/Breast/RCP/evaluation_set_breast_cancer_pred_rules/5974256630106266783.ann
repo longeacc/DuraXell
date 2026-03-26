@@ -1,0 +1,6 @@
+T1	HER2_IHC 781 796	. Cerb B2 : 0. 
+A1	Value T1 0
+T2	Progesterone_receptor 810 816	RP : +
+A2	Value T2 positif
+T3	Ki67 822 832	Ki67 20 %.
+A3	Value T3 20%

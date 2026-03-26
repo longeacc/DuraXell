@@ -1,0 +1,66 @@
+Pat15
+ Raison Complexite : nan
+ Age : 67
+ Données biométriques et score : 
+  Poids :    60.00 kg    Le  [ 1 jours avant RCP ] IMC (Quetelet) : 22.6 kg/m2
+  Taille :     163 cm Le     [ 1 jours avant RCP ]     SC (Dubois) : 1.64 m2
+ Motif de présentation : Motif de présentation          Validation simple de RCP
+ Données Médicales : 
+Motif de présentation          Validation simple de RCP
+Histologie
+ Date           Examen                                   
+Conclusion
+ [ 21 jours avant RCP ] MICROBIOPSIES DU SEIN DROIT
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 7 jours avant RCP ] :
+Motif : Adressée par [MEDECIN REFERANT]pour récidive homolatérale d'un cancer du sein droit
+Antécédents et allergies :
+Antécédents familiaux : Mère: cancer généralisé d'étiologie [NATIONALITE] à 77 ans
+Antécédents médicaux :
+- Adénocarcinome canalaire infiltrant de grade 2 (RH+, Her -) sans attente ganglionnaire en [ 7817 jours avant RCP ], traité par tumorectomie et procédure du ganglion sentinelle + radiothérapie+ tamoxifène pendant 1 an (arrêté avant pour effets indésirables importants)
+Antécédents chirurgicaux :
+- Appendicectomie
+- Amygladectomie
+Antécédents gynéco-obstétriques :
+- PR 14 ans
+- Ménopausée en [ 7086 jours avant RCP ]
+- G1P0, 1 IVG
+Histoire de la maladie :
+En [ 7817 jours avant RCP ]: adénocarcinome canalaire infiltrant du sein droit de grade 2 (RH+, Her 2 -) sans attente ganglionnaire , traité par tumorectomie et procédure du ganglion sentinelle + radiothérapie + curiethérapie + tamoxifène pendant 1 an (arrêté avant pour effets indésirables: métrorragies)
+Suivi régulier annuel par échographie + mammographie
+Derniers examens en [ 56 jours avant RCP ]:
+Mammographie le [ 29 jours avant RCP ]:
+Sein gauche: ACR1
+Sein droit: distorsion architecturale au niveau de la zone cicatricielle, surdensité, majorée par rapports aux examen successifs, pas de microcalcifications
+Pas d'adénopathie axillaire
+Échographie mammaire le [ 29 jours avant RCP ]:
+Sein Droit: au contact de la zone cicatricielle, zone hypoéchogène, mal limitée, absorbante, supéro externe de 7*6mm
+Sein Gauche: ACR 1
+Quelques ganglions lipo-scléreux axillaires visibles
+Microbiopsie du sein droit le [ 21 jours avant RCP ] : Carcinome infiltrant mucineux bien différencié, grade I (2+2+1), RO 80%,
+RP 50%, Her2 score 2++ FISH NON AMPLIFIE, Ki 67 3%.
+P63 : absence d’assise myo épithéliale
+Cytoponction ganglionnaire le [ 21 jours avant RCP ]: Matériel modérément lymphocytaire dépourvu de cellule tumorale maligne
+IRM mammaire le [ 6 jours avant RCP ] :
+IRM mammaire droite ACR 6 : masse unifocale ACR 6 de 20 mm de l'UQS. À noter, un ganglion axillaire bas situé, sans critère morphologique suspect.
+IRM mammaire gauche ACR 3 : plusieurs rehaussements ACR 3 prédominant à l'UQS, , pour lesquels on programme un bilan de second look avec clichés agrandis et échographie ciblée. En l'absence de cible, prévoir une IRM de contrôle dans 4 mois.
+Bilan de second look [ 2 jours avant RCP ] : Pas de cible échographique ou mammographique des rehaussements non masse du sein gauche décrits en IRM.
+Sein gauche classé BIRADS 3, contrôle IRM dans 4 mois.
+Examen clinique
+Poids: 60kg Taille : 1.63m base mammaire 14
+[VILLE] 90B
+Sein gauche: T0N0
+Sein droit: ancienne cicatrice dans le QSE sur 4 cm, palpation d'une induration infracentimétrique sous l'ancienne cicatrice
+Pas d'adénopathie axillaire
+TEP FDG prévu le [ 6 jours apres RCP ]
+Indication de mastectomie avec seconde procédure du ganglion sentinelle droite et possibilité éventuellement de reconstruction mammaire immédiate par prothèse même si surrisque de complications lié à l'antécédent de radiothérapie
+Mme SCHEUERMANN souhaite une reconstruction immédiate.
+[MEDECIN REFERANT]consultation pré opératoire le [ 4 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On confirme la 
+Proposition .
+  Contrôle IRM à 4 mois et si évolutif : biopsie du sein controlatéral
+
+

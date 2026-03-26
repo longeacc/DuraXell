@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 1814 1824	RE+ (100%)
+A1	Value T1 positif
+T2	Progesterone_receptor 1826 1835	RP+(100%)
+A2	Value T2 positif
+T3	HER2_IHC 1836 1853	 cerbB2 score 1 (
+A3	Value T3 1+
+T4	Ki67 1905 1910	Ki67 
+A4	Value T4 67%

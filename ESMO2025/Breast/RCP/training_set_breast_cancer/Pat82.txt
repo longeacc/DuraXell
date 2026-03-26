@@ -1,0 +1,33 @@
+Pat82
+ Raison Complexite : nan
+ Age : 57
+ Données biométriques et score : pas de données biometriques
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+Patiente âgée de 57ans, adressée par le [MEDECIN EXTERIEUR]pour un Cancer canalaire infiltrant du sein droit.
+Antécédents:
+Médicaux: asthme sous Ventoline en traitement de fond, HTA, tachycardie suivie par un= cardiologue
+Chirurgicaux: aucune
+Obstétricaux: G3P3, 3 accouchements voie basse
+Gynécologiques: Ménopausée depuis l'âge de 53ans, pas de THM, dernier FCU en [ 1143 jours avant RCP ] normal à priori, dernière mammographie
+Familiaux: mère sein à 55ans et utérus à 50ans, père cancer ORL (tabac), GMM colon 80ans
+Traitement: sous Triatec, Aspegic, Flecaine, statine.
+Allergie: connue non
+Tabac: non. OH : occasionnellement.
+Anamnèse: Découverte d'une lésion sur bilan de dépistage. Pas de douleur, pas d'écoulement.
+Mammographie/ Echographie de dépistage [ 36 jours avant RCP ] [VILLE] Gargan:
+Sein droit: ACR 4c avec masse uni-focale de 10mm du QIE à 7h30 à 1cm du mamelon.
+Sein gauche: ACR1
+Pas d'adénopathie axillaire.
+Microbiopsie [ 28 jours avant RCP ] au Raincy sein droit: Carcinome canalaire infiltrant NST, grade 2 EE 3+2+2, RO 100%, RP 100%; HER 2 score 1 négatif, Ki67% 15%.
+Examen clinique : SG 100C sein droit : nodule centimétrique juxta aréolaire externe sein gauche : pas de lésion palpable aires ganglionnaires axillaires sus et sous claviculaires libres explications données sur le diagnostic et les modalités de traitement.
+Indication de tumorectomie du sein droit après repérage et technique du ganglion sentinelle droit
+BLOC opératoire le 08.03.22 en J0.
+Brassière.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ On confirme
+
+

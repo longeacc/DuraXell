@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 2304 2308	RE3+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2316 2328	RP 2-3+ (80%
+A2	RP_values T2 positive
+T3	HER2_IHC 2342 2350	HER2 : 0
+A3	HER2_values T3 0
+T4	Ki67 2331 2340	KI67  30%
+T5	Estrogen_receptor 3234 3238	RE +
+A4	RO_values T5 positive
+T6	Progesterone_receptor 3244 3247;3248 3253	RP  ++70%
+A5	RP_values T6 positive
+

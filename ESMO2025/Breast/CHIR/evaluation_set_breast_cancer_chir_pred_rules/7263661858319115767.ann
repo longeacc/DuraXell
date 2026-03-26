@@ -1,0 +1,8 @@
+T1	Ki67 1834 1838	Ki67
+A1	Value T1 67%
+T2	Estrogen_receptor 2472 2479	RO 50 %
+A2	Value T2 positif
+T3	Progesterone_receptor 2481 2489	RP 100 %
+A3	Value T3 positif
+T4	Ki67 2491 2501	Ki67  12 %
+A4	Value T4 12%

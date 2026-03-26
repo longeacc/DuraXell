@@ -1,0 +1,88 @@
+" Assistance Publique - Hôpitaux de Paris 
+Service d’Anatomie et Cytologie Pathologiques  
+22TH09514 
+ Chef de service par intérim : Pr actaar HELLIAS  
+4, rue de la Chine 75970 PARIS Cedex 20  0611636913 / 66.17 / 69.43 / 80.58   
+ 01.49.59.61.69 
+ 
+Mme GHANAY shayane haiyen DUBOISDESTERMES Edith 
+Né(e) GHANAY Serv Radiologie 
+Née le 25/01/1952 Hôpital Tenon 
+NIP : 8006664700 4 Rue de la Chine 
+ 75020 PARIS 
+Prélevé le : 07/11/2022  
+Reçu le : 08/11/2022  
+Origine : KERMARREC Edith Edité le 10/11/2022 (TSABR) 
+Transmis à :  Dr POTOTNZIHOU tsidawo 
+      
+   
+   
+ 
+Antériorités : 22TH09437 
+ 
+ADICAP : PHGSA7B1   
+MACROBIOPSIES DU SEIN GAUCHE 
+ 
+Renseignements cliniques : patiente de 70 ans, ménopausée, sans traitement hormonal substitutif, sans antécédent 
+personnel ou familial de cancer du sein, adressée pour macrobiopsies d’une distorsion avec rehaussement masse en IRM de 
+l’UQE.  
+Description du site prélevé : type de lésion : distorsion architectural, du sein gauche, UQE, sur le rayon de 3 h, à 8,5 cm du 
+mamelon, taille 6 mm, Bi-rads 4c, aiguille 7 Gauge, 2 tours, pose d’un clip en forme de M. 
+ 
+Examen microscopique 
+Le matériel est inclus en totalité et étudié sur plusieurs niveaux. 01, 02 : sein 
+- Type histologique : carcinome infiltrant de type lobulaire. 
+- Architecture : en file indienne, cellules isolées,  
+- Anisocaryose : modérée  
+- Activité mitotique : 1 mitose pour 2mm2. 
+- Emboles tumoraux lymphatiques : absents.  
+- Composante carcinomateuse in situ : absente.  
+ 
+IMMUNOHISTOCHIMIE DES FACTEURS PRONOSTICS ET PREDICTIFS DU CANCER DU SEIN :  
+Bloc tumeur (indice) : 02 
+Technique: LEICA BOND III BOND Polymer Refine Detection. 
+RECEPTEURS AUX OESTROGENES (LEICA clone 6F11, prédilué) :  
+Pourcentage de cellules : 80 %   Intensité de marquage nucléaire : 2+ 
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RE + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+RECEPTEURS A LA PROGESTERONE (LEICA clone 16, prédilué) : 
+Pourcentage de cellules : 60 %   Intensité de marquage nucléaire : 2+ à 3+ 
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RP + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+ONCOGENE Cerb B2 (LEICA clone CB11, prédilué) : Score 2+ (faible) 
+Témoin négatif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire score 3 : OUI 
+Score 3 (positif) : marquage membranaire complet et fort >10 % des cellules tumorales invasives ; score 2 (équivoque) : 
+marquage membranaire complet modéré ou incomplet, baso-lateral modéré à fort >10 % des cellules; 
+score1(négatif) : marquage membranaire complet ou incomplet faible de > 10 % des cellules; score 0 (négatif) : absence de 
+marquage ou marquage membranaire faible ≤ 10 % (recommandations GEFPICS 2021). 
+FACTEUR DE PROLIFERATION (Dako clone Mib1, 1/150) : index Ki67 : 5 % 
+Témoin interne positif mitose : OUI (Tumeur non proliférante : % < à 20 % de cellules carcinomateuses invasives marquées ; 
+tumeur proliférante : % > ou égal à 20 % de cellules carcinomateuses invasives marquées). 
+E-CADHERINE (ZYMED clone 4A2C7, 1/100): absence de marquage membranaire  
+ 
+ 
+CONCLUSION :  
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme GHANAY shayane 22TH09514 Page 2 
+ 
+  
+Carcinome infiltrant de type lobulaire, de grade histopronostique EE 2 (3+2+1). Absence de 
+composante carcinomateuse in situ. Absence d’emboles lymphatiques. 
+Immunophénotype : RE 80 %, RP 60 %, HER2 score 2+,  Ki67 : 5 %. 
+ 
+Une étude par FISH est en cours à la recherche d’une amplification du gène HER2 et fera l’objet d’un 
+compte rendu complémentaire. 
+ 
+  Le 10/11/2022, 
+        Dr yinbin BANYINGELA 
+ 
+ 
+Compte-rendu validé et signé électroniquement. 
+ 
+ 
+ 
+"

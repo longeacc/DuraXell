@@ -1,0 +1,31 @@
+T1	Estrogen_receptor 994 998	RH +
+A1	RO_values T1 positive
+T2	Ki67 1000 1010	Ki67 : 10%
+T3	HER2_IHC 1012 1025	HER 2 score 0
+A2	HER2_values T3 0
+T4	Estrogen_receptor 1141 1145	RH +
+A3	RO_values T4 positive
+T5	Ki67 1147 1157	Ki67 : 10%
+T6	HER2_IHC 1159 1172	HER 2 score 0
+A4	HER2_values T6 0
+T7	Estrogen_receptor 2019 2022	RH+
+A5	RO_values T7 positive
+T8	Ki67 2024 2030	KI 10%
+T9	HER2_status 2031 2037	HER2 -
+A6	HER2_status_values T9 negatif
+T10	Estrogen_receptor 2274 2278	RH +
+A7	RO_values T10 positive
+T11	Ki67 2280 2290	Ki67 : 10%
+T12	HER2_IHC 2292 2305	HER 2 score 0
+A8	HER2_values T12 0
+T13	Estrogen_receptor 3540 3543	RH+
+A9	RO_values T13 positive
+T14	Ki67 3545 3551	KI 10%
+T15	HER2_status 3552 3558	HER2 -
+A10	HER2_status_values T15 negatif
+T16	Estrogen_receptor 5364 5368	RH+,
+A11	RO_values T16 positive
+T17	Ki67 5369 5375	KI 10%
+T18	HER2_status 5376 5382	HER2 -
+A12	HER2_status_values T18 negatif
+

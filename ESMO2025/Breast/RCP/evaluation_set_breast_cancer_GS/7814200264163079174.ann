@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 1611 1621	RE+++ 100%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1623 1631	RP++ 60%
+A2	RP_values T2 positive
+T3	HER2_IHC 1633 1641	Her2- (0
+A3	HER2_values T3 0
+T4	Ki67 1645 1653	Ki67 25%
+

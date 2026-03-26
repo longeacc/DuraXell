@@ -1,0 +1,110 @@
+ 
+PÔLE DE BIOLOGIE ET DE PATHOLOGIE 
+DEPARTEMENT DE PATHOLOGIE 
+Chef du Département :  Pr. P CHANGKAKEUNG 
+Centre Expert de Pathologie Neuromusculaire : Pr. R.N. DAROCHAVIEIRA 
+Hôpital HENRI MONDOR 720171 HARDY-SUR-BUISSON Tél : 06.30.15.37.62 
+Fax : 0680461231 
+Compte-rendu de l’examen P793634 
+ 
+Prescrit par :   
+Service d' IMAGERIE MEDICALE Service d' IMAGERIE MEDICALE 
+ 1er S/Sol 
+   
+ HOPITAL HENRI MONDOR 
+     
+  
+Patient : Mme depons neirouz  (NIP : 8009776851) 
+ Né(e) depons 
+Sexe : F Née le 07/06/1957   
+Copie à :   Prélevé le :  28/12/2021 
+    Reçu le :  28/12/2021 
+ 
+ 
+Sauf mention contraire :  
+- fixation : formol tamponné  
+- coloration standard : HES   Page 1/2 
+ 
+ 
+MEDECIN DESTINATAIRE : Pr. T. ONEGAALVAREZ 
+ 
+RECHERCHE D’AMPLIFICATION DU GENE HER2 (ERBB2) 
+PAR FISH INTERPHASIQUE 
+ 
+ 
+Médecin demandeur : Pr. T. ONEGAALVAREZ                            Date : 03/01/2022 
+ 
+Référence initiale : P793634 - pbh 
+ 
+IMMUNOHISTOCHIMIE 
+Lecteur : Pr. T. ONEGAALVAREZ      Score IHC : 2+        
+ 
+CONTROLE DE QUALITE 
+Qualité de la coupe : correcte    
+Cellules tumorales dans la zone d’analyse : 20 à 30 % 
+ 
+PRELEVEMENT 
+Nature : biopsie   
+Organe : foie 
+Diagnostic : localisation d’un adénocarcinome mammaire  
+Fixation : formol  
+ 
+TECHNIQUE 
+Date de la technique: 11-12/01/2022   Opérateur : VM  
+ZytoLight ® CEN 17/SPEC ERBB2 Dual Color Probe:  Réf: Z-2077 
+Examen concernant depons neirouz P793634 
+ 
+ 
+Page 2 / 2 
+  
+RESULTATS ET INTERPRETATION 
+Nombre de lecteurs : 2   Lecture : objectif x100 à immersion     
+ 
+Evaluation qualitative 
+Profil majoritaire observé : 2 à 3 signaux rouges (HER2), 2 signaux verts (CEN17) par noyau 
+ 
+Evaluation quantitative 
+Nombre de noyaux comptés : 100 
+Nombre moyen de gènes HER2 : 2,62 
+Nombre moyen de centromères 17 : 2,31 
+Rapport HER2/CEN 17 : 1,13 
+ 
+Groupe 
+Rapport 
+HER2/CEN 17  
+Moyenne HER2 Statut HER2 
+1 > 2 > 4 Positif 
+2 > 2 < 4 
+Négatif, le bénéfice d’une thérapie ciblée dans ce groupe n’est pas clairement 
+démontré 
+3 < 2 > 6 Positif 
+4 < 2 [ > 4 - < 6 ] 
+Négatif, le bénéfice d’une thérapie ciblée dans ce groupe n’est pas clairement 
+démontré 
+5 < 2 < 4 Négatif 
+Référence: Wolff et al, Human Epidermal Growth Factor 2 Testing in Breast Cancer: American Society of 
+Clinical Oncology/College of American  
+Pathologists Clinical Practice Guideline Focused Update, J Clin Oncol 2018.  
+ 
+CONCLUSION 
+ 
+Statut HER2 négatif (groupe 5) 
+Compte-rendu fait le 13.01.2022 
+ 
+ 
+Codification : PHFFAMA0 
+BB Créteil, le 14/01/2022 14:14 
+   
+        Dr abdrahaman SAAL LEDANI 
+CE COMPTE-RENDU A ETE SIGNE ELECTRONIQUEMENT 
+ 
+ 
+CE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

@@ -1,0 +1,60 @@
+Pat40
+ Raison Complexite : nan
+ Age : 40
+ Données biométriques et score : 
+ Poids :      0.00 kg    Le    [ 40 jours avant RCP ] IMC (Quetelet) :           0.0 kg/m 2
+ Taille :      168 cm Le       [ 40 jours avant RCP ]        SC (Dubois) : 0.00 m2
+ Motif de présentation : Motif de présentation             Résultats biopsies [ 15 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation             Résultats biopsies [ 15 jours avant RCP ]
+Histologie
+ Date           Examen                                          
+Conclusion
+ [ 15 jours avant RCP ] MACROBIOPSIE DU SEIN DROIT
+Histoire de la maladie
+Patiente de 39 ans adressée par le [MEDECIN EXTERIEUR]Laure pour masse mammaire droite.
+Antécédents :
+T: 168 cm; Poids: 82kg; TSG: 90F. Gyneco : DPR: 10 ans. 1 enfant par césarienne 2008. Contraception : 0.
+pas de suivi gynéco depuis 10 ans.
+Antécédent médical : cancer du sigmoide en cours de traitement
+Antécédent chirurgical : Césarienne. colostomie de décharge le 14.01.21.
+[ 54 jours avant RCP ]: Consulte aux urgences pour une constipation d’aggravation progressive depuis une semaine, associée à des douleurs abdominales et des nausées.
+Quelques rectorragies.
+TDM AP: présence d’une stase stercorale colique jusqu’à la jonction sigmoïdo-iliaque => Hospitaliastion en HGE recto-sigmoïdoscopie [ 50 jours avant RCP ] : lésion bourgeonnante inflammatoire, suspecte, à 40 cm de la marge anale, non franchissable.
+BIOPSIES = Au niveau du sigmoïde : adénocarcinome bien différencié, infiltrant.
+Absence d’argument en faveur d’une instabilité des microsatellites.
+Muqueuse rectale essentiellement oedémateuse.
+[ 49 jours avant RCP ] Colostomie de décharge coelioscopique
+RCP CHIR DIG SAT 18.01.2021 : indication de colectomie gauche.
+Biopsies coliques [ 38 jours avant RCP ] : Exérèse de 3 lésions sessiles festonnées non dysplasiques du sigmoïde. Présence également d’un polype d’allure hamartomateux, non dysplasique.
+Repli polypoïde muqueux non dysplasique du colon transverse.
+[ 37 jours avant RCP ] : Colectomie gauche avec anastomose colo-rectale haute manuelle et iléostomie de protection :
+Pièce de colectomie gauche comportant un adénocarcinome lierberkühnien moyennement différencié infiltrant la paroi colique sur toute son épaisseur avec atteinte de la séreuse et responsable d’une occlusion colique complète.
+Présence d’emboles lymphatiques, d’engainements périnerveux et d’invasion veineuse extra-murale.
+Présence de trois métastases ganglionnaires et d’un dépôt tumoral sans tissu lymphoïde résiduel.
+Expression des protéines MMR conservée sur les biopsies pré-opératoires.
+Limites de résection non tumorales.
+Classification TNM (8ème édition 2017) : pT4a N1b
+A noter la présence de deux foyers de remaniements fibro-inflammatoires de la séreuse et sous-séreuse (péri- tumoral et au niveau de la limite proximale) avec présence de fausses membranes.
+==>pT4aN1b adk moy. diff. E+, EPN+. (3N+/30). R0. MSS
+Découverte dans le cadre du bilan d'extension d'une masse mammaire droite.
+Mammographie et échographie mammaire ce jour : Masse hétérogène de l'union des quadrants externes du sein droit, évoquant un fibro-adénome complexe, de 14 mm, pour lequel une microbiopsie est programmée. Absence d'anomalie surajoutée. ACR 4 a à droite. ACR 2 à gauche au plan gynéco : dysménorrhées modérées, dyspareunies positionnelles profondes anciennes, pas de ménorragie, pas de mtr, pas de dlr pelvienne chronique;                                  
+Examen clinique : Abdomen souple indolore. Cicatrice de coelio avec colostomie de décharge en FIG.
+Spec: col sain. test HPV fait.
+TV+TR: utérus AV AF, douloureux, pas d'atteinte du torus et [VILLE] mais palpation d'une lésion en arrière du vagin postérieur douloureuse probablement en lien avec la maladie sigmoidienne pas de masse annexielle palpée
+Sein droit: palpation d'un nodule régulier centimétrique QSE sein droit, aires ganglionnaires libres sein gauche : pas d'anomalie
+Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement.
+Microbiopsie sein droit le 01.02.2021 : Adénose au sein d’une possible adénofibrome.
+Absence de signe morphologique de malignité.
+Cs le 12.02.2021.
+RCP [ 28 jours avant RCP ] : Macrobiopsies d'exérèse.
+RCP CHIR DIG SAT [ 13 jours avant RCP ] : Proposition d'inclusion dans l'essai IROCAS, comparant 6 mois de FOLFOX 6 modifié à une chimiothérapie de type FOLFIRINOX
+MACROBIOPSIE DU SEIN DROIT [ 15 jours avant RCP ] :
+- Les macrobiopsies sur repérage échographique du nodule du sein droit retrouvent un nodule correspondant à un foyer d’adénose nodulaire accompagné de secteurs d’hyperplasie fibro-adénomateuse mais sans véritable fibro-adénome constitué.
+- Absence de zone suspecte.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ Surveillance
+
+

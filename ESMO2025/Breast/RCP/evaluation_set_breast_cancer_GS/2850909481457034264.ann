@@ -1,0 +1,13 @@
+T1	Estrogen_receptor 2733 2740	RH 100%
+A1	RO_values T1 positive
+T2	Ki67 2742 2751	Ki 67 10%
+T3	HER2_status 2753 2772	Her2 non surexprimé
+A2	HER2_status_values T3 negatif
+T4	Estrogen_receptor 3360 3368	RO 100 %
+A3	RO_values T4 positive
+T5	Progesterone_receptor 3372 3380	RP 100 %
+A4	RP_values T5 positive
+T6	Ki67 3382 3391	Ki67 10 %
+T7	HER2_status 3393 3412	HER2 non surexprimé
+A5	HER2_status_values T7 negatif
+

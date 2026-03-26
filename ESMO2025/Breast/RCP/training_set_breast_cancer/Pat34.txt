@@ -1,0 +1,52 @@
+Pat34
+ Raison Complexite : nan
+ Age : 59
+ Données biométriques et score : 
+  Poids :     97.00 kg   Le   [ 7 jours avant RCP ] IMC (Quetelet) : 40.4 kg/m 2
+  Taille :      155 cm Le     [ 7 jours avant RCP ]       SC (Dubois) : 1.94 m2
+ Motif de présentation : Motif de présentation            Validation simple de RCP
+ Données Médicales : 
+Motif de présentation            Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 7 jours avant RCP ] :
+Antécédents et allergies :
+Allergies : - Ibuprofène : Eruption, Erythème, pas de problème avec le biprofenid
+Antécédents familiaux : - cancer du sein chez la mère à 91 ans
+- Cancer gynécologiquepelvien chez la GMM à 80 ans
+- Cancer du poumon chez le grand père paternelle / Tabac
+Antécédents médicaux : Pneumonie en [ 4002 jours avant RCP ]
+Antécédents chirurgicaux :
+- Poignet
+- Luxation épaule
+Antécédents gynéco-obstétriques : G0P0, ménopausée à 50 ans, pas de THM travaille à la région île de [PAYS]
+Résumé clinique - 
+Histoire de la maladie
+Patiente de [Age Patiente] adressée par le [MEDECIN EXTERIEUR]pour prise en charge d'un carcinome lobulaire infiltrant.
+Anamnèse:
+Découverte par la patiente d'une masse mammaire à gauche.
+Exploration en ville :
+Mammographie en [ 1175 jours avant RCP ]: Droit ACR2 Gauche ACR1
+Mammographie le [ 31 jours avant RCP ]: sein gauche ACR4 opacité du quadrant supéro externe gauche correspondant à la tuméfaction palpable. Droit ACR 1.
+Échographie: - sein droit QSE à 9h à 8 cm du mamelon masse hypoéchogène 12*8 mm contours réguliers échostructure homogène compatible avec un adénofibrome - sein gauche: QSE à 10h à 5 cm du mamelon masse de 14 mm contours irréguliers très hypoéchogène absorbant fortement les [VILLE], masse palpable.
+Pas d'adenopatie axillaire
+Biopsie avec anatomopathologie: lésion de 20x16mm
+Biopsie au niveau du QSE à 2 heures à 7 cm du mamelon à 16 en profondeur.
+Carcinome lobulaire infiltrant de type classique, index histopronostic (E.E) 2 (3+2+1 2), index mitotique bas, TIL 1%, contingent minoritaire de carcinome lobulaire in situ sans nécrose ni cellule pléomorphe,, sans emboles, RO 100%, RP 30%, Ki67 15%HER 2 score 0
+IRM mammaire [ 17 jours avant RCP ] sein gauche : ACR 5 Rehaussement en masse aux contours irréguliers du QSE du sein gauche de 27x34x35, Absence de lésion additionnellehomo ou contro-latérale décelable.
+Absence d'hypertrophiegg axillaire.
+sein droite : ACR2
+Examen clinique le [ 7 jours avant RCP ] : Poids : 97 kg, Taille : 155 cm, IMC : 40.4 kg/m², SC : 1.9 m²
+100F: masse d'environ 35mm du quadrants supéro externe du sein gauche
+1 ganglion axillaire gauche mobile
+Conclusion
+Indication de tumorectomie du sein gauche + procédure du ganglion sentinelle gauche par round block ou oncoplastie externe le [ 5 jours apres RCP ]/121 le [ 5 jours apres RCP ]
+Explication des principes de la chirurgie et des cicatrices. Explication du risque de recoupe mammaire et/ou curage axillaire en deux temps en fonction du résultat histologique sur l'examen final.
+Explication du risque d'hématome et d'abcès mammaire ou axillaire pouvant nécessiter une reprise chirurgicale en urgence.
+Explication des traitements adjuvants possibles: radiothérapie +/- chimiothérapie et hormonothérapie en fonction de l'analyse histologique.
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On confirme la 
+Proposition 
+
+

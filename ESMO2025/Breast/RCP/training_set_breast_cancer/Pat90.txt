@@ -1,0 +1,61 @@
+Pat90
+ Raison Complexite : nan
+ Age : 40
+ Données biométriques et score : 
+  Poids :      60.00 kg    Le  [ 14 jours avant RCP ] IMC (Quetelet) : 21.3 kg/m2
+  Taille :       168 cm Le     [ 14 jours avant RCP ]        SC (Dubois) : 1.68 m2
+ Motif de présentation : Motif de présentation            Validation simple de RCP
+ Données Médicales : 
+Motif de présentation            Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 7 jours avant RCP ]
+F[Age Patiente]
+Antécédents et allergies :
+Antécédents familiaux :
+- GMP cancer du sein 85 ans
+- GMM leucémie 58 ans
+Antécédents chirurgicaux :
+- 2010 : kyste ovaire gauche (75005), a priori [PAYS] (pas de CR).
+Antécédents gynéco-obstétriques :
+- PR : 12 ans. G0P0. Cycles réguliers. Pas de contraception.
+- FCU en [ 199 jours avant RCP ] : normal.
+Histoire de la maladie :
+Patiente âgée de [Age Patiente], adressée par le [MEDECIN EXTERIEUR]pour un cancer du sein gauche.
+Auto-palpation d'une masse au niveau du sein gauche en [ 351 jours avant RCP ].
+Mammo-échographie le 17.11.2020 :
+- Sein droit : ACR2.
+- Sein gauche :
+1. Masse hypoéchogène, hétérogène, aux contours imprécis sus-aréolaire de 20 mm.
+2. Masse de 11 mm au niveau du QSI du sein gauche.
+3. Foyer non spécifique de microcalcifications du QSI du sein gauche.
+Plusieurs kystes de 2 à 15 mm.
+Un ganglion liposcléreux du prolongement axillaire gauche de 20 x 4 mm.
+Micro-biopsies du 23.11.2020 :
+- Masse ACR5 de 20 mm (rayon 12h à 2.5 cm du mamelon) : CCI de 12 mm de grade 2, RO 100, RP 100, Ki67 20%,
+HER2 : faible intensité.
+- Masse de 11 mm (rayon 11h à 4.5 cm du mamelon) : CCI de 8 mm de grade 2, RO 100, RP 100, Ki67 10%, HER2 :
+faible intensité.
+Relecture IRM mammaire : Sous réserve d'une mastopathie fibrokystique bilatérale et d'un rehaussement glandulaire important :
+IRM mammaire droite BIRADS 2 de l'ACR, sans anomalie suspecte.
+IRM mammaire gauche BIRADS 6 de l'ACR avec :
+- Masse BIRADS 6 de 20 mm de l'union des quadrants supérieurs avec clip sur son versant interne.
+- Masse BIRADS 6 de 13 mm du quadrant supéro-interne avec clip sur son versant interne.
+Les deux masses sont distantes de 5 cm et l'ensemble lésionnel et de 8,5 cm en antéro-postérieur, 7 cm de hauteur et 3,5
+cm de largeur.
+- Pas de traduction IRM du foyer de microcalcifications.
+Echographie post IRM :
+Aspect de mastopathie fibrokystique avec :
+Sein droit ACR 2 sans lésion suspecte décelée.
+Sein gauche ACR 6 avec : - atteinte bifocale de l'UQS sous forme de deux masses ACR 6 de 20 mm et 15 mm centrée par des clips (distance interlésionnelle de 5 cm et ensemble lésionnel de 7 cm en échographie et 9 cm en mammographie et en IRM).
+- foyer de microcalcifications ACR 4a de 5 mm situé à proximité de la lésion la plus distante du mamelon.
+- pas d'adénomégalie axillaire.
+Examen clinique le [ 14 jours avant RCP ] : Poids : 60 kg, Taille : 168 cm, IMC : 21.3 kg/m², SC : 1.7 m²
+95 E on palpe masse du quadrants upero interne pas d'adénopathie axillaire
+Après longue discussion avec la patiente et étant donné le volume mammaire, on s'oriente vers oncoplastie après triple repérage 9+ procédure du ganglion sentinelle gauche explications du risque de mastectomie secondaire si berges non saines
+Bloc le [ 1 jours apres RCP ] en J0
+Consultation post opératoire [ 25 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision   on confirme avec risque existant de mastectomie secondaire
+
+

@@ -1,0 +1,58 @@
+Pat52
+ Raison Complexite : nan
+ Age : 59
+ Données biométriques et score : 
+  Poids :    53.00 kg    Le   [ 7 jours avant RCP ] IMC (Quetelet) : 20.7 kg/m 2
+  Taille :     160 cm Le      [ 7 jours avant RCP ]       SC (Dubois) : 1.54 m2
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+Antécédents et allergies
+Allergies : Pas d'allergie connue
+Antécédents familiaux : Mère, suivie pour un cancer du sein découverte à l'âge de 65 ans avec métastases osseuses/ Notion du cancer du sein chez les deux tantes maternelles et de cancer de l'utérus chez une cousine germaine/ Kcr sein chez tantes maternelles > 70 ans
+Antécédents médicaux : Péricardite il y a 30 ans/ Insuffisance mitrale depuis 25 ans/ Polyarthrite périphérique ayant évolué depuis 30 ans. Typée PR initialement mais reconsidérée Lupus selon la patiente. Plaquenil et AINS arrêté il y 3 à 4 ans.
+Antécédents chirurgicaux : dents de sagesse
+Antécédents gynéco-obstétriques : G4 P2: un avortement IVG par aspiration et une fausse couche spontanée.
+Ménopausée, pas de Traitement hormonal substitutif.
+Travaille en Mairie
+Résumé clinique - 
+Histoire de la maladie
+Patiente de [Age Patiente], découverte à la mammographie de dépistage d'un nodule du sein du sein gauche et bilan de fièvre inexpliquée prise en charge à la pitié Salpétrière ( bilan en cours ) . le [ 27 jours avant RCP ] dans le cadre d'un dépistage individuel, masse ACR 5 de 22 x 13 mm du sillon sous-mammaire gauche avec une adénopathie axillaire homolatérale (épaississement cortical à 6 mm).
+Bilan échographie/ mammographie :
+[ 16 jours avant RCP ] : masse UQInf 20mm Birads 5, Masse rétroaréolaire externe de 7 mm. ensemble lésionnel 5cm.
+IRM mammaire [ 16 jours avant RCP ] :
+Sein gauche classé BIRADS 5 de l'ACR devant: SITE 3 : une masse index ACR 5 pré-pectorale gauche du sillon sous-mammaire de 20 mm (7 cm du mamelon) sans argument pour un un envahissement du pectoral ou cutané.
+une seconde masse rétro-aréolaire profonde pré-pectorale de 8 mm rayon 3h SITE 2 à 5,5 cm du mamelon et à proximité d'un groupe de microkystes, classée ACR 4b. pose de clip ring Distance inter-lésionnelleà 36 mm.
+Probable atteinte ganglionnaire axillaire et rétro-pectorale homolatérale. SITE 1
+Sein droit BIRADS 2 de l'ACR sans anomalie suspecte
+Micro-biopsie mammaire gauche [ 6 jours avant RCP ] :
+SITE 2 : les microbiopsies de la masse rétro-aréolaire externe montrent un aspect de cicatrice radiaire associé à des lésions d’hyperplasie canalaire atypique, mais sans prolifération tumorale infiltrante
+SITE 3 : les microbiopsies de la masse à l’union des quadrants inférieurs montrent un carcinome infiltrant bien différencié de type non spécifique (canalaire) Grade histopronostic Elston et Ellis : 1 (2+2+1) avec index mitotique faible. Absence de contingent in situ et absence d’embole. RH RO 85%, RP 40%, HER2 score 2 , KI67 2 %
+Site 1 GANGLION : Cytoponction axillaire : Cytoponction peu représentative, sans amas de cellules suspecte identifiable.
+Biopsie axillaire [ 6 jours avant RCP ] : SITE 1 : Pas de localisation tumorale intra ganglionnaire.
+Examen clinique
+Poids 53 kg taille 160 cm et TSG 85 B
+Examen mammaire :
+Sein droit: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Sein gauche: masse UQ inf sillon sous mammaire adénopathie palpable.
+Examen paraclinique :
+TEP FDG [ 2 jours avant RCP ] :
+Parmi les lésions du sein gauche, seule la lésion du sillon sous-mammaire manifeste un hypermétabolisme discret qui la différencie du reste du parenchyme mammaire adjacent.
+Présence de ganglions modérément hypermétaboliques sus et sous-diaphragmatiques.
+Absence d'autre anomalie métabolique suspecte sur le reste du volume exploré.
+Compte tenu du faible métabolisme des lésions mammaires gauches, cet examen est de faible sensibilité pour leur bilan d'extension.
+Attente HER 2 :
+si HER 2 - 
+Proposition  d'oncoplastie en T inversé ou plastie verticale + repérage de la masse de 8mm UQE rayon
+3h / + procédure du ganglion sentinelle ( informée des risques de complications post opératoires : Indication de tumorectomie après repérage + prélèvement du ganglion sentinelle.
+FCV ce jour
+Consultation oncogénétique.
+fish non amplifiée
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision   on confirme la 
+Proposition 
+  Indication d'onco-génétique : Oui
+
+

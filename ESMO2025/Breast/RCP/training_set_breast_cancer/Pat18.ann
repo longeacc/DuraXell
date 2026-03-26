@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 2631 2637	RO 0%,
+T2	Progesterone_receptor 2638 2644	RP 0%,
+T3	HER2_IHC 2645 2658	HER 2 score 2
+T4	Ki67 2682 2688;2689 2690	KI 25% -
+T5	HER2_FISH 2659 2681	FISH HER2 NON AMPLIFIE
+A1	RO_values T1 negative
+A2	RP_values T2 negative
+A3	HER2_values T3 2+
+A4	FISH_values T5 negatif

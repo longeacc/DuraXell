@@ -1,0 +1,50 @@
+Pat100
+ Raison Complexite : nan
+ Age : 69
+ Données biométriques et score : 
+ Poids :      91.50 kg    Le   [ 7 jours avant RCP ] IMC (Quetelet) : 32.8 kg/m2
+ Taille :       167 cm Le      [ 14 jours avant RCP ]      SC (Dubois) : 2.00 m2
+ Motif de présentation : Motif de présentation             Avis Imagerie
+ Données Médicales : 
+Motif de présentation             Avis Imagerie
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]:
+Patiente âgée de [Age Patiente] adressée par le [MEDECIN EXTERIEUR]pour cancer du sein gauche.
+Contexte :
+Insuffisance rénale aiguë mixte ( anasarque, surcharge, obstructive ) chez une patiente ayant une découverte récente de néoplasie mammaire gauche.
+-Évolution lentement favorable de la fonction rénale après déplétion, contrôle tensionnel et drainage des urines par sondes JJ , créatininémie de sortie à 100 μmol/l
+Protéinurie et sédiment urinaire à recontrôler à distance.
+-TEP TDM et résultats de la biopsie mammaire en attente.
+Consultation de suivi gynécologique le 28.06 , cs oncologique le 30.06, consultation d'urologie le 30.07.
+-Contrôle tensionnel sous trithérapie à la sortie, à réévaluer.
+Tentative de déplétion par Lasilix, à réévaluer.
+- FO de réévaluation en externe pour contrôle de rétinopathie hypertensive.
+-Cystite à E Coli et Protéus Mirabilis traité par 6 jours de BACTRIM.
+- TSH à recontrôler aux alentours du [ 8 jours apres RCP ]
+ATCD familiaux : cancer pelvien soeur 37 ans décédée 40 ans. K pancréas mère décédée 63 ans.
+TTT : nébivolol, amlodipine, furosémide, eupressyl, levothyrox, latanoprost, paracétamol, movicol.
+tabagisme sevrée depuis 3 semaines, 53 PA.
+vaccin COVID : 1ère injection faite, 2ème injection prévue jeudi
+Découverte d'une masse mammaire gauche avec rétraction mammelonnaire et atteinte cutanée du bas du creux axillaire gauche.
+Mammographie 11.06.21 : distorsion architecturale avec surcroit d'opacité spiculé du QSE sein gauche. Lésion ACR5 de 47 x 40 x 30 mm, plusieurs adénomégalies axillaires gauches avec hypertrophie corticale. Sein droit : pas d'anomalie visible.
+Microbiopsie sein gauche 16.06.21 : CCI de type non spécifique de grade II, pas d'embole, RE 100%, RP 40%, HER
+2 négatif, Ki67 10%.
+échographie hépatique normale ([ETABLISSEMENT])
+CA 15-3 : 1121 kU/l bilan hépatique normal, dernière créatininémie = 100 UI/l, pas d'anémie.
+Uro TDM : pas de lésion visible, dilatation pyélocalicielle bilatérale à 20 mm avec pose de JJ.
+TEP TDM 25.06.21 [ETABLISSEMENT] : hypermétabolisme pathologique masse sein gauche (SUV 3.8), adénopathies et ganglions axillaires gauches métaboliques SUV 3.5, adénopathies mammaires internes, épanchement pleural bilatéral prédominant à droite SUV 4.6
+suspect au niveau de la plèvre droite, hypermétabolisme du bas oesophage sur probable hernie hiatale à explorer. Deux foyers d'hypermétabolisme pathologique de la partie supérieure L5 SUV 7.4, aileron sacré droit SUV 4.4. pas d'hypermétabolisme ostéo-médullaire.
+CCL : T4DN3M1.
+T4c ou T4d avec masse de plus de 10cm du sein gauche envahissant la peau sur 5 cm et une infiltration massive du creux avec lymphoedème bras gauche majeur
+Relecture TDM TAP oncogénétique
+RDV [MEDECIN REFERANT]le 30.06.21
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  Proposer une consultation d'oncogénétique.
+  Incluable dans PALATINE
+  Proposition d'inclusion dans un essai thérapeutique : Oui
+  Nom du protocole :PALATINE
+  Indication d'onco-génétique : Oui
+
+

@@ -1,0 +1,45 @@
+Pat19
+ Raison Complexite : nan
+ Age : 52
+ Données biométriques et score : 
+  Poids :     61.00 kg   Le   [ 3 jours avant RCP ] IMC (Quetelet) : 20.4 kg/m 2
+  Taille :      173 cm Le     [ 3 jours avant RCP ]     SC (Dubois) : 1.73 m2
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+CONSULTATION [MEDECIN REFERANT]LE [ 3 jours avant RCP ]:
+Madame GROOTENBOER ep.[NOM PATIENTE]Florence, née le [ 19019 jours avant RCP ], âgée de [Age Patiente], a été vue en consultation.
+Antécédents et allergies
+Antécédents familiaux : - frère CHC sur hépatite, en attente de greffe père cancer vessie (tabagique) cancer du colon? GPP 80 ans
+Antécédents médicaux : - tabac 0
+Antécédents chirurgicaux : - thyroïdectomie totale 1997
+genou droit menisque
+Antécédents gynéco-obstétriques :
+- G4P4 nés par VB
+DIU mirena depuis 20 ans dernier changement il y a 3-4 ans : aménorrhée
+Résumé clinique - 
+Histoire de la maladie habite à Pompadour, y travaille et qui a comme principaux antécédents familiaux un frère ayant un hépato- carcinome mais secondaire à une infection virale et un père ayant eu un cancer de la vessie sur un terrain tabagique.
+Allergie aux graminées.
+réalise des fontaines publiques mammographie de dépistage le [ 106 jours avant RCP ] sein droit : foyer de microcal du QSE de 20mm sein gauche ACR2
+Étant donné qu'à l'époque il y avait une pénurie d'aiguilles de macrobiopsie, la dame a finalement eu une macrobiopsie au mois de décembre ramenant du matériel significatif et dont l'analyse répond à un carcinome intra-canalaire de grade intermédiaire à haut sans composante invasive détectée.
+Relecture bilan Sénologique
+Examen sénologique réalisé le [ 106 jours avant RCP ] puis le [ 44 jours avant RCP ] comportant mammographie bilatérale avec clichés de profil puis réalisation d'une biopsie pose d'un clip mammographie poste clip.
+Présence d'un foyer microcalcifications s'étendant sur 4,5 cm de hauteur fois 2 cm d'axe antéropostérieur et 2 cm d'axe transversal QSE sein droit. Le clip positionné se situe à la partie très haute du foyer à plus de 4 cm de la partie inférieure du foyer et à la partie postérieure de celui-ci sur le cliché de face.
+Absence de masse distorsion architecturale.
+Adénopathies axillaires
+Examen clinique
+Le [ 3 jours avant RCP ] : Poids : 61 kg, Taille : 173 cm, IMC : 20.4 kg/m², SC : 1.7 m²
+95C léger empâtement à l'union des quadrants externes du sein droit, pas de masse palpée pas d'adénopathie axillaire
+Conclusion
+Indication d'une zonectomie après double repérage
+Explication des principes de la chirurgie et des cicatrices. Explication du risque de reprise de berge mammaire en fonction du résultat histologique sur l'examen final.
+Explication du risque d'hématome et d'abcès mammaire pouvant nécessiter une reprise chirurgicale en urgence.
+Explication des traitements adjuvants possibles: radiothérapie ablation DIU Mirena remplacé par DIU cuivre pendant l'intervention
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On confirme la 
+Proposition .
+
+

@@ -1,0 +1,13 @@
+T1	Estrogen_receptor 2234 2238	RH -
+T2	Estrogen_receptor 2619 2622	RH-
+T3	Progesterone_receptor 2234 2238	RH -
+T4	HER2_IHC 2239 2251	Her2 score 3
+T5	HER2_status 2622 2635	Her2 amplifié
+T6	Ki67 2252 2260	ki67 50%
+A1	RP_values T3 negative
+A2	RO_values T1 negative
+A3	HER2_values T4 3+
+A4	HER2_status_values T5 positif
+A6	RO_values T2 negative
+T7	Progesterone_receptor 2619 2622	RH-
+A5	RP_values T7 negative

@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 1774 1778	RO -
+A1	RO_values T1 negative
+T2	Progesterone_receptor 1782 1786	RP -
+A2	RP_values T2 negative
+T3	HER2_IHC 1790 1800	HER2 + + +
+A3	HER2_values T3 3+
+

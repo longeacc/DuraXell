@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 1536 1542	RO (+)
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1550 1556	PR (+)
+A2	RP_values T2 negative
+T3	HER2_IHC 1561 1570	HER2 : ++
+A3	HER2_values T3 2+
+

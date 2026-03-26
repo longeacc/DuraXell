@@ -1,0 +1,65 @@
+Pat127
+ Raison Complexite : nan
+ Age : 52
+ Données biométriques et score : 
+ Poids :      72.00 kg   Le   [ 1 jours avant RCP ] IMC (Quetelet) : 25.8 kg/m 2
+ Taille :       167 cm Le     [ 1 jours avant RCP ]      SC (Dubois) : 1.81 m2
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+Motif de présentation           Validation simple de RCP
+Diagnostic
+ T. Solide Ive / Hémopathie     Tumeur maligne du sein, sans précision (C509)
+ (CIM 10)
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 1 jours avant RCP ] :
+F[Age Patiente]
+ATCD MED :0
+ATCD CHIR : conisation il ya 20 ans
+ATCD GYN OBST : G1P1 1 AVB en siège, cycles plus ou moins réguliers, ménorragies 5-7 jours (doit se garnir un tampon + une serviette) : pas d'anemie
+- Pas d'antécédent familial connu.
+Mode de vie:
+- Divorcée, vit avec sa fille en appartement.
+- Agent d'entretien.
+- Tabagisme sevrée depuis moins d'un an, 30 PA/année.
+- Pas de consommation d'alcool.
+- Pas d'allergie connue.
+- Pas de traitement au long court.
+Histoire de la maladie :
+Autopalpation d'une lésion mammaire droite depuis environ deux mois.
+Un premier bilan a été réalisé à la [ETABLISSEMENT] avec une écho-mammographie début août qui retrouve une lésion du quadrant externe du sein droit 22x15 mm sein droit ACR5
+Sein gauche AC
+L' IRM mammaire réalisée le [ 44 jours avant RCP ] : sein droit : une masse du quadrant inféro-externe du sein droit avec une prise du contraste non masse, l'ensemble est estimé à près de 65 mm de grand axe sur 35 mm de petit axe. Deuxième prise de contraste en regard du quadrant inféro-interne du sein droit de 7 mm de grand axe, adénopathie axillaire droite de 16 mm.
+sein gauche ACR2 : 1ère microbiopsie du sein droit le [ 42 jours avant RCP ] : CCI grade 2 2nde microbiopsie du sein microbiopsie du sein droit [ 31 jours avant RCP ] qui retrouve un CCI grade 2 (3+2+1), RE 100%, RP 15%, HER2 score 2 fish non amplifiée, Ki 67 à 20%.
+Un TEP scanner le [ 29 jours avant RCP ] qui retrouve un foyer de 29 mm du quadrant supéro-externe avec SUV 16,9, un foyer de 16 mm de l'union des quadrants externes du sein droit de SUV max 3.5, deux ganglions axillaires droits SUV 4,7 et 6,3.
+Pas d'autre lésion à distance, trois petits nodules pulmonaires ne fixant pas.
+Relecture de l'IRM mammaire du [ 44 jours avant RCP ] et du TEP CT du [ 29 jours avant RCP ] :
+Densité mammaire de type C avec: - une masse de 2x3cm Bi-rads6 du QSE droit associée à un RNM segmentaire de 1.5x4 cm Bi-rads4c soit un ensemble lésionnel de 6.5cm - une masse rétro-aréolaire inféro-interne droite de 7mm situé à 4 cm du bord antérieur du RNM, Bi-rads6
+- un ganglion intramammaire de 4x8mm à 16mm en dehors de la masse index
+- 2 ganglions axillaires droit suspects et hypermétaboliques
+Echographie mammaire et axillaire droite :
+En corrélation avec l'IRM mammaire, présence d'une masse de 24x45mm du QSE droit vers 10h et 2cm du mamelon associée à une plage hypo-échogène hétérogène siège de microcalcifications étendues en avant et en superficie de la masse sur 4cm. La masse rétro-aréolaire inféro-interne droite mesure 7 mm vers 5h et 3cm du mamelon. Le ganglion intramammaire du quadrant supéro-externe droit présente une forme ronde et mesure 3.3x4.2mm.
+Présence de 2 ganglions axillaires droits d'aspect pathologique, l'un superficiel de 15x35mm avec un épaississement cortical focal de 5mm et l'autre plus profond de 10x15mm avec perte du hile graisseux.
+Elle souhaite être prise en charge à l'hôpital [ETABLISSEMENT], elle a réalisé également une échographie cardiaque avec FEVG à 65%.
+Examen clinique:
+PS 0. Poids 72 kg. Taille 167 cm. [VILLE] environ 95C. Masse de l'union des quadrants externes d'environ 5 cm.
+Adénopathie axillaire droite infracentimétrique.
+Reste de l'examen clinique normal.
+Examen clinique le [ 1 jours avant RCP ] : Poids : 72 kg, Taille : 167 cm, IMC : 25.8 kg/m², SC : 1.8 m²
+95 E empâtement de 5 cm du QSE du sein droit
+1 adénopathie 15mm axillaire droite
+Examens complémentaires
+Résultats de biologie
+Hb 13.5 g/dl
+CA 15-3 : 27.3
+- cytoponction axillaire droite (a eu le [ 9 jours avant RCP ]) : Présence de cellules carcinomateuses en amas isolées sur un fond hématique.
+Au total, CCI grade 2 du sein droit, RH+, HER2 score 2 non amplifié, luminal B, cT3N1N0.
+Proposition :
+RECUPERER IHC sur nodule n°1
+Trois nodules pulmonaires lobaires inférieurs droits non fixants : TDM thoracique coupes fines inclusion protocole NEOAPBI chimiothérapie néoadjuvante qui sera suivie d'une mastectomie curage axillaire droit
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  Protocole NEOAPBI non incluable du fait de la multifocalité.
+  On confirme la chimiothérapie néoadjuvante.
+
+

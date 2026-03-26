@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 6054 6061	RO 30%,
+T2	Progesterone_receptor 6062 6067	RP0%,
+T3	HER2_IHC 6068 6081	HER2 score 3,
+T4	HER2_status 7289 7303	HER2 amplifié.
+T5	Ki67 6082 6088	Ki 30%
+A1	HER2_status_values T4 positif
+A2	RO_values T1 positive
+A3	RP_values T2 negative
+A4	HER2_values T3 3+

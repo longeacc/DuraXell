@@ -1,0 +1,69 @@
+Pat4
+ Raison Complexite : nan
+ Age : 75
+ Données biométriques et score : 
+ Poids :      74.00 kg   Le     [ 36 jours avant RCP ] IMC (Quetelet) : 30.8 kg/m2                                G8 :
+ Motif de présentation : Motif de présentation              Validation simple de RCP
+ Données Médicales : 
+                                                                            2
+ Taille :      155 cm Le        [ 36 jours avant RCP ]       SC (Dubois) : 1.73 m
+Motif de présentation              Validation simple de RCP
+Histoire de la maladie
+Patiente âgée de [Age Patiente].
+Antécédents médicaux : DT2 sous ADO, HTA.
+Antécédents chirurgicaux: prothèse de genoux bilatérales.
+Antécédents gynéco-obstétrique: 7 AVB, 7 enfants bien portants.
+Vit au domicilie d'une de ses filles. Marche. plutôt autonome au quotidien.
+Patiente hospitalisée dans les suites d'une pneumopathie COVID en Maladies Infectieuses, AEG et vomissements incoercibles.
+Mise en évidence d'un érythème cutané du sein gauche.
+Cliniquement empâtement du QII sein gauche avec léger érythème cutanée. adénopathies axillaires homolatérales.
+Sein droit sans particularité.
+Imagerie : mammo/écho=> Sein Droit classé ACR2
+Creux axillaire gauche: Volumineuse adénopathie de 45 mm avec un cortex très hypo-échogène mais harmonieusement épaissi à 7 mm
+Il existe 3 autres ganglions arrondies hypo-échogènes pathologique de 8, 9 et 11 mm
+Sein gauche : Mise en évidence d'une plage hypo-échogène lobulée de 17 x 8 mm x 4 mm d'épaisseur, située à moins de 3 cm du mamelon, non hypervasculaire, d' élastographie molle normale classée ACR 4.
+Microbiopsie du [ 35 jours avant RCP ]
+Site 1 : Microbiopsies d’un ganglion à cortex épaissi axillaire gauche de 45 x 7 mm classé ACR4 :
+Localisation ganglionnaire d’un carcinome ayant un aspect morphologique et immunohistochimique (GATA 3+) s’accordant avec une origine primitive mammaire.
+L’aspect s’accorde donc avec celui d’une localisation ganglionnaire d’un carcinome canalaire infiltrant de grade histopronostic (EE) 3 (3 + 3 + X), RE- (0 %), RP- (0 %), cerbB2 score 1 (absence d’une surexpression significative de HER2), Ki67 à 40 %.
+Site 2 : Microbiopsies d’une plage hypoéchogène homogène de 15 x 4 mm classée ACR4 dans le contexte d’adénopathie, à l’union des quadrants inférieurs du sein gauche :
+La biopsie a intéressé un territoire de carcinome canalaire in situ de haut grade.
+Absence de carcinome infiltrant identifié.
+TDM AP : [ 36 jours avant RCP ] et complété le [ 22 jours avant RCP ] :
+Infiltration diffuse des parties molles de la région mammaire gauche avec multiples adénomégalies axillaires gauches, sous-claviculaire gauche, fortement suspect: à compléter par un bilan sénologique complet.
+Épaississement pariétal de la jonction oeso-gastrique avec hernie hiatale par glissement. À confronter à une EOGD.
+IRM mammaire le [ 17 jours avant RCP ]=> refusée par la patiente.
+TEP TDM : Epaississement cutané modérément hypermétabolique du quadrant inféro-interne du sein gauche. sans foyer hypermétabolique intra mammaire individualisable adénopathies intensément hypermétaboliques axillaires gauches touchant les 3 étages de Berg, et jusqu'en sus claviculaire gauche.
+adénopathies médiastino-hilaire bilatérales relativement symétriques pouvant être granulo-inflammatoires ou réactionnelles. Multiples plages parenchymateuses bilatérales de verre dépoli. (pneumopathie SARS- Cov2).
+Pas d'autre foyer hypermétabolique.
+RCP [ 14 jours avant RCP ] : Nouvelle écho mammaire ciblée +/- angiomammographie et nouveau prélèvement - évaluation oncogériatrique - chimiothérapie néoadjuvante - traitement local à discuter après chimiothérapie néo-adjuvante
+Refaire scanner thoracique coupe-fine pour caractériser les ganglions médiastino-hilaires et parenchymateux
+[ 15 jours avant RCP ] échographie mammaire et biopsies complémentaires:
+ECHOGRAPHIE du SEIN GAUCHE
+1- On retrouve la masse hypo-échogène de l'union des quadrants inférieurs de 25 mm de grand axe pour 5,5 mm d'épaisseur, qui avait été biopsiée en Décembre
+2- Il existe effectivement un épaississement cutané ACR 4 en regard du quadrant inféro-interne de 4 mm d'épaisseur alors que sur le sein controlatéral l'épaisseur est de moins de 2 mm.
+Réalisation d'une biopsie de peau Monopty 14G avec un seul prélèvement adressé en anapath (pot n°1)
+Résultat histologique : la peau est d'aspect normal sans lésion tumorale
+3- En regard de cet épaississement, on note un aspect en volutes avec des petits éléments hypo-échogènes séparant les lobules inflammatoires potentiellement tumoraux. On va réaliser sur 3 passages biopsiques Monopty 14G (pot n°2).
+Résultat histologique : tissu fibro-adipeux normal
+CONCLUSION :Les biopsies complémentaires réalisées la suite à l'hyperfixation du TEP ne montrent aucune anomalie histologique ni lésion suspecte
+[ 3 jours avant RCP ] :
+Angiomammographie droite Bi-rads2 sans anomalie suspecte.
+Angiomammographie gauche Bi-rads6 avec un RNM linéaire de 56mm centré par une petite masse de 6mm en corrélation avec l'angioscanner thoracique, le discret foyer de microcalcifications et la plage hypo-échogène microbiopsiée l'UQInf.
+FOGD/coloscopie prévue le [ 8 jours avant RCP ] : *coloscopie : Iléocoloscopie totale retrouvant un petit polype sigmoïdien infracentimétrique réséqué à la pince d'allure hyperplasique sans caractère suspect.
+Maladie hémorroïdaire interne et externe.
+*FOGD :pan gastrite atrophique, biopsies multiples sans anomalies visibles en lumière blanche et en NBI. Possible maladie de Biermer étant donné l'anémie et le diabète. Languette d'endobrachyœsophage biopsié (C0M1 en classification de Prague). Biopsie à la recherche d'une gastrite à HP, diverticule duodénal non compliqué.
+TDM thoracique : Tendance à la diminution des condensations et plages en verre dépoli bilatérales s'étendant ce-jour sur environ 30%.
+Stabilité du nodule sous-pleural lobaire moyen en comparaison de l'examen scanner du 1er [ 3864 jours avant RCP ].
+Hypertrophie ganglionnaire des chaînes médiastinales antérieures, axillaires et sus-claviculaires gauches, stable.
+Evaluation oncogériatrique : [VILLE] score GRADE (https://grade.shinyapps.io/dynnomapp/)est estimé à 9 soit un rapport coût/bénéfice favorable à une intervention thérapeutique
+Ici chimiothrapie néoadjuvante à tenter compte tenu de la seule possibilité d'avoir une réponse thérapeutique
+Au total, patiente fragile, dépendante, pas de comorbidités significatives, problématique de cachexie cancéreuse compte tenu de la perte de poids récente dont on tiendra compte pour adapter les doses de chimiothérapie 
+Proposition : - chimiothérapie néoadjuvante - traitement local par mastectomie + CA gauche
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On confirme la 
+Proposition .
+
+

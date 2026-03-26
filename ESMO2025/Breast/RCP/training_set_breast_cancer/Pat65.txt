@@ -1,0 +1,60 @@
+Pat65
+ Raison Complexite : nan
+ Age : 88
+ Données biométriques et score : 
+  Poids :     70.00 kg   Le     [ 3 jours avant RCP ] IMC (Quetelet) : 27.3 kg/m2                                G8 :
+ Motif de présentation : Motif de présentation              Validation simple de RCP
+ Données Médicales : 
+                                                                            2
+  Taille :     160 cm Le        [ 3 jours avant RCP ]       SC (Dubois) : 1.73 m
+Motif de présentation              Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Patiente âgée de [Age Patiente], consulte pour palpation d'une masse du sein gauche vit seule, autonome au domicile, fait ses courses. une aide ménagére 1 fois par semaine
+ATCD :
+- Médicaux : Hypercholestérolémie. HTA. Infections urinaires : 2 à 3 /an
+- Chirurgicaux : [VILLE] Maker il y a 15 ans, changé il y a 3 ans. Cancer du colon 2000. Opérée des deux épaules. Douleur + - Gynéco-obstétricaux : G3P3 (2 AVB, 1 césarienne). Hystérectomie totale annexectomie bilatérale il y a 40
+ans pour utérus polymyomateux.
+- Dernière mammographie il y a 10 ans.- 
+Antécédents familiaux : Cancer pelvien à 69 ans (utérus ovaire) 4 frères décédés d'un cancer entre 70 et 85
+ans (ne sait pas de quelle origine)
+- Allergies : Non connues
+- Traitements : KARDEGIC 75 mg, PRAVASTATINE 20 mg, RYTHMODAN LP 250 mg, CANDESARTAN 16,
+SULFARLEM, KLIOGEST
+Examen clinique :
+Masse palpable centro-mammaire très ferme et mobile d'environ 3 cm du sein gauche
+Mammographie bilatérale [ 17 jours avant RCP ] :
+Densité mammaire de type B.
+Masse ovalaire à l'UQE du sein droit mesurant 11 mm.
+Masse de forme et de contours irréguliers de 22x32x33mm siège de microcalcifications situé à l'union des 4 quadrants du sein gauche
+Absence d'asymétrie de densité, de distorsion architecturale ou de foyer de microcalcifications par ailleurs.
+Absence d’adénopathie axillaire.
+Echographie bilatérale [ 17 jours avant RCP ] :
+L'anomalie clinique du sein gauche correspond à une masse de 3cm de forme et de contours irréguliers et siège de remaniements kystiques située vers 5h30 et 3cm du mamelon en décubitus dorsal.
+L'anomalie mammographique du sein droit correspond à une masse ovalaire à grand axe parallèle à la peau et aux contours plutôt circonscrits compatible avec un adénofibrome mesura 5x9x10mm et situé vers 10h et 3cm du mamelon.
+Absence d’autre altération échostructurale suspecte à droite comme à gauche. Hyperplasie ganglionnaire axillaire bilatérale et symétrique.
+CONCLUSION :
+Mammographie et échographie droite Bi-rads 3 en raison d'une masse de type adénofibrome du QSE biopsiée ce jour.
+Mammographie et échographie gauche Bi-rads 5 en raison d'une masse unifocale de 3cm biopsiée ce jour.
+Microbiopsie sous échographie le [ 17 jours avant RCP ] :
+1. Microbiopsie d'une masse Bi-rads 5 de 33 mm de l'UQInf du sein gauche :
+Prolifération carcinomateuse d’architecture papillaire et cribriforme de bas grade avec nombreuses micro-calcifications. Les massifs tumoraux sont majoritairement détachés de tout contexte architectural et de rares secteurs bien limitées par une capsule fibreuse avec négativité des marqueurs myoépithéliaux, faisant évoquer en premier un carcinome papillaire encapsulé.
+Diagnostic à réevaluer sur histologie définitive.
+2. Microbiopsie d'une masse Bi-rads3 de 11 mm du QSE du sein droit :
+Lésion fibro-épithéliale évoquant plutôt un adénofibrome sans atypie. Absence de signe morphologique de malignité.
+Examen clinique
+Le [ 3 jours avant RCP ] : Poids : 70 kg, Taille : 160 cm, IMC : 27.3 kg/m², SC : 1.7 m²
+Masse de 3 cm proche du sillon sous mammaire sein gauche pas d'adénopathie axillaire
+Après une longue discussion avec la patiente, décision de mastectomie + procédure du ganglion sentinelle gauche qui pourrait éviter la radiothérapie consultation d'oncogériatrie [MEDECIN REFERANT]14h50 et d'anesthésie même jour à 12h10
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ On confirme la 
+Proposition  thérapeutique
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Indication d'onco-gériatrie : Oui
+ Suspicion de pathologie professionnelle : Non
+
+

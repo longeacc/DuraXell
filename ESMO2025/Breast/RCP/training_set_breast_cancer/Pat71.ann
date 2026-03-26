@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 4929 4940	RO 70 à 90%
+T2	Progesterone_receptor 4941 4948	RP 100%
+T3	HER2_IHC 4949 4961	HER2 score 2
+T4	Ki67 4963 4973	Ki67 < 5 %
+T38	HER2_FISH 4904 4927	FISH HER2 non amplifiée
+A1	FISH_values T38 positif
+A2	RO_values T1 positive
+A3	RP_values T2 positive
+A4	HER2_values T3 2+

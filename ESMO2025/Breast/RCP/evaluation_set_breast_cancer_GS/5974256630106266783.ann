@@ -1,0 +1,8 @@
+T1	HER2_IHC 783 794	Cerb B2 : 0
+A1	HER2_values T1 0
+T2	Estrogen_receptor 796 816	Récepteurs RE/RP : +
+A2	RO_values T2 positive
+T3	Progesterone_receptor 810 818	RP : +/+
+A3	RP_values T3 positive
+T4	Ki67 822 831	Ki67 20 %
+

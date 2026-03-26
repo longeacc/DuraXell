@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 1890 1893	RO+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1902 1906	RP -
+A2	RP_values T2 negative
+T3	Ki67 1914 1925	Ki67 : 10 %
+T4	HER2_status 1926 1933;1934 1942	HER2 :  score 2+
+

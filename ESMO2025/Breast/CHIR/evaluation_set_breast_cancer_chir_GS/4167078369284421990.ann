@@ -1,0 +1,7 @@
+T1	HER2_status 1586 1598	HER2 positif
+A1	HER2_status_values T1 positif
+T2	HER2_IHC 1586 1608	HER2 positif, score 2+
+A2	HER2_values T2 2+
+T3	HER2_FISH 1586 1609;1610 1618	HER2 positif, score 2+  amplifié
+A3	FISH_values T3 positif
+

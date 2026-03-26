@@ -1,0 +1,95 @@
+" LB2302760 
+SERVICE CENTRAL D’ANATOMIE Prélevé le : 16/03/2023 
+ET CYTOLOGIE  PATHOLOGIQUES    Reçu le : 17/03/2023 
+Laboratoire Jean Roujeau, Service du Pr. mubbashar 
+Tél : 0145651570     email : maeva.de.savigny@gmail.com 
+HOPITAL LARIBOISIERE  
+2, rue Ambroise Paré 
+75475 PARIS Cedex 10 Docteur KOSELA michelomar 
+ MATERNITE 
+Patient (e) :  PONSMOTHES ritabensamirkumar HOPITAL LARIBOISIERE  
+    
+Née le 23/06/1986     
+NIP : 8008209723  
+Demandé par :   DARLET   
+      
+    
+       
+  
+ 
+Antériorités :  LB2303587, SH2305330, LB2302767 
+ 
+Adicap : BHOTAM40----G, BIOTAM40 LSLM Page : 1/2 
+ 
+ 
+BIOPSIE D’UN NODULE CUTANE DU SEIN GAUCHE 
+ 
+Renseignements cliniques : 36 ans. Paraplégie sur syndrome de masse T9. Lésion cutanée du sein 
+gauche. Césarienne à 34SA +2j (placenta non communiqué). Tumeur vertébrale (LB2302767). 
+ 
+ Macroscopie : Multiples fragments parfois bordés de peau, inclus en totalité, 2 blocs, HES, niveaux. 
+ Histologie : l’épiderme est focalement ulcéré, dépourvu de maladie de Paget et d’extension tumorale. 
+Le derme est massivement infiltré et dissocié par une prolifération carcinomateuse très peu 
+différenciée s’organisant en massifs parfois cribriformes parfois creusés d’une cavité contenant de la 
+nécrose tumorale (score 3) et focalement sous forme de micro-amas cernés d’une fente claire 
+(contingent micropapillaire). Il existe de nombreux emboles néoplasiques et des engainements 
+périnerveux. Les noyaux sont de taille modérément irrégulière, vésiculeux, à la chromatine claire avec 
+un nucléole (score 2). On compte 9 mitoses pour 10 GC (x40). Le stroma fibreux, peu inflammatoire. 
+Etude immunohistochimique A Méthode polymérique EnVision FLEX Kit Omnis Dako. 
+Anti-RO, clone SP1: 50 % des cellules marquées (+ à ++)  
+Anti-RP, clone 1E2: 100 % des cellules marquées (++ à +++)  
+Anti-Ki67, clone Mib1: 12 % des noyaux carcinomateux. 
+Anti-HER2, clone 4B5: absence de marquage membranaire, score 0 (contrôle externe). 
+Anti-P63, clone 4A4 : rares noyaux marqués 
+Anti-CK5/6, clone D5/16B4 : perte d’expression complète 
+Anti-Ecadhérine, clone NCH-38 et anti-CKAE1/3 : marquage superposable des cellules tumorales. 
+Anti-mammoglobine, clone E29 : marquage cytoplasmique abondant 
+Anti-EMA, dilution 1/4000 : inversion de polarité focale 
+ 
+CONCLUSION  
+ Biopsie cutanée du sein gauche infiltrée par l’extension sous-cutanée et les multiples emboles d’un 
+carcinome mammaire, canalaire, de grade Elston et Ellis II (3+2+2), RO 50 %, RP 100 %, Ki67 
+12 %, HER2 non surexprimé avec un petit contingent micropapillaire.  
+De principe du matériel tumoral est adressé en biologie moléculaire pour NGS. 
+ Le 22/03/2023 
+Docteur abdessadak TOURNEAUBLANESYPEREZ Dr huong LEVEAU-BALIMWABO 
+     
+ 
+COMPTE RENDU COMPLEMENTAIRE 
+Patient(e) :  PONSMOTHES ritabensamirkumar LB2302760 
+ 
+ 
+ 
+Page : 2/2 
+ 
+Biologie moléculaire - Service d’Oncologie moléculaire, Hôpital Saint-Louis 
+ 
+Séquençage d’un panel de gènes dédié aux tumeurs solides par NGS 
+ Gènes étudiés : BRCA1 exons 2 à 23 (NM_007294.3), BRCA2 exons 2 à 27 (NM_000059.3), 
+ATM, BARD1, BRIP1, CDK12, CHEK1, CHEK2, FANCL, PALB2, PPP2R2A, RAD51C, 
+RAD51D, RAD54L et TP53. 
+ Résultat : Absence de mutation délétère ou probablement délétère sur ces gènes. Absence de 
+détection de mutation délétère ou probablement délétère (classes de pathogénicité 4 ou 5) sur 
+les gènes BRCA1 et BRCA2 dans cet échantillon tumoral. 
+Une recherche constitutionnelle de réarrangements de grande taille est souhaitable compte-tenu des 
+limites techniques de cet examen. 
+ 
+Le résultat complet de cette étude est enregistré sous le n° LT2302760. 
+ 
+ 
+ Le 01/06/2023 
+  Dr huong LEVEAU-BALIMWABO 
+  
+     
+ 
+Accréditation COFRAC examens médicaux NF EN ISO 15189 n°8-4238, liste des implantations et portées disponibles sous www.cofrac.fr 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+"

@@ -1,0 +1,24 @@
+T1	Estrogen_receptor 2086 2090	RE +
+T2	Estrogen_receptor 4240 4247	RO 100%
+T3	Estrogen_receptor 6372 6379	RO 100%
+T4	Progesterone_receptor 3142 3146	RP +
+T5	Progesterone_receptor 4248 4254	RP 10%
+T6	Progesterone_receptor 6380 6386	RP 10%
+T7	HER2_IHC 4255 4267	HER2 score 0
+T8	HER2_IHC 6387 6399	HER2 score 0
+T9	Ki67 4104 4114	Ki67 50 %.
+T10	Ki67 4268 4276	Ki67 50%
+T11	Ki67 6400 6408	Ki67 50%
+T52	Estrogen_receptor 1412 1451;1452 1542;1543 1647	RECEPTEURS AUX OESTROGENES (LEICA clone                                                                          6F11, prédilué) :                                                                          Pourcentage de cellules : 100 %
+T30	Progesterone_receptor 2469 2510;2511 2599;2600 2703	RECEPTEURS A LA PROGESTERONE (LEICA clone                                                                          16, prédilué) :                                                                          Pourcentage de cellules : 10 %
+T114	HER2_IHC 3534 3677	Cerb B2 (DAKO clone CerB-2 4B5                                                                          [ 373206 jours avant RCP ]) : Score : 0
+A1	RP_values T30 positive
+A2	RO_values T1 positive
+A3	RP_values T4 positive
+A4	HER2_values T114 0
+A5	RO_values T2 positive
+A6	RP_values T5 positive
+A7	HER2_values T7 0
+A8	RO_values T3 positive
+A9	RP_values T6 positive
+A10	HER2_values T8 0

@@ -1,0 +1,43 @@
+Pat20
+ Raison Complexite : nan
+ Age : 68
+ Données biométriques et score : 
+ Poids :     62.00 kg   Le   [ 3 jours avant RCP ] IMC (Quetelet) : 23.6 kg/m2
+ Taille :      162 cm Le     [ 3 jours avant RCP ]       SC (Dubois) : 1.66 m2
+ Motif de présentation : Motif de présentation          Validation simple de RCP
+ Données Médicales : 
+Motif de présentation          Validation simple de RCP
+Diagnostic
+ T. Solide Ive / Hémopathie    Tumeur maligne du sein, sans précision (C509)
+ (CIM 10)
+Histoire de la maladie
+Patiente âgée de [Age Patiente], enseignante à la retraite à [VILLE] Nord.
+Antécédents médicaux : HTA (bithérapie), DNID, déficit en facteur V, thrombose veineuse profonde,
+Dépression (arrêt du traitement).
+Antécédents chirurgicaux : hémithyroïdectomie. 2 décollements de rétine.
+Antécédents gynéco-obstétriques : 2 AVB, 2 fils bien portants. Ménopausée vers 50 ans.
+Antécédents familiaux : aucun
+Examen de dépistage :
+-Mammographie : Les seins sont de densité hétérogène, classés de type C selon BIRADS. Apparition d'un masse du quadrant supéro-interne à 10 cm du mamelon : dense, de forme irrégulière de contours lobulés mesurant 10 x 9 mm. Absence de regroupement suspect de micro calcifications. Pas d'anomalie des plans cutanés. Les creux axillaires sont libres.
+-Echographie mammaire: On retrouve la masse irrégulière hypoéchogène du quadrant supéro interne du sein gauche à 10h 9cm du mamelon mesurant 8,4 x 7 x 6 mm. Ganglions axillaires gauches homolatéraux non suspects.
+ACR 1 droit - ACR4 gauche.
+A l'examen clinique :
+Masse du Q supéro-interne de 1cm du sein gauche. Absence d'adénopathie.
+Sein droit sans particularité.
+Microbiopsies d’une masse de 10 mm classée ACR4c du quadrant supéro-interne du sein gauche :
+Carcinome canalaire infiltrant, grade histopronostique (EE) I (2 + 2 + 1), RE+ (100%), RP+(100%), cerbB2 score 1
+(absence d’une surexpression significative de HER2), Ki67 à 20 %.
+Composante carcinomateuse in situ associée : non. Embole lymphatique : non.
+Proposition thérapeutique :
+Tumorectomie + GS après repérage.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ On confirme la 
+Proposition 
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

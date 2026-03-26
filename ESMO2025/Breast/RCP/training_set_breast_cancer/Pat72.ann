@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 1834 1839	RE 90
+T2	Progesterone_receptor 1840 1845	RP 90
+T3	HER2_IHC 1846 1850;1851 1858	her2 score 0
+T4	Ki67 1859 1869	ki67 à 15%
+A1	RO_values T1 positive
+A2	RP_values T2 positive
+A3	HER2_values T3 0

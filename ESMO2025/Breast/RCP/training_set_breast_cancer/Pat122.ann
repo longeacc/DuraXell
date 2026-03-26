@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 1565 1571	RO 100
+T2	Progesterone_receptor 1572 1579	RP 100,
+T3	HER2_IHC 1580 1588	HER2 +3,
+T4	HER2_status 3176 3189	HER2 amplifié
+T5	Ki67 1589 1600	Ki67 : 20%,
+A1	HER2_values T3 3+
+A2	RP_values T2 positive
+A3	RO_values T1 positive
+A4	HER2_status_values T4 positif

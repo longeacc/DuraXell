@@ -1,0 +1,59 @@
+Pat135
+ Raison Complexite : nan
+ Age : 54
+ Données biométriques et score : 
+  Poids :    54.00 kg   Le   [ 1 jours avant RCP ] IMC (Quetelet) : 23.1 kg/m2
+  Taille :     153 cm Le     [ 1 jours avant RCP ]      SC (Dubois) : 1.50 m2
+ Motif de présentation : Motif de présentation          Avis Imagerie
+ Données Médicales : 
+Motif de présentation          Avis Imagerie
+Histoire de la maladie
+F[Age Patiente]
+Motif
+Adressée par son médecin traitant le [MEDECIN PARTICIPANT A LA RCP]pour Carcinome canalaire infiltrant du sein gauche.
+Antécédents et allergies
+Allergies :
+- Statines : Crampes
+Antécédents familiaux :
+- Pas de cancer gynécologique
+Diabète chez le père et asthme chez la mère
+Antécédents médicaux :
+- Diabète de type 2 diagnostiqué en [ 877 jours avant RCP ]
+- Dyslipidémie
+- Paresthésies des 2 mains, en cours d'exploration
+Antécédents chirurgicaux :
+- Césarienne
+Antécédents gynéco-obstétriques :
+- PR 12 ans
+G4P1, 1 césarienne, 3 IVG (3 aspirations)
+Contraception par préservatif
+Ménopausée depuis l'âge de 48 ans, pas de THM
+Traitement en cours
+Metformine 850 1-0-1
+Histoire de la maladie
+Découverte lors du dépistage, d'une lésion du sein gauche à la mammographie
+Mammographie et échographie mammaire le [ 29 jours avant RCP ]:
+Sein Droit: ACR2
+Sein Gauche: Foyer de microcalcifications polymorphes fines de distribution canalaire en projection du quadrant inféro-interne gauche de 23mm*6mm, à 4 cm du mammelon, classé ACR4C
+Pas d'adénopathie axillaire
+Macro biopsies du foyer de microcalcifications du sein gauche le [ 22 jours avant RCP ] + pose de Clip:
+Carcinome canalaire infiltrant ponctué de nécrose et de micro calcifications
+RE 100%, RP 0% Her 2 +++, Ki67 15%
+E cadhérine: présence de marquage membranaire des cellules infiltrantes montrant une différenciation de type canalaire
+Examen clinique
+Poids 54kg Taille 1.53m
+[VILLE] 90C
+Sein Droit: T0N0
+Sein Gauche: palpation d'un empâtement de 3cm légèrement douloureux à l'endroit de la biopsie , pas d'adénopathie palpée
+Complément d'imagerie par IRM pour évaluer la part de la portion infiltrante au sein du foyer de microcalcifications
+On déterminera en fonction, la stratégie a savoir soit chirurgie première soit chimiothérapie néoadjuvante + traitement anti
+HER2
+IRM mammaire [ 2 jours avant RCP ] : IRM mammaire droit ACR 2 .
+IRM mammaire gauche ACR 6 devant la présence de 2 RNM de distribution linéaire du QII gauche situés de part et d'autre du clip correspondant en imagerie conventionnelle à un foyer de microcalcifications et s'étendant sur 4cm d'axe antéro postérieur, 12mm d'axe transversal et 25 mm d'axe vertical.
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  Faire TEP-TDM
+  Traitement néo-adjuvant, chimiothérapie + traitement anti-HER2
+
+

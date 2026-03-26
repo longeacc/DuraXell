@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 1979 1987	RO 100 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1991 1999	RP 100 %
+A2	RP_values T2 positive
+T3	Ki67 2001 2010	Ki67 10 %
+T4	HER2_status 2012 2031	HER2 non surexprimé
+A3	HER2_status_values T4 negatif
+

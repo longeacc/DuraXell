@@ -1,0 +1,135 @@
+" Assistance Publique - Hôpitaux de Paris 
+Service d’Anatomie et Cytologie Pathologiques  
+23TH03773 
+ Chef de service par intérim : Pr vuochsim ZADONSEV  
+4, rue de la Chine 75970 PARIS Cedex 20  0147832545 / 66.17 / 69.43 / 80.58   
+ 06.12.96.22.12 
+ 
+Mme yon arthuralberto patshmanathan JOUANENE Edith 
+Né(e) LE BRIS Serv Radiologie 
+Née le 21/05/1944 Hôpital Tenon 
+NIP : 8003710994 4 Rue de la Chine 
+ 07470 PARIS 
+Prélevé le : 25/04/2023  
+Reçu le : 25/04/2023  
+Origine : KERMARREC Edith Edité le 05/05/2023 (TELAM) 
+Transmis à :  Serv Consult Oncologie Médicale 
+      
+   
+   
+ 
+Antériorités : 23TH02812, 18TH03745, 18TH03751 
+ 
+ADICAP : PHGSA7B2, PYGSA7B2 HER2 2 
+Renseignements cliniques : masse du QSI du sein gauche, rayon de 9 h 30, à 4 cm du mamelon, taille 3 mm, Bi-rads 3..   
+ 
+MICROBIOPSIE DU SEIN GAUCHE 
+ 
+Examen microscopique 
+Le matériel est inclus en totalité et étudié sur plusieurs niveaux. 
+- Type histologique : carcinome infiltrant de type canalaire 
+- Architecture : massive 
+- Anisocaryose : marquée 
+- Activité mitotique : 10 mitoses pour 10 HPF. 
+- Emboles tumoraux lymphatiques : absents. 
+- Composante carcinomateuse in situ : absente, y compris après immunohistochimie anti-P63 
+La tumeur est bien limitée avec stroma riche en lymphocytes 
+ 
+IMMUNOHISTOCHIMIE DES FACTEURS PRONOSTIQUES ET PREDICTIFS DU CANCER DU SEIN :  
+Technique: LEICA BOND III BOND Polymer Refine Detection. 
+RECEPTEURS AUX OESTROGENES (LEICA clone 6F11, prédilué) :  
+Pourcentage de cellules : 0 % 
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RE + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+RECEPTEURS A LA PROGESTERONE (LEICA clone 16, prédilué) : 
+Pourcentage de cellules : 0 % 
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RP + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+ONCOGENE Cerb B2 (LEICA clone CB11, prédilué) : Score 2 
+Témoin négatif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire score 3 : OUI 
+Score 3 (positif) : marquage membranaire complet et fort >10 % des cellules tumorales invasives ; score 2 (équivoque) : 
+marquage membranaire complet modéré ou incomplet, baso-lateral modéré à fort >10 % des cellules; 
+score1(négatif) : marquage membranaire complet ou incomplet faible de > 10 % des cellules; score 0 (négatif) : absence de 
+marquage ou marquage membranaire faible ≤ 10 % (recommandations GEFPICS 2021). 
+FACTEUR DE PROLIFERATION (Dako clone Mib1, 1/150) : index Ki67 : 70 % 
+Témoin interne positif mitose : OUI (Tumeur non proliférante : % < à 20 % de cellules carcinomateuses invasives marquées ; 
+tumeur proliférante : % > ou égal à 20 % de cellules carcinomateuses invasives marquées). 
+E-CADHERINE (ZYMED clone 4A2C7, 1/100): marquage membranaire des cellules tumorales.  
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme yon arthuralberto 23TH03773 Page 2 
+ 
+  
+ 
+CONCLUSION :  
+Carcinome infiltrant de type canalaire NS, de grade histopronostique EE 3 (3+3+2). Absence de 
+composante carcinomateuse in situ. Absence d’emboles lymphatiques. 
+Immunophénotype : RE 0 %, RP 0 %, HER2 score 2,  Ki67 70 %. 
+ 
+FISH HER2 en cours. 
+ 
+ 
+ 
+     Le 28/04/2023 
+        Pr vuochsim ZADONSEV 
+ 
+COMPTE RENDU COMPLEMENTAIRE 
+ 
+HER2 par FISH  
+Numéro bloc Tenon : 23TH03773-01  
+Bloc/lame communiqué : non   
+Structure et Médecin : Hôpital Tenon 
+ 
+Type de prélèvement : Biopsie  
+Pour Her2neu 2+ en immunohistochimie  
+ 
+CONTROLE DE QUALITE 
+Qualité de la coupe HES : correct 
+TECHNIQUE 
+Date technique de FISH : 02/05/2023 
+Kit utilisé : DAKO  Numéro de lot du kit : 41340116 
+Sonde METASYSTEMS (XL ERBB2 amp)     Numéro de lot : 24031     Exp : 01/2025 
+Technicien : AE 
+LECTURE 
+Lecture : médecin et technicien 
+ 
+FISH interprétation : 
+Signaux HER2 < 4 copies      HIS négatif 
+Signaux HER2 ≥ 6 copies     HIS positif 
+4 ≤ Signaux HER2 < 6 et HER2/CEP17 < 2   HIS négatif 
+4 ≤ Signaux HER2 < 6 et HER2/CEP17 ≥ 2   HIS positif 
+  
+[1] Wolff AC, et al. (2018) Human Epidermal Growth Factor Receptor 2 Testing in Breast Cancer: American Society of 
+Clinical Oncology/College of American Pathologists Clinical Practice Guideline Focused Update. J Clin Oncol. Jul 
+10;36(20) : 2105-2122 
+ 
+RESULTATS 
+Nombre de noyaux comptés : 100 
+HER2 signal : 2.9  Cluster : non 
+Chromosome 17 signal : 2.3 
+Ratio HER2/Chromosome 17 : 1.2 Numérisation : oui  
+ 
+ 
+CONCLUSION :  
+- Pas d’amplification du gène HER2 
+- Pas de polysomie du chromosome 17 
+ 
+ 
+ 
+  Le 05/05/2023, 
+    Pr vuochsim ZADONSEV Dr TENGHER-BOLESTEVE mehdibara 
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme yon arthuralberto 23TH03773 Page 3 
+ 
+  
+ 
+ 
+Compte-rendu validé et signé électroniquement. 
+ 
+ 
+ 
+"

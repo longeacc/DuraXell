@@ -1,0 +1,13 @@
+T1	Estrogen_receptor 1553 1579	Récepteur œstrogène + (20%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1582 1605;1606 1607	Récepteur progestérone  -
+A2	RP_values T2 negative
+T3	HER2_IHC 1615 1624	HER2 : 2+
+A3	HER2_values T3 2+
+T4	HER2_IHC 1837 1844	HER2 2+
+A4	HER2_values T4 2+
+T5	HER2_FISH 1859 1891	hybridation in situ est demandée
+A5	FISH_values T5 en_cours
+T6	HER2_FISH 2313 2344	as d’amplification du gène Her2
+A6	FISH_values T6 negatif
+

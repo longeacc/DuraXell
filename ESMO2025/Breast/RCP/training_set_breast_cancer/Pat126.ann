@@ -1,0 +1,13 @@
+T1	Estrogen_receptor 1738 1746	RE 100%,
+T2	Progesterone_receptor 1747 1754	RP 80%,
+T3	HER2_IHC 1755 1770	Her2 deux croix
+T4	Ki67 1726 1737	Ki67 à 10%,
+T5	HER2_FISH 312 318	Fish +
+T6	HER2_FISH 400 406	Fish +
+T7	HER2_FISH 1773 1786	FISH en cours
+A1	FISH_values T5 positif
+A2	FISH_values T6 positif
+A3	FISH_values T7 en_cours
+A4	HER2_values T3 2+
+A5	RP_values T2 positive
+A6	RO_values T1 positive

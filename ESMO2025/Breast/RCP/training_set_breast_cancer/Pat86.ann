@@ -1,0 +1,16 @@
+T2	HER2_IHC 2935 2946	HER SCORE 0
+T3	Ki67 2070 2083	KI 67 à 10 %.
+T4	Ki67 2947 2956	Ki 67 10%
+T65	Estrogen_receptor 1966 1994	récepteurs hormonaux à 100 %
+T22	Progesterone_receptor 2000 2036	récepteurs à la progestérone à 100 %
+T66	HER2_status 2050 2063	HER 2 négatif
+T25	Progesterone_receptor 2926 2934	100 RP %
+T39	Estrogen_receptor 2918 2925	100RO %
+A1	RO_values T65 positive
+A2	RP_values T22 positive
+A3	HER2_status_values T66 negatif
+T1	Progesterone_receptor 1967 1994	écepteurs hormonaux à 100 %
+A4	RP_values T1 positive
+A5	HER2_values T2 0
+A6	RP_values T25 positive
+A7	RO_values T39 positive

@@ -1,0 +1,102 @@
+" 
+AP-HP. NORD Université de Paris 
+Département de Pathologie 
+Hôpital BICHAT – R. LILINARES – Pr wazai URBANCIC 
+46, rue Henri HUCHARD 75877 PARIS cedex 18 
+ : (33) 1 40 25 80 03 - fax : (33) 1 40 25 80 00 
+23BG09002 
+    
+ 
+ 
+Nom patient : molinot 
+Prénom : ghislaindidist 
+Nom de naissance : OUALI 
+Née le 28/03/1973 
+Sexe : F 
+IPP : 8010018997 
+Prélevé le 05/05/2023   Reçu le 05/05/2023 
+Docteur raoby LEMPIERRE 
+Imagerie 
+Secrétariat Médical 
+BICHAT 1ER SS/SOL 
+    
+CASE 011 
+ 
+Prescripteur : Dr raoby LEMPIERRE 
+Correspondant(s) :                      
+ 
+Antériorités 19BG25034, 18BG03663, 18BG02834, 18BG01770, 17BG01225 
+ 
+COMPTE-RENDU ANATOMO-PATHOLOGIQUE 
+ 
+ 23BG09002 
+1/2 
+ 
+ PONCTION-BIOPSIE HEPATIQUE  
+ 
+ 
+Compte-rendu initial suivi d’un compte-rendu complémentaire 
+ 
+              
+ 
+Renseignements cliniques 
+ 
+Suspicion de métastase hépatique. Antécédent de cancer du sien en 2018. 
+Renseignements complémentaires (ORBIS) : carcinome lobulaire infiltrant. Récepteurs hormonaux positifs. HER2-. 
+ 
+Examen microscopique 
+ 
+Deux carottes biopsiques mesurant 10 et 12 mm sont communiqués. Inclusion en deux blocs. 
+ 
+Ces deux prélèvements sont infiltrés par un carcinome s’agençant sous forme de lobules ou de cordons. Les 
+cellules tumorales sont de taille moyenne à grande. Elles présentent un aspect relativement monotone. Le noyau 
+est rond aux contours réguliers sans nucléole, le cytoplasme est éosinophile. Le stroma est relativement abondant 
+fibreux et oedémateux.  
+ 
+Etude immunohistochimique : la prolifération est GATA3+, Récepteur œstrogène + (20%), Récepteur progestérone 
+-, score HER2 : 2+ (marquage membranaire faible à modérée d’environ 60% des cellules tumorales).  
+ 
+CONCLUSION 
+ 
+Métastase d’un carcinome dont le profil immunohistochimique est compatible avec l’origine mammaire 
+connue.  
+Score HER2 2+. Une étude en hybridation in situ est demandée (Pr mohamedwahil, Hôpital Saint Louis).  
+ 
+ 
+ 
+ 
+Compte-rendu initial du Dr barikha GRAFIADIS répondu le 11/05/2023 
+ 
+COMPTE-RENDU ANATOMO-PATHOLOGIQUE COMPLEMENTAIRE 
+ 
+ghislaindidist molinot 23BG09002 
+ 
+ 
+ 
+ 2/2 23BG09002 
+ 
+ 
+ 
+Recherche d’une amplification du gène Her2 par hybridation in situ DDISH 
+ 
+(Pr PIOVESANROSA, Service de Pathologie de l’Hôpital SAINT LOUIS, le 22/05/2023) 
+ 
+ 
+Conclusion : « Il n’y a pas d’amplification du gène Her2 dans cette tumeur ».  
+ 
+ 
+ 
+Le 31/05/2023       Dr barikha GRAFIADIS 
+ 
+ 
+ 
+Codification ADICAP : PHFFAMA0-----GS     
+Mot(s) clé(s) :    
+Congélation Non Photos 
+Numériques 
+Non Nombre 
+de blocs 
+     
+Secrétaire : BMME Coupe : / 
+ 
+"

@@ -1,0 +1,98 @@
+Pat118
+ Raison Complexite : nan
+ Age : 48
+ Données biométriques et score : 
+ Poids :     60.00 kg    Le    [ 46 jours avant RCP ] IMC (Quetelet) : 25.3 kg/m2
+ Taille :      154 cm Le       [ 46 jours avant RCP ]        SC (Dubois) : 1.58 m2
+ Motif de présentation : Motif de présentation              Résultats microbiopsies [ 10 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation              Résultats microbiopsies [ 10 jours avant RCP ]
+Histologie
+ Date           Examen                                          
+Conclusion
+ [ 10 jours avant RCP ] MICROBIOPSIES SOUS
+                ECHOGRAPHIE DU SEIN GAUCHE
+Histoire de la maladie
+Patiente âgée de [Age Patiente] vue ce jour après chirurgie d'une récidive d'abcès du sein droit ayant fait découvrir un cancer du sein droit.
+Originaire de [PAYS].
+Antécédents :
+Poids: 58 kilos (-4 kilos), T 152 cm. TSG 85B
+Médicaux : 0
+Chirurgicaux : abcès vulve, kystectomie ovarienne droit en [ 968 jours avant RCP ]
+Gynécologique : PR 10 ans, Cycles réguliers. G2P2, 2 AVB (un des deux enfants est décédé à 3 mois de vie, vaccin ? mort subite du nourrisson ? ). dernier FCV > 3 ans.
+Allergies : Pollens.
+Médicaments : 0
+Familiaux : cancers chez 2 de ses soeurs à 40 et 41 ans, ne sait pas exactement quel organe était atteint mais plutôt digestif ou pelvien (une décédée et l'autre hospitalisée en [NATIONALITE]). Nièce (fille de son frère) de 27
+ans vient de démarrer une chimiothérapie pour cancer du sein.
+Tabac : tabagisme actif
+En [PAYS] depuis [ 3159 jours avant RCP ], arrivée avec son ex mari. Actuellement hébergée chez des amies. Aucune sécurité sociale.
+A rendez vous avec assistante sociale le [ 2 jours avant RCP ].
+Anamnèse:
+Patiente vue aux urgences TNN le [ 82 jours avant RCP ] pour abcès du sein droit, traité par Augmentin pendant 7 jours, puis ponctionnée aux urgences le [ 75 jours avant RCP ].
+Evacuation chirurgicale de l'abcès du sein droit le [ 45 jours avant RCP ].
+Histologie de la biopsie per opératoire: Biopsie du sein droit ayant intéressé en totalité un tissu de type bourgeon charnu inflammatoire avec néo-vaisseaux avec infiltrat inflammatoire polymorphe à polynucléaires neutrophiles, sans parenchyme mammaire ni nécrose ni granulome. Il n’a pas été vu de cellule suspecte.
+Mammo / Echographie [ 28 jours avant RCP ] :
+Vaste plage de microcalcifications de l'union des quadrants inférieurs du sein droit, polymorphe, s'étendant sur plus de 7
+cm.
+On individualise également une distorsion architecturale du quadrant supéro-externe du sein droit, suspecte. Ces deux zones sont situés à plus de 3 cm l'une de l'autre et s'associe à des adénopathies axillaires droites inflammatoires.
+Du côté gauche, un nodule évoquant plutôt un kyste à contenu épais du quadrant supéro-externe du sein. On visualise aussi de nombreuses zones nodulaires d'allure plutôt kystique éparses des deux seins.
+Il est programmée dans un premier temps une IRM, et également une double microbiopsie sur le sein droit associée à un prélèvement ganglionnaire homolatéral.
+ACR 5 à droite. ACR 0 à gauche en attente d'IRM
+IRM mammaire droit ACR 5 devant la présence :
+- Site 1 : D'un RNM rétro-aréolaire et des quadrants inférieurs sur 98mm correspondant en imagerie conventionnelle au foyer de microcalcifications.
+- Site 2 : D'une distorsion architecturale de l'UQS à 12H-5cm.
+- Site 3 : D'une masse ACR 4a de 9mm du QSE à 11H-9cm.
+Il est nécessaire de réaliser :
+- Une double microbiopsie échoguidée des sites 1 et 2. En cas de négativité des examens complémentaires, on proposera une macrobiopsie sous stéréotaxie. Il ne sera pas nécessaire de prélever le site 3 en cas de traitement non conservateur.
+- Une cytoponction axillaire droite.
+IRM mammaire gauche ACR 4b devant la présence des 3 masses sus-décrites.
+Il est nécessaire de réaliser une échographie de second look. En cas de négativité on proposera :
+- Une surveillance IRM à 4 mois des sites 4 et 5 ; - Une macrobiopsie sous-IRM du site 6.
+[ 16 jours avant RCP ]:
+Sein droit classé BIRADS 5, avec :
+- RNM rétro-aréolaire et des quadrants inférieurs sur 98mm à l'IRM, correspondant à une plage atténuante étendue en échographie, pour la quelle une microbioposie est réalisée ( site de biopsie 3, site IRM 1 )
+- Une masse du QSE de 17 mm, pour laquelle on réalise une microbiopsie (site de biopsie 2, site IRM 2).
+- Une adénomégalie axillaire pour laquelle on réalise une micro biopsie (site de biopsie 1).
+En cas de négativité des examens complémentaires, on proposera une macrobiopsie sous stéréotaxie. Il ne sera pas nécessaire de prélever le site 3 en cas de traitement non conservateur.
+Sein gauche classé BIRADS ACR 4b, pour :
+- Une masse l'UQE à 3H-5cm en IRM (site 6 IRM), pouvant correspondre à une masse intra canalaire en échographie, pour laquelle on propose une microbiopsie.
+- Masse du QSE ( site 4 IRM) classée BIRADS 3, pour laquelle on propose une microbiopsie.
+En cas de négativité on proposera :
+- Une surveillance IRM à 4 mois des sites 4 et 5 ; - Une macrobiopsie sous-IRM du site 6.
+[ 10 jours avant RCP ]: Microbiopsie sous-échographie ce jour de 3 masses du sein gauche correspondant à des masses IRM :
+- Du QSE à 2H-5cm de 16mm ACR 3, avec clip en forme de bonhomme = Site 4 ; - De l'UQE à 3H-4cm de 12mm ACR 4b, avec clip Ring = Site 6 ; - De l'UQInf à 6H-7cm de 4mm ACR 4b avec clip X = Site 7.
+Pas de traduction mammo-échographique du site 5 IRM, ACR 3. On discutera de la conduite à tenir en fonction des résultats histologiques des 3 microbiopsies du sein gauche et de l'éventuelle attitude thérapeutique
+Histologie :
+SEIN DROIT :
+Site de biopsie 1 (adénomégalie axillaire droite): parenchyme ganglionnaire indemne de prolifération tumorale.
+Site de biopsie 2, Site IRM 2 (sein droit): lésion associant remaniements fibro-élastosiques marqués et structures épithéliales dépourvues de caractère suspect de malignité ; à confronter à l’analyse de la pièce d’exérèse
+Site de biopsie 3, Site IRM 1 (sein droit): carcinome infiltrant de type non spécifique, de grade 2 de malignité selon Elston et Ellis (3+2+2), RO 30%, RP0%, HER2 score 3, Ki 30%
+SEIN GAUCHE :
+1. Microbiopsies du quadrant supéro-externe du sein gauche.
+Site n°4 de l’IRM : Masse du QSE du sein gauche, rayon horaire 2 heures, distance mamelon 5 cm, taille 16 mm,
+ACR3: Adénofibrome. Absence de signe morphologique de malignité.
+2. Microbiopsies de l’union des quadrants externes du sein gauche.
+Site n°6 de l’IRM : Masse de l’UQE du sein gauche, rayon horaire 3 heures, distance mamelon 4 cm, taille 12 mm,
+ACR4b: Papilloadénome intra-galactophorique sans atypie.
+3. Microbiopsies de l’union des quadrant inférieurs du sein gauche.
+Site n°7 de l’IRM : Masse de l’UQInf du sein gauche, rayon horaire 6 heures, distance mamelon 7 cm, mesurant 4
+mm, ACR4b : Papilloadénome sans atypie.
+A l'examen physique : PS 0. Poids 58 kg. Taille 165 cm. Taille de bonnet 85 B.
+Seins volumineux, ptosés, aréoles moyennes
+Sein droit légèrement plus volumineux que le gauche.
+A droite : Erosion mamelonnaire. Bonne cicatrisation. Masse de 7 x 7 cm environ mobile n'envahissant pas la peau / muscle pectoral. Adénopathies axillaires centimétriques. Pas d'adénopathies sus claviculaires
+A gauche : pas de masse palpée, pas d'adénopathies axillaires ou sus claviculaires.
+Cancer du sein droit prouvé HER2 amplifié.
+IRM cérébrale [ 1 jours avant RCP ] : IRM encéphalique sans particularité notamment pas de rehaussement encéphalique ou méningé suspect.
+Elle a eu un TEP scanner qui retrouve l'atteinte mammaire droite avec plusieurs foyers, des ganglions axillaires droits hypermétaboliques. Pas d'autre localisation à distance.
+Échographie cardiaque réalisée le [ 2 jours avant RCP ] avec FEVG normale 55%.
+Discuter une chimiothérapie néoadjuvante avec double blocage anti HER2. Elle n'a pas encore la pose de PAC.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ Lésion au minimum T3N1 avec atteinte mamelonnaire du sein droit, 2 papilloadénomes.
+ Indication de chimiothérapie néo-adjuvante avec double blocage anti-HER2 puis mastectomie + curage axillaire droit et  double tumorectomie du sein gauche après repérage.
+ Récupérer enquête oncogénétique chez la nièce, si impossible enquête chez la patiente.
+ Problème social avec absence de prise en charge, en cours d'évaluation si poursuite traitement en [PAYS] ou en [PAYS].
+
+

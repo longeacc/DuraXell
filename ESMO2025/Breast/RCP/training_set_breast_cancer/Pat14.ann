@@ -1,0 +1,17 @@
+T1	Estrogen_receptor 1724 1731	RO 95%,
+T2	Estrogen_receptor 2392 2399	RO 95%,
+T3	Progesterone_receptor 1732 1738	RP 40%
+T4	Progesterone_receptor 2400 2406	RP 40%
+T5	HER2_IHC 1739 1752	HER 2 score 2
+T6	HER2_IHC 2407 2420	HER 2 score 2
+T7	Ki67 1771 1777	Ki 10%
+T8	HER2_FISH 1753 1770	FISH NON AMPLIFIE
+T9	HER2_FISH 2421 2438	FISH NON AMPLIFIE
+A1	RO_values T1 positive
+A2	RP_values T3 positive
+A3	HER2_values T5 2+
+A4	FISH_values T8 negatif
+A5	RO_values T2 positive
+A6	RP_values T4 positive
+A7	FISH_values T9 negatif
+A8	HER2_values T6 2+

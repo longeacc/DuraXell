@@ -1,0 +1,39 @@
+Pat121
+ Raison Complexite : nan
+ Age : 52
+ Données biométriques et score : 
+ Poids :     54.00 kg    Le   [ 3 jours avant RCP ] IMC (Quetelet) : 20.6 kg/m2
+ Taille :      162 cm Le      [ 3 jours avant RCP ]      SC (Dubois) : 1.57 m2
+ Motif de présentation : Motif de présentation            Décision complexe de  Données Médicales : 
+Motif de présentation            Décision complexe de                                  traitement
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Allergies : Pas d'allergie connue
+Antécédents familiaux :cancer du sein chez la mère >50 ans, et cousine germaine 37 ans/ pas d'autre cancer gynécologique/ cancer vessie chez une tante / tumeur cérébrale chez un cousin
+Antécédents médicaux : RAS
+Antécédents chirurgicaux : RAS
+Antécédents gynéco-obstétriques : PR 12 ans, cycle +/- réguliers/ en périménopause / G2P2 2AVB
+Mode de vie : gardienne d'immeuble.
+Histoire de la maladie :
+Patiente de [Age Patiente], découverte à la mammographie de dépistage d'un nodule du sein droit de 16 mm
+Bilan échographie/mammographie en ville : nodule du sein droit 16mm (rayon 8h, 3cm )
+IRM mammaire: réhaussement masse hétérogène QIExt du sein droit
+Micro-biopsie mammaire : CCI grade 3 TIL 80%, RO 60%, RP négatifs, KI 30%, Her2 score 2 FISH amplifié
+Examen clinique le [ 3 jours avant RCP ] : Poids : 54 kg, Taille : 162 cm, IMC : 20.6 TSG 85 B
+Examen mammaire :
+Sein droit: nodule 1,5 cm du QIE du sein droit. aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Sein gauche: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Examen complémentaire relecture imagerie TNN / Pose de Coil.
+PET-scanner d'extension : [ 1 jours avant RCP ] : Caractère hypermétabolique de la lésion mammaire droite. Absence de foyer hypermétabolique suspect par ailleurs.
+Chimiothérapie néoadjuvante double blocage et traitement anti-her2
+Consultation oncogénétique.
+RDV [MEDECIN REFERANT][ 1 jours apres RCP ] à 12h45
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ On confirme la 
+Proposition .
+ Cs oncogénétique.
+ Indication d'onco-génétique : Oui
+
+

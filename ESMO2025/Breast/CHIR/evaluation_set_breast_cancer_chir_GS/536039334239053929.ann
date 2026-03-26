@@ -1,0 +1,9 @@
+T1	HER2_IHC 1788 1855	HER2 (anticorps monoclonal 4B5) : négativité, immunomarquage coté 0
+A1	HER2_values T1 0
+T2	HER2_status 1788 1832	HER2 (anticorps monoclonal 4B5) : négativité
+A2	HER2_status_values T2 negatif
+T3	Progesterone_receptor 1742 1783	Récepteurs à la progestérone : négativité
+A3	RP_values T3 negative
+T4	Estrogen_receptor 1639 1715	Récepteurs aux oestrogènes : marquage nucléaire d'intensité modérée sur 75 %
+A4	RO_values T4 positive
+

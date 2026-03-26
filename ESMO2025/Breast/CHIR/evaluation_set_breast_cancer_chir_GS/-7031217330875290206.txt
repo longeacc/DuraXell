@@ -1,0 +1,103 @@
+" 
+PÔLE DE BIOLOGIE ET DE PATHOLOGIE 
+DEPARTEMENT DE PATHOLOGIE 
+Chef du Département :  Pr. P ZAPICO 
+Centre Expert de Pathologie Neuromusculaire : Pr. R.L. PROAL 
+Hôpital HENRI MONDOR 94010 CRETEIL CEDEX Tél : 06.24.44.92.00 
+Fax : 0623522908 
+Compte-rendu de l’examen P814859 
+ 
+Prescrit par :   
+Consultation de  RADIOTHERAPIE Consultation de  RADIOTHERAPIE 
+ 1er S/Sol 
+   
+ HOPITAL HENRI MONDOR 
+     
+  
+Patient : Mme bentobeato garou  (NIP : 8007430040) 
+ Né(e) bentobeato 
+Sexe : F Née le 24/12/1938   
+Copie à :   Service d' IMAGERIE MEDICALE Prélevé le :  19/01/2023 
+    Reçu le :  19/01/2023 
+ 
+ 
+Sauf mention contraire :  
+- fixation : formol tamponné  
+- coloration standard : HES   Page 1/2 
+ 
+ 
+ 
+MÉDECIN DESTINATAIRE : Dr SABERAN 
+ 
+RECHERCHE D’AMPLIFICATION DU GÈNE HER2 (ERBB2) 
+PAR FISH INTERPHASIQUE 
+ 
+ 
+Médecin demandeur : Dr SABERAN                                      Date : 22/01/2023 
+ 
+Référence initiale : P814859-sei1 
+ 
+IMMUNOHISTOCHIMIE 
+Lecteur : BR  Score IHC : 2+   
+ 
+ 
+CONTROLE DE QUALITE 
+Qualité de la coupe : correcte    
+Cellules tumorales dans la zone d’analyse : 50 % 
+ 
+PRELEVEMENT 
+Nature : biopsie  
+Organe : sein  
+Diagnostic : adénocarcinome mammaire 
+Fixation : Formol 
+ 
+TECHNIQUE 
+Date de la technique: 24-25/01/2023   Opérateur : CH  
+ZytoLight ® CEN 17/SPEC ERBB2 Dual Color Probe:  Réf: Z-2077 
+Examen concernant bentobeato garou P814859 
+ 
+ 
+Page 2 / 2 
+  
+RÉSULTATSET INTERPRÉTATION 
+Nombre de lecteurs : 2   Lecture : objectif x100 à immersion     
+ 
+Évaluation qualitative 
+Profil majoritaire observé : 7 signaux oranges (HER2), 3 signaux verts (CEN17) par noyau 
+ 
+Évaluation quantitative 
+Nombre de noyaux comptés : 100 
+Nombre moyen de gènes HER2 : 6,72 
+Nombre moyen de centromères 17 : 3,21 
+Rapport HER2/CEN 17 : 2,09 
+ 
+Groupe 
+Rapport 
+HER2/CEN 17  
+Moyenne HER2 Statut HER2 
+1 > 2 > 4 Positif 
+Référence: Wolff et al, Human Epidermal Growth Factor 2 Testing in Breast Cancer: American Society of 
+Clinical Oncology/College of American  
+Pathologists Clinical Practice Guideline Focused Update, J Clin Oncol 2018.  
+ 
+ 
+ 
+CONCLUSION : 
+Statut HER2 positif (groupe 1) 
+ 
+ 
+ 
+Codification : PHSGAMB2, PHGSA7B2 
+LBE Créteil, le 30/01/2023 17:54 
+   
+        Dr adinan KOBAITRI 
+CE COMPTE-RENDU A ETE SIGNE ELECTRONIQUEMENT 
+ 
+ 
+ 
+CE 
+ 
+ 
+ 
+ 
+"

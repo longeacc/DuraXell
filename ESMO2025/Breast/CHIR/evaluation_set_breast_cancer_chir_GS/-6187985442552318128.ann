@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 1974 2007	Récepteurs des œstrogènes :  100%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2160 2196	Récepteurs de la progestérone : 25 %
+A2	RP_values T2 positive
+T3	HER2_IHC 2354 2379	Oncogène cerbB2 : score 1
+A3	HER2_values T3 1+
+T4	Ki67 3149 3160	Ki67 : 30 %
+T5	Estrogen_receptor 3842 3845	RE+
+A4	RO_values T5 positive
+T6	Progesterone_receptor 3854 3857	RP+
+A5	RP_values T6 positive
+T7	HER2_IHC 3863 3870;3871 3878	cerbB2  score 1
+A6	HER2_values T7 1+
+

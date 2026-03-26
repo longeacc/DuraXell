@@ -1,0 +1,15 @@
+T1	Estrogen_receptor 2150 2158	RO 100%,
+T2	Estrogen_receptor 2501 2504	RH+
+T3	Progesterone_receptor 2159 2165	RP 5%,
+T5	HER2_IHC 2166 2180	HER2 score 3+,
+T6	HER2_status 2505 2518	Her2 amplifié
+T8	Ki67 2181 2190	Ki67 40%.
+T80	HER2_status 3338 3342	Her2
+T85	Estrogen_receptor 3343 3347	LumB
+A1	RO_values T1 positive
+A2	RP_values T3 negative
+A3	HER2_values T5 3+
+A4	HER2_status_values T6 positif
+A5	RO_values T85 positive
+A6	RO_values T2 positive
+A7	HER2_status_values T80 positif

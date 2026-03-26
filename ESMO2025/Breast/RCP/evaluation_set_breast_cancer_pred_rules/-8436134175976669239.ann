@@ -1,0 +1,42 @@
+T1	Estrogen_receptor 994 998	RH +
+A1	Value T1 positif
+T2	Progesterone_receptor 994 998	RH +
+A2	Value T2 positif
+T3	Ki67 1000 1010	Ki67 : 10%
+A3	Value T3 10%
+T4	HER2_IHC 1011 1026	 HER 2 score 0 
+A4	Value T4 0
+T5	Estrogen_receptor 1141 1145	RH +
+A5	Value T5 positif
+T6	Progesterone_receptor 1141 1145	RH +
+A6	Value T6 positif
+T7	Ki67 1147 1157	Ki67 : 10%
+A7	Value T7 10%
+T8	HER2_IHC 1158 1173	 HER 2 score 0 
+A8	Value T8 0
+T9	Estrogen_receptor 2019 2022	RH+
+A9	Value T9 positif
+T10	Progesterone_receptor 2019 2022	RH+
+A10	Value T10 positif
+T11	Ki67 2024 2030	KI 10%
+A11	Value T11 10%
+T12	Estrogen_receptor 2274 2278	RH +
+A12	Value T12 positif
+T13	Progesterone_receptor 2274 2278	RH +
+A13	Value T13 positif
+T14	Ki67 2280 2290	Ki67 : 10%
+A14	Value T14 10%
+T15	HER2_IHC 2291 2306	 HER 2 score 0 
+A15	Value T15 0
+T16	Estrogen_receptor 3540 3543	RH+
+A16	Value T16 positif
+T17	Progesterone_receptor 3540 3543	RH+
+A17	Value T17 positif
+T18	Ki67 3545 3551	KI 10%
+A18	Value T18 10%
+T19	Estrogen_receptor 5364 5367	RH+
+A19	Value T19 positif
+T20	Progesterone_receptor 5364 5367	RH+
+A20	Value T20 positif
+T21	Ki67 5369 5375	KI 10%
+A21	Value T21 10%

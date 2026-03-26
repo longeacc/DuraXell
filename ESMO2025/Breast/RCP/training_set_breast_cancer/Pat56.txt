@@ -1,0 +1,51 @@
+Pat56
+ Raison Complexite : nan
+ Age : 66
+ Données biométriques et score : 
+  Poids :   78.00 kg    Le     [ 3 jours avant RCP ] IMC (Quetelet) : 27.6 kg/m 2
+  Taille :    168 cm Le        [ 3 jours avant RCP ]      SC (Dubois) : 1.88 m2
+ Motif de présentation : Motif de présentation             Validation simple de RCP
+ Données Médicales : 
+Motif de présentation             Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Motif : patiente adressée par le [MEDECIN EXTERIEUR]pour une suspîcion de carcinome mammaire gauche
+Antécédents et allergies :
+Antécédents familiaux : - mère : cancer du sein à 60 ans décédée d'une évolution métastatique
+- 2 tantes maternelles 70 ans - pas de cancer ovaire colon utérus
+Antécédents médicaux : - hypercholestérolémie hypertriglycéridémie sous statintes assez déséquilibré récemment
+- HTA
+Antécédents chirurgicaux : canal carpien sou ALR
+Antécédents gynéco-obstétriques : G1P1 : 1AVB
+Traitement en cours : atorvastatine candesartan
+Examen clinique le [ 3 jours avant RCP ] : Poids : 78 kg, Taille : 168 cm, IMC : 27.6 kg/m², SC : 1.9 m²
+110 D
+Ancienne secrétaire documentaliste
+Histoire de la maladie :
+Bilan sénologique (mammographie, angiommamographie et échographie mammaire) classé :
+- ACR4c à gauche devant 2 masses mammo- échographiques du QSE de 34mm et du QIE de 10mm, microbiopsiée ce jour.
+Une cytoponction axillaire gauche est également réalisée.
+- ACR3 à droite devant 2 asymétrie de densité mélangées à de la graisse sans mammographie comparative disponible
+Adénomégalie axillaire gauche avec un cortex mesuré à 7mm
+IRM mammaire droit ACR 2 devant la présence de 2 asymétries de densité sur le bilan conventionnel correspondant à des îlots glandulaires simples en IRM.
+IRM mammaire gauche ACR 4c devant la présence d'une masse de 32mm du QSE microbiopsiée avec clip en place et en concordance avec l'imagerie conventionnelle.
+Une masse de 14mm de forme ovale et de contours circonscrit non réhaussée de l'UQInf en zone mammaire superficielle à 6H et 7cm classée ACR 2.
+Microbiopsies :
+- SITE 1 : les microbiopsies de la masse du QSE (rayon de 1h à 7 cm) montrent un carcinome infiltrant de type non spécifique (canalaire). RH - Her2 score 3 ki67 50% Grade histopronostic SBR : III (3+3+2) avec un index mitotique moyen.
+Absence de contingent in situ.
+- SITE 2 : les microbiopsies du nodule du QIE ne montrent pas de prolifération tumorale. Il existe un aspect non spécifique de mastose fibreuse proliférante mais sans atypie. Absence de nodule.
+cytologie axillaire positive
+Carcinome mammaire gauche cT2N1Mx RH-Her2 amplifié
+TEP FDG [ 2 jours avant RCP ]
+[MEDECIN REFERANT][ 1 jours avant RCP ] chimiothérapie néoadjuvante + double blocage anti Her2
+patiente réadressée au [MEDECIN EXTERIEUR]pour ouverture des droits au 100% enquête oncogénétique (questionnaire oncogénétique transmis à la patiente)
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision   on confirme la 
+Proposition 
+  Proposition d'inclusion dans un essai thérapeutique : Non
+  Proposition de préservation de la fertilité : Non
+  Indication d'onco-génétique : Oui
+  Suspicion de pathologie professionnelle : Non
+
+

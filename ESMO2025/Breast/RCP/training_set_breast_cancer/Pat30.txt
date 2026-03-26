@@ -1,0 +1,45 @@
+Pat30
+ Raison Complexite : nan
+ Age : 51
+ Données biométriques et score : 
+ Poids :       67.00 kg   Le  [ 5 jours avant RCP ] IMC (Quetelet) : 25.5 kg/m2
+ Taille :       162 cm Le     [ 5 jours avant RCP ]        SC (Dubois) : 1.72 m2
+ Motif de présentation : Motif de présentation            Validation simple de RCP
+ Données Médicales : 
+Motif de présentation            Validation simple de RCP
+Diagnostic
+ T. Solide Ive / Hémopathie      Tumeur maligne du sein, sans précision (C509)
+ (CIM 10)
+Histoire de la maladie
+Patiente âgée de [Age Patiente], ménopausée sans THS
+Antécédent médicaux : tabagisme actif
+Antécédents chirurgicaux : 2 césariennes. Une hystérectomie totale par laparotomie
+Antécédents gynéco-obstétrique : G2P2
+Autopalpation d'une masse du sein gauche et douleurs axillaire gauche
+Cliniquement : Masse de 4*5 cm du sein gauche avec adénopathies axillaires palpables. Petite rétraction mammaire.
+Absence d'atteinte cutanée.
+Sein droit sans particularité.
+Mammographie/ Echographie mammaire :
+Lésion supéro-externe de 35 *30*19 mm classée ACR 5, à 2h, à 5cm du mamelon avec poly adénomégalies homo-latérales axillaire et sous claviculaires.
+Image douteuse d'ectasie échogène intra galactophorique à l'union des quadrants inférieurs du sein gauche de 12.6 mm.
+Absence d'anomalie du sein et du creux axillaire droit.
+Microbiopsie de la lésion ACR 5 : carcinome infiltrant de type non spécifique de grade 3, RO négatif, RP négatif,
+Ki 67 75%. Cerb B2 négatif
+Cytoponction : localisation axillaire gauche d'un adénocarcinome.
+IRM mammaire:
+Sein gauche: masse biopsiée du quadrant supéro-externe mesurant 33 x 26 x 36 mm + masse à l'union des quadrants externes mesurant 8 mm rehaussée selon une courbe de type III.
+Multiples adénomégalies axillaires suspectes. Deux ganglions sus-claviculaires gauches de 4 mm.
+Sein droit: Rehaussement non masse nodulaire linéaire à l'union des quadrants supérieurs mesurant 38 x 28 x 35 mm.
+IRM classée ACR 4 pour le sein droit et ACR 6 pour le sein gauche.
+L'échographie de second look sera réalisée le mercredi [ 1 jours avant RCP ]. Pose de clip programmée ce jour là.
+Proposition thérapeutique: - récupérer biopsie sein droit/écho second look
+- TEP TDM - chimiothérapie néoadjuvante après pose de clip - enquête oncogénétique - tumorectomie + CA gauche
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On confirme la 
+Proposition .
+  Cs oncogénétique à [ETABLISSEMENT]
+  Indication d'onco-génétique : Oui
+
+

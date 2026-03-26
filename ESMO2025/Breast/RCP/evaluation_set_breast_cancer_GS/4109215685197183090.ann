@@ -1,0 +1,21 @@
+T1	Estrogen_receptor 1316 1319;1320 1322	RE  3+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1330 1334	RP -
+A2	RP_values T2 negative
+T3	HER2_status 1336 1344	HER2 nég
+A3	HER2_status_values T3 negatif
+T4	Ki67 1346 1353	KI67 5%
+T5	Estrogen_receptor 6405 6410	RE 3+
+A4	RO_values T5 positive
+T6	Progesterone_receptor 6417 6421	RP -
+A5	RP_values T6 negative
+T7	HER2_status 6423 6431	HER2 nég
+A6	HER2_status_values T7 negatif
+T8	Estrogen_receptor 8548 8552	RE3+
+A7	RO_values T8 positive
+T9	Progesterone_receptor 8560 8564	RP1+
+A8	RP_values T9 positive
+T10	HER2_status 8571 8579	HER2 neg
+A9	HER2_status_values T10 negatif
+T11	Ki67 8581 8589	Ki67 30%
+

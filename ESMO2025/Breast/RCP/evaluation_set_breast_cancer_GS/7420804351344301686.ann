@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 1519 1522	RO-
+A1	RO_values T1 negative
+T2	Progesterone_receptor 1524 1527	RP-
+A2	RP_values T2 negative
+T3	HER2_IHC 1529 1541	HER2 score 2
+A3	HER2_values T3 2+
+T4	HER2_FISH 1567 1607;1608 1621	FISH à la recherche d'une amplification  a été demandé
+A4	FISH_values T4 en_cours
+

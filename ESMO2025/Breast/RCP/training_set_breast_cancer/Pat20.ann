@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 1814 1824	RE+ (100%)
+T2	Progesterone_receptor 1826 1835	RP+(100%)
+T3	HER2_IHC 1837 1851;1852 1853	cerbB2 score 1 (
+T4	Ki67 1905 1917	Ki67 à 20 %.
+T45	HER2_status 1853 1902	absence d’une surexpression significative de HER2
+A1	HER2_status_values T45 negatif
+A2	RO_values T1 positive
+A3	RP_values T2 positive
+A4	HER2_values T3 1+

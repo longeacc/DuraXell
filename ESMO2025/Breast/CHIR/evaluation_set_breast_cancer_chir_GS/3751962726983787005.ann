@@ -1,0 +1,5 @@
+T1	Estrogen_receptor 1440 1476	Récepteurs aux oestrogènes : négatif
+A1	RO_values T1 negative
+T2	Progesterone_receptor 1480 1518	Récepteurs à la progestérone : négatif
+A2	RP_values T2 negative
+

@@ -1,0 +1,9 @@
+T1	HER2_IHC 1015 1037;1038 1040	HER2 équivoque, score  ++
+A1	HER2_values T1 2+
+T2	HER2_status 1664 1676	HER2 positif
+A2	HER2_status_values T2 positif
+T3	HER2_IHC 1664 1686	HER2 positif, score 2+
+A3	HER2_values T3 2+
+T4	HER2_FISH 1664 1695	HER2 positif, score 2+ amplifié
+A4	FISH_values T4 positif
+

@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 1523 1530	RO 100,
+T2	Estrogen_receptor 1649 1656	RO 100,
+T3	Progesterone_receptor 1531 1538	RP 100,
+T4	Progesterone_receptor 1657 1664	RP 100,
+T5	Ki67 1539 1548	Ki67 20%,
+T6	Ki67 1665 1674	Ki67 10%,
+T50	HER2_status 1549 1572	HER2 : faible intensité
+T56	HER2_status 1675 1681;1682 1698	HER2 : faible intensité
+A1	HER2_status_values T56 negatif
+A2	RP_values T3 positive
+A3	HER2_status_values T50 negatif
+A4	RO_values T1 positive
+A5	RO_values T2 positive
+A6	RP_values T4 positive

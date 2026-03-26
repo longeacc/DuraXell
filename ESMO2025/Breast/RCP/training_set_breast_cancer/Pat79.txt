@@ -1,0 +1,75 @@
+Pat79
+ Raison Complexite : nan
+ Age : 45
+ Données biométriques et score : pas de données biometriques
+ Motif de présentation : Motif de présentation                Validation simple de RCP
+ Données Médicales : Motif de présentation                Validation simple de RCP
+Histoire de la maladie
+Antécédents et allergies
+Antécédents familiaux : diabète mère/ HTA mère: AVC IDM 0: cancer du colon père 77 ans: TVP père ( contexte de cancer) cancer sein / utérue/ovaire 0
+Antécédents médicaux : asthme/ sd dépressif depuis [ 7598 jours avant RCP ]/ HCS à révélation tardive ( diagnostic en [ 2850 jours avant RCP ])
+Antécédents chirurgicaux : amygdalectomie et adénoïdectomie / kyste pilonidal 2007
+Antécédents gynéco-obstétriques :PR 14 ans, cycles réguliers / Contraception oestroprog de 20 à 26 ans, puis Nexplanon
+G1P0 1 IVG médicamenteuse 1997
+sur le plan mammaire : biopsie [ 1481 jours avant RCP ] QSE gauche nodule 14 mm en faveur AF non suspect.
+Résumé clinique - 
+Histoire de la maladie
+Patiente âgée de [Age Patiente], prise en charge pour cancer du sein droit.
+Antécédents :
+- Médicaux : Syndrome dépressif, Hirsutisme, Asthme
+- Chirurgicaux : Amygdalectomie, Adenoïdectomie, kyste pilonidal[ 1754 jours avant RCP ]
+- Gynéco-obstétricaux : G1P0 (IVG par médicaments) , adénofibrome du sein gauche microbiopsié en [ 1754 jours avant RCP ] à [ETABLISSEMENT]
+- Familiaux : pas de néoplasie mammaire ou gynécologique.Père cancer du colon, TVP
+- Allergies : Pollens, Acariens
+- Tabac : Cannabis pendant 20 ans, arrêté 2018, Tabac 1-2 cigarette
+- Traitements : Sertraline 50, Sertraline 25, Anafranil 75, Diazepam, Abilify 10, Tercian 25x2, Spironolactone 75, Luteran
+10
+Mode de vie : vie en couple, travaille à temps partiel garde d'enfant.
+Auto-palpation d'une masse du sein droit en [ 50 jours avant RCP ].
+Mammographie- Echographie le [ 30 jours avant RCP ] :
+- Sein droit Bi-rads 4c : Apparition d'une masse palpable suspecte BIRADS 4c de 28 mm de l'UQE du sein droit (9h-5 cm) pour laquelle on programme une microbiopsie sous échographie.
+Apparition d'un foyer de microcalcifications polymorphes étendues sur 7 mm du QIE du sein droit (8h-9cm). BIRADS 4B, sans concordance échographique, pour lequel on programme une macrobiopsie sous stéréotaxie. Distance inter- lésionnelleestimée à 30 mm en tomosynthèse.
+- Sein gauche Bi-rads 2 ; sans anomalie suspecte.
+IRM mammaire le [ 28 jours avant RCP ] :
+IRM mammaire droite ACR 5 :
+- Masse ACR 5 de 29 mm du QSE (10h-4cm, ZMS) pour laquelle une microbiopsie sous échographie est programmée ce jour
+- RNM focal ACR 4b de 8 mm de l'UQInt (3h-6,5cm, ZMS) pour lequel on programme un bilan de 2nd look (agrandis + échographie ciblée) +/- microbiopsie. En l'absence de cible, discuter d'une macrobiopsie sous IRM.
+- Augmentation de taille du ganglion intramammaire de 7 mm de l'UQE (9h-12cm, ZMP), ACR 3, pour lequel on programme une cytoponction (ou une microbiopsie sous échographie)
+- Deux ganglions axillaires à cortex focalement épais.
+IRM mammaire gauche ACR 2 sans lésion suspecte décelée.
+Microbiopsie/Cytoponctionle [ 28 jours avant RCP ] :
+Sein droit BIRADS 5 avec :
+- Microbiopsie de la masse BIRADS 5 du QSE de 30 mm, avec pose de clip R,
+- Microbiopsie de la masse BIRADS 4c de l'UQint de 9 mm, correspondant au rehaussement non masse décrit en IRM, avec pose du clip Ring, Ensemble lésionnel de 9 cm.
+- Microbiopsie du ganglion intramammaire BIRADS 3, majoré en taille de l'UQE de 7 mm, sans pose de clip, Ensemble lésionnel de 10 cm.
+- Cytoponction d'un ganglion axillaire droit à cortex focalement épaissi, Maneiro 3.
+Anatomopathologie :
+- Cytoponction axillaire droite : Eléments lymphoïdes polymorphes sur deux lames, sans cellule suspecte.
+- Microbiopsies du sein droit – site biopsique n°1 : carcinome infiltrant de type non spécifique, de grade 2 de malignité selon Elston et Ellis (3+2+1). RO 90% RP 80% Her2 Score 0 Ki 67 10%
+- Microbiopsies du sein droit – site biopsique n°2 : carcinome canalaire in situ de grade intermédiaire sans carcinome infiltrant. Présence d’un adénofibrome.
+- Microbiopsies du sein droit – site biopsique n°3 : parenchyme ganglionnaire indemne de prolifération tumorale.
+Macrobiopsie le [ 21 jours avant RCP ] du foyer de microcalcifications :
+Macrobiopsie sous stéréotaxie d’ un foyer de microcalcifications du sein droit, QSE, à 25 cm d'un nodule déjà biopsié.
+ACR 4
+CR Anapath : Adénocarcinome canalaire infiltrant 2+2+X selon Elston et Ellis mesurant 4 mm. Carcinome canalaire in situ de grade intermédiaire avec calcifications.
+Mammographie post macrobiopsie le [ 3 jours avant RCP ] : Il existe 30% de calcifications résiduelles sans opacité radiologique identifiable.Hématome post biopsie centimétrique.
+Présence d’un clip en forme de M centré. Présence d'un clip en forme d'anneau dans le QSI droit.
+Cliniquement:
+Poids 78 kg taille 160cm et TSG 95 E
+Examen mammaire :
+Sein droit: nodule palpé 4-5 UQE du sein droit. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Sein gauche: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Au total : patiente de [Age Patiente] , tumeur bifocale du sein droit ( ensemble lésionnel 10cm ) + CCIS
+[ 19 jours apres RCP ] mastectomie + procédure du ganglion sentinelle GS droit
+Arret LUTERAN
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ On confirme la 
+Proposition 
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

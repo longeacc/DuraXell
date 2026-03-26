@@ -1,0 +1,17 @@
+T1	Estrogen_receptor 1714 1720	RE 90%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1722 1728	RP 90%
+A2	RP_values T2 positive
+T3	HER2_status 1730 1735	Her2+
+A3	HER2_status_values T3 positif
+T4	Ki67 1737 1745	Ki67 40%
+T5	Estrogen_receptor 1868 1875	RE 100%
+A4	RO_values T5 positive
+T6	Progesterone_receptor 1877 1884	RP 100%
+A5	RP_values T6 positive
+T7	HER2_IHC 1886 1892	Her2++
+A6	HER2_values T7 2+
+T8	HER2_FISH 1886 1908	Her2++, DDISH en cours
+A7	FISH_values T8 en_cours
+T9	Ki67 1931 1937;1938 1941	Ki 67  35%
+

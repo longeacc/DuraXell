@@ -1,0 +1,45 @@
+Pat74
+ Raison Complexite : nan
+ Age : 74
+ Données biométriques et score : 
+  Poids :     92.00 kg    Le   [ 3 jours avant RCP ] IMC (Quetelet) : 33.8 kg/m 2
+  Taille :      165 cm Le      [ 3 jours avant RCP ]        SC (Dubois) : 1.99 m2
+ Motif de présentation : Motif de présentation             Validation simple de RCP
+ Données Médicales : 
+Motif de présentation             Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ]
+F[Age Patiente]
+Antécédents et allergies :
+Antécédents familiaux : - soeur aînée deux cancers du sein dont le premier à 60 ans - cousine germaine maternelle cancer du sein à 38 ans décédée à 49 ans - colon tante maternelle vers 80 ans
+Antécédents médicaux :
+- Luxation épaule droite post AVP
+- Phlébite jambe gauche en [ 1747 jours avant RCP ]
+- HTA labile non traitée - hypercholestérolémie sous atorvastatine mais pris irrégulièrement
+- Allergie respiratoire acariens plume chat poussière
+- SAS appareillé - tabagisme sevré il y a 20 ans : 40PA
+Antécédents chirurgicaux : 0
+Antécédents gynéco-obstétriques :
+- G0 P0
+- ménopausée vers 55 ans, THM pendant 10 ans
+Patiente de ans, adressée par le [MEDECIN EXTERIEUR]la pris en charge d'un cancer carcinome infiltrant de type NST de grade 1 (1+2+1) RO 100 RP 90 her2 score 0 ki67 à 10%
+Mode de vie : retraitée, anciennement dans la logistique export
+Anamnèse :
+Bilan échographie/mammographie [ 23 jours avant RCP ] :
+Mammographie et échographie ACR 5 sein droit . Désorganisation architecturale du quadrant supéro-externe, à 10
+heures, à 6 cm du mamelon, correspondant à une plage de 10 mm nécessitant un contrôle histologique au mieux par microbiopsie sous échographie
+Mammographie et échographie ACR 2 sein gauche sans anomalie suspecte
+Micro-biopsie mammaire le [ 21 jours avant RCP ]/201 :Sein droit classé BIRADS 5 avec Microbiopsie de la masse du QSE de 13
+mm, sans pose de clip : carcinome infiltrant de type NST de grade 1 (1+2+1) RO 100 RP 90 her2 score 0 ki67 à 10%
+Examen clinique le [ 3 jours avant RCP ] : Poids : 92 kg, Taille : 165 cm, IMC : 33.8 kg/m², SC : 2 m²
+110 C
+Sein droit: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Sein gauche: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Au total : Carcinome mammaire droit sein droit T1cN0M0
+Indication de tumorectomie après repérage + prélèvement du ganglion sentinelle en J0 le [ 22 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  Faire IRM mammaire et représenter.
+
+

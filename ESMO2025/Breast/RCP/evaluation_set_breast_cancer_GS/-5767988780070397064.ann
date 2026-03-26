@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 1310 1313	RO+
+A1	RO_values T1 positive
+T2	HER2_IHC 1315 1324	HER 2 +++
+A2	HER2_values T2 3+
+T3	Ki67 1328 1339	Ki 67 : 60%
+T4	HER2_FISH 1781 1826	Augmentation du nombre de copie du gène ERBB2
+A3	FISH_values T4 positif
+T5	Genetic_mutation 1735 1777	Mutation pathogène dans l'exon10 de PIK3CA
+A4	Genetic_mutation_values T5 Other
+T6	HER2_status 3369 3374	HER2+
+A5	HER2_status_values T6 positif
+T7	Estrogen_receptor 3375 3378	R0+
+A6	RO_values T7 positive
+

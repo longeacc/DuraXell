@@ -1,0 +1,8 @@
+T1	Ki67 2070 2076	KI 67 
+A1	Value T1 67%
+T2	Estrogen_receptor 2780 2784	re -
+A2	Value T2 negatif
+T3	HER2_IHC 2934 2947	 HER SCORE 0 
+A3	Value T3 0
+T4	Ki67 2947 2956	Ki 67 10%
+A4	Value T4 10%

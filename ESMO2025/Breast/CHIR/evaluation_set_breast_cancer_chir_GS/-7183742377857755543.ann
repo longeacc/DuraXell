@@ -1,0 +1,19 @@
+T1	Estrogen_receptor 2291 2322	Récepteurs des œstrogènes : 90%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2400 2435	Récepteurs à la progestérone : 100%
+A2	RP_values T2 positive
+T3	Ki67 2534 2568	Ki67 : Positivité nucléaire de 20%
+T4	HER2_IHC 2787 2876	HER2 : absence de marquage membranaire des cellules carcinomateuses infiltrantes, score 0
+A3	HER2_values T4 0
+T5	HER2_status 2878 2885;2886 2900	statut  HER2 négatif  
+A4	HER2_status_values T5 negatif
+T6	Estrogen_receptor 4676 4707	Récepteurs des œstrogènes : 90%
+A5	RO_values T6 positive
+T7	Progesterone_receptor 4794 4858	Récepteurs à la progestérone : Positivité modérée à forte de 90%
+A6	RP_values T7 positive
+T8	Ki67 4939 4973	Ki67 : Positivité nucléaire de 11%
+T9	HER2_IHC 5189 5278	HER2 : absence de marquage membranaire des cellules carcinomateuses infiltrantes, score 0
+A7	HER2_values T9 0
+T10	HER2_status 5280 5287;5288 5300	statut  HER2 négatif
+A8	HER2_status_values T10 negatif
+

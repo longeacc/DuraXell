@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 1544 1590	Récepteurs aux Œstrogènes : intensité 3+, 100%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1594 1642	Récepteurs à la progestérone : intensité 3+, 30%
+A2	RP_values T2 positive
+T3	HER2_status 1646 1715	HER2 (anticorps monoclonal 4B5) : absence de surexpression (score 1+)
+T4	Ki67 1720 1730	Ki67 : 15%
+A3	HER2_status_values T3 negatif
+T5	HER2_IHC 1646 1714	HER2 (anticorps monoclonal 4B5) : absence de surexpression (score 1+
+A4	HER2_values T5 1+
+

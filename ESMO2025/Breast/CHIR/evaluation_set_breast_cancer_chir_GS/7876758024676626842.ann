@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 3200 3220	R.O. (6 F 11) : 80 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3292 3313	R.P. (1 A 6) : absenc
+A2	RP_values T2 negative
+T3	Ki67 3365 3385	Ki67 est estimé à 1%
+T4	HER2_IHC 3414 3441;3442 3443;3444 3528;3529 3548	HER2 PAR IMMUNOHISTOCHIMIE    Plus de 10% de cellules marquées au niveau membranaire, le marquage étant faible et  incomplet (score 1+
+A3	HER2_values T4 1+
+

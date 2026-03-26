@@ -1,0 +1,57 @@
+Pat93
+ Raison Complexite : nan
+ Age : 71
+ Données biométriques et score : 
+ Poids :     57.00 kg   Le   [ 3 jours avant RCP ] IMC (Quetelet) : 25.0 kg/m 2
+ Taille :      151 cm Le     [ 3 jours avant RCP ]        SC (Dubois) : 1.52 m2
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+CONSULTATION [MEDECIN REFERANT]DU [ 3 jours avant RCP ]:
+Patiente âgée de 71ans, adressée par le [MEDECIN EXTERIEUR]pour carcinome papillaire solide infiltrant du sein gauche.
+Antécédents:
+Médicaux: HTA non traitée, dyslipidémie non traitée. glaucome incontinence mixte a priori
+Chirurgicaux: cancer du sein droit traitée par mastectomie partielle et curage axillaire puis radiothérapieà JVR en [ 5119 jours avant RCP ].
+Dernière mammo/ écho [ 2927 jours avant RCP ] normale à priori.OG catacracte opéré
+Obstétricaux: G3P3 dont 3 AVB.
+Gynécologique: Ménopausée depuis l'âge de 57 ans, pas de THM.
+Familiaux: cancer sein chez la soeur à 63 ans, cancer utérus 40 ans et pancréas chez une 2ème soeur à 53 ans, cancer poumon chez une 3ème soeur 48 ans non fumeuse (décédée) .
+frère décédé à 58 ans d'un cancer des os autre frère cancer de prostate opéré ne connaît pas ATCD cancéro des ascendants car au vietnam
+Allergie: Pénicilline (éruption cutanée). N'a pas fait consultation allergo
+Anamnèse:
+Autopalpation d'une masse du QSI du sein gauche début 2020, quelques douleurs, pas d'écoulement.
+Pas de bilan fait car confinement COVID.
+Mammographie/ échographie en [ 2927 jours avant RCP ] normale à priori.
+Masse QSI du sein gauche 55*47*49mm.
+Echo/ Mammographie: pas de comte rendu sein gauche ACR5 masse de 44 mm grand axe
+Microbiopsie [ 16 jours avant RCP ]: Carcinome papillaire solide infiltrant grade III EE (3+3+2), RO 100% RP 100% HER 2 score 0,
+Ki67 25%.
+Cytoponction axillaire gauche: localisation axillaire du carcinome.
+Examen clinique
+Le [ 3 jours avant RCP ] : Poids : 57 kg, Taille : 151 cm, IMC : 25 kg/m², SC : 1.5 m²
+Examen clinique:
+Taille 151cm, poids 57kg, TGS: 85B masse 8 cm du sein gauche avec possible debut infiltrtion cutanée, 1 adénopathie mobile à la partie basse du creux pas d'adénopathie sus claviculaire perte de 3 kg depuis novembre pas d'autres symptomes col atrophique, atrophie muqueuse
+TV 1 doigt douloureux : pas de masse perçue mais peu contributif
+Examens complémentaires
+Résultats de biologie ca 15-3 : 31.8
+ca 125 : 58
+Conclusion
+Carcinome mammaire gauche T3N1Mx CCI grade 3 RH+ Her2 neg ki67 à 25% indicationIRM mammaire
+TEP FDG
+Échographie pelvienne ca 125 : 58
+consultation oncogénétique a priori chimiothérapie néoadjuvante suivie de mastectomie curage axillaire gauche radiothérapie traitement anti hormonal réévaluation en fonction bilan extension
+100% demandé par médecin traitant
+Décision RCP du [ 0 jours avant RCP ]:
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  Prévoir une consultation d'oncogénétique
+  On confirme la 
+Proposition 
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Oui
+ Suspicion de pathologie professionnelle : Non
+
+

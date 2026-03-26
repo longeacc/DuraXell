@@ -1,0 +1,8 @@
+T1	Ki67 1743 1753	Ki67 10 %.
+A1	Value T1 10%
+T2	Estrogen_receptor 2025 2029	RO+ 
+A2	Value T2 positif
+T3	Progesterone_receptor 2031 2035	RP- 
+A3	Value T3 negatif
+T4	Ki67 2060 2071	Ki-67 : 10%
+A4	Value T4 10%

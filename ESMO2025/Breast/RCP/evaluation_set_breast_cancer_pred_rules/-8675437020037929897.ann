@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 1425 1431	RO 90%
+A1	Value T1 positif
+T2	Progesterone_receptor 1433 1436	RP-
+A2	Value T2 negatif
+T3	Ki67 1445 1452	Ki67<5%
+A3	Value T3 5%
+T4	Estrogen_receptor 1532 1539	RO 100%
+A4	Value T4 positif
+T5	Progesterone_receptor 1541 1544	RP-
+A5	Value T5 negatif
+T6	Ki67 1553 1560	Ki67<5%
+A6	Value T6 5%

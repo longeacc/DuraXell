@@ -1,0 +1,16 @@
+T1	Estrogen_receptor 3645 3701	Récepteurs des œstrogènes : 30 % d’intensité faible. RO+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3807 3810	RP-
+A2	RP_values T2 negative
+T3	Ki67 3884 3895	Ki67 : 10 %
+T4	HER2_IHC 4023 4037	HER2 : score 3
+A3	HER2_values T4 3+
+T5	HER2_IHC 4780 4793	HER2 (score 3
+A4	HER2_values T5 3+
+T6	HER2_status 4767 4784	surexprimant HER2
+A5	HER2_status_values T6 positif
+T7	Progesterone_receptor 4762 4765	RP-
+A6	RP_values T7 negative
+T8	Estrogen_receptor 4757 4760	RO+
+A7	RO_values T8 positive
+

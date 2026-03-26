@@ -1,0 +1,5 @@
+T1	Estrogen_receptor 1932 1991;1992 2022	RECEPTEURS AUX OESTROGENES (LEICA clone 6F11, prédilué) :   Pourcentage de cellules : 90 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2262 2320;2321 2351	RECEPTEURS A LA PROGESTERONE (LEICA clone 16, prédilué) :  Pourcentage de cellules : 70 %
+A2	RP_values T2 positive
+

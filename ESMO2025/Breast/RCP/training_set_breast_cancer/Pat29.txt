@@ -1,0 +1,49 @@
+Pat29
+ Raison Complexite : nan
+ Age : 80
+ Données biométriques et score : pas de données biometriques
+ Motif de présentation : Motif de présentation           Décision complexe de  Données Médicales : Motif de présentation           Décision complexe de                                 traitement
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]le [ 10 jours avant RCP ]
+Patiente de 80ans, présentant une tumeur bifocale du sein droit (UQI et QSE) .
+Antécédents et allergies
+Allergies : Pas d'allergie connue
+Antécédents familiaux : pas de cancer sein ovaire colon
+Antécédents médicaux : pas d'HTA, pas de diabète; Hypothyroïdie traité par levothyrox,
+Antécédents chirurgicaux : TVT 2015 (CH [VILLE]), appendicectomie, colectomie gauche pour diverticulite
+Antécédents gynéco-obstétriques : Ménopause 50 ans, THM moins d'un an, G2P2, 2 AVB
+Histoire de la maladie :
+Autopalpation il y a 1 mois d'une masse UQInf du sein droit
+Mammo + echo [ 48 jours avant RCP ] :
+A droite : opacité QII légère rétraction cutanée en regard, masse 22 mm hétérogène => ACR 5 et une suspicion d'atteinte axillaire ( 2 biopsies réalisées)
+A gauche : pas d'aspect stellaire, pas de foyer de microcalcification,
+[VILLE] axillaire libre résultats des microbiospies [ 23 jours avant RCP ]:
+Site 1/ Masse du sein droit, union des quadrants inférieurs, rayon horaire 6 heures, distance mamelon 4 cm, taille
+21 mm, ACR 4c: Carcinome infiltrant de type non spécifique, de grade 3 de malignité (3+3+2). RO 90%, RP 10%,
+Her2 score 3 KI 80% Absence de composante in situ.
+Embole lymphatique non identifié.
+Site 2/ Masse du sein droit, quadrant supéro-externe, rayon horaire 10 heures, distance mamelon 12 cm, taille 16
+mm, ACR 4c : Carcinome infiltrant de type non spécifique, de grade 3 de malignité (3+3+3). Ro 95%, RP 0%, KI score 3 Ki 70% Absence de composante in situ. Embole lymphatique non identifié
+Examen clinique :Poids 71Kg, taille 1.68, TSG 100E
+Sein gauche : Pas de nodule palpé, pas d'écoulement, pas d'inflammation, absence d'adénopathie axillaire ou sus claviculaire
+Sein droit :
+ Nodule de 2.5cm au niveau du quadrant inféro-interne 18h , avec retraction cutané en regard sans signe d'inflammation, pas d'écoulement
+ Nodule de 2cm dans le prolongement axillaire, induré, indolore, pas d'autre lésion palpés. Absence d'adénopathie axillaire ou sus claviculaire
+BILAN d'extension et pré chimiothérapie :
+IRM mammaire : - sein droit classée ACR 6 devant 2 ensembles lésionnels : Du QSE de 26mm à 10H et 12cm du mamelon et de e l'UQInf de 28mm à 6H et 4,5cm du mamelon.
+-sein gauche classée ACR 2 sans lésion suspecte -aires axillaire libres
+TEP [ 1 jours avant RCP ] : Deux nodules mammaires droits hypermétaboliques (QSE : 14x10 mm - SUVmax 7,4 et UQI : 18x14
+mm - SUVmax 7,1), en rapport avec la pathologie tumorale bifocale connue.
+Pas de foyer hypermétabolique suspect ganglionnaire, viscéral ou osseux par ailleurs.
+Tumeur bifocale du sein droit : Carcinome infiltrant de type non spécifique, de grade 3 de malignité (3+3+3). Ro 95%, RP 0%, KI score 3 Ki 80%
+Chimiothérapie néoadjuvante + traitement anti Her2 puis mastectomie totale GS au décours
+Décision de la RCP : 
+Proposition de décision
+  Type de 
+Proposition               Application référentiel
+  [VILLE] de soins                    Traitement néoadjuvant
+  Proposition de décision
+  On confirme la 
+Proposition .
+
+

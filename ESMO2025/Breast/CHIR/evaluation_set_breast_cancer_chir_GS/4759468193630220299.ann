@@ -1,0 +1,33 @@
+T1	Ki67 3754 3765	Ki67 à 70 %
+T2	Estrogen_receptor 3194 3308	Récepteurs aux œstrogènes (LEICA clone 6F11, prédilué) : expression nucléaire hétérogène, marquage intense par 60%
+A1	RO_values T2 positive
+T3	Progesterone_receptor 3337 3452	Récepteurs a la progestérone (LEICA clone 16, prédilué) : expression nucléaire hétérogène, marquage intense par 30%
+A2	RP_values T3 positive
+T4	HER2_IHC 3490 3595;3596 3689	cerb B2 (DAKO clone CerB-2 1/600) : expression membranaire faible à modérée incomplète baso-latérale par  80% des cellules tumorales avec un marquage intense sur 10% des cellules tumorales (score  2+
+A3	HER2_values T4 2+
+T5	Estrogen_receptor 4489 4581	Récepteurs aux œstrogènes (LEICA clone 6F11, prédilué) : expression nucléaire modéré par 80%
+A4	RO_values T5 positive
+T6	Progesterone_receptor 4609 4687	Recepteurs a la progestérone (LEICA clone 16, prédilué) : absence d’expression
+A5	RP_values T6 negative
+T7	HER2_IHC 4701 4801;4802 4822	Cerb B2 (DAKO clone CerB-2 1/600) : expression membranaire faible et incomplet par 80% des cellules  tumorales (score  1+
+A6	HER2_values T7 1+
+T8	Ki67 4887 4896	Ki67 5 %.
+T9	Estrogen_receptor 5879 5882	RH+
+A7	RO_values T9 positive
+T10	HER2_IHC 5885 5909	HER2 équivoque  (score2+
+A8	HER2_values T10 2+
+T11	HER2_FISH 5885 5926	HER2 équivoque  (score2+). DDISH demandée
+A9	FISH_values T11 en_cours
+T12	Ki67 5935 5946	Ki-67 : 70%
+T13	Estrogen_receptor 6342 6345	RO+
+A10	RO_values T13 positive
+T14	Progesterone_receptor 6346 6349	RP-
+A11	RP_values T14 negative
+T15	HER2_status 6350 6362	HER2 négatif
+A12	HER2_status_values T15 negatif
+T16	HER2_IHC 6350 6366	HER2 négatif (1+
+A13	HER2_values T16 1+
+T17	Ki67 6368 6375	Ki67 5%
+T18	HER2_FISH 6806 6838	pas d’amplification du gène Her2
+A14	FISH_values T18 negatif
+

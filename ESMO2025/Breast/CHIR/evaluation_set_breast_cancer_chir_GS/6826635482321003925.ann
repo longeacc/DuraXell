@@ -1,0 +1,15 @@
+T1	Estrogen_receptor 3642 3675	Récepteurs aux œstrogènes : 100 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3730 3765	Récepteurs à la progestérone : 80 %
+A2	RP_values T2 positive
+T3	HER2_IHC 3825 3912	Cerb B2 :10 % des cellules tumorales marquées de manière faible et incomplète, score 1+
+A3	HER2_values T3 1+
+T4	Ki67 3917 3928	Ki67 : 15 %
+T5	Estrogen_receptor 5425 5461	récepteurs aux œstrogènes : positifs
+A4	RO_values T5 positive
+T6	Progesterone_receptor 5465 5504	récepteurs à la progestérone : positifs
+A5	RP_values T6 positive
+T7	HER2_IHC 5508 5526	Cerb B2 : score 1+
+A6	HER2_values T7 1+
+T8	Ki67 5530 5541	Ki67 : 15 %
+

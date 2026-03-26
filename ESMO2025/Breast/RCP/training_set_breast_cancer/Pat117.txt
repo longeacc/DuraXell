@@ -1,0 +1,49 @@
+Pat117
+ Raison Complexite : nan
+ Age : 69
+ Données biométriques et score : 
+  Poids :     54.00 kg   Le   [ 24 jours avant RCP ] IMC (Quetelet) : 21.1 kg/m 2
+  Taille :      160 cm Le     [ 24 jours avant RCP ]        SC (Dubois) : 1.55 m2
+ Motif de présentation : Motif de présentation            Validation simple de RCP
+ Données Médicales : 
+Motif de présentation            Validation simple de RCP
+Histoire de la maladie
+Antécédents et allergies
+Antécédents familiaux : - pas de cancer sein utérus colon ovaire père décédé d'un cancer généralisé 80 ans mère morte en couche à la naissance de la patiente
+Antécédents médicaux :
+- HTA, hypercholesterolémie tabac : 1 paquet par jour 50PA tentative de suicide medicamenteuse il y a 2-3 ans, actuellement sous venlafaxine + zopiclone
+Antécédents chirurgicaux : - fracture jambe droite
+Antécédents gynéco-obstétriques :
+- G1P1 : 1 enfant née par VB décédée d'une malformation cardique à 6 mois - ménopause vers 55 ans, pas de THM
+Résumé clinique - 
+Histoire de la maladie
+Retraitée de la restauration mammographie [ 57 jours avant RCP ] :
+Sein droit ACR 5 : 2 nodules du quadrant supero externe : de 13.5 et 5mm, s'étendant de bord à bord extenre sur 15mm pas d'adénopathie sein G : ACR2
+IRM mammaire : masse de 18mm du quadrant supéro externe droit ACR5
+sein gauche ACR2
+microbiopsie des deux lésions du sein droit : carcinome de type NST de grade 3 ki 67 à 80% triple négatif
+Examen clinique
+Le [ 24 jours avant RCP ] : Poids : 54 kg, Taille : 160 cm, IMC : 21.1 kg/m², SC : 1.6 m²
+95 D masse de 2 cm du quadrant superoexterne du sein droit, pas d'adénopathie axillaire. Pas de masse mammaire controlatérale
+Conclusion
+Carcinome du sein droit triple négatif cT1cN0
+indication de chimiothérapie néoadjuvante pose de coil le [ 24 jours avant RCP ]
+TEP FDG le [ 22 jours avant RCP ]
+100% en cours par le médecin traitant
+RCP cancérologie mammaire du [ 21 jours avant RCP ] : chimiothérapie néo adjuvante. Prévoir rectoscopie.
+RDV [MEDECIN REFERANT]jeudi [ 21 jours avant RCP ] à 17h30 avec le [MEDECIN REFERANT]en oncologie
+Consultation [MEDECIN REFERANT]le [ 7 jours avant RCP ] :
+Consultation [MEDECIN REFERANT][ 21 jours avant RCP ] : refus de la patiente chimiothérapie néoadjuvante
+Au total carcinome de type NST grade 3 triple négatif Ki 67 80% cT1cN0
+Échographie cardiaque réalisée le [ 14 jours avant RCP ] : sans anomalies.
+Patiente refusant la chimiothérapie néoadjuvante.
+Examen clinique le [ 24 jours avant RCP ] : Poids : 54 kg, Taille : 160 cm, IMC : 21.1 kg/m², SC : 1.6 m²
+Masse de 2 cm du quadrant supero externe du sein droit
+Conclusion :
+Indication de tumorectomie + procédure du ganglion sentinelle droit bloc [ 3356 jours avant RCP ]
+GS la veillle de l'intervention
+Cs anesth en présentiel faite ce jour ([ 7 jours avant RCP ])
+RCP cancérologie mammaire du [ 0 jours avant RCP ] pour validation de la chirurgie
+Décision de la RCP : nan
+
+

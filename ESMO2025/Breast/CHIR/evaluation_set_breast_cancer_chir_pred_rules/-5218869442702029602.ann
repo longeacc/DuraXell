@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 2573 2594	R.O. (6 F 11) : 70 % 
+A1	Value T1 positif
+T2	Progesterone_receptor 2665 2685	R.P. (1 A 6) : 20 % 
+A2	Value T2 positif
+T3	Ki67 2734 2739	Ki67 
+A3	Value T3 67%
+T4	Estrogen_receptor 3410 3431	R.O. (6 F 11) : 20 % 
+A4	Value T4 positif
+T5	Progesterone_receptor 3503 3515	R.P. (1 A 6)
+A5	Value T5 negatif
+T6	Ki67 3561 3566	Ki67 
+A6	Value T6 67%

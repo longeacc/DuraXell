@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 3014 3017	RE-
+A1	RO_values T1 negative
+T2	Progesterone_receptor 3019 3022	RP-
+A2	RP_values T2 negative
+T3	HER2_status 3024 3029	Her2-
+A3	HER2_status_values T3 negatif
+T4	HER2_IHC 3024 3032	Her2- (+
+A4	HER2_values T4 1+
+T5	Ki67 3058 3066	Ki67 70%
+

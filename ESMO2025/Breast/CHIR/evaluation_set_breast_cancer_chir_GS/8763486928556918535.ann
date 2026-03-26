@@ -1,0 +1,11 @@
+T1	Estrogen_receptor 1276 1279	RO-
+A1	RO_values T1 negative
+T2	Progesterone_receptor 1281 1284	RP-
+A2	RP_values T2 negative
+T3	HER2_status 1601 1632	Absence de surexpression d’HER2
+A3	HER2_status_values T3 negatif
+T4	Estrogen_receptor 1593 1596	RO-
+A4	RO_values T4 negative
+T5	Progesterone_receptor 1596 1598	RP
+A5	RP_values T5 negative
+

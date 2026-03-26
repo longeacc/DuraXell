@@ -1,0 +1,53 @@
+Pat72
+ Raison Complexite : nan
+ Age : 44
+ Données biométriques et score : 
+ Poids :      56.00 kg   Le   [ 3 jours avant RCP ] IMC (Quetelet) : 19.4 kg/m2
+ Taille :      170 cm Le      [ 3 jours avant RCP ]        SC (Dubois) : 1.65 m2
+ Motif de présentation : Motif de présentation            Avis Imagerie
+ Données Médicales : 
+Motif de présentation            Avis Imagerie
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Antécédents et allergies :
+Allergies : Pas d'allergie connue
+Antécédents familiaux : pas de néoplasie mammaire ou gynécologique
+Antécédents médicaux : RAS
+Antécédents chirurgicaux : Prothèse mammaire bilatérale en [ 1565 jours avant RCP ]
+Antécédents gynéco-obstétriques :
+- G2P2 2AVB - sous stérilet au cuivre MONA LISA depuis [ 7 jours avant RCP ] - suivi régulier
+Mode de vie : expert comptable.
+prothèse bilatérales: NAGOR Eurosilicone (290)
+Histoire de la maladie :
+Patiente de [Age Patiente], découverte à la mammographie de dépistage et en IRM d'un foyer de CLI du sein gauche QSI découvert au décours de mastodynies droite.
+Bilan échographie/ mammographie : Le [ 37 jours avant RCP ] en ville ) Absence de lésion suspecte des deux seins. suspicion de rupture de l'enveloppe prothétique droite. suspicion de 3 siliconomes du quadrant supéro-externe
+Pas d'adénopathie axillaire.
+IRM mammaire en ville [ 28 jours avant RCP ]:
+IRM mammaire gauche ACR4 : rehaussement asymétrique de l'union des quadrants supérieure QSIntérne (biopsie sous écho en ville)
+IRM mammaire droite ACR2. Pas de signe de rupture prothétique.
+Échographie de seconde look en ville [ 19 jours avant RCP ]: La zone fibreuse mal limitée, QSInterne du sein gauche (rayon 11h 5cm du mamelon) de 17 x 13 mm.
+Microbiopsie du sein gauche en faveur d'un carcinome lobulaire infiltrant de Grade 2 (3 + 2 + 1) RE 90 RP 90 her2
+score 0 ki67 à 15% un index mitotique faible. Carcinome lobulaire in-situ associé : 15 %.
+Examen clinique le [ 3 jours avant RCP ] : Poids : 56 kg, Taille : 170 cm, IMC : 19.4 kg/m², SC : 1.6 m²
+Poids taille et TSG 90C-D
+Examen mammaire :
+Sein droit: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+Sein gauche: induration du QSI du sein gauche. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement relecture IRM [ETABLISSEMENT]
+Sein droit BIRADS 2.
+Sein gauche BIRADS 6:
+- Rehaussement non masse micronodulaire de l'union des quadrants supérieurs et du quadrant supéro-interne avec ensemble lésionnel de 4 x 1,5 x 4 cm.
+- Masse de 6 mm du quadrant supéro-externe évocatrice d'un ganglion intramammaire, à corréler à une échographie de seconde intention.
+Indication de tumorectomie + procédure du ganglion sentinelle ( patiente informée du risque de coque péri prothétique post radique) AMBULATOIRE le [ 12 jours apres RCP ]
+Consultation post opératoire le [ 42 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+  Type de 
+Proposition                Application référentiel
+  Proposition de décision
+  Chirurgie première dont les modalités sont à préciser avec le complément de bilan radiologique
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

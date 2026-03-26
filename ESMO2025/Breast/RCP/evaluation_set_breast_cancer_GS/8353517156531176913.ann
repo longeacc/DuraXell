@@ -1,0 +1,23 @@
+T1	Estrogen_receptor 2882 2888	RO 80%
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2890 2895	RP 0%
+A2	RP_values T2 negative
+T3	HER2_IHC 2901 2915;2916 2959	HER2: marquage discontinu de rares cellules tumorales (1+)
+A3	HER2_values T3 1+
+T4	Estrogen_receptor 5159 5165	RO+80%
+A4	RO_values T4 positive
+T5	Progesterone_receptor 5167 5170	RP-
+A5	RP_values T5 negative
+T6	HER2_IHC 5172 5181	HER2- (1+
+A6	HER2_values T6 1+
+T7	HER2_status 5172 5177	HER2-
+A7	HER2_status_values T7 negatif
+T8	Estrogen_receptor 5567 5572	RO+80
+A8	RO_values T8 positive
+T9	Progesterone_receptor 5575 5578	RP-
+A9	RP_values T9 negative
+T10	HER2_status 5580 5585	HER2-
+A10	HER2_status_values T10 negatif
+T11	HER2_IHC 5580 5589	HER2- (1+
+A11	HER2_values T11 1+
+

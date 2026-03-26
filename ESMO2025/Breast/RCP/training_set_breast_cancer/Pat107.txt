@@ -1,0 +1,55 @@
+Pat107
+ Raison Complexite : nan
+ Age : 63
+ Données biométriques et score : 
+ Poids :     59.00 kg    Le   [ 38 jours avant RCP ] IMC (Quetelet) : 21.4 kg/m 2
+ Taille :      166 cm Le      [ 38 jours avant RCP ]        SC (Dubois) : 1.65 m2
+ Motif de présentation : Motif de présentation             Résultats histologiques bloc du  Données Médicales : 
+Motif de présentation             Résultats histologiques bloc du                                   [ 16 jours avant RCP ]
+Histoire de la maladie
+Consulation [MEDECIN REFERANT]du [ 8 jours avant RCP ] :
+Antécédents et allergies :
+Antécédents familiaux : - caner du sein chez la mère à tante à 27 ans - pas de cancer uterus ovaire colon prostate pancreas
+Antécédents médicaux :
+- HTA limite non traité - cholestérol limite, doit contrôler - nodules thyroïdiens controlés
+Antécédents chirurgicaux : 0
+Antécédents gynéco-obstétriques : G0P0, ménopause vers 50 ans , pas de THM
+Résumé clinique - 
+Histoire de la maladie :
+Echo/ mammographie en ville relue à l'hôpital [ETABLISSEMENT] :
+- ACR 4c à droite 15mm QSE avec microbiopsie échoguidée .
+- ACR 3 à gauche avec asymétrie de densité du QSE.
+Microbiopsie du sein droit [ 50 jours avant RCP ] : Adénocarcinome infiltrant probablement de type lobulaire, de grade 2 de malignité selon Elston et Ellis (3+2+1). RO 100%, RP 0%, Her 2 score 1, Ki 10%.
+IRM Mammaire :
+Sein droit ACR 6 : masses confluentes du QSE s'étendant sur 42 mm de grand axe sans adénomégalie axillaire.
+Sein gauche ACR 4c : désorganisation architecturale avec RNM segmentaire du QSE sur 41 mm de grand axe, sans adénomégalie axillaire.
+Biopsie mammaire gauche prévues le [ 37 jours avant RCP ].
+1. Microbiopsie d'une plage hypoéchogène Birads 4b du sein gauche de 8mm du QSE/UQS du sein gauche avec pose de clip et programmation d’une IRM post clip : Tissu à prédominance adipeux avec septa vasculaire sans argument pour un lipome, ni de stéatonécrose. Fragments de parenchyme mammaire renfermant des canaux réguliers sans prolifération épithéliale suspecte sur les différents niveaux supplémentaires
+2. Cytoponction ganglionnaire axillaire droite : bénigne ( par téléphone [MEDECIN PARTICIPANT A LA RCP], pas de CR vu)
+2eme biopsie mammaires gauches : [ 21 jours avant RCP ]/ 2021 : Microbiopsie du sein gauche – site biopsique n°1 : parenchyme mammaire dans les limites de la normale.
+3 Macrobiopsie du sein gauche – site biopsique n°2 : lésions associant adénose, kystes, métaplasie apocrine et hyperplasie canalaire simple
+Examen clinique initial : 90 B : sein droit : on palpe difficilement une masse du quadrant supéro externe du sein droit centimétrique sein gauche RAS pas d'adénopathies axillaires ou sus claviculaire
+Examen complémentaires :
+IRM post pose de clip : Clip dans le QSE du sein gauche, à la partie la plus antérieure et superficielle du RNM segmentaire de 4 cm. A confronter aux résultats histologiques.
+Au total :
+Carcinome mammaire droit T1c(m) mutifocal N0
+Exploration sein gauche : benignes
+Indication de tumorectomie oncoplastie externe + prélèvement du ganglion sentinelle droit
+Pièce de tumorectomie de l’union des quadrants externes du sein droit : Pièce incluse en quasi-totalité pour taille histologique:
+Carcinome lobulaire infiltrant de type pléomorphe, mesurant histologiquement 15 mm, de grade 2 de malignité selon Elston et Ellis (3+2+2), situé à plus de 5 mm de l’ensemble des limites latérales et à 1 mm du plan profond.
+Présence de la cicatrice de biopsie. Ki 67 10% , Her2 score 1, RE 100%, RP 3%
+Composante carcinomateuse lobulaire in situ arrivant à moins de 1 mm de la limite inférieure et à 1 mm de la limite supérieure.
+Absence d'emboles tumoraux lymphatiques ou sanguins.
+Recoupe interne : carcinome lobulaire in situ arrivant à moins de 1 mm de la limite d’exérèse.
+Recoupes supérieure, inférieure et interne : indemnes de prolifération carcinomateuse infiltrante.
+Ganglions sentinelles : 3 ganglions négatifs.
+Classification pTNM AJCC 2017, 8e édition : pT1cN0(sn).
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision  radiothérapie et traitement anti hormonal
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

@@ -1,0 +1,7 @@
+T1	Estrogen_receptor 1488 1523	Récepteurs aux Œstrogènes : négatif
+A1	RO_values T1 negative
+T2	Progesterone_receptor 1527 1565	Récepteurs à la progestérone : négatif
+A2	RP_values T2 negative
+T3	HER2_IHC 1569 1666;1667 1683	HER2 (anticorps monoclonal 4B5) : fort marquage membranaire en cadre de la plupart des cellules,  marquage coté 3+
+A3	HER2_values T3 3+
+

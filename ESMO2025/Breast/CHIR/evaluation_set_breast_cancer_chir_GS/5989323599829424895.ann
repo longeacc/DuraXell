@@ -1,0 +1,17 @@
+T1	Estrogen_receptor 1365 1473;1474 1483	Récepteurs aux œstrogènes (LEICA clone 6F11, prédilué) : expression nucléaire intense par 100% des cellules  tumorales
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1488 1588	Recepteurs a la progesterone (LEICA clone 16, prédilué) : absence de marquage des cellules tumorales
+A2	RP_values T2 negative
+T3	HER2_status 1593 1680	Oncogene cerb B2 (DAKO clone CerB-2 1/600) : absence de marquage des cellules tumorales
+A3	HER2_status_values T3 negatif
+T4	Ki67 1743 1752	Ki67 10 %
+T5	HER2_IHC 2037 2057	HER2 négatif (score0
+A4	HER2_values T5 0
+T6	HER2_status 2037 2049	HER2 négatif
+A5	HER2_status_values T6 negatif
+T7	Ki67 2060 2071	Ki-67 : 10%
+T8	Progesterone_receptor 2031 2034	RP-
+A6	RP_values T8 negative
+T9	Estrogen_receptor 2025 2028	RO+
+A7	RO_values T9 positive
+

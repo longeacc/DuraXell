@@ -1,0 +1,22 @@
+T1	Estrogen_receptor 1103 1106	RH+
+A1	Value T1 positif
+T2	Progesterone_receptor 1103 1106	RH+
+A2	Value T2 positif
+T3	Estrogen_receptor 3297 3300	RO+
+A3	Value T3 positif
+T4	Progesterone_receptor 3406 3409	RP+
+A4	Value T4 positif
+T5	Ki67 3483 3495	Ki67 : 15 %.
+A5	Value T5 15%
+T6	HER2_IHC 3622 3639	 HER2 : score 1 (
+A6	Value T6 1+
+T7	Estrogen_receptor 4289 4292	RO+
+A7	Value T7 positif
+T8	Progesterone_receptor 4294 4297	RP+
+A8	Value T8 positif
+T9	HER2_IHC 4298 4314	 HER2- (score 1)
+A9	Value T9 1+
+T10	HER2_status 4298 4314	 HER2- (score 1)
+A10	Value T10 negatif
+T11	Ki67 4316 4322	Ki67  
+A11	Value T11 67%

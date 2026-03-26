@@ -1,0 +1,9 @@
+T1	Estrogen_receptor 1248 1255	RO 60%,
+T2	Progesterone_receptor 1256 1268	RP négatifs,
+T3	HER2_IHC 1277 1289	Her2 score 2
+T4	Ki67 1269 1276	KI 30%,
+T45	HER2_FISH 1290 1303	FISH amplifié
+A1	RO_values T1 positive
+A2	RP_values T2 negative
+A3	HER2_values T3 2+
+A4	FISH_values T45 positif

@@ -1,0 +1,74 @@
+Pat1
+ Raison Complexite : nan
+ Age : 58
+ Données biométriques et score : 
+  Poids :    110.0 kg   Le    [ 38 jours avant RCP ] IMC (Quetelet) : 40.9 kg/m2
+  Taille :     164 cm Le      [ 38 jours avant RCP ]      SC (Dubois) : 2.14 m2
+ Motif de présentation : Motif de présentation           Résultats histo [ 13 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation           Résultats histo [ 13 jours avant RCP ]
+Histologie
+ Date           Examen                                      
+Conclusion
+ [ 13 jours avant RCP ] PIECE DE TUMORECTOMIE DU SEIN
+                DROIT, RECOUPES LATERALES,
+                GANGLIONS SENTINELLES ET MASSE
+                MAMELONNAIRE
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]le [ 38 jours avant RCP ]
+Motif Patiente adressée par le [MEDECIN PARTICIPANT A LA RCP]pour un avis sénologique
+Antécédents et allergies
+Antécédents familiaux : pas de cancer connu
+Antécédents médicaux : - diabète de type 2 + hypercholestérolémie contrôlés sous régime
+- HTA Coversyl - aponévrite plantaire - gonarthrose - tendinopathie achilééenne - fibromyalgie
+Antécédents chirurgicaux : - cholecystectomie - canal carpien : doit se faire opérer
+Antécédents gynéco-obstétriques :
+- 1 FCS 2004
+- G1P0
+-ménopausée vers 50 ans pas de THM
+Histoire de la maladie
+Bilan sénologique de depistage relu à l'hôpital [ETABLISSEMENT]
+Sein droit classé BIRADS 5 de l'ACR avec une masse de 18 mm ACR 5 de l'UQE (9h-1 cm du mamelon), microbiopsée ce jour avec pose de clip RING.
+Pas de masse additionnelle ni d'adénopathie axillaire.
+Sein gauche classé BIRADS 4b de l'ACR avec une masse de 13 mm ACR 4b du Quadrant infero interne proche de l'Union des Quadrants Interne (8h30 - 2 cm du mamelon), microbiopsiée ce jour avec pose de clip RING.
+Pas de masse additionnelle ni d'adénopathie axillaire.
+Site biopsique n°1 sein gauche : masse du QII du sein gauche : hyperplasie stromale pseudo-angiomateuse, adénose et métaplasie cylindrique simple..
+Site biopsique n°2 : masse à l’UQE du sein droit : adénocarcinome lobulaire infiltrant de grade 2 de malignité selon Elston et Ellis (3+2+1). RO 100%, RP 100%, Her2
+score 1 et Ki 67 10%.
+Examen clinique le [ 38 jours avant RCP ] : Poids : 110 kg, Taille : 164 cm, IMC : 40.9 kg/m², SC : 2.1 m²
+95 D on palpe difficilement une masse para aréolaire du sein droit pas d'adénopathie axillaire
+IRM mammaire [ 34 jours avant RCP ] : Sous réserve du rehaussement glandulaire diffus micronodulaire masquant :
+IRM mammaire droite BIRADS 4b, avec :
+- Cible n°1: Masse de 22 mm de l'UQE , avec clip en place, BIRADS 6.
+- Cible n°2: Masse mamelonnaire de 9 x 7 mm, classée BIRADS 4b, pour laquelle on programme une échographie de seconde look avec microbiopsie.
+Ensemble lésionnel de 36 x 21 x 22 mm
+En l'absence de cible échographique, la cible n'est pas accessible en biopsie sous IRM.
+IRM mammaire gauche BIRADS 2.
+Biopsie complémentaire le [ 30 jours avant RCP ] : Biopsie du mamelon intéressant un tissu fibreux avec de nombreux faisceaux musculaires lisses réguliers, sans canaux ni lobules identifiables.
+Il n’ a pas été identifié de prolifération tumorale in situ ni infiltrante.
+Cet aspect histologique n’explique pas le signal radiologique : Masse ACR4B, à corréler à la radiologie.
+RCP [ 21 jours avant RCP ] Indication de tumorectomie +/- pamectomie et ganglion sentinelle après repérage (bloc [ 13 jours avant RCP ])
+Evaluer l'exérèse du nodule mamelonnaire.
+TUMORECTOMIE DU SEIN DROIT ET PROCEDURE DU GANGLION SENTINELLE DROIT [ 13 jours avant RCP ] :
+- Pièce de tumorectomie du sein droit :
+Adénocarcinome lobulaire infiltrant mesurant 18 mm, de grade 2 de malignité selon Elston et Ellis (3+2+1). RO 50% RP 100% HER2 score 0 Ki67 5%
+Composante carcinomateuse lobulaire in situ estimée à 20 %.
+Absence d'emboles tumoraux.
+Carcinome lobulaire invasif situé à plus de 5 mm de l’ensemble des limites d'exérèse.
+Carcinome lobulaire in situ situé à 1 mm de la limite supérieure et du plan superficiel, à 2 mm de la limite externe et restant à plus de 5 mm des autres limites d'exérèse.
+- Recoupes latérales : saines.
+- Ganglions sentinelles : 3 ganglions métastatiques sur 4 ganglions (3 N + / 4 N).
+- Masse mamelonnaire : papillomatose floride du mamelon mesurant 6 mm.
+Classification pTNM AJCC 2017, 8e édition : pT1cN1a(sn)
+Consultation post opératoire le [ 4 jours apres RCP ] à 13h30
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  TEP-FDG
+  IHC sur ganglion métastatique
+  Indication de chimiothérapie, radiothérapie et traitement anti-hormonal.
+  Incluable dans NATALEE
+  Proposition d'inclusion dans un essai thérapeutique : Oui
+  Nom du protocole :NATALEE
+
+

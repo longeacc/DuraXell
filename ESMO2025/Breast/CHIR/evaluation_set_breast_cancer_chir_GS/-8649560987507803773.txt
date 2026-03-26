@@ -1,0 +1,182 @@
+" Assistance Publique - Hôpitaux de Paris 
+Service d’Anatomie et Cytologie Pathologiques  
+23TH06230 
+ Chef de service par intérim : Pr younghi LAMYMARTINS  
+4, rue de la Chine 75970 PARIS Cedex 20  0665338592 / 66.17 / 69.43 / 80.58   
+ 0668365599 
+ 
+Mme BENKHNIFA gugatharshini kamody GARCIADURAND dominique 
+Né(e) BENKHNIFA serv radiologie 
+Née le 26/07/1954 hôpital Tenon 
+NIP : 8001767020 4 rue de la chine 
+ 75020 PARIS 
+Prélevé le : 18/07/2023  
+Reçu le : 18/07/2023  
+Origine : NGOUANA dominique Edité le 02/10/2023 (TJUHO) 
+Transmis à :  Dr TAILLEBOSQPLATERO euniceesther 
+      
+   
+   
+ 
+Antériorités : 23TH06728, 23TH06014 
+ 
+ADICAP : C---A5B2, PHGS0161, PHGSA7X6    
+MICROBIOPSIE DU SEIN DROIT 
+ 
+Renseignements cliniques : patiente avec  antécédent personnel de cancer de sein gauche métastatique 
+ 
+Description du (des) site(s) prélevé(s) : type de lésion : plage d’altération échostructurale, du sein droit, du quadrant QSI, sur 
+le rayon de 1 h, à 4 cm du mamelon, taille difficile a délimiter, Bi-rads 4b, aiguille 14 Gauge, 4 passages, pose de clip. 
+ 
+Examen microscopique 
+Le matériel est inclus en totalité et étudié sur plusieurs niveaux. 
+- Type histologique : carcinome infiltrant de type canalaire. 
+- Architecture : massive 
+- Anisocaryose : modérée  
+- Activité mitotique : mitoses pour 10 HPF. 
+- Emboles tumoraux lymphatiques : absents.  
+- Composante carcinomateuse in situ : présente, de type canalaire.  
+ 
+IMMUNOHISTOCHIMIE DES FACTEURS PRONOSTIQUES ET PREDICTIFS DU CANCER DU SEIN :  
+Bloc tumeur (indice) : 1 
+Technique: LEICA BOND III BOND Polymer Refine Detection. 
+RECEPTEURS AUX OESTROGENES (LEICA clone 6F11, prédilué) :  
+Pourcentage de cellules : 0 %    
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RE + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+RECEPTEURS A LA PROGESTERONE (LEICA clone 16, prédilué) : 
+Pourcentage de cellules : 0 %    
+Témoin positif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire RP + : OUI 
+(Positivité pour plus de 10 % de cellules carcinomateuses invasives marquées). 
+ONCOGENE Cerb B2 (LEICA clone CB11, prédilué) : Score 1 
+Témoin négatif interne cellule galactophorique normale : OUI 
+Témoin positif externe autre tumeur mammaire score 3 : OUI 
+Score 3 (positif) : marquage membranaire complet et fort >10 % des cellules tumorales invasives ; score 2 (équivoque) : 
+marquage membranaire complet modéré ou incomplet, baso-lateral modéré à fort >10 % des cellules; 
+score1(négatif) : marquage membranaire complet ou incomplet faible de > 10 % des cellules; score 0 (négatif) : absence de 
+marquage ou marquage membranaire faible ≤ 10 % (recommandations GEFPICS 2021). 
+FACTEUR DE PROLIFERATION (Dako clone Mib1, 1/150) : index Ki67 : 5 % 
+Témoin interne positif mitose : OUI (Tumeur non proliférante : % < à 20 % de cellules carcinomateuses invasives marquées ; 
+tumeur proliférante : % > ou égal à 20 % de cellules carcinomateuses invasives marquées). 
+E-CADHERINE (ZYMED clone 4A2C7, 1/100): marquage membranaire positif.  
+CK14 et P63 : negatives (absence de couche myoépitheliale) 
+ 
+ 
+ 
+ 
+ 
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme BENKHNIFA gugatharshini 23TH06230 Page 2 
+ 
+  
+ 
+CONCLUSION :  
+Carcinome infiltrant de type canalaire NS, de grade histopronostique EE 2 (3 + 2 + 1).  
+Présence d’une faible composante carcinomateuse in situ de type canalaire. 
+Absence d’emboles lymphatiques. 
+Immunophénotype : RE: 0 %, RP: 0 %, HER2 score 1,  Ki67 : 5 %. 
+ 
+Un étude immunohistochimique anti GATA3 est en cours et fera l’objet d’un compte rendu 
+complémentaire. 
+ 
+ 
+ 
+ 
+     Le 21/07/2023 
+        Dr TENGHER-ANGELMANN clency 
+ 
+ 
+ 
+ 
+COMPTE RENDU COMPLEMENTAIRE 
+  
+Les examens immunohistochimiques complémentaires réalisés montrent: 
+- anti-GATA3 : positif nucléaire. 
+- anti- CK7: positif membrannaire sur l’ensemble de la proliferation tumorale. 
+- anti-EMA: positif membrannaire en cadre cytoplasmique basolateral. 
+- anti-C-Kit, P63, CK14, chromogranine, synaptophisine: négatifs. 
+ 
+ 
+CONCLUSION : Aspect histologique et immunohistochimique inhabituel de cette 
+prolifération carcinomateuse invasive, de phénotype triple négatif (RE-, RP-, HER2-), 
+faisant discuter un carcinome de type adénoïde kystique de forme solide, de bas grade. 
+ 
+Les lames/bloc ont été envoyés pour avis diagnostique et étude immunohistochimique 
+MYB à l’Institut Curie, Paris. 
+ 
+ 
+ 
+ 
+     Le 10/08/2023 
+        Dr TENGHER-ANGELMANN clency 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme BENKHNIFA gugatharshini 23TH06230 Page 3 
+ 
+  
+COMPTE RENDU COMPLEMENTAIRE 
+ 
+ 
+ 
+ 
+ 
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme BENKHNIFA gugatharshini 23TH06230 Page 4 
+ 
+  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hôpital TENON 75970 PARIS cedex 20 Service d'Anatomie et Cytologie Pathologiques 
+Mme BENKHNIFA gugatharshini 23TH06230 Page 5 
+ 
+  
+ 
+ 
+ 
+  Le 02/10/2023, 
+        Dr TENGHER-ANGELMANN clency 
+ 
+ 
+Compte-rendu validé et signé électroniquement. 
+ 
+ 
+ 
+"

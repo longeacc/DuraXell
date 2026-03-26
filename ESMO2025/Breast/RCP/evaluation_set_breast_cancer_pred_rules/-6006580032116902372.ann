@@ -1,0 +1,30 @@
+T1	HER2_IHC 849 864	. Cerb B2 : 0. 
+A1	Value T1 0
+T2	Progesterone_receptor 878 884	RP : -
+A2	Value T2 negatif
+T3	Ki67 890 899	Ki67 5 %.
+A3	Value T3 5%
+T4	Estrogen_receptor 1722 1725	RE-
+A4	Value T4 negatif
+T5	Progesterone_receptor 1727 1730	RP-
+A5	Value T5 negatif
+T6	HER2_status 1731 1746	 Her2-.      Un
+A6	Value T6 negatif
+T7	Estrogen_receptor 1985 1988	RE-
+A7	Value T7 negatif
+T8	Progesterone_receptor 1990 1993	RP-
+A8	Value T8 negatif
+T9	Ki67 2002 2013	Ki 67 = 5%.
+A9	Value T9 5%
+T10	Estrogen_receptor 3661 3664	RE-
+A10	Value T10 negatif
+T11	Progesterone_receptor 3666 3669	RP-
+A11	Value T11 negatif
+T12	Ki67 3678 3686	Ki67 40%
+A12	Value T12 40%
+T13	Estrogen_receptor 4446 4449	RE-
+A13	Value T13 negatif
+T14	Progesterone_receptor 4451 4454	RP-
+A14	Value T14 negatif
+T15	Ki67 4463 4470	Ki67 5%
+A15	Value T15 5%

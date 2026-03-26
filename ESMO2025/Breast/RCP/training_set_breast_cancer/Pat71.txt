@@ -1,0 +1,67 @@
+Pat71
+ Raison Complexite : nan
+ Age : 45
+ Données biométriques et score : pas de données biometriques
+ Motif de présentation : Motif de présentation          Résultats histologiques bloc du  Données Médicales : 
+Histoire de la maladie
+F[Age Patiente]
+Mode de vie : enseignante
+Tabac : 0.
+Antécédents :
+Gyneco : DPR : 14 ans. 3 enfants, 3 AVB 2003, 2005, 2009 AM 12-15 mois. non ménopausée, DIU cuivre à changer (5 ans).
+Chir: DL sous AL. Med: 0. Pas de thrombose, cancer, HTA ni diabète. Allergie med: 0. Fam: pas de cancer.
+Anamnèse : autopalpation d'une masse indurée mobile avec rétraction cutanée à l'UQS du sein gauche avec augmentation de volume mammaire gauche depuis 3 semaines.
+Mammo/écho ville : indication de biopsie.
+Examen clinique :
+T: 172 cm; Poids: 62 kg; TSG: 90B
+Examen mammaire :
+Sein droit: pas de masse palpée, pas d'atteinte cutanée, aires ganglionnaires axillaires sus et sous clav libres
+Sein gauche: masse supéroexterne de 3 cm avec attraction cutanée sur 5 mm sans atteinte cutanée visible. pas d'autre masse palpée, aires ganglionnaires libres axillaires sous et sus claviculaire.
+Relecture de la mammographie réalisée en externe le [ 27 jours avant RCP ] et échographie mammaire et axillaire bilatérale du jour :
+Seins de densité C.
+Masse index du sein gauche dans le QSE à 1H et 2 cm du mamelon de 30 x 16 mm dans un plan axial et 20 mm de hauteur, de forme irrégulière, de contours non circonscrits anguleux avec atténuation postérieure, spiculée à la mammographie associée à des microcalcifications, à une distorsion architecturale et à une rétraction cutanée en regard,
+Birads 5. Atteinte localisée de la peau en regard de la rétraction cutanée.
+En échographie on retrouve un plusieurs formations du sein gauche hypoéchogènes de forme majoritairement ovalaire, de contours non circonscrits Birads 4b - à 3 h et 3 cm du mamelon de 4 mm située à 14 mm de la masse index pour un ensemble lésionnel mesurant 40 mm.
+- à 8 h et 3 cm de 3x4x4.4 mm - à 8 h et 4 cm de 5 x 3 x 4 mm, plus haute que large choisie pour cible (site2) et la plus éloignée du site index - à 9 h et 2 cm 4 x 3 x 6 mm, choisie pour cible (site3)
+- à 9 h 30 et 2 cm de 6 x 5 x 6 mm située à 42 mm de la masse index avec un ensemble lésionnel à 54 mm - à 10 h et 5 cm du mamelon de 3 mm - à 10h et 3cm de 3.7x5mm situé à 10 mm de la masse index avec un ensemble lésionnel de 44 mm.
+Calcifications d'allure bénigne du sein droit sédimentaires en faveur de laits calciques.
+Pas de masse ni d'atténuation suspecte en échographie du sein droit.
+Pas d'adénopathie axillaire.
+Conclusion : Relecture de la mammographie du [ 27 jours avant RCP ] et échographie du jour:
+Sein Droit Birads 2 et Sein gauche Birads 5 devant la présence d'une masse irrégulière de 30 mm de l'UQS avec atteinte cutanée sans adénopathie axillaire mais avec plusieurs masses hypoéchogènes éparses Birads 4b. Une IRM mammaire est programmée pour le 9 aout et une triple microbiopsie est réalisée ce jour :
+Site 1. d'une masse index Bi-rads 5 de 3cm du QSE du sein gauche, avec clip en anneau
+Site 2. d'une masse Bi-rads 4b du QII du sein gauche, avec clip en omega
+Site 3. d'une masse Bi-rads 4b du QII du sein gauche.
+IRM mammaire 05.08.2021 : CR préliminaire : sein droit : pas de lésion visible
+Sein gauche :
+En concordance avec la mammographie, on retrouve: - une masse de 26 x 15 x 23 mm du quadrant supéro-externe sur le rayon de 1h à 36 mm du mamelon (image 83 série
+101), de forme ovalaire et de contours spiculés réhaussant de manière homogène selon une courbe de type 3 du QSE classée ACR 6. Présence de clips en son sein Extension au plan pectoral superficiel.
+- masse annexe ovalaire de 5 mm du QSI sur le rayon de 11h à 36 mm du mamelon en ZMP (image 78 série 101) de forme ovalaire et de contours réguliers se réhaussant de manière homogène selon une courbe de type 3
+Pas d’extension à la plaque aréolo-mammaire ni à la peau.
+Absence de prise de contraste masse ou non masse au contact du clip du quadrant inféro-interne (pour rappel la biopsie de ce site était positive).
+Absence d’adénopathie axillaire ou mammaire interne.
+CONCLUSION : IRM mammaire droit BiRADS 2 sans lésion suspecte sous réserve d'un rehaussement glandulaire masquant.
+IRM mammaire gauche BiRADS 6 avec atteinte multifocale dont une masse principale de 26mm envahissant focalement la peau en regard.
+Histologie : Microbiopsies du quadrant supéro-externe du sein gauche – site biopsique n°1 : carcinome infiltrant de type non spécifique, de grade 1 de malignité selon Elston et Ellis (2+2+1).
+- Microbiopsies du quadrant inféro-interne du sein gauche – site biopsique n°2 : carcinome infiltrant de type non spécifique, de grade 1 de malignité selon Elston et Ellis (2+2+1).
+- Microbiopsies du quadrant inféro-interne du sein gauche – site biopsique n°3 : carcinome infiltrant de type non spécifique, de grade 1 de malignité selon Elston et Ellis (2+2+1).
+FISH HER2 non amplifiée. RO 70 à 90%
+RP 100%
+HER2 score 2
+ Ki67 < 5 %
+Conclusion : cancer multifocal du sein gauche T2N0Mx
+TEP TDM : Intense traduction TEP de la masse du quadrant supéro-externe du sein gauche avec au moins 4 autres petits foyers moins actifs du sein gauche correspondant à l'atteinte multifocale connue.
+Quelques ganglions axillaires gauches discrètement actifs, peu spécifiques en particulier dans le contexte de vaccination covid19 réalisée sur ce bras en [ 72 jours avant RCP ], mais néanmoins douteux dans ce contexte de néoplasie mammaire gauche.
+Absence de lésion suspecte à distance.
+Indication théorique de mastectomie totale avec conservation de la PAM et étui cutané + pose prothèse + technique du GS axillaire gauche +/- chimiothérapie néo-adjuvante selon le résultat de la FISH HER2 et les résultats du bilan d'extension.
+Echographie pelvienne normale.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ Indication de mastectomie totale et curage axillaire gauche. Pas de conservation de la PAM compte tenu de la proximité  de la lésion avec la peau et la PAM sur l'imagerie
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

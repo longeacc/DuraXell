@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 2690 2697	RO: 3 +
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2705 2712	RP: 0 %
+A2	RP_values T2 negative
+T3	HER2_status 2714 2727	HER2: négatif
+A3	HER2_status_values T3 negatif
+T4	HER2_IHC 2714 2736	HER2: négatif, score 0
+A4	HER2_values T4 0
+T5	Ki67 2738 2747	Ki67: 8 %
+

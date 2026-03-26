@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 1714 1720	RE 90%
+A1	Value T1 positif
+T2	Progesterone_receptor 1722 1728	RP 90%
+A2	Value T2 positif
+T3	Ki67 1737 1746	Ki67 40%.
+A3	Value T3 40%
+T4	Estrogen_receptor 1868 1875	RE 100%
+A4	Value T4 positif
+T5	Progesterone_receptor 1877 1884	RP 100%
+A5	Value T5 positif
+T6	Ki67 1931 1942	Ki 67  35%.
+A6	Value T6 35%

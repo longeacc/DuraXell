@@ -1,0 +1,6 @@
+T1	Estrogen_receptor 4147 4150	RH+
+A1	RO_values T1 positive
+T2	HER2_status 4157 4185	sans surexpression de l’HER2
+A2	HER2_status_values T2 negatif
+T3	Ki67 4192 4202	Ki67 à 15%
+

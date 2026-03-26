@@ -1,0 +1,12 @@
+T1	Estrogen_receptor 1474 1483	RO +100 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 1485 1493	RP +90 %
+A2	RP_values T2 positive
+T3	Ki67 1495 1498;1499 1503	KI  50 %
+T4	HER2_IHC 1505 1517	Her-2 modéré
+A3	HER2_values T4 2+
+T5	HER2_FISH 1526 1546	SISH non contributif
+A4	FISH_values T5 non_disponible
+T6	HER2_FISH 2798 2828	absence d'amplification d'HER2
+A5	FISH_values T6 negatif
+

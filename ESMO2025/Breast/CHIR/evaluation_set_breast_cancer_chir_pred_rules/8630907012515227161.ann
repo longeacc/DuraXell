@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 1829 1832	RO+
+A1	Value T1 positif
+T2	Progesterone_receptor 1935 1938	RP-
+A2	Value T2 negatif
+T3	Ki67 2014 2024	Ki67 : 70 
+A3	Value T3 70%
+T4	Ki67 2975 2982	Ki67 70
+A4	Value T4 70%

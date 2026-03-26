@@ -1,0 +1,5 @@
+T1	HER2_status 1682 1701	statut HER2 négatif
+A1	HER2_status_values T1 negatif
+T2	HER2_IHC 1689 1711	HER2 négatif, score 1+
+A2	HER2_values T2 1+
+

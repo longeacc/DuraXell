@@ -1,0 +1,65 @@
+Pat73
+ Raison Complexite : nan
+ Age : 76
+ Données biométriques et score : 
+  Poids :     69.00 kg   Le  [ 3 jours avant RCP ] IMC (Quetelet) : 27.0 kg/m 2                                     G8 :
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+                                                                         2
+  Taille :      160 cm Le    [ 3 jours avant RCP ]        SC (Dubois) : 1.72 m
+Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Antécédents et allergies :
+Allergies : NOROXINE : Urticaire
+Antécédents familiaux :
+- Soeur: cancer pancréas 59ans
+- Pas de cancer sein, ni ovaire, ni colon, ni endomètre
+- Pas de MTEV
+Antécédents médicaux : - artériopathie des membres inférieurs. doppler du [ 510 jours avant RCP ] : Occlusion fémorale superficielle superficielle avec un flux de réentrée un peu dégradé depuis [ 1810 jours avant RCP ].
+- Athérome carotidien ( 30% à droite et 40-45% à gauche) ([ 1810 jours avant RCP ]) - syndrome anxio dépressif traitée par antidépresseur et anxiolytiques ([ 1810 jours avant RCP ])
+- Hernie hiatale
+- 2 para-phlébites - cardiopathie ischémique : ATL avec pose de 2 stents actifs (coronaire droite et IVA) à [ETABLISSEMENT] ([ 905 jours avant RCP ]) - dyslipidémie traitée par tahor - thyroïde multinodulaire et suspicion de nodule parathyroïde (dernière imagerie en [ 715 jours avant RCP ]) ([ 1414 jours avant RCP ]) - duplicité rein gauche avec aspect dilaté du bassinet inférieur - adénome surrénale gauche connue et stable
+- Tabac actif
+Antécédents chirurgicaux : - coloscopie sous AG + Igel à [ETABLISSEMENT]. Douleurs pharyngées durant quelques jours du fait du masque laryngé
+([ 849 jours avant RCP ])
+- Nodule mammaire à Curie ( cellules pré cancéreuses)) (1990)
+Antécédents gynéco-obstétriques :
+- G1P1 1 AVB normal à terme 1978
+- Ménopausée à l'âge de 50ans, sans traitement hormonal de la ménopause
+Résumé clinique - 
+Histoire de la maladie :
+Patiente âgée de 76ans, adressée pour carcinome canalaire infiltrant sein opérée dans les années 90 d'une tumorectomie sein à [ETABLISSEMENT] pour des lésions d'atypie : pas de radiothérapie patiente sous aspirine protect bisoprolol transfusée à deux reprises lors de la chirurgie de la prothèse de hanche ancienne formatrice sur audit informatique vit seule, sans aide, marche avec une béquille depuis chirurgie prothèse de hanche il y 1 an avec lesion nerf femoral et déficit séquellaire du quadriceps gauche
+1 fille qui habite en région parisienne que la patiente voit de temps en temps
+3ème étage sans ascenseur
+Mammographie de dépistage le [ 28 jours avant RCP ].
+Patiente asymptomatique, pas de douleur, pas d'écoulement.
+Relecture bilan Sénologique réalisé le [ 28 jours avant RCP ] :
+Sein droit :
+Absence de masse, d'asymétrie de densité, de distorsion architecturale ou de foyer de microcalcifications. Quelques macro-calcifications éparses ACR 2.
+Sein gauche :
+Masse irrégulière de contours irréguliers dense de 11mm située à l'UQinf et 6cm du mamelon classée ACR 5.
+Echographie mammaire [ 28 jours avant RCP ]:
+Masse index ACR 5 irrégulière, de contours irréguliers, hypo-échogène, hétérogène mesurant
+11x5x10mm de l'UQinf et à 6cm du mamelon.
+La masse ACR 0 située à 6h-6cm et à 12mm de la masse index correspond à un kyste simple : ACR 2.
+Absence d’anomalie des creux axillaires, mammaires internes ni sus ou sous-claviculaires.
+Microbiopsie masse ACR5 UQinf sein gauche [ 17 jours avant RCP ]:
+Carcinome infiltrant de type non spécifique, de grade 1 de malignité selon Elston et Ellis (1+2+1). RO 100% RP 100% Her 2 score 1, Ki 67 5%.
+Possible minime composante carcinomateuse in situ en bordure de biopsie sur une section canalaire.
+Absence d’embole.
+Examen clinique
+Le [ 3 jours avant RCP ] : Poids : 69 kg, Taille : 160 cm, IMC : 27 kg/m², SC : 1.7 m²
+SG 95B on palpe difficilement une masse centimétrique à l'union des quadrants inferieurs du sein gauche pas d'adénopathie axillaire
+Conclusion :
+Indication de tumorectomie après repérage + prélèvement du ganglion sentinelle le [ 33 jours apres RCP ] en J0.
+Explication des principes de la chirurgie et des cicatrices. Explication du risque de reprise mammaire et/ou curage axillaire en fonction du résultat histologique sur l'examen final.
+Explication du risque d'hématome et d'abcès mammaire ou axillaire pouvant nécessiter une reprise chirurgicale en urgence.
+Explication des traitements adjuvants possibles: radiothérapie et hormonothérapie +/- chimiothérapie en fonction de l'analyse histologique.
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision
+  On valide la 
+Proposition 
+
+

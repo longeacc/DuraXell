@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 2997 3005	RO : 0%,
+T2	Estrogen_receptor 3526 3532	RO 0%,
+T3	Progesterone_receptor 3006 3012	RP 0%,
+T4	Progesterone_receptor 3533 3539	RP 0%,
+T5	HER2_status 972 984	Her2 score 3
+T6	HER2_IHC 3013 3027	HEr 2 score 3,
+T7	HER2_IHC 3540 3555	HER 2+ score 3,
+T8	Ki67 3028 3038	Ki67 à 90.
+A1	HER2_values T6 3+
+A2	RP_values T3 negative
+A3	RO_values T1 negative
+A4	RO_values T2 negative
+A5	RP_values T4 negative
+A6	HER2_values T7 3+

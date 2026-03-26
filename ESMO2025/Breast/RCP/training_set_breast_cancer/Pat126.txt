@@ -1,0 +1,46 @@
+Pat126
+ Raison Complexite : nan
+ Age : 43
+ Données biométriques et score : 
+  Poids :      66.00 kg    Le   [ 9 jours avant RCP ] IMC (Quetelet) : 24.8 kg/m2
+  Taille :       163 cm Le      [ 9 jours avant RCP ]         SC (Dubois) : 1.71 m2
+ Motif de présentation : Motif de présentation               Résultat Fish + relecture IRM
+ Données Médicales : 
+Motif de présentation               Résultat Fish + relecture IRM
+Histoire de la maladie
+Patiente âgée de [Age Patiente] adressée par le Pr Lotz pour prise en charge d'un cancer du sein gauche.
+Antécédents :
+Poids 66 kilos, T 163 cm, TSG 95B
+Médicaux: thyroïdite d'Hashimoto
+Chirurgicaux : avulsion dents de sagesse.
+Antécédents gyneco-obs : PR 11 ans, Sous Optimizette depuis 3 ans, n'a plus de cycle (a arrêté l'optimizette hier). G2P2, HDD pour le premier enfant, 2 AVB. Dernier FCV 2019 normal.
+Antécédents familiaux : - mère : cancer du sein à 42 ans décédée en [ 1214 jours avant RCP ]. Soeur ainée : cancer du sein à 42 ans, en RC. --->>> Consultation onco-génétique (la soeur serait BRCA neg, test fait il y a 7-8 ans) - père : Leucémie chronique, cancer de la prostate
+Médicaments : Levothyrox
+MDV : [VILLE] mari a été pris en charge pour un cancer du testicule en [ 1579 jours avant RCP ]. RC actuelle. Prof : directrice 'visual merchandising' chez [VILLE].. [VILLE] conjoint est manager Enedis. Tabac = 0.
+Tabac, 0. Alcool, à l'occasion. Allergies, 0
+Histoire de la maladie - dépistage annuel. 2019, RAS. 2020 non fait.
+- [ 29 jours avant RCP ] : masse irrégulière : de 30 mm en mammo, typique en écho, UQS du sein gauche. RAS à droite
+- [ 27 jours avant RCP ] : IRM , lésion de 20 mm UQS
+- [ 23 jours avant RCP ] : CCI, 20 mm, T1N0, UQS SBR II, pas d'embols, Ki67 à 10%, RE 100%, RP 80%, Her2 deux croix / FISH en cours
+A l'examen ce jour :
+Sein ptosés de taille moyenne, aréoles moyennes
+A droite : pas de masse palpée, pas d'adénopathies axillaires ou sus claviculaires
+A gauche : ecchymose cutanée post biopsie. On palpe difficilement la masse à l'union des quadrants supérieurs de 2 cm environ, sus aréolaire. Pas d'adénopathies axillaires ou sus claviculaire
+TDM TAP [ 8 jours avant RCP ] : Pas d'argument pour une extension à distance.
+CA15.3 10.3 le [ 9 jours avant RCP ]
+RCP oncologie [ 7 jours avant RCP ]: On confirme la 
+Proposition  Relecture IRM ++ Nouvelle biopsie ? Si Her surexprimé : tt neo adjuvant
+Conduite à tenir :
+Récupérer les résultats de la FISH
+Relecture IRM
+A revoir en consultation le [ 364 jours avant RCP ]pour organiser ensuite éventuellement la chirurgie.
+J'explique ce jour les différentes modalités de traitement possible en fonction de la taille de la lésion à la relecture de l'imagerie et du statut HER2 avec la FISH.
+Si HER2 surexprimé et lésion >=2 cm, traitement néo adjuvant avec thérapies ciblées
+Sinon, traitement chirurgical premier conservateur.
+Cs oncogénétique prévue le [ 50 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+   Proposition de décision
+   Sous réserve de la FISH, chirurgie première : tumorectomie + GS
+
+

@@ -1,0 +1,17 @@
+T1	Estrogen_receptor 2963 3000	Récepteurs aux oestrogènes : positifs
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3018 3057	Récepteurs à la progestérone : positifs
+A2	RP_values T2 positive
+T3	HER2_IHC 3075 3100	HER2 : équivoque, score 2
+A3	HER2_values T3 2+
+T4	Ki67 3104 3113	Ki67 : 5%
+T5	Estrogen_receptor 3299 3336	Récepteurs aux oestrogènes : positifs
+A4	RO_values T5 positive
+T6	Progesterone_receptor 3354 3393	Récepteurs à la progestérone : positifs
+A5	RP_values T6 positive
+T7	HER2_IHC 3411 3436	HER2 : équivoque, score 2
+A6	HER2_values T7 2+
+T8	Ki67 3446 3455	Ki67 : 5%
+T9	HER2_FISH 3634 3659	FISH ERBB2 (HER2) négativ
+A7	FISH_values T9 negatif
+

@@ -1,0 +1,47 @@
+Pat99
+ Raison Complexite : nan
+ Age : 59
+ Données biométriques et score : pas de données biometriques
+ Motif de présentation : Motif de présentation               Validation simple de RCP
+ Données Médicales : Motif de présentation               Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Patiente de [Age Patiente] adressée pour lésion ACR4c du sein droit.
+Antécédents :
+T: 166 cm; Poids: 75 kg; TSG: 95-100E.
+Gyneco : DPR: 12 ans. 3 enfants AVBx3. Ménopausée à 51 ans. Pas de THM.
+Chir: péritonite appendiculaire à 7 ans, hernie discale L5-S1.
+Med: Troubles anxieux depuis le début du Covid. Sciatique droite. Pas de thrombose, cancer,
+HTA ni diabète. Hypercholestérolémie.
+Allergie med: intolérance à la codéine. Tabac : en sevrage, 10-15 PA.
+Fam: pas de cancer.
+Mode de vie : vit en [PAYS] à Egine. artiste.
+Pas de médecin correspondant.
+Nouvelle gynécologue : [MEDECIN EXTERIEUR].
+Traitement : alprazolam.
+Anamnèse : Découverte lors d'un bilan d'imagerie d'une lésion ACR4c du sein droit.
+Bilan sénologique de ville du 22.09.21
+Mammographie : foyer de microcalcifications du QSE du sein droit de 2 cm de trajet intra galactophorique. Sein gauche : pas d'anomalie visible
+Echographie mammaire du : pas d'anomalie visible dans le sein droit et le sein gauche. Pas d'adénomégalie.
+Conclusion : sein droit ACR4c, sein gauche ACR2 01.10.21 Macrobiopsies : QSE du sein droit + pose de clip (pas de description)
+Mammo post clip : impression de clip migré en inférieur de la lésion. pas de CR.
+Histologie : carcinome canalaire in situ de haut grade et grade intermédiaire d'architecture comédomateuse calcifié et cribliforme. Absence de micro-infiltration.
+Examen clinique :
+Sein droit : pas de nodule palpé.
+Sein gauche: pas de nodule palpé.
+Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement.
+Complément de bilan par échographie mammaire second look + relecture des mammographies à [ETABLISSEMENT] le [ 1 jours avant RCP ] :
+CLIP à vérifier
+Indication de tumorectomie du QSE du sein droit après repérage le [ 19 jours apres RCP ].
+BLOC opératoire réservé le [ 19 jours apres RCP ]
+Décision de la RCP : 
+Proposition de décision
+ Type de 
+Proposition                    Application référentiel
+ Proposition de décision  on confirme l'indication chirurgicale
+ Proposition d'inclusion dans un essai thérapeutique : Non
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+

@@ -1,0 +1,14 @@
+T1	Estrogen_receptor 2303 2335	Récepteurs aux œstrogènes : 10 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2412 2446	Récepteurs à la progestérone : 0 %
+A2	RP_values T2 negative
+T3	HER2_IHC 2471 2484	HER : score 2
+A3	HER2_values T3 2+
+T4	Ki67 2513 2524	KI67 : 60 %
+T5	Estrogen_receptor 4152 4204	positivité pour les récepteurs aux œstrogènes  (10 %
+A4	RO_values T5 positive
+T6	Progesterone_receptor 4207 4224;4225 4253	négatif pour les  récepteurs à la progestérone
+A5	RP_values T6 negative
+T7	HER2_IHC 4264 4304	surexpression équivoque de HER2 (score 2
+A6	HER2_values T7 2+
+

@@ -1,0 +1,66 @@
+Pat104
+ Raison Complexite : nan
+ Age : 48
+ Données biométriques et score : 
+ Poids :     78.00 kg    Le   [ 21 jours avant RCP ] IMC (Quetelet) : 28.7 kg/m 2
+ Taille :      165 cm Le      [ 21 jours avant RCP ]       SC (Dubois) : 1.85 m2
+ Motif de présentation : Motif de présentation           Résultats histo [ 9 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation           Résultats histo [ 9 jours avant RCP ]
+Histologie
+ Date           Examen                                       
+Conclusion
+ [ 9 jours avant RCP ]20 PIECE DE TUMORECTOMIE DU SEIN
+                GAUCHE, RECOUPES LATERALES,
+                GANGLION SENTINELLE AXILLAIRE
+                GAUCHE ET GANGLION NON
+                SENTINELLE
+Histoire de la maladie
+Patiente de [Age Patiente]
+Vu avec sa mère
+Métier: bureautique
+Antécédents familiaux : 0
+Antécédents médicaux : souffrance néo natale avec troubles cognitifs, psychose infantile suivie en CMP
+Antécédents chirurgicaux : 0
+Antécédents gynéco-obstétricaux : G0P0
+Allergie: 0
+Tabac = 0
+Age au 1ères règles: 12 ans
+Ménopausée : oui , Age ménopause 45 ans, THS : non
+Antécédent de biopsie mammaire : non
+Antécédent de lésion atypique du sein : non
+Traitement en cours : ABILIFY
+ANAMNESE :
+Dépistage
+Imagerie : Echo mammographie [ 65 jours avant RCP ]
+Densité mammaire ?
+Sein droit: ACR2
+Sein gauche: nodule de 4-5 mm QIInt ACR5
+Microcalcifications associées : non
+Échographie axillaire : oui Si oui : adénopathie suspecte : non
+Micro biopsies sein droit le [ 28 jours avant RCP ]: CCI de grade 2 (3+2+1) R0100 RP90 HER2 score 0 Ki 10% + CIS
+Examen clinique le [ 21 jours avant RCP ] : Poids : 78 kg, Taille : 165 cm, IMC : 28.7
+Taille de soutien-gorge : 95c
+Sein droit: T0N0
+Sein gauche :T0N0
+Atteinte cutanée : non
+Aspect inflammatoire : non
+Adénopathie palpable : non
+RCP [ 14 jours avant RCP ] : Indication de tumorectomie du sein gauche après repérage + technique du ganglion sentinelle
+Bloc le [ 9 jours avant RCP ]20 en J0
+TUMORECTOMIE DU SEIN GAUCHE APRÈS REPÉRAGE + TECHNIQUE DU GANGLION SENTINELLE [ 3662 jours avant RCP ] :
+- Pièce de tumorectomie du sein gauche :
+Adénocarcinome canalaire infiltrant mesurant 7 mm, de grade 1 de malignité selon Elston et Ellis (2+2+1). RO 60 %, RP 100 %, HER2 score 0, Ki67 5 %.
+Tumeur invasive située à 1 mm du plan profond et à plus de 5 mm des autres limites d'exérèse.
+Composante carcinomateuse canalaire in situ de bas grade mesurant 20 mm, située au contact du plan superficiel, à moins de 1 mm du plan profond, à moins de 1 mm de la limite supérieure et à plus de 5 mm des autres limites d'exérèse.
+Absence d'emboles tumoraux.
+- Recoupe supérieure : carcinome canalaire in situ de bas grade mesurant 10 mm situé à moins de 1 mm de la limite d'exérèse.
+- Recoupes interne et externe : saines.
+- Ganglion sentinelle axillaire gauche : 1 ganglion non métastatique (1 N −).
+- Ganglion non sentinelle (« Ganglion palpable ») : 1 ganglion non métastatique (1 N −).
+Classification TNM : pT1bN0(sn)
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision  reprise de berge supérieure  radiothérapie traitement anti hormonal
+
+

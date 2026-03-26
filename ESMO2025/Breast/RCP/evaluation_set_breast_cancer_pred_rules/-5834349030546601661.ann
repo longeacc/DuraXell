@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 1667 1670	RE+
+A1	Value T1 positif
+T2	Progesterone_receptor 1672 1675	RP+
+A2	Value T2 positif
+T3	HER2_IHC 1676 1687	 Her2 : 2+ 
+A3	Value T3 2+
+T4	HER2_status 1676 1687	 Her2 : 2+ 
+A4	Value T4 positif
+T5	Ki67 1702 1710	Ki67 20%
+A5	Value T5 20%

@@ -1,0 +1,22 @@
+T1	Estrogen_receptor 878 881	RH+
+A1	Value T1 positif
+T2	Progesterone_receptor 878 881	RH+
+A2	Value T2 positif
+T3	HER2_status 882 890	 Her -) 
+A3	Value T3 negatif
+T4	Estrogen_receptor 1377 1380	RH+
+A4	Value T4 positif
+T5	Progesterone_receptor 1377 1380	RH+
+A5	Value T5 positif
+T6	Estrogen_receptor 2289 2295	RO 80%
+A6	Value T6 positif
+T7	Progesterone_receptor 2297 2303	RP 50%
+A7	Value T7 positif
+T8	HER2_IHC 2304 2320	 Her2 score 2++ 
+A8	Value T8 2+
+T9	HER2_status 2304 2320	 Her2 score 2++ 
+A9	Value T9 positif
+T10	HER2_FISH 2319 2337	 FISH NON AMPLIFIE
+A10	Value T10 positif
+T11	Ki67 2339 2348	Ki 67 3%.
+A11	Value T11 3%

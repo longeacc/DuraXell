@@ -1,0 +1,26 @@
+Pat102
+ Raison Complexite : nan
+ Age : 76
+ Données biométriques et score : 
+ Poids :      59.00 kg   Le    [ 198 jours avant RCP ] IMC (Quetelet) : 24.2 kg/m 2                                G8 :
+ Motif de présentation : Motif de présentation             Validation simple de RCP
+ Données Médicales : 
+                                                                            2
+ Taille :       156 cm Le      [ 198 jours avant RCP ]        SC (Dubois) : 1.58 m
+Motif de présentation             Validation simple de RCP
+Histoire de la maladie
+Pour rappel, patient transgenre suivi par [MEDECIN REFERANT]pour un cancer du sein droit en [ 213 jours avant RCP ] survenu sous androtardyl.
+Mastectomie droite en [ 213 jours avant RCP ]
+-Mastectomie droite : carcinome lobulaire infiltrant mesurant histologiquement 18 x 16 x 14 mm de grade 2 de malignité selon Elston et Ellis (3+2+2). RO 90% RP 95% HER2 score 2 Ki67 20% RA 95% ; E-CADHERINE (ZYMED clone 4A2C7, 1/100) :
+négatif.
+Stade pTNM AJCC 2017, 8e édition : pT1c N0.
+RCP [ 168 jours avant RCP ] : Indication à une radiothérapie de paroi + Tamoxifène
+Sous Tamoxifène actuellement, arrêt de l'androtardyl
+Se plaint de leucorrhée et prurit vulvaire résistant au Lomexin
+Compte tenu du statut hormonal de ce patient correspondant en réalité après arrêt de l'Androtardyl a celui d'une femme ménopausée se pose la question d'un relai du Tamoxifene par les inhibiteurs de l'aromatase
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ En cas de mauvaise tolérance du Tamoxifène relais par inhibiteurs de l'aromatase.
+
+

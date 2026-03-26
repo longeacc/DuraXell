@@ -1,0 +1,10 @@
+T1	Estrogen_receptor 2013 2046	Récepteurs des œstrogènes : 100 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 2278 2281	RP+
+A2	RP_values T2 positive
+T3	Ki67 2357 2419	Ki67 : positivité nucléaire de forte intensité d’au moins 30 %
+T4	HER2_IHC 2656 2750;2751 2772	HER2 : marquage membranaire complet d’intensité modérée de > 10% des cellules carcinomateuses  infiltrantes, score2+
+A3	HER2_values T4 2+
+T5	HER2_FISH 2656 2750;2751 2786	HER2 : marquage membranaire complet d’intensité modérée de > 10% des cellules carcinomateuses  infiltrantes, score2+, HIS en cours
+A4	FISH_values T5 en_cours
+

@@ -1,0 +1,62 @@
+Pat18
+ Raison Complexite : nan
+ Age : 62
+ Données biométriques et score : 
+  Poids :     69.00 kg   Le   [ 3 jours avant RCP ] IMC (Quetelet) : 25.3 kg/m2
+  Taille :     165 cm Le      [ 3 jours avant RCP ]     SC (Dubois) : 1.76 m2
+ Motif de présentation : Motif de présentation           Validation simple de RCP
+ Données Médicales : 
+Motif de présentation           Validation simple de RCP
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 3 jours avant RCP ] :
+Antécédents et allergies :
+Allergies : Pas d'allergie connue
+Antécédents familiaux : 2 soeurs cancer du sein : cancer du sein 47 ans, et 64 ans, et Nièce 33 ans - cancer poumon chez le père
+Antécédents médicaux :sourde et muette de naissance
+- HTA
+- Glaucome - cataracte
+Antécédents chirurgicaux : RAS
+Antécédents gynéco-obstétriques :
+- G2P0 2 IVG curetage - ménopausée
+Histoire de la maladie :
+Patiente de [Age Patiente], découverte à la mammographie d'un nodule du sein droit.
+Échographie et mammographie bilatérale :
+Syndrome de masse hétérogène d'environ 3 cm de l'union des quadrants externes du sein droit, discrètement supérieure, de 32 x 20 mm, nécessitant des prélèvements histologiques.
+Par ailleurs, distorsion architecturale de 7 mm inféro-externe du sein droit, nécessitant une échographie de deuxième look et des clichés focalisés.
+ACR 4 à droite. ACR 2 à gauche
+IRM mammaire :
+Sein droit ACR 6 : lésion bi focale avec une masse princeps de 40 mm de l'UQE, et une lésion fille ACR 5 du QIE de 16 mm, avec ensemble lésionnel mesuré à 56 mm.
+Pas de traduction IRM suspecte de l'ectasie galactophorique rétro-aréolaire ayant bénéficié d'une microbiopsie (bénigne).
+On programme une échographie de seconde intention +/- microbiopsie de la lésion fille du QIE.
+Ganglions axillaires droits à cortex hypertrophié (cytoponction réalisée : Population lymphocytaire d’aspect polymorphe. Absence de caractère cytologique suspect de malignité).
+Sein gauche ACR 2, sans anomalie suspecte.
+microbiopsie du sein droit :
+1. L'AFD décrite sur le cliché oblique droit correspond à une superposition glandulaire
+2. Site 1: microbiopsie d'une masse Bi-rads 5 de 33mm de l'UQE du sein droit
+3. Site 2: microbiopsie d'ectasies canalaires échogènes rétroaréolaires de 9mm à 2.5cm et dans le prolongement antérieur de la masse index masse, Bi-rads 3.
+4. Cytoponction ganglionnaire axillaire droite, Maniero 2 5. Une IRM mammaire est organisée en raison des nombreux antécédents familiaux [ 6 jours avant RCP ] - 13h
+Microbiopsies du sein droit : – site biopsique n°1 : adénocarcinome canalaire infiltrant de grade 3 (3+3+2) avec différenciation épidermoïde focale. RO 0%, RP 0%, HER 2 score 2 FISH HER2 NON AMPLIFIE KI 25%
+- Microbiopsies du sein droit – site biopsique n°2 : possibles remaniements adénofibromateux.
+- cytologie axillaire négative
+Examen clinique le [ 3 jours avant RCP ] : Poids : 69 kg, Taille : 165 cm, IMC : 25.3 kg/m², SC : 1.8 m²
+TSG 105D
+Examen mammaire :
+Sein droit: nodule de 3cm de l'union des quadrants externes du sein droit
+Sein gauche: pas de nodule palpé. Aires ganglionnaires axillaires et sus claviculaire libres. Pas d'écoulement
+TEP-TDM [ 3 jours avant RCP ] : Intense hypermétabolisme des deux lésions du sein droit (à l'union des quadrants internes droits
+(SUVmax 19,7) mesurant environ 34 mm x 23 d'axe transverse associée à un foyer franc de plus petite taille du QIE
+(SUVmax = 9,7)).
+Pas d'autre foyer hypermétabolique suspect sur le reste de l'examen.
+A noter des foyers ganglionnaires non spécifiques (cervicaux et médiastino hilaires) et un hypermétabolisme du cavum
+(SUVmax 6,1) et amygdalien, l'ensemble étant d'aspect inflammatoire non suspect dans le contexte d'infection ORL actuelle signalée.
+pose de clip +/- biopsie de la lésion fille [ 4 jours apres RCP ]
+Chimiothérapie néoadjuvante, Pr GLIOGOROV le [ 3 jours avant RCP ]
+Consultation oncogénétique +/- en fonction des résultats de la nièce.
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ Prévoir une consultation d'oncogénétique.
+ Chimiothérapie néoadjuvante
+ Indication d'onco-génétique : Oui
+
+

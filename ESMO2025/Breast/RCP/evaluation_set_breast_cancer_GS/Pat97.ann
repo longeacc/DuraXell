@@ -1,0 +1,8 @@
+T1	Estrogen_receptor 1233 1241	RO 100 %
+T2	Progesterone_receptor 1242 1260	RP positive à 80 %
+T3	HER2_IHC 1263 1275	HER2 score 1
+T4	Ki67 1279 1291	Ki67 à 20 %.
+T5	Ki67 2003 2015	Ki67 à 20 %.
+A1	RO_values T1 positive
+A2	RP_values T2 positive
+A3	HER2_values T3 1+

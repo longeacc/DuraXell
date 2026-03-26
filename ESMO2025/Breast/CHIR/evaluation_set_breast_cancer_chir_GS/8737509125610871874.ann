@@ -1,0 +1,19 @@
+T1	Estrogen_receptor 3122 3160	Récepteurs aux œstrogènes (RE) : >95 %
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3181 3224	Récepteurs à la progestérone (RP) :  35-40%
+A2	RP_values T2 positive
+T3	HER2_status 3259 3293	HER2 : absence d’une surexpression
+A3	HER2_status_values T3 negatif
+T4	HER2_IHC 3259 3303	HER2 : absence d’une surexpression, score 1+
+A4	HER2_values T4 1+
+T5	Ki67 3310 3322	Ki67 : <10 %
+T6	Estrogen_receptor 3678 3716	Récepteurs aux œstrogènes (RE) : 100 %
+A5	RO_values T6 positive
+T7	Progesterone_receptor 3737 3778	Récepteurs à la progestérone (RP) :  >95%
+A6	RP_values T7 positive
+T8	HER2_status 3813 3847	HER2 : absence d’une surexpression
+A7	HER2_status_values T8 negatif
+T9	HER2_IHC 3813 3856	HER2 : absence d’une surexpression, score 0
+A8	HER2_values T9 0
+T10	Ki67 3863 3874	Ki67 : <3 %
+

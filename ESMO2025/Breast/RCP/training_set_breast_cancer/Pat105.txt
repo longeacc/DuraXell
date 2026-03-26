@@ -1,0 +1,70 @@
+Pat105
+ Raison Complexite : nan
+ Age : 64
+ Données biométriques et score : 
+ Poids :     67.00 kg   Le    [ 59 jours avant RCP ] IMC (Quetelet) : 27.9 kg/m2
+ Taille :      155 cm Le      [ 59 jours avant RCP ]     SC (Dubois) : 1.66 m2
+ Motif de présentation : Motif de présentation           Résultats histo [ 23 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation           Résultats histo [ 23 jours avant RCP ]
+Diagnostic
+ T. Solide Ive / Hémopathie     Tumeur maligne du sein, sans précision (C509)
+ (CIM 10)
+Histologie
+               Date           Examen                                       
+Conclusion
+                [ 23 jours avant RCP ] TUMORECTOMIE DE L’UNION DES
+                              QUADRANTS EXTERNES DU SEIN
+                              DROIT, RECOUPE LATERALE
+                              SUPERO-EXTERNE, REDUCTION
+                              MAMMAIRE GAUCHE ET GANGLIONS
+                              SENTINELLES
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 52 jours avant RCP ] :
+Allergies : - iode : Eruption
+Antécédents familiaux : - aucun
+Antécédents médicaux :
+- HTA sous monotieldiem
+AOMI sous plavix hernie hiatale
+Antécédents chirurgicaux : - stent artère iliaque primitive droite 2008
+sténose iliaque primitive gauche 80% non symptomatique
+Antécédents gynéco-obstétriques :
+- G3P2 1 GEU/salpingotomie pfa, césarienne, 1AVB
+Patiente âgée de [Age Patiente]
+Mode vie : retraitée comptabilité
+Histoire de la maladie :
+Patiente asymptomatique
+Mammographie de dépistage en ville [ 84 jours avant RCP ] : sein droit : ACR4c pour distorsion architecturale du quadrant supéro externe à type de petite opacité stellaire de 5 mm sur le rayon de 11h à 9cm.
+sein gauche : ACR2
+Mammographie de contrôle réalisée le [ 84 jours avant RCP ] : idem mammo de ville
+Macrobiopsie du sein droit le [ 77 jours avant RCP ] : parenchyme mammaire fibreux avec rares canaux et lobules réguliers. Présence sur un minime secteur un tissu adipeux avec remaniements macrophagiques compatibles avec de la stéatonécrose non spécifique sans signes de malignité.
+Nouvelle microbiopsie du sein droit le [ 66 jours avant RCP ] :
+CLI de grade 2 (3+2+1) R 90 RP 90 her2 score 2 fish négative, Polysomie du chromosome 17 : oui , ki67 5%
+IRM mammaire [ 66 jours avant RCP ] :
+IRM mammaire droite ACR 5 devant la présence de la masse biopsiée avec clip au contact, et d'un rehaussement non masse à l'union de tous les quadrants, mesurée à 12mm plus en profondeur .
+IRM mammaire gauche ACR 2.
+échographie de second look [ 59 jours avant RCP ] : + macrobiopsie le [ 59 jours avant RCP ] d'un foyer de microcalcifications à l'union des quadrants inférieurs du sein droit semblant correspondre au RNM vu en IRM macrobiopsie [ 59 jours avant RCP ] : métaplasie cylindrique atypique et hyperplasie canalaire simple focalement atypique associées aux microcalcifications.
+mammographie post macrobiopsie : 10% de microcalcifications résiduelles
+Examen clinique le [ 59 jours avant RCP ] : Poids : 67 kg, Taille : 155 cm, IMC : 27.9 kg/m², SC : 1.7 m²
+105c on palpe hématome de biopsie du quadrant supéro externe du sein droit et du quadrant inféro externe pas d'adénopathie axillaire.
+sein gauche beaucoup plus volumineux que le sein droit ce qui gène la patiente
+RCP [ 49 jours avant RCP ] : Double tumorectomie du sein droit après double repérage + procédure du ganglion sentinelle droit + symétrisation du sein gauche par même technique d'oncoplastie externe le [ 23 jours avant RCP ] en J0
+Consultation post opératoire le [ 366 jours avant RCP ]
+DOUBLE TUMORECTOMIE DU SIEN DROIT AVEC PLASTIE EN T ET PEDICULE SUPERIEUR POUR CLI DU QSE
+ET HYPERPLASIE ATYPIQUE DU QIE AVEC GANGLION SENTINELLE ET PLASTIE DE REDUCTION POUR
+SYMETRISATION A GAUCHE [ 23 jours avant RCP ] :
+-Zonectomie de l’union des quadrants externes du sein droit (incluse en totalité):
+En supérieur de la pièce, carcinome lobulaire infiltrant, mesurant histologiquement 11 mm, de grade 2 de malignité selon Elston et Ellis (3+2+1). RO 90% RP 90% HER2 score 2 Ki67 5% ; E-CADHERINE (ZYMED clone 4A2C7, 1/100) : négatif
+Absence de composante carcinomateuse in situ. Absence d'emboles tumoraux lymphatiques ou sanguins.
+Tumeur invasive située à moins de 1 mm de la limite supérieure, restant à 5 mm de l'ensemble des autres limites d'exérèse et des plans superficiel et profond.
+En inféro-externe, au contact de la macrobiopsie, papillome kystes et adénose, avec métaplasie apocrine, cylindrique et hyperplasie canalaire simple et de rares secteurs atypique avec possible localisation d’une néoplasie lobulaire(E-cadhérine en cours). Il s’y associe des calcifications. Ces lésions sont à moins de 1 mm en inféro-externe, 2 mm de la limite profonde et à plus de 5 mm des autres limites d’exérèse.
+-Recoupe supéro-externe cicatricielle saine.
+-5 ganglions sentinelles indemnes en HES et en immunohistochimie.
+-Réduction mammaire gauche et complément: adipeuse avec des kystes en métaplasie cylindrique et hyperplasie canalaire sans atypie (bloc34 et 37 : CK 14 en cours).
+Stade pTNM AJCC 2017, 8e édition : pT1cN0 (gs).
+Décision de la RCP : 
+Proposition de décision
+ Proposition de décision
+ Radiothérapie et traitement anti-hormonal sous réserve de la FISH HER2
+
+

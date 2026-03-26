@@ -1,0 +1,5 @@
+T1	Estrogen_receptor 3394 3397	RE+
+A1	RO_values T1 positive
+T2	Progesterone_receptor 3405 3410;3411 3425	RP :  exceptionnelle
+A2	RP_values T2 negative
+

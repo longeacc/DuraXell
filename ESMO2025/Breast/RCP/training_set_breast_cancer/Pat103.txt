@@ -1,0 +1,62 @@
+Pat103
+ Raison Complexite : nan
+ Age : 67
+ Données biométriques et score : 
+ Poids :      66.50 kg   Le    [ 38 jours avant RCP ] IMC (Quetelet) : 24.7 kg/m 2
+ Taille :       164 cm Le      [ 38 jours avant RCP ]       SC (Dubois) : 1.73 m2
+ Motif de présentation : Motif de présentation            Résultats histo [ 23 jours avant RCP ]
+ Données Médicales : 
+Motif de présentation            Résultats histo [ 23 jours avant RCP ]
+Histologie
+ Date            Examen                                         
+Conclusion
+ [ 23 jours avant RCP ]20 PIECE DE TUMORECTOMIE DE
+                 L’UNION DES QUADRANTS INTERNES
+                 DU SEIN GAUCHE , RECOUPES
+                 LATERALES ET GANGLIONS
+                 SENTINELLES
+Histoire de la maladie
+Consultation [MEDECIN REFERANT]du [ 38 jours avant RCP ]
+F67 a 
+Antécédents familiaux : ne sait pas car enfant adoptée
+Antécédents médicaux :
+- HTA - glaucome - migraine saus aura
+Antécédents chirurgicaux : - hernie inguinale - hernie ombilicale - amygdalectomies et dents de sagesse
+Antécédents gynéco-obstétriques :
+- G4P2, 2 AVB, 1 aspiration pour grossesse molaire, 1 IVG chir
+-Ménopause à 56 ans, pas de THM
+Allergie: 0
+A la retraite, ancienne attachée juridique.
+Histoire de la maladie :
+Consultation auprès du [MEDECIN EXTERIEUR]le [ 52 jours avant RCP ] dans le cadre de l'autopalpation d'un nodule mammaire gauche.
+mammographie et échographie mammaire le [ 48 jours avant RCP ]: sein gauche ACR4c : masse palpable inféro-intéro interne de 11 mm nécessitant une microbiopsie.
+Sein droit ACR 2
+Pas d'adénopathie axillaire.
+Micro biopsie le [ 45 jours avant RCP ]: CCI peu différencié de type non spécifique, index histopronostic 2, RO: 100%, RP:
+60%, Ki67: 20%, HER: négatif, pas de contingent de CCIS
+Examen clinique le [ 38 jours avant RCP ] : Poids : 66.5 kg, Taille : 164 cm, IMC : 24.7 kg/m², SC : 1.7 m²
+90 B C masse centimétrique à l'union des quadrants internes du sein gauche pas d'adénopathie axillaire palpée
+RCP [ 35 jours avant RCP ] :Indication de tumorectomie + procédure du ganglion sentinelle gauche Bloc prévu le [ 23 jours avant RCP ]20 en ambulatoire réadressé au [MEDECIN EXTERIEUR]pour ouverture des droits au 100% consultation post opératoire le [ 3 jours avant RCP ]
+TUMORECTOMIE DU QUADRANT INFERO-INTERNE DU SEIN GAUCHE AVEC GS AXILLAIRE GAUCHE [ 23 jours avant RCP ] :
+-Carcinome infiltrant de type non spécifique, de l’ union des quadrants internes du sein gauche, mesurant histologiquement 12 mm, de grade 3 de malignité selon Elston et Ellis (3+3+2). RO 95%, RP 40%, HER2 score1, Ki67 35% HERTEROGENE, E-CADHERINE (ZYMED clone 4A2C7, 1/100) :
+conservée
+Composante carcinomateuse canalaire in situ estimée à 15 %, de grade intermédiaire et haut. Emboles tumoraux non identifiés.
+Tumeur invasive située à moins de 1 mm du plan profond, 1 mm du plan superficiel, 3 mm de la limite.
+Composante carcinomateuse in situ à moins de 1 mm de la berge supérieure.
+-Recoupe externe : carcinome canalaire in situ à moins de 0.5 mm de la berge encrée.
+-Recoupes supérieure et inférieure : saines.
+-Deux ganglions sentinelles indemnes en HES et en immunohistochimie.
+-Un ganglion non sentinelle indemne en HES et en immunohistochimie.
+Stade pTNM AJCC 2017, 8e édition : pT1cN0(gs)
+Décision de la RCP : 
+Proposition de décision
+  Proposition de décision   reprise de berge
+ Indication théorique de chimiothérapie, radiothérapie et traitement anti-hormonal.
+ oncotype Dx
+ Proposition d'inclusion dans un essai thérapeutique : Oui
+ Nom du protocole :oncotype RIHN
+ Proposition de préservation de la fertilité : Non
+ Indication d'onco-génétique : Non
+ Suspicion de pathologie professionnelle : Non
+
+
