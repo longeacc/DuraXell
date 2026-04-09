@@ -82,8 +82,8 @@ def calculate_location_metrics(
                     FP = True
                     for location in locations[file_name]:
                         if (
-                            location[0] <= place_start and place_end <= location[1]
-                        ):  # place found (TP)
+                            location[0] == place_start and place_end == location[1]
+                        ):  # strict concordance (TP)
                             if any(
                                 banword in text[location[0] : location[1]]
                                 for banword in ban_words_entities[current_entity]
@@ -132,15 +132,15 @@ def calculate_location_metrics(
                         ) in (
                             locations_found_currentfile
                         ):  # verification in already exist to current category
-                            if location[0] <= place_start and place_end <= location[1]:
+                            if location[0] == place_start and place_end == location[1]:
                                 add_to_FP = False
 
                         for index, row in df_other_categories[
                             filtre2
                         ].iterrows():  # verification in other categories
                             if (
-                                row["places"][0] <= place_start
-                                and place_end <= row["places"][1]
+                                row["places"][0] == place_start
+                                and place_end == row["places"][1]
                             ):
                                 add_to_FP = False
                                 break

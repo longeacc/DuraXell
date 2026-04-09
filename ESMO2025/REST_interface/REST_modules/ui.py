@@ -88,6 +88,9 @@ def on_selection_change_entity(change):
     """
     global current_entity, current_category, list_spacing_regex
 
+    if change.new is None:
+        return
+
     current_entity = change.new
     list_spacing_regex = calculate_list_spacing_regex(current_entity, ent_cat)
     update_tabs()
@@ -228,6 +231,12 @@ def initiate_loading(file_path):
     global ban_words_entities, ban_words_tfidf
     global homogeneity_score
     global list_isNotFP, list_isNotFN, df_results
+    
+    if file_path is None:
+        with output_load:
+            output_load.clear_output()
+            print("Please select a valid directory containing BRAT files before loading.")
+        return
 
     # 1 - load data annotation and possible progress
     (
@@ -246,6 +255,12 @@ def initiate_loading(file_path):
     list_isNotFN = var.get("list_isNotFN", list_isNotFN)
     ban_words_entities = var.get("ban_words_entities", ban_words_entities)
     df_results = var.get("df_results", df_results)
+
+    if not ent_cat:
+        with output_load:
+            output_load.clear_output()
+            print(f"No entities found in Path: {file_path}")
+        return
 
     # 2 - Update of the ui
     button_selection_entity.options = getEnt(ent_cat)  # update_tabs
