@@ -1,4 +1,6 @@
 import subprocess
+import os
+import sys
 from typing import Iterator, Dict
 
 class CLIRunner:
@@ -15,9 +17,20 @@ class CLIRunner:
         Yields:
             str: Chaque ligne de la sortie standard.
         """
+        # Exécuter les commandes de CLI depuis la racine du projet (2 niveaux au-dessus)
+        root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        
+        # Mettre à jour vers le python de l'environnement virtuel pour éviter le mauvais PATH
+        venv_python = os.path.join(root_dir, ".venv", "Scripts", "python.exe")
+        if os.path.exists(venv_python):
+            command = command.replace("python ", f"\"{venv_python}\" ")
+        else:
+            command = command.replace("python ", f"\"{sys.executable}\" ")
+
         process = subprocess.Popen(
             command,
             shell=True,
+            cwd=root_dir,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True

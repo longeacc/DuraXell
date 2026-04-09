@@ -245,7 +245,11 @@ class CascadeOrchestrator:
                         )
         except Exception as e:
             logging.debug(f"CRF model error: {e}")
-        """Tente l'extraction par modèle Transformer (PubMedBERT/CancerBERT)."""
+        # Default fallback for CRF
+        return ExtractionResult(entity_type, None, "ML_CRF", 0.0, energy, 2)
+
+    def _try_transformer(self, text: str, entity_type: str) -> ExtractionResult:
+        """Tente l'extraction par modÃ¨le Transformer (PubMedBERT/CancerBERT)."""
         energy = self.DEFAULT_ENERGY["Transformer"]
 
         if self.ner_model:

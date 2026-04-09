@@ -113,7 +113,7 @@ def create_fig_recommandation(spacing_regex_values, title):
     """
     df = pd.DataFrame(spacing_regex_values, columns=["Type", "Distance"])
 
-    plt.figure(figsize=(6, 1.2))
+    plt.figure(figsize=(8, 2))
 
     sns.scatterplot(
         data=df,
@@ -147,7 +147,7 @@ def create_fig_recommandation(spacing_regex_values, title):
     plt.title("Estimation of optimized spacing for : " + title, fontsize=10)
     plt.xlabel("")
     plt.grid(True)
-    plt.tight_layout()
+    # plt.tight_layout() Removed to strictly avoid the UserWarning.
 
     return plt
 
@@ -186,7 +186,17 @@ def create_accordion_recommendations(list_spacing_regex, path, current_entity, d
                 fig = create_fig_recommandation(
                     spacing_regex_values, str(spacing_regex[2])
                 )
-                fig.show()
+                import IPython.display as display
+                import io
+                import base64
+                import matplotlib.pyplot as plt
+                
+                buf = io.BytesIO()
+                fig.savefig(buf, format='png', bbox_inches='tight')
+                buf.seek(0)
+                plt.close(fig.gcf())
+                
+                display.display(display.Image(data=buf.getvalue(), format='png'))
 
         return widgets.Accordion(
             [output_recommendations],
