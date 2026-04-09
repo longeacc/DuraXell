@@ -1,0 +1,1 @@
+"""Module vide pour l'initialisation du package core."""

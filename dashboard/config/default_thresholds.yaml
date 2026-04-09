@@ -1,0 +1,63 @@
+# Seuils optimaux par métrique (baseline du projet DuraXell)
+thresholds:
+  Te: 65          # Seuil entropie terminologique
+  R: 75           # Taux succès règles regex
+  He: 40          # Entropie entité normalisée
+  Freq: 50        # Fréquence corpus
+  Feas: 80        # Faisabilité NER
+  DomainShift: 30 # Décalage domaine MMD
+  LLM_Necessity: 60 # Nécessité LLM composite
+  Yield: 85       # Rendement production regex
+
+# Pondérations pour le score de frugalité computationnelle
+weights:
+  rules: 1.0
+  crf: 0.7
+  transformer: 0.4
+  llm: 0.1
+
+# Plages de valeurs pour chaque métrique
+ranges:
+  Te:
+    min: 0
+    max: 100
+    unit: "score"
+  R:
+    min: 0
+    max: 100
+    unit: "%"
+  He:
+    min: 0
+    max: 100
+    unit: "score"
+  Freq:
+    min: 0
+    max: 500
+    unit: "occurrences"
+  Feas:
+    min: 0
+    max: 100
+    unit: "score"
+  DomainShift:
+    min: 0
+    max: 100
+    unit: "score MMD"
+  LLM_Necessity:
+    min: 0
+    max: 100
+    unit: "score composite"
+  Yield:
+    min: 0
+    max: 100
+    unit: "%"
+
+# Descriptions métriques
+descriptions:
+  Te: "Seuil d'entropie terminologique — mesure la variabilité lexicale du biomarqueur"
+  R: "Taux de succès des règles regex sur corpus de validation"
+  He: "Entropie des entités normalisée par Shannon — mesure la régularité des annotations"
+  Freq: "Fréquence d'apparition dans le corpus (occurrences absolues)"
+  Feas: "Score de faisabilité NER — combinaison précision/rappel atteignable"
+  DomainShift: "Décalage de domaine par Maximum Mean Discrepancy entre corpus train/test"
+  LLM_Necessity: "Score composite de nécessité LLM — inversement proportionnel à la frugalité"
+  Yield: "Rendement de production des règles regex — ratio annotations correctes extraites"

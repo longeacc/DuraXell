@@ -1,0 +1,88 @@
+{
+  "entities": [
+    {
+      "name": "ER",
+      "full_name": "Estrogen Receptor",
+      "french_name": "Récepteur aux œstrogènes",
+      "cancer_type": "Breast",
+      "typical_values": ["Positive", "Negative", "10%", "90%", "RH+", "RH-", "ER+", "ER-"],
+      "regex_examples": ["ER\\s*:\\s*(positif|négatif|\\d+%)", "RE\\s+(positif|négatif)"],
+      "typical_method": "Rules",
+      "clinical_importance": "Facteur prédictif hormono-thérapie",
+      "tnm_relevance": true
+    },
+    {
+      "name": "PR",
+      "full_name": "Progesterone Receptor",
+      "french_name": "Récepteur à la progestérone",
+      "cancer_type": "Breast",
+      "typical_values": ["Positive", "Negative", "20%", "80%", "RP+", "RP-", "PR+", "PR-"],
+      "regex_examples": ["PR\\s*:\\s*(positif|négatif|\\d+%)", "RP\\s+(positif|négatif)"],
+      "typical_method": "Rules",
+      "clinical_importance": "Facteur prédictif hormono-thérapie secondaire",
+      "tnm_relevance": true
+    },
+    {
+      "name": "HER2_status",
+      "full_name": "HER2 Status",
+      "french_name": "Statut HER2 global",
+      "cancer_type": "Breast",
+      "typical_values": ["Positif", "Négatif", "Equivoque", "HER2+", "HER2-", "3+", "2+", "1+", "0"],
+      "regex_examples": ["HER2\\s*:\\s*(positif|négatif|équivoque)", "HER-2\\s+(\\d\\+)"],
+      "typical_method": "Transformer",
+      "clinical_importance": "Détermine éligibilité trastuzumab/pertuzumab",
+      "tnm_relevance": true
+    },
+    {
+      "name": "HER2_IHC",
+      "full_name": "HER2 Immunohistochemistry",
+      "french_name": "HER2 Immunohistochimie",
+      "cancer_type": "Breast",
+      "typical_values": ["0", "1+", "2+", "3+", "Score 0", "Score 3+"],
+      "regex_examples": ["IHC\\s*:\\s*(\\d\\+?)", "immunohistochimie\\s+HER2\\s+(\\d\\+?)"],
+      "typical_method": "CRF",
+      "clinical_importance": "Score IHC HER2 pour classification moléculaire",
+      "tnm_relevance": false
+    },
+    {
+      "name": "Ki67",
+      "full_name": "Ki-67 Proliferation Index",
+      "french_name": "Indice de prolifération Ki67",
+      "cancer_type": "Breast",
+      "typical_values": ["5%", "14%", "20%", "30%", "50%", "bas", "élevé", "<14%", ">20%"],
+      "regex_examples": ["Ki67\\s*:\\s*(\\d+%?)", "Ki-67\\s*=\\s*(\\d+)\\s*%"],
+      "typical_method": "CRF",
+      "clinical_importance": "Indice prolifératif — guide chimiothérapie adjuvante",
+      "tnm_relevance": false
+    },
+    {
+      "name": "HER2_FISH",
+      "full_name": "HER2 Fluorescence In Situ Hybridization",
+      "french_name": "HER2 Hybridation FISH",
+      "cancer_type": "Breast",
+      "typical_values": ["Amplifié", "Non amplifié", "ratio >2.0", "ratio <2.0", "positif", "négatif"],
+      "regex_examples": ["FISH\\s*:\\s*(amplifié|non amplifié)", "hybridation\\s+in\\s+situ.*?(amplifié|négatif)"],
+      "typical_method": "Transformer",
+      "clinical_importance": "Confirmation amplification HER2 si IHC 2+",
+      "tnm_relevance": false
+    },
+    {
+      "name": "Genetic_mutation",
+      "full_name": "Genetic Mutation",
+      "french_name": "Mutation génétique",
+      "cancer_type": "Multi",
+      "typical_values": ["BRCA1", "BRCA2", "PIK3CA", "TP53", "PTEN", "CDH1", "PALB2", "ATM"],
+      "regex_examples": ["mutation\\s+(BRCA[12]|PIK3CA|TP53)", "(BRCA[12])\\s*(muté|pathogène)"],
+      "typical_method": "LLM",
+      "clinical_importance": "Guide thérapies ciblées (PARP inhibiteurs, immunothérapie)",
+      "tnm_relevance": false
+    }
+  ],
+  "cascade_order": ["ER", "PR", "HER2_IHC", "Ki67", "HER2_status", "HER2_FISH", "Genetic_mutation"],
+  "method_hierarchy": {
+    "Rules": {"cost": 1, "speed": "fast", "requires_training": false},
+    "CRF": {"cost": 2, "speed": "medium", "requires_training": true},
+    "Transformer": {"cost": 3, "speed": "slow", "requires_training": true},
+    "LLM": {"cost": 4, "speed": "very_slow", "requires_training": false}
+  }
+}
