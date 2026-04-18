@@ -1,4 +1,4 @@
-import argparse
+﻿import argparse
 import csv
 import glob
 import logging
@@ -47,19 +47,19 @@ def cmd_extract_all(args):
 
     orchestrator = CascadeOrchestrator()
     entities = args.entities.split(",") if args.entities else ALL_ENTITIES
-    print(f"Extraction de {len(entities)} entités depuis le document...")
+    print(f"Extraction de {len(entities)} entitÃ©s depuis le document...")
     print("-" * 80)
     total_energy = 0.0
     for ent in entities:
         ent = ent.strip()
         res = orchestrator.extract(args.doc, ent)
-        status = res.value if res.value else "NON TROUVÉ"
+        status = res.value if res.value else "NON TROUVÃ‰"
         print(
             f"  {ent:<25s} => {status:<20s} | {res.method_used:<12s} | conf={res.confidence:.2f} | E={res.energy_kwh:.6f} kWh"
         )
         total_energy += res.energy_kwh
     print("-" * 80)
-    print(f"  Énergie totale : {total_energy:.6f} kWh")
+    print(f"  Ã‰nergie totale : {total_energy:.6f} kWh")
 
 
 def cmd_batch(args):
@@ -81,7 +81,7 @@ def cmd_batch(args):
     )
     files = sorted(glob.glob(os.path.join(input_dir, "*.txt")))
     if not files:
-        print(f"Aucun fichier .txt trouvé dans {input_dir}")
+        print(f"Aucun fichier .txt trouvÃ© dans {input_dir}")
         return
 
     # Load decision_config to get the recommended method per entity
@@ -104,7 +104,7 @@ def cmd_batch(args):
     t0 = time.time()
 
     print(
-        f"Batch : {len(files)} fichiers × {len(entities)} entités = {total} extractions"
+        f"Batch : {len(files)} fichiers Ã— {len(entities)} entitÃ©s = {total} extractions"
     )
     print(f"Sortie CSV : {out_path}")
     print("-" * 70)
@@ -168,15 +168,15 @@ def cmd_batch(args):
     elapsed = time.time() - t0
     print("-" * 70)
     print(
-        f"Terminé en {elapsed:.1f}s | {found}/{total} extractions trouvées ({100 * found / total:.0f}%)"
+        f"TerminÃ© en {elapsed:.1f}s | {found}/{total} extractions trouvÃ©es ({100 * found / total:.0f}%)"
     )
-    print(f"CSV écrit : {out_path} ({len(rows)} lignes)")
+    print(f"CSV Ã©crit : {out_path} ({len(rows)} lignes)")
 
 
 def cmd_metrics(args):
     """Compute ESMO2025 metrics"""
     print("Metrics running via specific scripts in ESMO2025/ ...")
-    subprocess.run([sys.executable, "ESMO2025/E_templeability.py"])
+    subprocess.run([sys.executable, "ESMO2025/E_templatability.py"])
     subprocess.run([sys.executable, "ESMO2025/E_homogeneity.py"])
 
 
@@ -241,7 +241,7 @@ def main():
     )
     parser_extract_all.set_defaults(func=cmd_extract_all)
 
-    # Command: batch (directory of files × entities)
+    # Command: batch (directory of files Ã— entities)
     parser_batch = subparsers.add_parser(
         "batch", help="Extract entities from all .txt files in a directory"
     )

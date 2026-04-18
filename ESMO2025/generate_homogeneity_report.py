@@ -25,8 +25,8 @@ def generate_html_report(csv_file: str, output_file: str):
                 try:
                     row["Homogeneity_Score"] = float(row.get("Homogeneity_Score", 0))
                     row["Homogeneity_Raw_He"] = float(row.get("Homogeneity_Raw_He", 0))
-                    row["Structural_Templeability"] = float(
-                        row.get("Structural_Templeability", 0)
+                    row["Structural_Templatability"] = float(
+                        row.get("Structural_Templatability", 0)
                     )
                     row["Unique_Words_Ue"] = float(row.get("Unique_Words_Ue", 0))
                     row["Total_Words_Te"] = float(row.get("Total_Words_Te", 0))
@@ -106,7 +106,7 @@ def generate_html_report(csv_file: str, output_file: str):
                     <td><strong>{row["Entity_Type"]}</strong></td>
                     <td><span class="badge {cls}">{s:.4f}</span></td>
                     <td>{row["Homogeneity_Raw_He"]:.4f}</td>
-                    <td>{row["Structural_Templeability"]:.4f}</td>
+                    <td>{row["Structural_Templatability"]:.4f}</td>
                     <td>{int(row["Unique_Words_Ue"])} / {int(row["Total_Words_Te"])}</td>
                 </tr>
         """

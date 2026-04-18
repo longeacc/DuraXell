@@ -59,12 +59,12 @@
         sweep_csv:  {x:445,  y:238, w:150, h:35, c:C.output,  label:"sweep_results.csv",  sub:"hyperparams + F1"},
 
         // ══════ COUCHE 2 — MÉTRIQUES ESMO2025 (y=330) ══════
-        te_mod:     {x:30,   y:330, w:165, h:65, c:C.metrics, label:"E_templeability.py", sub:"TempleabilityScorer\ncompute(entity) → Te ∈ [0,1]"},
+        te_mod:     {x:30,   y:330, w:165, h:65, c:C.metrics, label:"E_templatability.py", sub:"TemplatabilityScorer\ncompute(entity) → Te ∈ [0,1]"},
         he_mod:     {x:215,  y:330, w:165, h:65, c:C.metrics, label:"E_homogeneity.py",   sub:"HomogeneityScorer\ncompute(entity) → He ∈ [0,1]"},
         risk_mod:   {x:400,  y:330, w:165, h:65, c:C.metrics, label:"E_risk_context.py",  sub:"RiskContextScorer\ncompute(entity) → R ∈ [0,1]"},
         freq_mod:   {x:585,  y:330, w:165, h:65, c:C.metrics, label:"E_frequency.py",     sub:"FrequencyScorer\ncompute(entity) → Freq"},
         yield_mod:  {x:770,  y:330, w:185, h:65, c:C.metrics, label:"E_annotation_yield.py", sub:"AnnotationYieldScorer\ncompute(entity) → Yield ∈ [0,1]"},
-        feas_mod:   {x:975,  y:330, w:165, h:65, c:C.metrics, label:"E_fesability_NER.py",sub:"FeasibilityScorer\ncompute(entity) → Feas"},
+        feas_mod:   {x:975,  y:330, w:165, h:65, c:C.metrics, label:"E_feasibility_NER.py",sub:"FeasibilityScorer\ncompute(entity) → Feas"},
 
         // ══════ COUCHE 3 — ARBRE DE DÉCISION (y=470, gauche) ══════
         arbre:      {x:300,  y:470, w:255, h:75, c:C.decision, label:"E_creation_arbre_decision.py", sub:"DecisionTree\n6 critères × 6 feuilles → recommandation", bold:true},
@@ -110,7 +110,7 @@
 
         // ══════ COUCHE 7 — ÉVALUATION COMPOSITE (y=1175) ══════
         composite:  {x:100,  y:1175,w:255, h:70, c:C.eval,    label:"E_composite_scorer.py",       sub:"CompositeScorer\nC = 0.4·F1 + 0.3·Expl + 0.3·(1-E_norm)\nPareto analysis"},
-        init_py:    {x:800,  y:1175,w:215, h:55, c:C.eval,    label:"ESMO2025/__init__.py",         sub:"Exports publics : 9 classes\n__all__ = [TempleabilityScorer, ...]"},
+        init_py:    {x:800,  y:1175,w:215, h:55, c:C.eval,    label:"ESMO2025/__init__.py",         sub:"Exports publics : 9 classes\n__all__ = [TemplatabilityScorer, ...]"},
 
         // ══════ COUCHE 8 — POINTS D'ENTRÉE (y=1315) ══════
         main_py:    {x:80,   y:1315,w:240, h:75, c:C.entry,   label:"main.py",                     sub:"★ CLI DuraXELL ★\n8 commandes : extract batch metrics\ntree rest evaluate serve info", bold:true},
@@ -220,7 +220,7 @@
         ["composite","init_py","export","main"],
 
         // === TESTS ===
-        ["te_mod","tests","test_templeability.py","test"],
+        ["te_mod","tests","test_templatability.py","test"],
         ["he_mod","tests","test_homogeneity.py","test"],
         ["risk_mod","tests","test_risk_context.py","test"],
         ["arbre","tests","test_decision_tree.py","test"],

@@ -11,7 +11,7 @@ except ImportError:
 
 if __name__ == "__main__" and HAS_ECO2AI:
     set_params(
-        project_name="Consumtion_of_E_fesability_NER.py",
+        project_name="Consumtion_of_E_feasibility_NER.py",
         experiment_description="Calcul Faisabilite NER",
         file_name="Consumtion_of_Duraxell.csv",
     )
@@ -133,14 +133,14 @@ def compute_feasibility():
                 if ent:
                     risk_scores[ent] = float(row.get("R_Score", 0.0))
 
-    # 4. Load Templeability (Te)
-    te_file = results_dir / "templeability_analysis.json"
-    templeability = {}
+    # 4. Load Templatability (Te)
+    te_file = results_dir / "templatability_analysis.json"
+    templatability = {}
     if te_file.exists():
         with open(te_file, "r", encoding="utf-8") as f:
             data = json.load(f)
             for ent, vals in data.items():
-                templeability[ent] = vals.get("templeability_score", 0.0)
+                templatability[ent] = vals.get("templatability_score", 0.0)
 
     # 5. Compute Yield (F1 Rules vs GS)
     yield_scores = {}
@@ -166,7 +166,7 @@ def compute_feasibility():
     for ent, freq in frequencies.items():
         he = homogeneity.get(ent, 50.0)
         r = risk_scores.get(ent, 0.0)
-        te = templeability.get(ent, 50.0)
+        te = templatability.get(ent, 50.0)
         yld = yield_scores.get(ent, 0.0)
         count = max(1, int(freq * 207000))  # Approx corpus size ~207k tokens
 

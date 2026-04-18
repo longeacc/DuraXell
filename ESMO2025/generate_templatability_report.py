@@ -25,7 +25,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
         data_list = []
         for entity, stats in raw_data.items():
             stats["Entity_Type"] = entity
-            stats["Templeability_Score"] = stats.get("templeability_score", 0)
+            stats["Templatability_Score"] = stats.get("templatability_score", 0)
             # Récupération sécurisée des listes
             stats["Sample_Values_List"] = stats.get("sample_values", [])
             stats["Abstract_Patterns_List"] = stats.get("top_abstract_patterns", [])
@@ -40,7 +40,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
             data_list.append(stats)
 
         # Tri par score de templeabilité
-        data_list.sort(key=lambda x: x["Templeability_Score"], reverse=True)
+        data_list.sort(key=lambda x: x["Templatability_Score"], reverse=True)
 
     except FileNotFoundError:
         print(f"Erreur: Fichiers de données non trouvés ({json_file})")
@@ -365,7 +365,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
     """
 
     # Statistiques globales
-    scores = [d["Templeability_Score"] for d in data_list]
+    scores = [d["Templatability_Score"] for d in data_list]
     avg_score = sum(scores) / len(scores) if scores else 0
     high_temp = sum(1 for s in scores if s >= 0.7)
     total_ents = len(data_list)
@@ -390,7 +390,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
     """
 
     for row in data_list:
-        score = row["Templeability_Score"]
+        score = row["Templatability_Score"]
         entity = row["Entity_Type"]
 
         if score >= 0.7:
@@ -487,7 +487,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
         html_content += f"""
                             <tr>
                                 <td><strong>{row["Entity_Type"]}</strong></td>
-                                <td><strong>{row["Templeability_Score"]:.3f}</strong></td>
+                                <td><strong>{row["Templatability_Score"]:.3f}</strong></td>
                                 <td>{row.get("Top_Pattern_Coverage", 0) * 100:.1f}%</td>
                                 <td>{row.get("Diversity_Ratio", 0):.3f}</td>
                                 <td>{row.get("Total_Occurrences", 0)}</td>
@@ -528,9 +528,9 @@ if __name__ == "__main__":
             base_dir = potential_path
 
     # Chemins des fichiers
-    json_path = base_dir / "templeability_analysis.json"
-    csv_path = base_dir / "templeability_analysis.csv"
-    html_path = base_dir / "templeability_analysis_report.html"
+    json_path = base_dir / "templatability_analysis.json"
+    csv_path = base_dir / "templatability_analysis.csv"
+    html_path = base_dir / "templatability_analysis_report.html"
 
     print(f"Recherche des données dans : {base_dir}")
 
@@ -538,7 +538,7 @@ if __name__ == "__main__":
         generate_html_report(str(json_path), str(csv_path), str(html_path))
     else:
         print("ATTENTION: Fichiers de données (JSON/CSV) introuvables.")
-        print("Veuillez d'abord exécuter le script d'analyse 'templeability.py'.")
+        print("Veuillez d'abord exécuter le script d'analyse 'templatability.py'.")
 try:
     tracker.stop()
 except Exception as e:

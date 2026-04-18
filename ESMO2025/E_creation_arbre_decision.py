@@ -3,7 +3,7 @@ Build and execute the DuraXELL Decision Tree.
 Generates 'decision_config.json' and 'output_decision.txt'.
 
 Decision Tree Logic (Priority Order):
-1. Templeability (Te) & Homogeneity (He) (Structure) -> HIGH? -> RULES
+1. Templatability (Te) & Homogeneity (He) (Structure) -> HIGH? -> RULES
 2. Risk Context (R) -> HIGH? -> LLM / REVIEW
 3. Frequency (Freq) & Annotation Yield -> RULES vs ML (NER) vs LLM
 
@@ -288,16 +288,16 @@ def load_metrics_from_csv(results_dir: Path):
         except Exception as e:
             print(f"Error reading {filename}: {e}")
 
-    # 1. Te (Templeability)
+    # 1. Te (Templatability)
     # Often in JSON, but let's check CSVs too
-    if (results_dir / "templeability_analysis.json").exists():
+    if (results_dir / "templatability_analysis.json").exists():
         try:
-            with open(results_dir / "templeability_analysis.json") as f:
+            with open(results_dir / "templatability_analysis.json") as f:
                 data = json.load(f)
                 for ent, vals in data.items():
                     if ent not in aggregated:
                         aggregated[ent] = {}
-                    aggregated[ent]["Te"] = vals.get("templeability_score", 0)
+                    aggregated[ent]["Te"] = vals.get("templatability_score", 0)
                     aggregated[ent]["Te_count"] = vals.get("count", 0)
         except:
             pass

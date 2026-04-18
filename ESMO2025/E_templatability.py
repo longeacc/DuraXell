@@ -1,7 +1,7 @@
 """
-Calculate templeability of biomarkers and named entities.
+Calculate templatability of biomarkers and named entities.
 
-Templeability is the capacity of an entity to follow predictable structured patterns
+Templatability is the capacity of an entity to follow predictable structured patterns
 (formats, constant prefixes/suffixes).
 
 Example: TNM staging always follows the pattern T[0-4]N[0-3]M[0-1].
@@ -25,7 +25,7 @@ except ImportError:
 
 if __name__ == "__main__" and HAS_ECO2AI:
     set_params(
-        project_name="Consumtion_of_E_templeability.py",
+        project_name="Consumtion_of_E_templatability.py",
         experiment_description="We Calculate...",
         file_name="data/Consumtion_of_Duraxell.csv",
     )
@@ -44,7 +44,7 @@ class BratAnnotation:
     file_id: Optional[str] = None
 
 
-class TempleabilityScorer:
+class TemplatabilityScorer:
     """
     Calcule le score de Templateabilité (Te) pour chaque entité biomédicale.
     Te mesure le degré de prédictibilité structurelle des patterns d'expression.
@@ -198,7 +198,7 @@ class TempleabilityScorer:
             "unique_patterns": num_unique,
             "entropy_consistency": structure_consistency,
             "entropy": H,
-            "templeability_score": Te,
+            "templatability_score": Te,
             "top_patterns": pattern_counts.most_common(5),
         }
 
@@ -212,15 +212,15 @@ class TempleabilityScorer:
         return scores
 
     def to_json(self, output_path: str) -> None:
-        """Sauvegarder les résultats dans templeability_analysis.json"""
+        """Sauvegarder les résultats dans templatability_analysis.json"""
         output = {}
         for entity_type, stats in self.results_cache.items():
             # Convert stats to JSON serializable format
             output[entity_type] = {
                 "count": stats["count"],
                 "unique_patterns": stats["unique_patterns"],
-                "templeability_score": round(
-                    stats["templeability_score"], 1
+                "templatability_score": round(
+                    stats["templatability_score"], 1
                 ),  # Round to 1 decimal place
                 "top_patterns": [f"{p} ({c})" for p, c in stats["top_patterns"]],
             }
@@ -321,7 +321,7 @@ def main():
     # Construct absolute paths
     DATA_DIRS = [ROOT_DIR / d for d in DATA_DIRS_REL]
 
-    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/templeability_analysis.json"
+    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/templatability_analysis.json"
 
     # Ensure output directory exists
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -330,7 +330,7 @@ def main():
     corpus = load_brat_corpus([str(p) for p in DATA_DIRS])
 
     # 2. Initialize Scorer
-    scorer = TempleabilityScorer(corpus)
+    scorer = TemplatabilityScorer(corpus)
 
     # 3. Compute All
     scores = scorer.compute_all()
@@ -339,7 +339,7 @@ def main():
     scorer.to_json(OUTPUT_FILE)
 
     # Optional: Print Top 5
-    print("\nTop 5 Templeability Scores:")
+    print("\nTop 5 Templatability Scores:")
     for entity, score in sorted(scores.items(), key=lambda x: x[1], reverse=True)[:5]:
         # score is tuple? No, compute returns float. compute_all returns dict[str, float]
         print(f"{entity}: {score:.3f}")

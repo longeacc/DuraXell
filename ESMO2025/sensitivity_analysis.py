@@ -32,14 +32,14 @@ def load_real_metrics(results_dir: Path) -> dict:
                         row.get("He_Score_Percent", 0)
                     )
 
-    te_file = results_dir / "templeability_analysis.json"
+    te_file = results_dir / "templatability_analysis.json"
     if te_file.exists():
         try:
             with open(te_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 for ent, vals in data.items():
                     metrics_db.setdefault(ent, {})["Te"] = vals.get(
-                        "templeability_score", 0
+                        "templatability_score", 0
                     )
                     metrics_db[ent]["Te_count"] = vals.get("total_occurrences", 0)
         except:

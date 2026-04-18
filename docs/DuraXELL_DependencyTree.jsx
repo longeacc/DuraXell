@@ -1,107 +1,107 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // PALETTE
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const C = {
-  data:      "#37474F",  // données brutes
+  data:      "#37474F",  // donnÃ©es brutes
   ner:       "#1B5E20",  // pipeline NER
-  metrics:   "#0D47A1",  // métriques ESMO2025
-  decision:  "#4A148C",  // arbre de décision
+  metrics:   "#0D47A1",  // mÃ©triques ESMO2025
+  decision:  "#4A148C",  // arbre de dÃ©cision
   rest:      "#880E4F",  // REST-interface
   cascade:   "#BF360C",  // cascade/orchestrateur
   connector: "#4E342E",  // connecteurs
   config:    "#E65100",  // fichiers de config pivots
-  eval:      "#006064",  // évaluation / scoring
-  entry:     "#1A237E",  // points d'entrée (main, notebook)
+  eval:      "#006064",  // Ã©valuation / scoring
+  entry:     "#1A237E",  // points d'entrÃ©e (main, notebook)
   output:    "#212121",  // sorties finales
   test:      "#37474F",  // tests
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // NODES  {id, x, y, w, h, c, label, sub, bold?}
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const N = {
-  // ══════ COUCHE 0 — DONNÉES D'ENTRÉE (y=30) ══════
+  // â•â•â•â•â•â• COUCHE 0 â€” DONNÃ‰ES D'ENTRÃ‰E (y=30) â•â•â•â•â•â•
   brat_train: {x:40,   y:30,  w:190, h:55, c:C.data,    label:"NER/data/Breast/",   sub:"train/ val/ test/ (*.txt + *.ann)"},
-  lung_data:  {x:250,  y:30,  w:165, h:55, c:C.data,    label:"NER/data/Lung/",     sub:"À créer — extension poumon"},
-  eval_csv:   {x:430,  y:30,  w:230, h:55, c:C.data,    label:"breast_cancer_biomarker_eval_summary.csv", sub:"données existantes"},
+  lung_data:  {x:250,  y:30,  w:165, h:55, c:C.data,    label:"NER/data/Lung/",     sub:"Ã€ crÃ©er â€” extension poumon"},
+  eval_csv:   {x:430,  y:30,  w:230, h:55, c:C.data,    label:"breast_cancer_biomarker_eval_summary.csv", sub:"donnÃ©es existantes"},
   consumtion: {x:680,  y:30,  w:215, h:55, c:C.data,    label:"Consumtion_of_Duraxell.csv", sub:"Suivi eco2ai existant"},
   eco2ai:     {x:915,  y:30,  w:120, h:55, c:C.data,    label:"eco2ai",             sub:"lib externe"},
 
-  // ══════ COUCHE 1 — PIPELINE NER (y=150) ══════
-  convert:    {x:40,   y:150, w:195, h:50, c:C.ner,     label:"1convert_brat_to_conll.py",  sub:"BRAT → train.conll"},
-  sweep:      {x:260,  y:150, w:160, h:50, c:C.ner,     label:"2sweep_ner.py",              sub:"PubMedBERT / CancerBERT — sweep F1"},
-  infer:      {x:445,  y:150, w:135, h:50, c:C.ner,     label:"3infer.py",                  sub:"Inférence → prédictions"},
-  pred_brat:  {x:605,  y:150, w:180, h:50, c:C.ner,     label:"4predict_to_brat.py",        sub:"prédictions → BRAT"},
-  eval_ner:   {x:810,  y:150, w:180, h:50, c:C.ner,     label:"5evaluate_ner.py",           sub:"F1/P/R par entité"},
+  // â•â•â•â•â•â• COUCHE 1 â€” PIPELINE NER (y=150) â•â•â•â•â•â•
+  convert:    {x:40,   y:150, w:195, h:50, c:C.ner,     label:"1convert_brat_to_conll.py",  sub:"BRAT â†’ train.conll"},
+  sweep:      {x:260,  y:150, w:160, h:50, c:C.ner,     label:"2sweep_ner.py",              sub:"PubMedBERT / CancerBERT â€” sweep F1"},
+  infer:      {x:445,  y:150, w:135, h:50, c:C.ner,     label:"3infer.py",                  sub:"InfÃ©rence â†’ prÃ©dictions"},
+  pred_brat:  {x:605,  y:150, w:180, h:50, c:C.ner,     label:"4predict_to_brat.py",        sub:"prÃ©dictions â†’ BRAT"},
+  eval_ner:   {x:810,  y:150, w:180, h:50, c:C.ner,     label:"5evaluate_ner.py",           sub:"F1/P/R par entitÃ©"},
   
-  // Sorties intermédiaires NER
+  // Sorties intermÃ©diaires NER
   conll:      {x:40,   y:238, w:130, h:35, c:C.output,  label:"train.conll",        sub:""},
   best_model: {x:260,  y:238, w:150, h:35, c:C.output,  label:"models/best_model/", sub:"meilleur checkpoint"},
   sweep_csv:  {x:445,  y:238, w:150, h:35, c:C.output,  label:"sweep_results.csv",  sub:"hyperparams + F1"},
 
-  // ══════ COUCHE 2 — MÉTRIQUES ESMO2025 (y=330) ══════
-  te_mod:     {x:30,   y:330, w:165, h:65, c:C.metrics, label:"E_templeability.py", sub:"TempleabilityScorer\ncompute(entity) → Te ∈ [0,1]"},
-  he_mod:     {x:215,  y:330, w:165, h:65, c:C.metrics, label:"E_homogeneity.py",   sub:"HomogeneityScorer\ncompute(entity) → He ∈ [0,1]"},
-  risk_mod:   {x:400,  y:330, w:165, h:65, c:C.metrics, label:"E_risk_context.py",  sub:"RiskContextScorer\ncompute(entity) → R ∈ [0,1]"},
-  freq_mod:   {x:585,  y:330, w:165, h:65, c:C.metrics, label:"E_frequency.py",     sub:"FrequencyScorer\ncompute(entity) → Freq"},
-  yield_mod:  {x:770,  y:330, w:185, h:65, c:C.metrics, label:"E_annotation_yield.py", sub:"AnnotationYieldScorer\ncompute(entity) → Yield ∈ [0,1]"},
-  feas_mod:   {x:975,  y:330, w:165, h:65, c:C.metrics, label:"E_fesability_NER.py",sub:"FeasibilityScorer\ncompute(entity) → Feas"},
+  // â•â•â•â•â•â• COUCHE 2 â€” MÃ‰TRIQUES ESMO2025 (y=330) â•â•â•â•â•â•
+  te_mod:     {x:30,   y:330, w:165, h:65, c:C.metrics, label:"E_templatability.py", sub:"templatabilityScorer\ncompute(entity) â†’ Te âˆˆ [0,1]"},
+  he_mod:     {x:215,  y:330, w:165, h:65, c:C.metrics, label:"E_homogeneity.py",   sub:"HomogeneityScorer\ncompute(entity) â†’ He âˆˆ [0,1]"},
+  risk_mod:   {x:400,  y:330, w:165, h:65, c:C.metrics, label:"E_risk_context.py",  sub:"RiskContextScorer\ncompute(entity) â†’ R âˆˆ [0,1]"},
+  freq_mod:   {x:585,  y:330, w:165, h:65, c:C.metrics, label:"E_frequency.py",     sub:"FrequencyScorer\ncompute(entity) â†’ Freq"},
+  yield_mod:  {x:770,  y:330, w:185, h:65, c:C.metrics, label:"E_annotation_yield.py", sub:"AnnotationYieldScorer\ncompute(entity) â†’ Yield âˆˆ [0,1]"},
+  feas_mod:   {x:975,  y:330, w:165, h:65, c:C.metrics, label:"E_feasibility_NER.py",sub:"FeasibilityScorer\ncompute(entity) â†’ Feas"},
 
-  // ══════ COUCHE 3 — ARBRE DE DÉCISION (y=470, gauche) ══════
-  arbre:      {x:300,  y:470, w:255, h:75, c:C.decision, label:"E_creation_arbre_decision.py", sub:"DecisionTree\n6 critères × 6 feuilles → recommandation", bold:true},
+  // â•â•â•â•â•â• COUCHE 3 â€” ARBRE DE DÃ‰CISION (y=470, gauche) â•â•â•â•â•â•
+  arbre:      {x:300,  y:470, w:255, h:75, c:C.decision, label:"E_creation_arbre_decision.py", sub:"DecisionTree\n6 critÃ¨res Ã— 6 feuilles â†’ recommandation", bold:true},
   thresh_doc: {x:40,   y:480, w:200, h:55, c:C.decision, label:"THRESHOLDS_JUSTIFICATION.md", sub:"TE_HIGH/LOW HE_HIGH\nRISK_LOW YIELD_MIN"},
 
-  // ══════ COUCHE 3 — REST ANNOTATION (y=330+, droite) ══════
-  rest_annot: {x:1180, y:330, w:185, h:65, c:C.rest,    label:"rest_annotator.py",  sub:"RESTAnnotator\n→ BratAnnotation[] (pilote 40 docs)"},
+  // â•â•â•â•â•â• COUCHE 3 â€” REST ANNOTATION (y=330+, droite) â•â•â•â•â•â•
+  rest_annot: {x:1180, y:330, w:185, h:65, c:C.rest,    label:"rest_annotator.py",  sub:"RESTAnnotator\nâ†’ BratAnnotation[] (pilote 40 docs)"},
   yield_calc: {x:1390, y:330, w:175, h:65, c:C.rest,    label:"yield_calculator.py", sub:"Yield empirique\nAnnotation timing"},
-  rest_eval:  {x:1180, y:430, w:185, h:65, c:C.rest,    label:"rest_evaluator.py",  sub:"RESTEvaluator\n→ RESTEntityReport"},
+  rest_eval:  {x:1180, y:430, w:185, h:65, c:C.rest,    label:"rest_evaluator.py",  sub:"RESTEvaluator\nâ†’ RESTEntityReport"},
   rest_pipe:  {x:1390, y:430, w:175, h:55, c:C.rest,    label:"rest_pipeline.py",   sub:"driver REST complet"},
 
-  // ══════ COUCHE 4 — FICHIER PIVOT (y=620, centre) ══════
-  dec_cfg:    {x:275,  y:620, w:305, h:80, c:C.config,  label:"★  decision_config.json  ★", sub:"FICHIER PIVOT — généré par arbre\nPilote CascadeOrchestrator | version: 2.0", bold:true},
+  // â•â•â•â•â•â• COUCHE 4 â€” FICHIER PIVOT (y=620, centre) â•â•â•â•â•â•
+  dec_cfg:    {x:275,  y:620, w:305, h:80, c:C.config,  label:"â˜…  decision_config.json  â˜…", sub:"FICHIER PIVOT â€” gÃ©nÃ©rÃ© par arbre\nPilote CascadeOrchestrator | version: 2.0", bold:true},
 
-  // ══════ COUCHE 4 — REST BRIDGE (y=540+, droite) ══════
-  rest_bridge:{x:1180, y:540, w:185, h:75, c:C.rest,    label:"rest_decision_bridge.py", sub:"RESTDecisionBridge\n★ Validation croisée ★\nConcordance ≥ 80%", bold:true},
-  conv_anal:  {x:1390, y:540, w:175, h:65, c:C.rest,    label:"convergence_analyzer.py", sub:"Analyse divergences\n→ rest_convergence_plot.png"},
-  demo_rest:  {x:1390, y:630, w:175, h:45, c:C.rest,    label:"demo_rest.py",        sub:"Script de démonstration"},
+  // â•â•â•â•â•â• COUCHE 4 â€” REST BRIDGE (y=540+, droite) â•â•â•â•â•â•
+  rest_bridge:{x:1180, y:540, w:185, h:75, c:C.rest,    label:"rest_decision_bridge.py", sub:"RESTDecisionBridge\nâ˜… Validation croisÃ©e â˜…\nConcordance â‰¥ 80%", bold:true},
+  conv_anal:  {x:1390, y:540, w:175, h:65, c:C.rest,    label:"convergence_analyzer.py", sub:"Analyse divergences\nâ†’ rest_convergence_plot.png"},
+  demo_rest:  {x:1390, y:630, w:175, h:45, c:C.rest,    label:"demo_rest.py",        sub:"Script de dÃ©monstration"},
 
   // Sorties REST
   annot_json: {x:1180, y:700, w:195, h:38, c:C.output,  label:"annotation_yield_by_entity.json", sub:""},
   conv_json:  {x:1390, y:700, w:185, h:38, c:C.output,  label:"convergence_tree_vs_rest.json",  sub:""},
 
-  // ══════ COUCHE 4 — VISUALISATIONS (y=780) ══════
-  viz_tree:   {x:40,   y:780, w:210, h:55, c:C.decision, label:"visualize_decision_tree.py", sub:"→ figures/decision_tree.png (.svg)"},
-  sensit:     {x:640,  y:780, w:210, h:55, c:C.decision, label:"sensitivity_analysis.py",    sub:"Seuils ±10%/±20% → sensitivity_output.csv"},
+  // â•â•â•â•â•â• COUCHE 4 â€” VISUALISATIONS (y=780) â•â•â•â•â•â•
+  viz_tree:   {x:40,   y:780, w:210, h:55, c:C.decision, label:"visualize_decision_tree.py", sub:"â†’ figures/decision_tree.png (.svg)"},
+  sensit:     {x:640,  y:780, w:210, h:55, c:C.decision, label:"sensitivity_analysis.py",    sub:"Seuils Â±10%/Â±20% â†’ sensitivity_output.csv"},
 
-  // ══════ COUCHE 5 — CONNECTEURS (y=900) ══════
-  bio_annot:  {x:40,   y:900, w:205, h:50, c:C.connector, label:"biomarker_brat_annotator.py", sub:"Rules/src/Breast/ — regex biomarqueurs"},
-  rules_eval: {x:265,  y:900, w:170, h:50, c:C.connector, label:"rules_evaluator.py",          sub:"Précision/Rappel des règles"},
+  // â•â•â•â•â•â• COUCHE 5 â€” CONNECTEURS (y=900) â•â•â•â•â•â•
+  bio_annot:  {x:40,   y:900, w:205, h:50, c:C.connector, label:"biomarker_brat_annotator.py", sub:"Rules/src/Breast/ â€” regex biomarqueurs"},
+  rules_eval: {x:265,  y:900, w:170, h:50, c:C.connector, label:"rules_evaluator.py",          sub:"PrÃ©cision/Rappel des rÃ¨gles"},
   rules_conn: {x:460,  y:900, w:205, h:50, c:C.connector, label:"rules_cascade_connector.py",  sub:"RulesCascadeConnector\n.predict(text, entity)"},
   ner_conn:   {x:690,  y:900, w:205, h:50, c:C.connector, label:"ner_cascade_connector.py",    sub:"NERCascadeConnector\n.predict(text, entity)"},
   energy_tr:  {x:920,  y:900, w:195, h:50, c:C.connector, label:"energy_tracker.py",           sub:"EnergyTracker | eco2ai wrapper\n@contextmanager .measure()"},
 
-  // ══════ COUCHE 6 — ORCHESTRATEUR CASCADE (y=1020) ══════
-  cascade:    {x:260,  y:1020,w:330, h:90, c:C.cascade,  label:"cascade_orchestrator.py",     sub:"★ PIÈCE MAÎTRESSE ★\nCascadeOrchestrator\nRules → ML-CRF → Transformer → LLM\n.extract() | .extract_all() | .extract_batch()", bold:true},
+  // â•â•â•â•â•â• COUCHE 6 â€” ORCHESTRATEUR CASCADE (y=1020) â•â•â•â•â•â•
+  cascade:    {x:260,  y:1020,w:330, h:90, c:C.cascade,  label:"cascade_orchestrator.py",     sub:"â˜… PIÃˆCE MAÃŽTRESSE â˜…\nCascadeOrchestrator\nRules â†’ ML-CRF â†’ Transformer â†’ LLM\n.extract() | .extract_all() | .extract_batch()", bold:true},
 
-  // Règles Lung (parallèle)
+  // RÃ¨gles Lung (parallÃ¨le)
   lung_rules: {x:940,  y:1020,w:175, h:55, c:C.connector, label:"Rules/Lung/\nlung_biomarker_rules.py", sub:"EGFR ALK ROS1 KRAS PD-L1"},
 
   // Tests
-  tests:      {x:1155, y:900, w:195, h:55, c:C.test,    label:"ESMO2025/tests/",              sub:"test_*.py (8 fichiers)\npytest — unitaires + intégration"},
+  tests:      {x:1155, y:900, w:195, h:55, c:C.test,    label:"ESMO2025/tests/",              sub:"test_*.py (8 fichiers)\npytest â€” unitaires + intÃ©gration"},
 
-  // ══════ COUCHE 7 — ÉVALUATION COMPOSITE (y=1175) ══════
-  composite:  {x:100,  y:1175,w:255, h:70, c:C.eval,    label:"E_composite_scorer.py",       sub:"CompositeScorer\nC = 0.4·F1 + 0.3·Expl + 0.3·(1-E_norm)\nPareto analysis"},
-  init_py:    {x:800,  y:1175,w:215, h:55, c:C.eval,    label:"ESMO2025/__init__.py",         sub:"Exports publics : 9 classes\n__all__ = [TempleabilityScorer, ...]"},
+  // â•â•â•â•â•â• COUCHE 7 â€” Ã‰VALUATION COMPOSITE (y=1175) â•â•â•â•â•â•
+  composite:  {x:100,  y:1175,w:255, h:70, c:C.eval,    label:"E_composite_scorer.py",       sub:"CompositeScorer\nC = 0.4Â·F1 + 0.3Â·Expl + 0.3Â·(1-E_norm)\nPareto analysis"},
+  init_py:    {x:800,  y:1175,w:215, h:55, c:C.eval,    label:"ESMO2025/__init__.py",         sub:"Exports publics : 9 classes\n__all__ = [templatabilityScorer, ...]"},
 
-  // ══════ COUCHE 8 — POINTS D'ENTRÉE (y=1315) ══════
-  main_py:    {x:80,   y:1315,w:240, h:75, c:C.entry,   label:"main.py",                     sub:"★ CLI DuraXELL ★\n8 commandes : extract batch metrics\ntree rest evaluate serve info", bold:true},
-  notebook:   {x:380,  y:1315,w:255, h:75, c:C.entry,   label:"DuraXELL_Pipeline.ipynb",      sub:"Notebook maître reproductible\n7 sections — résultats complets"},
-  readme_md:  {x:690,  y:1315,w:175, h:60, c:C.entry,   label:"README.md",                   sub:"Documentation maître\nInstallation + Usage"},
-  audit_doc:  {x:885,  y:1315,w:175, h:60, c:C.entry,   label:"AUDIT_24FEV.md",              sub:"État des lieux\n+ ARCHITECTURE_RECAP.md"},
+  // â•â•â•â•â•â• COUCHE 8 â€” POINTS D'ENTRÃ‰E (y=1315) â•â•â•â•â•â•
+  main_py:    {x:80,   y:1315,w:240, h:75, c:C.entry,   label:"main.py",                     sub:"â˜… CLI DuraXELL â˜…\n8 commandes : extract batch metrics\ntree rest evaluate serve info", bold:true},
+  notebook:   {x:380,  y:1315,w:255, h:75, c:C.entry,   label:"DuraXELL_Pipeline.ipynb",      sub:"Notebook maÃ®tre reproductible\n7 sections â€” rÃ©sultats complets"},
+  readme_md:  {x:690,  y:1315,w:175, h:60, c:C.entry,   label:"README.md",                   sub:"Documentation maÃ®tre\nInstallation + Usage"},
+  audit_doc:  {x:885,  y:1315,w:175, h:60, c:C.entry,   label:"AUDIT_24FEV.md",              sub:"Ã‰tat des lieux\n+ ARCHITECTURE_RECAP.md"},
 
-  // ══════ COUCHE 9 — SORTIES FINALES (y=1460) ══════
+  // â•â•â•â•â•â• COUCHE 9 â€” SORTIES FINALES (y=1460) â•â•â•â•â•â•
   bench_perf: {x:30,   y:1460,w:175, h:40, c:C.output,  label:"benchmark_performance.csv",   sub:""},
   bench_expl: {x:220,  y:1460,w:185, h:40, c:C.output,  label:"benchmark_explainability.csv", sub:""},
   bench_energy:{x:420, y:1460,w:175, h:40, c:C.output,  label:"benchmark_energy.csv",        sub:""},
@@ -112,32 +112,32 @@ const N = {
   frugalite:  {x:1410, y:1460,w:195, h:40, c:C.output,  label:"conference_frugalite_*.md+.pptx", sub:""},
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // EDGES  [from, to, label, style]
-// style: "main"=bleu, "gen"=orange, "val"=rose, "data"=gris, "test"=vert foncé
-// ─────────────────────────────────────────────────────────────────────────────
+// style: "main"=bleu, "gen"=orange, "val"=rose, "data"=gris, "test"=vert foncÃ©
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const EDGES = [
-  // === DONNÉES → NER ===
+  // === DONNÃ‰ES â†’ NER ===
   ["brat_train","convert","BRAT","data"],
-  ["convert","conll","→","data"],
+  ["convert","conll","â†’","data"],
   ["convert","sweep","CoNLL","data"],
-  ["sweep","best_model","→","data"],
-  ["sweep","sweep_csv","→","data"],
+  ["sweep","best_model","â†’","data"],
+  ["sweep","sweep_csv","â†’","data"],
   ["sweep","infer","best_model","data"],
-  ["infer","pred_brat","prédictions","data"],
+  ["infer","pred_brat","prÃ©dictions","data"],
   ["pred_brat","eval_ner","pred.brat","data"],
   ["brat_train","eval_ner","gold.brat","data"],
 
-  // === DONNÉES → MÉTRIQUES ===
+  // === DONNÃ‰ES â†’ MÃ‰TRIQUES ===
   ["brat_train","te_mod","corpus","data"],
   ["brat_train","he_mod","corpus","data"],
   ["brat_train","risk_mod","corpus","data"],
   ["brat_train","freq_mod","corpus","data"],
   ["brat_train","yield_mod","corpus","data"],
   ["brat_train","feas_mod","corpus","data"],
-  ["bio_annot","yield_mod","règles","data"],
+  ["bio_annot","yield_mod","rÃ¨gles","data"],
 
-  // === MÉTRIQUES → ARBRE ===
+  // === MÃ‰TRIQUES â†’ ARBRE ===
   ["te_mod","arbre","Te","main"],
   ["he_mod","arbre","He","main"],
   ["risk_mod","arbre","R","main"],
@@ -145,14 +145,14 @@ const EDGES = [
   ["yield_mod","arbre","Yield","main"],
   ["feas_mod","arbre","Feas","main"],
 
-  // === ARBRE → CONFIG ===
-  ["arbre","dec_cfg","génère decision_config.json","gen"],
+  // === ARBRE â†’ CONFIG ===
+  ["arbre","dec_cfg","gÃ©nÃ¨re decision_config.json","gen"],
   ["arbre","thresh_doc","documente seuils","gen"],
   ["arbre","viz_tree","appelle","main"],
-  ["dec_cfg","sensit","seuils à tester","main"],
+  ["dec_cfg","sensit","seuils Ã  tester","main"],
 
-  // === CONFIG → CASCADE ===
-  ["dec_cfg","cascade","pilote méthode par entité","gen"],
+  // === CONFIG â†’ CASCADE ===
+  ["dec_cfg","cascade","pilote mÃ©thode par entitÃ©","gen"],
   ["dec_cfg","rest_bridge","tree_decisions","val"],
 
   // === REST CHAIN ===
@@ -160,17 +160,17 @@ const EDGES = [
   ["rest_annot","rest_eval","BratAnnotation[]","val"],
   ["yield_calc","rest_eval","Yield empirique","val"],
   ["rest_pipe","rest_annot","lance","val"],
-  ["rest_pipe","rest_eval","évalue","val"],
+  ["rest_pipe","rest_eval","Ã©value","val"],
   ["rest_pipe","rest_bridge","bridge","val"],
   ["rest_eval","rest_bridge","rest_decisions","val"],
   ["rest_bridge","conv_anal","ConvergenceReport","val"],
-  ["rest_annot","annot_json","→","val"],
-  ["rest_bridge","conv_json","→","val"],
+  ["rest_annot","annot_json","â†’","val"],
+  ["rest_bridge","conv_json","â†’","val"],
 
-  // === CONNECTORS → CASCADE ===
-  ["bio_annot","rules_conn","règles regex","main"],
-  ["rules_eval","rules_conn","précision","main"],
-  ["infer","ner_conn","modèle","main"],
+  // === CONNECTORS â†’ CASCADE ===
+  ["bio_annot","rules_conn","rÃ¨gles regex","main"],
+  ["rules_eval","rules_conn","prÃ©cision","main"],
+  ["infer","ner_conn","modÃ¨le","main"],
   ["best_model","ner_conn","weights","main"],
   ["rules_conn","cascade","RulesCascadeConnector","main"],
   ["ner_conn","cascade","NERCascadeConnector","main"],
@@ -178,21 +178,21 @@ const EDGES = [
   ["energy_tr","cascade","EnergyTracker","main"],
   ["energy_tr","consumtion","log","data"],
 
-  // === CASCADE → ÉVALUATION ===
+  // === CASCADE â†’ Ã‰VALUATION ===
   ["cascade","composite","ExtractionResult[]","main"],
-  ["eval_ner","composite","F1 par entité","main"],
-  ["eval_ner","bench_perf","→","gen"],
+  ["eval_ner","composite","F1 par entitÃ©","main"],
+  ["eval_ner","bench_perf","â†’","gen"],
 
-  // === COMPOSITE → OUTPUTS ===
-  ["composite","bench_perf","→","gen"],
-  ["composite","bench_expl","→","gen"],
-  ["composite","bench_energy","→","gen"],
-  ["composite","bench_casc","→","gen"],
-  ["composite","fig_radar","→","gen"],
-  ["composite","fig_bench","→","gen"],
+  // === COMPOSITE â†’ OUTPUTS ===
+  ["composite","bench_perf","â†’","gen"],
+  ["composite","bench_expl","â†’","gen"],
+  ["composite","bench_energy","â†’","gen"],
+  ["composite","bench_casc","â†’","gen"],
+  ["composite","fig_radar","â†’","gen"],
+  ["composite","fig_bench","â†’","gen"],
 
-  // === VISUALISATIONS → OUTPUTS ===
-  ["viz_tree","fig_radar","→ tree.png","gen"],
+  // === VISUALISATIONS â†’ OUTPUTS ===
+  ["viz_tree","fig_radar","â†’ tree.png","gen"],
   ["sensit","bench_casc","sensitivity_output.csv","gen"],
 
   // === INIT.PY ===
@@ -203,20 +203,20 @@ const EDGES = [
   ["composite","init_py","export","main"],
 
   // === TESTS ===
-  ["te_mod","tests","test_templeability.py","test"],
+  ["te_mod","tests","test_templatability.py","test"],
   ["he_mod","tests","test_homogeneity.py","test"],
   ["risk_mod","tests","test_risk_context.py","test"],
   ["arbre","tests","test_decision_tree.py","test"],
   ["cascade","tests","test_cascade.py","test"],
   ["rest_bridge","tests","test_rest_bridge.py","test"],
 
-  // === main.py → tout ===
+  // === main.py â†’ tout ===
   ["main_py","cascade","orchestre","entry"],
   ["main_py","composite","benchmark","entry"],
   ["main_py","arbre","tree/calibrate","entry"],
   ["main_py","rest_pipe","rest","entry"],
-  ["main_py","bilan","→","entry"],
-  ["main_py","readme_md","→","entry"],
+  ["main_py","bilan","â†’","entry"],
+  ["main_py","readme_md","â†’","entry"],
 
   // === NOTEBOOK ===
   ["notebook","cascade","section 5","entry"],
@@ -227,20 +227,20 @@ const EDGES = [
   ["notebook","fig_radar","section 5","entry"],
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // HELPERS
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const EDGE_COLORS = {
   main:  "#64B5F6",  // bleu - flux principal
-  gen:   "#FFB74D",  // orange - génère/crée
+  gen:   "#FFB74D",  // orange - gÃ©nÃ¨re/crÃ©e
   val:   "#F48FB1",  // rose - validation REST
-  data:  "#90A4AE",  // gris - données brutes
+  data:  "#90A4AE",  // gris - donnÃ©es brutes
   test:  "#81C784",  // vert - tests
-  entry: "#CE93D8",  // violet - points d'entrée
+  entry: "#CE93D8",  // violet - points d'entrÃ©e
 };
 
 function getExit(n, targetN) {
-  // Choix du côté de sortie selon la position relative
+  // Choix du cÃ´tÃ© de sortie selon la position relative
   const sc = { x: n.x + n.w/2, y: n.y + n.h/2 };
   const tc = { x: targetN.x + targetN.w/2, y: targetN.y + targetN.h/2 };
   const dy = tc.y - sc.y, dx = tc.x - sc.x;
@@ -285,51 +285,51 @@ function buildPath(from, to) {
   return { path: `M ${s.x} ${s.y} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${t.x} ${t.y}`, tx: (s.x+t.x)/2, ty: (s.y+t.y)/2 };
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // LAYER LABELS
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const LAYERS = [
-  { y: 30,   h: 70,  label: "COUCHE 0 — DONNÉES D'ENTRÉE", color:"#1C2B33" },
-  { y: 145,  h: 130, label: "COUCHE 1 — PIPELINE NER", color:"#0A1F0C" },
-  { y: 320,  h: 90,  label: "COUCHE 2 — MÉTRIQUES ESMO2025  (Te · He · R · Freq · Yield)", color:"#0A1133" },
-  { y: 455,  h: 200, label: "COUCHE 3 — ARBRE DE DÉCISION  +  REST ANNOTATION", color:"#160A27" },
-  { y: 670,  h: 130, label: "COUCHE 4 — FICHIER PIVOT  +  REST ÉVALUATION / BRIDGE", color:"#2D1200" },
-  { y: 770,  h: 70,  label: "COUCHE 4bis — VISUALISATIONS & SENSIBILITÉ", color:"#1A0040" },
-  { y: 880,  h: 80,  label: "COUCHE 5 — CONNECTEURS (Rules + NER + Energy)", color:"#1A0C08" },
-  { y: 1010, h: 120, label: "COUCHE 6 — CASCADE ORCHESTRATOR  ★ PIÈCE MAÎTRESSE ★", color:"#2C0A00" },
-  { y: 1155, h: 100, label: "COUCHE 7 — ÉVALUATION COMPOSITE  +  __init__.py", color:"#002626" },
-  { y: 1300, h: 100, label: "COUCHE 8 — POINTS D'ENTRÉE (main.py · Notebook · Docs)", color:"#0A0A2A" },
-  { y: 1445, h: 65,  label: "COUCHE 9 — SORTIES FINALES", color:"#111111" },
+  { y: 30,   h: 70,  label: "COUCHE 0 â€” DONNÃ‰ES D'ENTRÃ‰E", color:"#1C2B33" },
+  { y: 145,  h: 130, label: "COUCHE 1 â€” PIPELINE NER", color:"#0A1F0C" },
+  { y: 320,  h: 90,  label: "COUCHE 2 â€” MÃ‰TRIQUES ESMO2025  (Te Â· He Â· R Â· Freq Â· Yield)", color:"#0A1133" },
+  { y: 455,  h: 200, label: "COUCHE 3 â€” ARBRE DE DÃ‰CISION  +  REST ANNOTATION", color:"#160A27" },
+  { y: 670,  h: 130, label: "COUCHE 4 â€” FICHIER PIVOT  +  REST Ã‰VALUATION / BRIDGE", color:"#2D1200" },
+  { y: 770,  h: 70,  label: "COUCHE 4bis â€” VISUALISATIONS & SENSIBILITÃ‰", color:"#1A0040" },
+  { y: 880,  h: 80,  label: "COUCHE 5 â€” CONNECTEURS (Rules + NER + Energy)", color:"#1A0C08" },
+  { y: 1010, h: 120, label: "COUCHE 6 â€” CASCADE ORCHESTRATOR  â˜… PIÃˆCE MAÃŽTRESSE â˜…", color:"#2C0A00" },
+  { y: 1155, h: 100, label: "COUCHE 7 â€” Ã‰VALUATION COMPOSITE  +  __init__.py", color:"#002626" },
+  { y: 1300, h: 100, label: "COUCHE 8 â€” POINTS D'ENTRÃ‰E (main.py Â· Notebook Â· Docs)", color:"#0A0A2A" },
+  { y: 1445, h: 65,  label: "COUCHE 9 â€” SORTIES FINALES", color:"#111111" },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // LEGEND
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const LEGEND_NODES = [
-  { c: C.data,      label: "Données brutes / sources" },
+  { c: C.data,      label: "DonnÃ©es brutes / sources" },
   { c: C.ner,       label: "Pipeline NER" },
-  { c: C.metrics,   label: "Métriques ESMO2025" },
-  { c: C.decision,  label: "Arbre de décision" },
+  { c: C.metrics,   label: "MÃ©triques ESMO2025" },
+  { c: C.decision,  label: "Arbre de dÃ©cision" },
   { c: C.rest,      label: "REST-interface (Bazin)" },
   { c: C.cascade,   label: "Cascade Orchestrator" },
   { c: C.connector, label: "Connecteurs" },
   { c: C.config,    label: "Fichier pivot / config" },
-  { c: C.eval,      label: "Évaluation composite" },
-  { c: C.entry,     label: "Points d'entrée" },
+  { c: C.eval,      label: "Ã‰valuation composite" },
+  { c: C.entry,     label: "Points d'entrÃ©e" },
   { c: C.output,    label: "Sorties finales" },
 ];
 const LEGEND_EDGES = [
-  { c: EDGE_COLORS.main,  label: "Flux principal de données" },
-  { c: EDGE_COLORS.gen,   label: "Génération / création" },
-  { c: EDGE_COLORS.val,   label: "Validation croisée REST" },
-  { c: EDGE_COLORS.data,  label: "Transfert de données brutes" },
-  { c: EDGE_COLORS.test,  label: "Tests unitaires / intégration" },
-  { c: EDGE_COLORS.entry, label: "Points d'entrée CLI / notebook" },
+  { c: EDGE_COLORS.main,  label: "Flux principal de donnÃ©es" },
+  { c: EDGE_COLORS.gen,   label: "GÃ©nÃ©ration / crÃ©ation" },
+  { c: EDGE_COLORS.val,   label: "Validation croisÃ©e REST" },
+  { c: EDGE_COLORS.data,  label: "Transfert de donnÃ©es brutes" },
+  { c: EDGE_COLORS.test,  label: "Tests unitaires / intÃ©gration" },
+  { c: EDGE_COLORS.entry, label: "Points d'entrÃ©e CLI / notebook" },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // COMPOSANT PRINCIPAL
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function DuraXELLDependencyTree() {
   const [hoveredNode, setHoveredNode] = useState(null);
   const [hoveredEdge, setHoveredEdge] = useState(null);
@@ -337,7 +337,7 @@ export default function DuraXELLDependencyTree() {
 
   const SVG_W = 1640, SVG_H = 1540;
 
-  // Edges connectés au nœud survolé
+  // Edges connectÃ©s au nÅ“ud survolÃ©
   const relatedEdges = hoveredNode
     ? new Set(EDGES.filter(([f,t]) => f===hoveredNode||t===hoveredNode).map((_,i)=>i))
     : null;
@@ -349,17 +349,17 @@ export default function DuraXELLDependencyTree() {
       <div style={{ marginBottom:"12px", display:"flex", alignItems:"center", gap:"16px", flexWrap:"wrap" }}>
         <div>
           <h1 style={{ color:"#E3F2FD", fontSize:"18px", margin:0, fontWeight:700 }}>
-            DuraXELL / ESMO2025 — Arbre des Dépendances
+            DuraXELL / ESMO2025 â€” Arbre des DÃ©pendances
           </h1>
           <p style={{ color:"#78909C", fontSize:"11px", margin:"2px 0 0" }}>
-            Flux de données · Classes · Fonctions · Entrées/Sorties de chaque fichier
+            Flux de donnÃ©es Â· Classes Â· Fonctions Â· EntrÃ©es/Sorties de chaque fichier
           </p>
         </div>
         <button
           onClick={() => setShowLabels(v => !v)}
           style={{ background:"#1E3A5F", color:"#90CAF9", border:"1px solid #1565C0", borderRadius:"6px",
                    padding:"4px 12px", cursor:"pointer", fontSize:"11px" }}>
-          {showLabels ? "Masquer labels flèches" : "Afficher labels flèches"}
+          {showLabels ? "Masquer labels flÃ¨ches" : "Afficher labels flÃ¨ches"}
         </button>
       </div>
 
@@ -406,13 +406,13 @@ export default function DuraXELLDependencyTree() {
                 <path d={path} stroke={col} strokeWidth={sw} fill="none"
                       opacity={opacity}
                       markerEnd={`url(#arr-${style})`} />
-                {showLabels && label && label !== "→" && (isHighlighted || isHovered || !relatedEdges) && (
+                {showLabels && label && label !== "â†’" && (isHighlighted || isHovered || !relatedEdges) && (
                   <g>
                     <rect x={tx-28} y={ty-9} width={56} height={14}
                           fill="#0D0D1A" opacity={0.75} rx={3} />
                     <text x={tx} y={ty+2} textAnchor="middle" fill={col}
                           fontSize="7.5" fontFamily="monospace" opacity={opacity + 0.1}>
-                      {label.length > 18 ? label.slice(0,17)+"…" : label}
+                      {label.length > 18 ? label.slice(0,17)+"â€¦" : label}
                     </text>
                   </g>
                 )}
@@ -484,12 +484,12 @@ export default function DuraXELLDependencyTree() {
         </svg>
       </div>
 
-      {/* LÉGENDE */}
+      {/* LÃ‰GENDE */}
       <div style={{ marginTop:"16px", display:"flex", gap:"32px", flexWrap:"wrap" }}>
         {/* Nodes */}
         <div>
           <p style={{ color:"#64B5F6", fontSize:"11px", fontWeight:"700", margin:"0 0 6px", textTransform:"uppercase", letterSpacing:"1px" }}>
-            Types de nœuds
+            Types de nÅ“uds
           </p>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"4px 16px" }}>
             {LEGEND_NODES.map((l,i) => (
@@ -503,7 +503,7 @@ export default function DuraXELLDependencyTree() {
         {/* Edges */}
         <div>
           <p style={{ color:"#64B5F6", fontSize:"11px", fontWeight:"700", margin:"0 0 6px", textTransform:"uppercase", letterSpacing:"1px" }}>
-            Types de flèches
+            Types de flÃ¨ches
           </p>
           <div style={{ display:"grid", gridTemplateColumns:"1fr", gap:"4px" }}>
             {LEGEND_EDGES.map((l,i) => (
@@ -526,9 +526,9 @@ export default function DuraXELLDependencyTree() {
           <p style={{ color:"#64B5F6", fontSize:"11px", fontWeight:"700", margin:"0 0 6px", textTransform:"uppercase", letterSpacing:"1px" }}>
             Navigation
           </p>
-          <p style={{ color:"#78909C", fontSize:"10px", margin:"0 0 3px" }}>🖱 Survoler un nœud → met en évidence ses dépendances</p>
-          <p style={{ color:"#78909C", fontSize:"10px", margin:"0 0 3px" }}>🖱 Survoler une flèche → affiche le label</p>
-          <p style={{ color:"#78909C", fontSize:"10px", margin:0 }}>⭐ Bordure pointillée = fichiers pivot / pièces maîtresses</p>
+          <p style={{ color:"#78909C", fontSize:"10px", margin:"0 0 3px" }}>ðŸ–± Survoler un nÅ“ud â†’ met en Ã©vidence ses dÃ©pendances</p>
+          <p style={{ color:"#78909C", fontSize:"10px", margin:"0 0 3px" }}>ðŸ–± Survoler une flÃ¨che â†’ affiche le label</p>
+          <p style={{ color:"#78909C", fontSize:"10px", margin:0 }}>â­ Bordure pointillÃ©e = fichiers pivot / piÃ¨ces maÃ®tresses</p>
         </div>
       </div>
 
@@ -536,22 +536,22 @@ export default function DuraXELLDependencyTree() {
       {hoveredNode && N[hoveredNode] && (
         <div style={{ marginTop:"12px", background:"#1E2A38", border:"1px solid #1565C0", borderRadius:"8px", padding:"12px", maxWidth:"500px" }}>
           <p style={{ color:"#64B5F6", fontWeight:"700", margin:"0 0 6px", fontSize:"12px" }}>
-            📄 {hoveredNode}
+            ðŸ“„ {hoveredNode}
           </p>
           <p style={{ color:"white", fontSize:"11px", margin:"0 0 4px", fontWeight:"600" }}>
             {N[hoveredNode].label.replace(/\n/g,' ')}
           </p>
           {N[hoveredNode].sub && (
             <p style={{ color:"#90CAF9", fontSize:"10px", margin:0 }}>
-              {N[hoveredNode].sub.replace(/\n/g,' · ')}
+              {N[hoveredNode].sub.replace(/\n/g,' Â· ')}
             </p>
           )}
           <div style={{ marginTop:"8px", display:"flex", gap:"20px" }}>
             <div>
-              <p style={{ color:"#81C784", fontSize:"10px", margin:"0 0 3px", fontWeight:"600" }}>Dépend de :</p>
+              <p style={{ color:"#81C784", fontSize:"10px", margin:"0 0 3px", fontWeight:"600" }}>DÃ©pend de :</p>
               {EDGES.filter(([,t]) => t===hoveredNode).map(([f,,l],i) => (
                 <p key={i} style={{ color:"#B0BEC5", fontSize:"10px", margin:"1px 0" }}>
-                  ← {f} <span style={{ color:"#546E7A" }}>({l})</span>
+                  â† {f} <span style={{ color:"#546E7A" }}>({l})</span>
                 </p>
               ))}
             </div>
@@ -559,7 +559,7 @@ export default function DuraXELLDependencyTree() {
               <p style={{ color:"#FFB74D", fontSize:"10px", margin:"0 0 3px", fontWeight:"600" }}>Alimente :</p>
               {EDGES.filter(([f]) => f===hoveredNode).map(([,t,l],i) => (
                 <p key={i} style={{ color:"#B0BEC5", fontSize:"10px", margin:"1px 0" }}>
-                  → {t} <span style={{ color:"#546E7A" }}>({l})</span>
+                  â†’ {t} <span style={{ color:"#546E7A" }}>({l})</span>
                 </p>
               ))}
             </div>

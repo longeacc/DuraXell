@@ -1,29 +1,61 @@
-﻿.venv/*
-
-# Removed by User Request
-.venv/
-.pytest_cache/
-.vscode/
-NER/models/*
-**/Breast/*
-
-models/sweeps/*
-
-# --- Added for Project Cleanliness ---
-# Python & Bytecode
+﻿# Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# OS Generated Files
+*.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+# Environnements
+.venv/
+venv/
+env/
+.env
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+# OS
 .DS_Store
 Thumbs.db
-ehthumbs.db
-
-# Generated Logs and Outputs
-logs/*.log
-logs/output_decision.txt
+desktop.ini
+# Fichiers temporaires
+*.log
+*.tmp
+*_tmp_*
+.~lock.*
+# Données et modèles (trop lourds pour Git)
+*.pdf
+*.pptx
+*.rar
+*.zip
+*.tar.gz
+# Fichiers spécifiques 
+DuraXELL_Guide_Execution_Ordre_Lancement (1).pdf
+DuraXELL_Niveau2_Metriques_Formalismes (1).pdf
+ESMO2025/REST_interface/Rapport_de_stage_Guillaume_Bazin_E4_APHP_LIMICS.pdf
+ESMO2025/REST_interface/Présentation Oral de stage.pptx
+ESMO2025/REST_interface/cantemist-fr.rar
+NER/models/
+**/Breast/*
+ESMO2025/Breast/*
+data/
+# Fichiers générés
+decision_config.json
 output_decision.txt
+Consumtion_of_Duraxell.csv
+Results/figures/*.png
+# Pytest / Coverage
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+models/*
 
-# Streamlit
-.streamlit/secrets.toml
+models/sweeps/

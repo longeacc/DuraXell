@@ -5,7 +5,7 @@ Module principal d'extraction de biomarqueurs oncologiques
 par cascade intelligente Rules→ML→LLM.
 
 Exports principaux :
-- TempleabilityScorer : calcul de la métrique Te
+- TemplatabilityScorer : calcul de la métrique Te
 - HomogeneityScorer : calcul de la métrique He
 - RiskContextScorer : calcul de la métrique R
 - FrequencyScorer : calcul de la métrique Freq
@@ -20,7 +20,7 @@ from .E_creation_arbre_decision import DecisionTreeBuilder
 from .E_frequency import FrequencyScorer
 from .E_homogeneity import HomogeneityScorer
 from .E_risk_context import RiskContextScorer
-from .E_templeability import TempleabilityScorer
+from .E_templatability import TemplatabilityScorer
 
 # Alias for backward compatibility if needed, else just use Builder
 DecisionTree = DecisionTreeBuilder
@@ -31,7 +31,7 @@ from .energy_tracker import EnergyTracker
 
 __version__ = "2.0.0"
 __all__ = [
-    "TempleabilityScorer",
+    "TemplatabilityScorer",
     "HomogeneityScorer",
     "RiskContextScorer",
     "FrequencyScorer",

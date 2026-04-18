@@ -4,11 +4,11 @@ import os
 # Add ESMO2025 to path
 sys.path.append(os.path.join(os.path.dirname(__file__), "../ESMO2025"))
 
-from E_templeability import TempleabilityScorer
+from E_templatability import TemplatabilityScorer
 
 
-def test_templeability_scores():
-    scorer = TempleabilityScorer([])
+def test_templatability_scores():
+    scorer = TemplatabilityScorer([])
 
     # Cas 1 : Structure très rigide -> Te élevé
     # Simulation: pattern unique répété

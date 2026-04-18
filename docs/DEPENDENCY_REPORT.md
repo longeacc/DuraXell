@@ -1,4 +1,4 @@
-# DuraXELL — Import Dependency Report
+﻿# DuraXELL â€” Import Dependency Report
 
 ## ANALYSIS SUMMARY
 
@@ -13,13 +13,13 @@
 | `ESMO2025/REST_interface/demo_rest.py` | Demo | REST interface demonstration |
 | `ESMO2025/REST_interface/rest_pipeline.py` | Pipeline | REST annotation pipeline driver |
 | `ESMO2025/E_creation_arbre_decision.py` | Script | Decision tree builder (also importable) |
-| `ESMO2025/E_templeability.py` | Script | Templeability scorer (also importable) |
+| `ESMO2025/E_templatability.py` | Script | templatability scorer (also importable) |
 | `ESMO2025/E_homogeneity.py` | Script | Homogeneity scorer (also importable) |
 | `ESMO2025/E_risk_context.py` | Script | Risk context scorer (also importable) |
 | `ESMO2025/E_frequency.py` | Script | Frequency scorer (also importable) |
 | `ESMO2025/E_annotation_yield.py` | Script | Annotation yield scorer (also importable) |
-| `ESMO2025/E_fesability_NER.py` | Script | NER feasibility calculator |
-| `ESMO2025/generate_*_report.py` (×3) | Script | HTML report generators |
+| `ESMO2025/E_feasibility_NER.py` | Script | NER feasibility calculator |
+| `ESMO2025/generate_*_report.py` (Ã—3) | Script | HTML report generators |
 | `ESMO2025/Rules/src/Breast/lunch.py` | Script | Rule-based annotation runner |
 | `NER/src/2bis_train_hf_ner.py` | Script | NER training |
 | `NER/src/2sweep_ner.py` | Script | NER hyperparameter sweep |
@@ -45,7 +45,7 @@ These are the foundational modules with zero internal dependencies:
 | `ESMO2025/E_frequency.py` | `__init__`, `debug_freq`, tests |
 | `ESMO2025/E_homogeneity.py` | `__init__`, tests |
 | `ESMO2025/E_risk_context.py` | `__init__`, tests |
-| `ESMO2025/E_templeability.py` | `__init__`, tests |
+| `ESMO2025/E_templatability.py` | `__init__`, tests |
 | `ESMO2025/visualize_decision_tree.py` | `run_full_pipeline_report` |
 | `ESMO2025/REST_interface/rest_annotator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
 | `ESMO2025/REST_interface/rest_evaluator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
@@ -97,7 +97,7 @@ These are the top-level entry points or standalone scripts:
 The closest potential issue:
 - `ESMO2025/__init__.py` imports `cascade_orchestrator`, which imports `rules_cascade_connector`, which imports `ESMO2025.structs`. But `structs` is loaded first by `__init__.py` order, so there's no cycle.
 - `ESMO2025/__init__.py` imports both `E_creation_arbre_decision` and `E_annotation_yield`. `E_creation_arbre_decision` also imports `E_annotation_yield`, but this is a DAG, not a cycle.
-- `REST_modules/__init__.py` → `categorization` → `.calculs` → (submodules). No back-references.
+- `REST_modules/__init__.py` â†’ `categorization` â†’ `.calculs` â†’ (submodules). No back-references.
 
 **All dependency graphs are DAGs (Directed Acyclic Graphs). No circular imports exist.**
 
@@ -107,25 +107,25 @@ The closest potential issue:
 
 ```
 main.py
-  └── cascade_orchestrator.py
-        ├── structs.py                    [LEAF]
-        ├── rules_cascade_connector.py
-        │     ├── biomarker_brat_annotator.py  [LEAF]
-        │     └── structs.py                    [LEAF]
-        └── ner_cascade_connector.py
-              └── structs.py                    [LEAF]
+  â””â”€â”€ cascade_orchestrator.py
+        â”œâ”€â”€ structs.py                    [LEAF]
+        â”œâ”€â”€ rules_cascade_connector.py
+        â”‚     â”œâ”€â”€ biomarker_brat_annotator.py  [LEAF]
+        â”‚     â””â”€â”€ structs.py                    [LEAF]
+        â””â”€â”€ ner_cascade_connector.py
+              â””â”€â”€ structs.py                    [LEAF]
 
 run_full_pipeline_report.py
-  ├── E_composite_scorer.py               [LEAF]
-  ├── cascade_orchestrator.py             (see above)
-  ├── energy_tracker.py                   [LEAF]
-  ├── visualize_decision_tree.py          [LEAF]
-  ├── sensitivity_analysis.py
-  │     └── E_creation_arbre_decision.py
-  │           └── E_annotation_yield.py   [LEAF]
-  ├── rest_annotator.py                   [LEAF]
-  ├── rest_evaluator.py                   [LEAF]
-  └── rest_decision_bridge.py             [LEAF]
+  â”œâ”€â”€ E_composite_scorer.py               [LEAF]
+  â”œâ”€â”€ cascade_orchestrator.py             (see above)
+  â”œâ”€â”€ energy_tracker.py                   [LEAF]
+  â”œâ”€â”€ visualize_decision_tree.py          [LEAF]
+  â”œâ”€â”€ sensitivity_analysis.py
+  â”‚     â””â”€â”€ E_creation_arbre_decision.py
+  â”‚           â””â”€â”€ E_annotation_yield.py   [LEAF]
+  â”œâ”€â”€ rest_annotator.py                   [LEAF]
+  â”œâ”€â”€ rest_evaluator.py                   [LEAF]
+  â””â”€â”€ rest_decision_bridge.py             [LEAF]
 ```
 
 ---
@@ -162,14 +162,14 @@ run_full_pipeline_report.py
 
 ### 6. WARNINGS & OBSERVATIONS
 
-1. **Hard eco2ai imports** in `generate_*_report.py` (×3) and `biomarker_brat_annotator.py` and `lunch.py` — these will crash if `eco2ai` is not installed (no try/except guard).
+1. **Hard eco2ai imports** in `generate_*_report.py` (Ã—3) and `biomarker_brat_annotator.py` and `lunch.py` â€” these will crash if `eco2ai` is not installed (no try/except guard).
 
-2. **Inconsistent import styles** in tests: `test_homogeneity.py`, `test_risk_context.py`, and `test_templeability.py` use `sys.path.append` + bare module imports (`from E_homogeneity import ...`) instead of package-qualified imports (`from ESMO2025.E_homogeneity import ...`).
+2. **Inconsistent import styles** in tests: `test_homogeneity.py`, `test_risk_context.py`, and `test_templatability.py` use `sys.path.append` + bare module imports (`from E_homogeneity import ...`) instead of package-qualified imports (`from ESMO2025.E_homogeneity import ...`).
 
 3. **REST_interface/__init__.py** uses bare module imports (`from convergence_analyzer import ...`) instead of relative imports (`from .convergence_analyzer import ...`), which will fail when imported as a package from outside the directory.
 
-4. **graph_orchestrator.py** is an empty file — appears to be a placeholder.
+4. **graph_orchestrator.py** is an empty file â€” appears to be a placeholder.
 
-5. **E_fesability_NER.py** is a standalone script not imported by any other file.
+5. **E_feasibility_NER.py** is a standalone script not imported by any other file.
 
-6. **NER/src/** pipeline scripts (2bis, 2sweep, 3infer, 4predict, 5evaluate, eval_best) are fully standalone — they have no internal project imports and are never imported by others. Only `ner_cascade_connector.py` bridges into the main DuraXELL system.
+6. **NER/src/** pipeline scripts (2bis, 2sweep, 3infer, 4predict, 5evaluate, eval_best) are fully standalone â€” they have no internal project imports and are never imported by others. Only `ner_cascade_connector.py` bridges into the main DuraXELL system.

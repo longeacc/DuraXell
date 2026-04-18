@@ -28,7 +28,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.2135,
+    "templatability_score": 0.2135,
     "sample_values": [
       "100RO %",
       "Anti-RO, clone SP1: 100 %",
@@ -77,7 +77,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.85,
+    "templatability_score": 0.85,
     "sample_values": [
       "Mutation pathogène dans l'exon10 de PIK3CA",
       "mutation génétique BRCA1"
@@ -113,7 +113,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.14,
+    "templatability_score": 0.14,
     "sample_values": [
       "Augmentation du nombre de copie du gène ERBB2",
       "DDISH en cours",
@@ -168,7 +168,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.4149,
+    "templatability_score": 0.4149,
     "sample_values": [
       "Anti-Cerb B2 : 0 % des cellules tumorales marquées, score : 0",
       "Anti-Cerb B2 : marquage membranaire complet d’intensité modérée d’au moins 10% des cellules  tumorales , score : 2+",
@@ -225,7 +225,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.3493,
+    "templatability_score": 0.3493,
     "sample_values": [
       ". Cerb B2 négatif",
       "Absence de surexpression d’HER2",
@@ -282,7 +282,7 @@
     ],
     "has_percentage": true,
     "has_plus_minus": false,
-    "templeability_score": 0.6939,
+    "templatability_score": 0.6939,
     "sample_values": [
       "KI  50 %",
       "KI 10%",
@@ -334,7 +334,7 @@
     ],
     "has_percentage": false,
     "has_plus_minus": false,
-    "templeability_score": 0.3776,
+    "templatability_score": 0.3776,
     "sample_values": [
       "(RH+,",
       "100 RP %",

@@ -173,7 +173,7 @@ class HomogeneityScorer:
 # MAIN EXECUTION
 # ==================================================================================
 def load_brat_corpus_simple(data_dirs):
-    """Simple loader reusing logic from templeability."""
+    """Simple loader reusing logic from templatability."""
     corpus = []
     processed_files = set()
     for d in data_dirs:
