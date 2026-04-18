@@ -17,20 +17,9 @@ class CompositeScorer:
     """
 
     EXPLAINABILITY_SCORES = {
-        "Rules": 1.0,
-        "REGLES": 1.0,  # Alias
         "RÈGLES": 1.0,
-        "RÈGLES PAR DÉFAUT": 1.0,
-        "ML_CRF": 0.7,
-        "CRF": 0.7,
-        "ML LÉGER": 0.7,
-        "ML LÉGER PAR DÉFAUT": 0.7,
-        "Transformer": 0.3,
-        "BERT": 0.3,
-        "TRANSFORMER BIDIRECTIONNEL": 0.3,
+        "TBM": 0.3,
         "LLM": 0.1,
-        "LLM_7B": 0.1,
-        "LLM_API": 0.1,
     }
 
     def __init__(self, max_energy_kwh: float = 0.01):

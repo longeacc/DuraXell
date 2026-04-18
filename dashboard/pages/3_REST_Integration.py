@@ -1,18 +1,23 @@
 import streamlit as st
 import json
-from core.metrics import ENTITIES
 
 st.set_page_config(page_title="REST Integration", page_icon="🔧", layout="wide")
 
 def main() -> None:
     st.title("🔧 Configuration et Intégration REST")
     
+    if "entity_stats" not in st.session_state or not st.session_state["entity_stats"]:
+        st.warning("⚠️ Veuillez d'abord charger un corpus depuis la page 'Dashboard Métriques' pour identifier les entités cibles.")
+        return
+        
+    corpus_entities = list(st.session_state["entity_stats"].keys())
+    
     st.header("Gestion des Entités")
     
     col1, col2 = st.columns(2)
     with col1:
         if st.button("Tout sélectionner"):
-            st.session_state.selected_entities = ENTITIES.copy()
+            st.session_state.selected_entities = corpus_entities.copy()
     with col2:
         if st.button("Tout désélectionner"):
             st.session_state.selected_entities = []
@@ -22,16 +27,17 @@ def main() -> None:
     st.subheader("Entités cibles :")
     checks = {}
     
-    # 7 Checkboxes layout en grille
+    # Checkboxes layout en grille
     cols = st.columns(4)
-    for i, entity in enumerate(ENTITIES):
+    for i, entity in enumerate(corpus_entities):
         with cols[i % 4]:
-            is_sel = entity in selected
+            # Initialiser à True par défaut si non défini
+            is_sel = entity in selected if "selected_entities" in st.session_state else True
             checks[entity] = st.checkbox(entity, value=is_sel)
             
     # Mise à jour list session
     st.session_state.selected_entities = [ent for ent, checked in checks.items() if checked]
-    st.info(f"{len(st.session_state.selected_entities)}/{len(ENTITIES)} entités sélectionnées.")
+    st.info(f"{len(st.session_state.selected_entities)}/{len(corpus_entities)} entités sélectionnées.")
 
     st.markdown("---")
     st.header("Synchronisation")

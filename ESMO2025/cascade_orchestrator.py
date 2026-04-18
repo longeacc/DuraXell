@@ -36,12 +36,9 @@ class CascadeOrchestrator:
 
     # Mapping méthode recommandée → niveau max d'escalade dans la cascade
     METHOD_MAX_LEVEL = {
-        "RÈGLES": 1,
-        "RÈGLES PAR DÉFAUT": 1,
-        "ML LÉGER": 2,
-        "ML LÉGER PAR DÉFAUT": 2,
-        "TRANSFORMER BIDIRECTIONNEL": 3,
-        "LLM": 4,
+        "RÈGLES": 1,        # Niveau 1 : Rules uniquement
+        "TBM": 2,           # Niveaux 1-2 : Rules puis Transformer (DrBERT)
+        "LLM": 3,           # Niveaux 1-2-3 : Rules puis Transformer puis LLM
     }
 
     def __init__(
@@ -66,23 +63,15 @@ class CascadeOrchestrator:
             self.ner_model = NERCascadeConnector()
         else:
             self.ner_model = ner_model
-            
-        self.crf_model = None  # Placeholder pour modèle ML_CRF
-        try:
-            import pycrfsuite
-            self.crf_model = "Active" # on vérifie juste que l'import marche pour cette maquette
-        except ImportError:
-            pass
 
         self.llm_client = llm_client
         self.energy_tracker = energy_tracker
 
         # Coûts énergétiques estimés par défaut si pas de tracker
         self.DEFAULT_ENERGY = {
-            "Rules": 1e-6,
-            "ML_CRF": 1e-5,
-            "Transformer": 1e-4,
-            "LLM": 1e-2,
+            "Rules": 1e-6,          # Clé interne consommée par _try_rules()
+            "Transformer": 1e-4,    # Clé interne consommée par _try_transformer()
+            "LLM": 1e-2,            # Clé interne consommée par _try_llm()
         }
 
     def _load_config(self) -> Dict:
@@ -108,13 +97,13 @@ class CascadeOrchestrator:
 
         # 1. Déterminer la méthode recommandée par l'arbre de décision
         entity_cfg = self._get_entity_config(entity_type)
-        recommended_method = entity_cfg.get("method", "RÈGLES PAR DÉFAUT")
-        max_level = self.METHOD_MAX_LEVEL.get(recommended_method, 4)
+        recommended_method = entity_cfg.get("method", "LLM")  # Fallback sûr : escalade maximale
+        max_level = self.METHOD_MAX_LEVEL.get(recommended_method, 3)
 
         result = None
         logging.info(f"[Cascade] Entity={entity_type}, recommended={recommended_method}, max_level={max_level}")
 
-        # Niveau 1 : RÈGLES (toujours essayé en premier — le moins coûteux)
+        # Niveau 1 : RÈGLES (toujours essayé en premier)
         result = self._try_rules(document, entity_type)
         if self._is_confident(result) or max_level <= 1:
             if result and result.value is not None:
@@ -123,18 +112,8 @@ class CascadeOrchestrator:
             if max_level <= 1:
                 return self._finalize(result, entity_type, start_time)
 
-        # Niveau 2 : ML_CRF (si arbre autorise escalade ML LÉGER)
+        # Niveau 2 : TBM — Transformer (DrBERT)  [ANCIEN NIVEAU 3]
         if max_level >= 2:
-            crf_result = self._try_ml_crf(document, entity_type)
-            if self._is_confident(crf_result):
-                crf_result.execution_time_ms = (time.time() - start_time) * 1000
-                return crf_result
-            if crf_result and crf_result.value is not None:
-                if result is None or result.value is None or crf_result.confidence > result.confidence:
-                    result = crf_result
-
-        # Niveau 3 : Transformer (si arbre autorise escalade TRANSFORMER)
-        if max_level >= 3:
             ml_result = self._try_transformer(document, entity_type)
             if self._is_confident(ml_result):
                 ml_result.execution_time_ms = (time.time() - start_time) * 1000
@@ -143,8 +122,8 @@ class CascadeOrchestrator:
                 if result is None or result.value is None or ml_result.confidence > result.confidence:
                     result = ml_result
 
-        # Niveau 4 : LLM (si arbre autorise et client disponible)
-        if max_level >= 4 and self.llm_client:
+        # Niveau 3 : LLM  [ANCIEN NIVEAU 4]
+        if max_level >= 3 and self.llm_client:
             llm_result = self._try_llm(document, entity_type)
             if llm_result and llm_result.value is not None:
                 llm_result.execution_time_ms = (time.time() - start_time) * 1000
@@ -187,66 +166,6 @@ class CascadeOrchestrator:
 
         # Mock si pas de moteur
         return ExtractionResult(entity_type, None, "Rules", 0.0, energy, 1)
-
-    def _try_ml_crf(self, text: str, entity_type: str) -> ExtractionResult:
-        """Tente l'extraction par modèle ML léger (CRF - sklearn-crfsuite)."""
-        energy = self.DEFAULT_ENERGY["ML_CRF"]
-        
-        try:
-            import pycrfsuite
-            from ESMO2025.train_crf import tokenize_with_spans, word2features
-            
-            # Lazy load the CRF model if not already loaded
-            if getattr(self, "crf_model", None) is None:
-                crf_path = os.path.join(os.path.dirname(__file__), "crf_model.crfsuite")
-                if os.path.exists(crf_path):
-                    tagger = pycrfsuite.Tagger()
-                    tagger.open(crf_path)
-                    self.crf_model = tagger
-                else:
-                    self.crf_model = None
-
-            if self.crf_model:
-                tokens = list(tokenize_with_spans(text))
-                if tokens:
-                    features = [word2features(tokens, i) for i in range(len(tokens))]
-                    
-                    if self.energy_tracker:
-                        with self.energy_tracker.measure("ML_CRF", entity_type) as metrics:
-                            predictions = self.crf_model.tag(features)
-                    else:
-                        predictions = self.crf_model.tag(features)
-                        
-                    # Extract joined token values for the matched entity type
-                    extracted_values = []
-                    current_val = []
-                    for i, tag in enumerate(predictions):
-                        if tag == f"B-{entity_type}":
-                            if current_val:
-                                extracted_values.append(" ".join(current_val))
-                            current_val = [tokens[i][0]]
-                        elif tag == f"I-{entity_type}" and current_val:
-                            current_val.append(tokens[i][0])
-                        else:
-                            if current_val:
-                                extracted_values.append(" ".join(current_val))
-                                current_val = []
-                    if current_val:
-                        extracted_values.append(" ".join(current_val))
-                        
-                    if extracted_values:
-                        return ExtractionResult(
-                            entity_type=entity_type,
-                            value=", ".join(extracted_values),
-                            method_used="ML_CRF",
-                            confidence=0.85, # arbitrary high confidence when CRF predicts
-                            energy_kwh=energy,
-                            cascade_level=2
-                        )
-        except Exception as e:
-            logging.debug(f"CRF model error: {e}")
-        # Default fallback for CRF
-        return ExtractionResult(entity_type, None, "ML_CRF", 0.0, energy, 2)
 
     def _try_transformer(self, text: str, entity_type: str) -> ExtractionResult:
         """Tente l'extraction par modÃ¨le Transformer (PubMedBERT/CancerBERT)."""

@@ -29,7 +29,7 @@ for entity, data in st.session_state["entity_metrics"].items():
         st.write(f"**{entity}** ({count} occurrences)")
     with col3:
         routing = data["Routing"]
-        badge_colors = {"RULES": "🟢", "CRF": "🔵", "TRANSFORMER": "🟠", "LLM": "🔴"}
+        badge_colors = {"RÈGLES": "🟢", "TBM": "🟠", "LLM": "🔴"}
         st.write(f"→ {routing} {badge_colors.get(routing, '')}")
 
 st.session_state["selected_entities"] = selected_entities
@@ -51,7 +51,7 @@ for entity, data in st.session_state["entity_metrics"].items():
         
         with col2:
             st.write("**Métriques L2:**")
-            for metric in ["Te", "He", "R", "Freq", "Yield"]:
+            for metric in ["Te", "He", "R", "Freq", "Feas"]:
                 st.write(f"  • {metric}: {data.get(metric, 0.0):.2f}")
         
         st.write(f"**Routage:** {data.get('Routing', 'INCONNU')} (confiance: {data.get('Confidence', 0.0):.2f})")

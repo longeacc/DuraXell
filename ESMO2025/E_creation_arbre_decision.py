@@ -56,16 +56,10 @@ class DecisionTreeBuilder:
 
         # --- CALIBRATED THRESHOLDS (Based on Audit) ---
         self.THRESHOLDS = {
-            "TE_HIGH": 70.0,
-            "TE_MED": 40.0,
-            "HE_HIGH": 70.0,
-            "RISK_HIGH": 0.5,
-            "FREQ_MIN": 0.001,
-            "YIELD_HIGH": 0.75,
-            "YIELD_MIN_RULES": 0.25,   # Minimum Yield for rules routing via noeud 1b
-            "FEAS_NER": 0.6,
-            "DOMAIN_SHIFT_MAX": 0.5,
-            "LLM_NEC_HIGH": 0.5
+            "TE_HIGH": 70.0,     # Te >= 70 → templatabilité élevée (échelle 0-100)
+            "HE_HIGH": 70.0,     # He >= 70 → homogénéité élevée (échelle 0-100)
+            "R_MAX": 0.3,        # R <= 0.3 → risque contextuel acceptable (seuil INVERSÉ, échelle 0-1)
+            "FEAS_TBM": 0.6,     # Feas >= 0.6 → faisable par Transformer (échelle 0-1)
         }
 
     # Nombre minimum d'occurrences pour que Te soit fiable (Aligné avec THRESHOLDS_JUSTIFICATION.md)
@@ -100,24 +94,24 @@ class DecisionTreeBuilder:
             if train_te_vals:
                 # 75e percentile manuel
                 idx = int(len(train_te_vals) * 0.75)
-                calibrated_te_med = train_te_vals[idx] if idx < len(train_te_vals) else self.THRESHOLDS["TE_MED"]
+                calibrated_te_high = train_te_vals[idx] if idx < len(train_te_vals) else self.THRESHOLDS["TE_HIGH"]
             else:
-                calibrated_te_med = self.THRESHOLDS["TE_MED"]
+                calibrated_te_high = self.THRESHOLDS["TE_HIGH"]
             
             # Stocker l'ancien
-            old_te_med = self.THRESHOLDS["TE_MED"]
+            old_te_high = self.THRESHOLDS["TE_HIGH"]
             # Appliquer le seuil calibré
-            self.THRESHOLDS["TE_MED"] = calibrated_te_med
+            self.THRESHOLDS["TE_HIGH"] = calibrated_te_high
             
             # Mesurer l'accord (stabilité) entre les règles par défaut et les calibrées
             matches = 0
             for ent in test_entities:
                 metrics = entities_metrics[ent]
                 # Modèle origine
-                self.THRESHOLDS["TE_MED"] = old_te_med
+                self.THRESHOLDS["TE_HIGH"] = old_te_high
                 orig_decision = self.analyze_entity(ent, metrics).get("method", "")
                 # Modèle calibré
-                self.THRESHOLDS["TE_MED"] = calibrated_te_med
+                self.THRESHOLDS["TE_HIGH"] = calibrated_te_high
                 new_decision = self.analyze_entity(ent, metrics).get("method", "")
                 
                 if orig_decision == new_decision:
@@ -125,118 +119,70 @@ class DecisionTreeBuilder:
                     
             stability = matches / max(1, len(test_entities))
             stabilities.append(stability)
-            self.THRESHOLDS["TE_MED"] = old_te_med # Reset
+            self.THRESHOLDS["TE_HIGH"] = old_te_high # Reset
 
         avg_stability = sum(stabilities) / len(stabilities)
         print(f"Stabilité moyenne des décisions (K-Fold, k={k}): {avg_stability:.2%}")
 
     def analyze_entity(self, entity: str, metrics: Dict[str, float]) -> Dict[str, Any]:
-        """
-        Apply the recursive decision tree strictly compliant with the flowchart image.
-        Garde-fou : si count < MIN_TE_SAMPLES, Te est ramené à 0 (non fiable).
-        """
-        te = metrics.get("Te", 0.0)
-        te_count = metrics.get("Te_count", 0)
-        he = metrics.get("He", 0.0)
-        r_score = metrics.get("R", 0.0)
-        freq = metrics.get("Freq", 0.0)
-        yield_score = metrics.get("Yield", 0.0)
+        """Arbre de décision simplifié : Te++ → He++ → R− → RÈGLES | Feas++ → TBM | LLM.
 
-        # Garde-fou : Te non fiable si trop peu d'échantillons
+        Args:
+            entity: Nom de l'entité cible (ex: 'Estrogen_receptor').
+            metrics: Dictionnaire {Te, He, R, Feas, Freq, Te_count, ...}.
+
+        Returns:
+            Dictionnaire avec 'method', 'justification', 'trace'.
+        """
+        te: float = metrics.get("Te", 0.0)
+        te_count: int = metrics.get("Te_count", 0)
+        he: float = metrics.get("He", 0.0)
+        r_score: float = metrics.get("R", 0.0)
+        feas: float = metrics.get("Feas", 0.0)
+
+        # Garde-fou existant : Te non fiable si trop peu d'échantillons
         if te_count < self.MIN_TE_SAMPLES:
             te = 0.0
 
-        # Derived metrics/proxies when not explicitly given yet in data
-        feas_score = metrics.get("Feas", 0.0)
-        domain_shift = metrics.get("DomainShift", 0.0)
-        llm_necessity = metrics.get("LLM_Necessity", 0.0)
-        path_trace = []
-        method = "UNKNOWN"
-        justification = ""
+        path_trace: list[str] = []
 
-        def resolve(m, j):
-            nonlocal method, justification
-            method = m
-            justification = j
-
-        # ── NOEUD 1 : Templateabilité élevée ? ──
-        path_trace.append("Templateabilité élevée?")
+        # NOEUD 1 : Templatabilité élevée ?
+        path_trace.append("Te++ ?")
         if te >= self.THRESHOLDS["TE_HIGH"]:
-            path_trace.append("Oui -> Variabilité lexicale faible?")
+            path_trace.append("Oui → He++ ?")
+            # NOEUD 2 : Homogénéité élevée ?
             if he >= self.THRESHOLDS["HE_HIGH"]:
-                path_trace.append("Oui -> Risque contextuel faible?")
-                if r_score < self.THRESHOLDS["RISK_HIGH"]:
-                    path_trace.append("Oui -> [RÈGLES]")
-                    resolve("RÈGLES", "Temp élevée, var lexicale faible, certitude contextuelle élevée.")
-                    return {"method": method, "justification": justification, "trace": path_trace}
+                path_trace.append("Oui → R− ?")
+                # NOEUD 3 : Risque contextuel acceptable ?
+                if r_score <= self.THRESHOLDS["R_MAX"]:
+                    path_trace.append("Oui → [RÈGLES]")
+                    return {
+                        "method": "RÈGLES",
+                        "justification": f"Te={te:.1f}≥{self.THRESHOLDS['TE_HIGH']}, He={he:.1f}≥{self.THRESHOLDS['HE_HIGH']}, R={r_score:.3f}≤{self.THRESHOLDS['R_MAX']}",
+                        "trace": path_trace,
+                    }
                 else:
-                    # Te élevée + He élevée + R élevé → Faisabilité NER
-                    path_trace.append("Non (R élevé) -> Faisabilité NER élevée?")
+                    path_trace.append(f"Non (R={r_score:.3f} > {self.THRESHOLDS['R_MAX']}) → Feas++ ?")
             else:
-                # Te élevée MAIS He faible → sauter directement à Faisabilité NER
-                # (ne pas re-tester Te moyenne car Te est déjà haute)
-                path_trace.append("Non (He faible) -> Faisabilité NER élevée?")
+                path_trace.append(f"Non (He={he:.1f} < {self.THRESHOLDS['HE_HIGH']}) → Feas++ ?")
         else:
-            # ── NOEUD 1b : Homogénéité lexicale élevée + Yield confirme ? ──
-            # Si He très élevée, R faible ET Yield > 0 (les règles trouvent au moins
-            # quelque chose), alors les règles sont appropriées.
-            # Si Yield trop faible, les règles ne fonctionnent pas suffisamment → on continue.
-            path_trace.append("Non -> Homogénéité élevée + Yield ≥ seuil?")
-            if he >= self.THRESHOLDS["HE_HIGH"] and r_score < self.THRESHOLDS["RISK_HIGH"] and yield_score >= self.THRESHOLDS["YIELD_MIN_RULES"]:
-                path_trace.append(f"Oui (He={he:.1f}%, R={r_score:.2f}, Yield={yield_score:.2f}) -> [RÈGLES]")
-                resolve("RÈGLES",
-                        f"He très élevée ({he:.1f}%), risque faible ({r_score:.2f}), Yield={yield_score:.2f} confirme l'efficacité des règles.")
-                return {"method": method, "justification": justification, "trace": path_trace}
-            else:
-                # ── NOEUD 2 : Templateabilité moyenne ? ──
-                path_trace.append("Non -> Templateabilité moyenne?")
-                if te >= self.THRESHOLDS["TE_MED"]:
-                    path_trace.append("Oui -> Fréquence suffisante?")
-                    if freq >= self.THRESHOLDS["FREQ_MIN"]:
-                        path_trace.append("Oui -> Rendement d'annotation suffisant?")
-                        if yield_score >= self.THRESHOLDS["YIELD_HIGH"]:
-                            path_trace.append("Oui -> [ML LÉGER]")
-                            resolve("ML LÉGER", "Temp structurelle moyenne mais grand volume de données de qualité.")
-                            return {"method": method, "justification": justification, "trace": path_trace}
-                        else:
-                            path_trace.append("Non -> Faisabilité NER élevée?")
-                    else:
-                        path_trace.append("Non -> Faisabilité NER élevée?")
-                else:
-                    path_trace.append("Non -> Faisabilité NER élevée?")
+            path_trace.append(f"Non (Te={te:.1f} < {self.THRESHOLDS['TE_HIGH']}) → Feas++ ?")
 
-        # CHEMIN : Faisabilité NER élevée
-        if path_trace[-1].endswith("Faisabilité NER élevée?"):
-            if feas_score >= self.THRESHOLDS["FEAS_NER"]:
-                path_trace.append("Oui -> Décalage de domaine faible?")
-                if domain_shift < self.THRESHOLDS["DOMAIN_SHIFT_MAX"]:
-                    path_trace.append("Oui -> [TRANSFORMER BIDIRECTIONNEL]")
-                    resolve("TRANSFORMER BIDIRECTIONNEL", "Données faisables et domaine concordant pour Transformers.")
-                    return {"method": method, "justification": justification, "trace": path_trace}
-                else:
-                    path_trace.append("Non -> Nécessité LLM élevée?")
-            else:
-                path_trace.append("Non -> Nécessité LLM élevée?")
-
-        # CHEMIN : Nécessité LLM élevée
-        if path_trace[-1].endswith("Nécessité LLM élevée?"):
-            if llm_necessity >= self.THRESHOLDS["LLM_NEC_HIGH"]:
-                path_trace.append("Oui -> [LLM]")
-                resolve("LLM", "Forte complexité/nécessité d'utiliser un LLM lourd.")
-                return {"method": method, "justification": justification, "trace": path_trace}
-            else:
-                path_trace.append("Non -> Fréquence suffisante?")
-                if freq >= self.THRESHOLDS["FREQ_MIN"]:
-                    path_trace.append("Oui -> [ML LÉGER PAR DÉFAUT]")
-                    resolve("ML LÉGER PAR DÉFAUT", "Backoff : ML léger retenu par défaut (fréquences acceptables).")
-                    return {"method": method, "justification": justification, "trace": path_trace}
-                else:
-                    path_trace.append("Non -> [RÈGLES PAR DÉFAUT]")
-                    resolve("RÈGLES PAR DÉFAUT", "Backoff final : Fréquence trop faible, utilisation de règles par défaut.")
-                    return {"method": method, "justification": justification, "trace": path_trace}
-
-        # Sécurité
-        return {"method": method, "justification": justification, "trace": path_trace}
+        # NOEUD 4 : Faisabilité TBM ?
+        if feas >= self.THRESHOLDS["FEAS_TBM"]:
+            path_trace.append(f"Oui (Feas={feas:.3f}) → [TBM]")
+            return {
+                "method": "TBM",
+                "justification": f"Feas={feas:.3f}≥{self.THRESHOLDS['FEAS_TBM']} — Transformer (DrBERT) faisable.",
+                "trace": path_trace,
+            }
+        else:
+            path_trace.append(f"Non (Feas={feas:.3f} < {self.THRESHOLDS['FEAS_TBM']}) → [LLM]")
+            return {
+                "method": "LLM",
+                "justification": f"Feas={feas:.3f}<{self.THRESHOLDS['FEAS_TBM']} — Escalade vers LLM nécessaire.",
+                "trace": path_trace,
+            }
 
     def build_full_config(self, metrics_data: Dict[str, Dict]):
         """Compile all decisions into the config dict."""
@@ -352,8 +298,6 @@ def load_metrics_from_csv(results_dir: Path):
 
     # 5. NER Feasibility metrics
     _read_csv("ner_feasibility_analysis.csv", "Feas_Score", "Feas")
-    _read_csv("ner_feasibility_analysis.csv", "Domain_Shift", "DomainShift")
-    _read_csv("ner_feasibility_analysis.csv", "LLM_Necessity", "LLM_Necessity")
 
     return aggregated
 
