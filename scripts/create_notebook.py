@@ -65,13 +65,13 @@ cells.append(nbf.v4.new_markdown_cell("""## Section 3 : Arbre de Décision
 Génération de la configuration optimale (quelle méthode pour quelle entité ?) et analyse de sensibilité."""))
 
 cells.append(nbf.v4.new_code_cell("""# 3.1 Exécution de l'arbre de décision
-# !python ../ESMO2025/E_creation_arbre_decision.py
-print("✅ Arbre de décision généré (decision_config.json).")
+# !python ../scripts/E_creation_arbre_decision.py
+print("✅ Arbre de décision généré (data/decision_config.json).")
 
 # 3.2 Visualisation de l'arbre
-from visualize_decision_tree import visualize_decision_tree
+from ESMO2025.visualize_decision_tree import visualize_decision_tree
 try:
-    visualize_decision_tree('../decision_config.json', '../Results/figures/decision_tree.png')
+    visualize_decision_tree('../data/decision_config.json', '../Results/figures/decision_tree.png')
     from IPython.display import Image, display
     display(Image(filename='../Results/figures/decision_tree.png'))
 except Exception as e:

@@ -10,7 +10,7 @@ class RESTDecisionBridge:
 
     def compare(
         self,
-        tree_config: dict,  # decision_config.json
+        tree_config: dict,  # data/decision_config.json
         rest_reports: list,  # output of RESTEvaluator (list of RESTEntityReport)
     ) -> dict:
         """

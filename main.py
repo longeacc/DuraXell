@@ -68,7 +68,7 @@ def cmd_batch(args):
 
     # Load decision_config to get the recommended method per entity
     decision_cfg = {}
-    cfg_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "decision_config.json")
+    cfg_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "decision_config.json")
     if os.path.exists(cfg_path):
         with open(cfg_path, "r", encoding="utf-8") as f:
             raw = json.load(f)

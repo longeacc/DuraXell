@@ -43,7 +43,7 @@ class CascadeOrchestrator:
 
     def __init__(
         self,
-        config_path: str = "decision_config.json",
+        config_path: str = "data/decision_config.json",
         rules_engine=None,  # RulesCascadeConnector
         ner_model=None,  # NERCascadeConnector
         llm_client=None,  # LLMClient

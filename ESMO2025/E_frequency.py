@@ -31,7 +31,7 @@ if __name__ == "__main__" and HAS_ECO2AI:
     set_params(
         project_name="Consumtion_of_E_frequency.py",
         experiment_description="Calculating Entity Frequency",
-        file_name="Consumtion_of_Duraxell.csv",
+        file_name="data/Consumtion_of_Duraxell.csv",
     )
     tracker = Tracker()
     tracker.start()

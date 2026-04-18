@@ -5,7 +5,7 @@ import networkx as nx
 
 
 def visualize_decision_tree(
-    decision_config_path: str = "decision_config.json",
+    decision_config_path: str = "data/decision_config.json",
     output_path: str = "Results/figures/decision_tree_visualization.png",
     format: str = "png",
 ) -> None:

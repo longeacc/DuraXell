@@ -66,12 +66,12 @@ def main():
 
     # 4. Chargement Arbre de Décision (Top-Down)
     print("\n[ETAPE 4] Comparaison avec l'Arbre de Décision (Top-Down)...")
-    config_path = "decision_config.json"
+    config_path = "data/decision_config.json"
     if os.path.exists(config_path):
         with open(config_path, "r", encoding="utf-8") as f:
-            tree_config = json.load(f)
+            decision_config = json.load(f)
     else:
-        print("   (Fichier decision_config.json absent, utilisation mock)")
+        print("   (Fichier data/decision_config.json absent, utilisation mock)")
         tree_config = {
             "Estrogen_receptor": {"method": "FEUILLE NER À BASE DE RÈGLES", "metrics": {"Te": 0.9}},
             "HER2": {"method": "FEUILLE NER À BASE DE RÈGLES", "metrics": {"Te": 0.85}},

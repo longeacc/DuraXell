@@ -29,7 +29,7 @@ if __name__ == "__main__" and HAS_ECO2AI:
     set_params(
         project_name="Consumtion_of_E_homogeneity.py",
         experiment_description="Calculating Linguistic Homogeneity",
-        file_name="Consumtion_of_Duraxell.csv",
+        file_name="data/Consumtion_of_Duraxell.csv",
     )
     tracker = Tracker()
     tracker.start()

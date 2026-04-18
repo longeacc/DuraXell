@@ -4,7 +4,7 @@
 		{
 			"label": "Run Sensitivity",
 			"type": "shell",
-			"command": "cmd /c \"python run_sens.py\""
+			"command": "cmd /c \"python scripts/run_sens.py\""
 		},
 		{
 			"label": "Run standalone",
@@ -14,22 +14,22 @@
 		{
 			"label": "Run standalone",
 			"type": "shell",
-			"command": "python run_sens.py"
+			"command": "python scripts/run_sens.py"
 		},
 		{
 			"label": "Run run_sens2",
 			"type": "shell",
-			"command": "python run_sens2.py"
+			"command": "python scripts/run_sens2.py"
 		},
 		{
 			"label": "Check cantemist",
 			"type": "shell",
-			"command": "python check_cantemist.py > cantemist_count.log"
+			"command": "python scripts/check_cantemist.py > logs/cantemist_count.log"
 		},
 		{
 			"label": "Check cantemist2",
 			"type": "shell",
-			"command": "python check_cantemist.py"
+			"command": "python scripts/check_cantemist.py"
 		},
 		{
 			"label": "Run Tests",
@@ -39,17 +39,17 @@
 		{
 			"label": "Validation cantemist",
 			"type": "shell",
-			"command": "python validation_cantemist.py > validation_cantemist.log"
+			"command": "python scripts/validation_cantemist.py > logs/validation_cantemist.log"
 		},
 		{
 			"label": "Validation cantemist run",
 			"type": "shell",
-			"command": "python validation_cantemist.py > validation_cantemist.log"
+			"command": "python scripts/validation_cantemist.py > logs/validation_cantemist.log"
 		},
 		{
 			"label": "Validation cantemist Run Specific Py",
 			"type": "shell",
-			"command": "C:\\Users\\cleme\\AppData\\Local\\Programs\\Python\\Python312\\python.exe validation_cantemist.py > validation_cantemist.log"
+			"command": "C:\\Users\\cleme\\AppData\\Local\\Programs\\Python\\Python312\\python.exe scripts/validation_cantemist.py > logs/validation_cantemist.log"
 		}
 	]
 }

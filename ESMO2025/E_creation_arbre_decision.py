@@ -307,8 +307,8 @@ def main():
     # Standard DuraXELL directory structure
     RESULTS_DIR = SCRIPT_DIR / "Rules/Results"
     ROOT_DIR = SCRIPT_DIR.parent
-    CONFIG_FILE = ROOT_DIR / "decision_config.json"
-    REPORT_FILE = ROOT_DIR / "output_decision.txt"
+    CONFIG_FILE = ROOT_DIR / "data" / "decision_config.json"
+    REPORT_FILE = ROOT_DIR / "logs" / "output_decision.txt"
 
     # 1. Load existing metrics
     print("Loading metrics from Results folder...")
