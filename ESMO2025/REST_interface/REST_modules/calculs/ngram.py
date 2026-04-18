@@ -80,14 +80,12 @@ def treate_n_grams(n_grams, maximum_n_gram):
         treated_n_grams[current_keyword] = {}
         i = 0
         for current_gram, current_occurrence in n_grams[current_keyword].items():
-
             if current_occurrence >= threshold_occurrences:
                 to_remove = None
                 for existing_keyword in treated_n_grams.keys():
                     for existing_gram, existing_occurrence in treated_n_grams[
                         existing_keyword
                     ].items():
-
                         if (
                             current_gram in existing_gram
                             or existing_gram in current_gram
@@ -100,9 +98,9 @@ def treate_n_grams(n_grams, maximum_n_gram):
                 if to_remove:
                     if to_remove != current_gram:
                         del treated_n_grams[to_remove[0]][to_remove[1]]
-                        treated_n_grams[current_keyword][
-                            current_gram
-                        ] = current_occurrence
+                        treated_n_grams[current_keyword][current_gram] = (
+                            current_occurrence
+                        )
                 elif i < maximum_n_gram:
                     treated_n_grams[current_keyword][current_gram] = current_occurrence
                     i += 1

@@ -1,6 +1,3 @@
-import ipywidgets as widgets
-import pandas as pd
-
 from .calculs import *
 from .extraction.normalisation import getEnt
 

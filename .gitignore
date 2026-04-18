@@ -8,3 +8,22 @@ NER/models/*
 **/Breast/*
 
 models/sweeps/*
+
+# --- Added for Project Cleanliness ---
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Generated Logs and Outputs
+logs/*.log
+logs/output_decision.txt
+output_decision.txt
+
+# Streamlit
+.streamlit/secrets.toml

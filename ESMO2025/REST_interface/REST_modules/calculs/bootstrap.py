@@ -1,8 +1,6 @@
-import math
 import random
 
 import numpy as np
-import pandas as pd
 
 
 def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
@@ -22,15 +20,15 @@ def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
     for file in df_metrics_locations["file"].unique():
         TP = df_metrics_locations[
             (df_metrics_locations["file"] == file)
-            & ((df_metrics_locations["result"] == "TP"))
+            & (df_metrics_locations["result"] == "TP")
         ].shape[0]
         TPcorr = df_metrics_locations[
             (df_metrics_locations["file"] == file)
-            & ((df_metrics_locations["result"] == "TP(corr)"))
+            & (df_metrics_locations["result"] == "TP(corr)")
         ].shape[0]
         FP = df_metrics_locations[
             (df_metrics_locations["file"] == file)
-            & ((df_metrics_locations["result"] == "FP"))
+            & (df_metrics_locations["result"] == "FP")
         ].shape[0]
         bootstrap_data[file] = {"TP": (TP + TPcorr), "FP": FP, "FN": 0}
 

@@ -1,7 +1,6 @@
 from math import pi
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 
 
@@ -26,7 +25,7 @@ class CompositeScorer:
         """
         Initialise le scorer.
         Args:
-            max_energy_kwh: Seuil de référence pour normaliser l'énergie 
+            max_energy_kwh: Seuil de référence pour normaliser l'énergie
                             (ex: 0.01 = coût estimé d'un appel API LLM lourd).
         """
         self.MAX_ENERGY_KWH = max_energy_kwh
@@ -99,7 +98,6 @@ class CompositeScorer:
                     and other["Explainability"] >= row["Explainability"]
                     and other["Energy_kWh"] <= row["Energy_kWh"]
                 ):
-
                     if (
                         other["F1"] > row["F1"]
                         or other["Explainability"] > row["Explainability"]

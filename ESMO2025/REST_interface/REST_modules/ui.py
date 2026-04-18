@@ -1,19 +1,9 @@
 import copy
-import math
-import os
 
 import ipywidgets as widgets
-import matplotlib.pyplot as plt
-import nltk
 import pandas as pd
-import plotly.io as pio
-from bqplot import ColorScale, LinearScale, OrdinalColorScale, OrdinalScale
-from ipydatagrid import (BarRenderer, CellRenderer, DataGrid, Expr,
-                         TextRenderer, VegaExpr)
 from ipyfilechooser import FileChooser
 from IPython.display import HTML
-from nltk.corpus import stopwords
-from unidecode import unidecode
 
 from .calculs import *
 from .categorization import *
@@ -231,11 +221,13 @@ def initiate_loading(file_path):
     global ban_words_entities, ban_words_tfidf
     global homogeneity_score
     global list_isNotFP, list_isNotFN, df_results
-    
+
     if file_path is None:
         with output_load:
             output_load.clear_output()
-            print("Please select a valid directory containing BRAT files before loading.")
+            print(
+                "Please select a valid directory containing BRAT files before loading."
+            )
         return
 
     # 1 - load data annotation and possible progress

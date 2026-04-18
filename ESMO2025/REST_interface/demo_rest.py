@@ -1,7 +1,6 @@
 import json
 import os
 import sys
-import time
 
 # Ajout du chemin racine pour les imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
@@ -73,7 +72,10 @@ def main():
     else:
         print("   (Fichier data/decision_config.json absent, utilisation mock)")
         tree_config = {
-            "Estrogen_receptor": {"method": "FEUILLE NER À BASE DE RÈGLES", "metrics": {"Te": 0.9}},
+            "Estrogen_receptor": {
+                "method": "FEUILLE NER À BASE DE RÈGLES",
+                "metrics": {"Te": 0.9},
+            },
             "HER2": {"method": "FEUILLE NER À BASE DE RÈGLES", "metrics": {"Te": 0.85}},
             "Ki67": {"method": "FEUILLE ML LÉGER NER", "metrics": {"Te": 0.4}},
         }

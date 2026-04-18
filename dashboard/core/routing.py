@@ -1,6 +1,7 @@
-﻿"""Routage simplifié DuraXell — Arbre à 4 nœuds, 3 sorties."""
+"""Routage simplifié DuraXell — Arbre à 4 nœuds, 3 sorties."""
 
 from typing import Dict, Tuple
+
 
 def compute_routing(
     metrics: Dict[str, float], thresholds: Dict[str, float]

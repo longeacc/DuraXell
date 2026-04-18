@@ -1,6 +1,5 @@
 import glob
 import os
-import random
 import re
 from collections import defaultdict
 

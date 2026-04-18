@@ -3,12 +3,7 @@ Generate HTML report for Homogeneity analysis.
 """
 
 import csv
-import os
 from pathlib import Path
-
-from eco2ai import Tracker, set_params
-
-
 
 
 def generate_html_report(csv_file: str, output_file: str):
@@ -108,11 +103,11 @@ def generate_html_report(csv_file: str, output_file: str):
 
         html_content += f"""
                 <tr>
-                    <td><strong>{row['Entity_Type']}</strong></td>
+                    <td><strong>{row["Entity_Type"]}</strong></td>
                     <td><span class="badge {cls}">{s:.4f}</span></td>
-                    <td>{row['Homogeneity_Raw_He']:.4f}</td>
-                    <td>{row['Structural_Templeability']:.4f}</td>
-                    <td>{int(row['Unique_Words_Ue'])} / {int(row['Total_Words_Te'])}</td>
+                    <td>{row["Homogeneity_Raw_He"]:.4f}</td>
+                    <td>{row["Structural_Templeability"]:.4f}</td>
+                    <td>{int(row["Unique_Words_Ue"])} / {int(row["Total_Words_Te"])}</td>
                 </tr>
         """
 

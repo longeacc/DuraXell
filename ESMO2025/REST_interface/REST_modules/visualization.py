@@ -2,9 +2,8 @@ import copy
 
 import pandas as pd
 import plotly.graph_objects as go
-from bqplot import ColorScale, LinearScale, OrdinalColorScale, OrdinalScale
-from ipydatagrid import (BarRenderer, CellRenderer, DataGrid, Expr,
-                         TextRenderer, VegaExpr)
+from bqplot import ColorScale, LinearScale
+from ipydatagrid import BarRenderer, DataGrid, TextRenderer
 
 
 def create_dg_results(df_results):
@@ -29,7 +28,9 @@ def create_dg_results(df_results):
 
     df_temp = copy.deepcopy(df_results)
     df_temp.loc[:, "precision_confidence_interval"] = df_temp.apply(
-        lambda row: f"[{row['precision_conf_inter_down']}, {row['precision_conf_inter_up']}]",
+        lambda row: (
+            f"[{row['precision_conf_inter_down']}, {row['precision_conf_inter_up']}]"
+        ),
         axis=1,
     )
     df_temp.loc[:, "recall_confidence_interval"] = df_temp.apply(

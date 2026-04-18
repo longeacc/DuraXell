@@ -2,7 +2,6 @@
 import re
 
 import inflect
-from unidecode import unidecode
 
 engine = inflect.engine()
 

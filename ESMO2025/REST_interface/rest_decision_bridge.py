@@ -1,7 +1,3 @@
-import json
-import os
-
-
 class RESTDecisionBridge:
     """
     Composant de validation croisée.
@@ -71,11 +67,15 @@ class RESTDecisionBridge:
         m = method.upper()
         if m in ["RULES", "REGLES"] or "RÈGLES" in m:
             return "REGLES"
-        if m in ["ML", "ML_NER", "ML_CRF", "TRANSFORMER"] or "ML" in m or "TRANSFORMER" in m:
+        if (
+            m in ["ML", "ML_NER", "ML_CRF", "TRANSFORMER"]
+            or "ML" in m
+            or "TRANSFORMER" in m
+        ):
             return "ML"
         if "LLM" in m:
             return "LLM"
-        return "UNKNOWN" 
+        return "UNKNOWN"
 
     def _decide_from_empirics(self, report) -> str:
         """

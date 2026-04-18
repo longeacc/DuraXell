@@ -7,15 +7,13 @@ Templeability is the capacity of an entity to follow predictable structured patt
 Example: TNM staging always follows the pattern T[0-4]N[0-3]M[0-1].
 """
 
-import csv
 import json
 import math
-import os
 import re
 from collections import Counter, defaultdict
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional
 
 # eco2ai dependencies
 try:

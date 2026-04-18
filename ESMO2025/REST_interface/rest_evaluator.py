@@ -1,8 +1,3 @@
-import json
-import math
-import os
-
-
 class RESTEntityReport:
     def __init__(
         self, entity_type, empirical_te, empirical_he, empirical_r, n_patterns

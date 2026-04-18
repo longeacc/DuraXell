@@ -1,5 +1,4 @@
 import os
-import random
 import re
 
 import ipywidgets as widgets
@@ -188,15 +187,14 @@ def create_accordion_recommendations(list_spacing_regex, path, current_entity, d
                 )
                 import IPython.display as display
                 import io
-                import base64
                 import matplotlib.pyplot as plt
-                
+
                 buf = io.BytesIO()
-                fig.savefig(buf, format='png', bbox_inches='tight')
+                fig.savefig(buf, format="png", bbox_inches="tight")
                 buf.seek(0)
                 plt.close(fig.gcf())
-                
-                display.display(display.Image(data=buf.getvalue(), format='png'))
+
+                display.display(display.Image(data=buf.getvalue(), format="png"))
 
         return widgets.Accordion(
             [output_recommendations],

@@ -13,7 +13,7 @@ import csv
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 
 # Eco2AI for energy tracking
 try:
@@ -119,7 +119,9 @@ class RiskContextScorer:
             self.weights["contradiction"] = float(clf.coef_[0][2])
             print(f"Poids R recalibrés via RL : {self.weights}")
         except ImportError:
-            print("scikit-learn non disponible pour la R.L., utilisation des heuristiques.")
+            print(
+                "scikit-learn non disponible pour la R.L., utilisation des heuristiques."
+            )
         except Exception as e:
             print(f"Erreur lors de l'apprentissage des poids : {e}")
 
@@ -133,17 +135,23 @@ class RiskContextScorer:
         text = text.lower()
         return any(re.search(pat, text) for pat in self.UNCERTAINTY_PATTERNS)
 
-    def compute_score_from_stats(self, negated_count: int, uncertain_count: int, total_count: int, contradicted_rate: float = 0.0) -> float:
+    def compute_score_from_stats(
+        self,
+        negated_count: int,
+        uncertain_count: int,
+        total_count: int,
+        contradicted_rate: float = 0.0,
+    ) -> float:
         """
         Méthode unique pour calculer le score R à partir des statistiques de base.
         Garantit la cohérence de la formule partout.
         """
         if total_count == 0:
             return 0.0
-            
+
         f_neg = negated_count / total_count
         f_unc = uncertain_count / total_count
-        
+
         raw_risk = (
             (self.weights["negation"] * f_neg)
             + (self.weights["uncertainty"] * f_unc)
@@ -163,7 +171,9 @@ class RiskContextScorer:
         negated = sum(1 for t in texts if self.has_negation(t))
         uncertain = sum(1 for t in texts if self.has_uncertainty(t))
 
-        return self.compute_score_from_stats(negated, uncertain, total, contradicted_rate=0.0)
+        return self.compute_score_from_stats(
+            negated, uncertain, total, contradicted_rate=0.0
+        )
 
     def _load_data(self):
         """Lit les fichiers .ann ET .txt pour avoir le contexte."""
@@ -213,7 +223,7 @@ class RiskContextScorer:
                                             "context": context,
                                         }
                                     )
-                except Exception as e:
+                except Exception:
                     # print(f"Erreur lecture {ann_file}: {e}")
                     pass
 
@@ -284,10 +294,10 @@ class RiskContextScorer:
 
             # Utilisation de la méthode unifiée
             risk_score = self.compute_score_from_stats(
-                negated_count=stats["negated"], 
-                uncertain_count=stats["uncertain"], 
-                total_count=N, 
-                contradicted_rate=f_cont
+                negated_count=stats["negated"],
+                uncertain_count=stats["uncertain"],
+                total_count=N,
+                contradicted_rate=f_cont,
             )
 
             results.append(
@@ -335,10 +345,10 @@ def main(learn_weights=False):
         ROOT_DIR / "NER/data/Breast/val",
         ROOT_DIR / "NER/data/Breast/test",
         # Fallback old paths if needed
-        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",  
+        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",
     ]
 
-    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"       
+    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     print("=== Démarrage de l'analyse Risk Context (R) ===")
@@ -347,6 +357,7 @@ def main(learn_weights=False):
     if learn_weights:
         print("--- Mode apprentissage des poids (Calibration RL) ---")
         import numpy as np
+
         entities = list(scorer.entities_stats.keys())
         if entities:
             X = []

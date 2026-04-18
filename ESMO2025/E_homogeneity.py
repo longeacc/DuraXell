@@ -10,7 +10,6 @@ Normalization: Sigmoid transform to spread values between 0 and 1 (returned as %
 """
 
 import csv
-import json
 import math
 import re
 from collections import defaultdict

@@ -16,9 +16,9 @@ class ConvergenceAnalyzer:
         """
         Génère un rapport texte et des graphiques simples.
         """
-        print(f"\n--- RAPPORT DE CONVERGENCE DURAXELL ---")
+        print("\n--- RAPPORT DE CONVERGENCE DURAXELL ---")
         print(
-            f"Taux de concordance global : {bridge_report['concordance_rate']*100:.1f}%"
+            f"Taux de concordance global : {bridge_report['concordance_rate'] * 100:.1f}%"
         )
 
         divs = bridge_report.get("divergences", [])

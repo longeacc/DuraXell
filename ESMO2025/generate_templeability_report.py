@@ -5,10 +5,6 @@ Générer un rapport HTML pour l'analyse de templeabilité.
 import json
 from pathlib import Path
 
-from eco2ai import Tracker, set_params
-
-
-
 
 def generate_html_report(json_file: str, csv_file: str, output_file: str):
     """
@@ -439,19 +435,19 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                         <div class="metrics">
                             <div class="metric">
                                 <span class="metric-label">Couverture Motif</span>
-                                <span class="metric-value">{row.get('Top_Pattern_Coverage', 0)*100:.1f}%</span>
+                                <span class="metric-value">{row.get("Top_Pattern_Coverage", 0) * 100:.1f}%</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">Diversité</span>
-                                <span class="metric-value">{row.get('Diversity_Ratio', 0):.2f}</span>
+                                <span class="metric-value">{row.get("Diversity_Ratio", 0):.2f}</span>
                             </div>
                             <div class="metric">
                                 <span class="metric-label">Fréquence Rel.</span>
-                                <span class="metric-value">{row.get('Presence_Ratio', 0)*100:.1f}%</span>
+                                <span class="metric-value">{row.get("Presence_Ratio", 0) * 100:.1f}%</span>
                             </div>
                              <div class="metric">
                                 <span class="metric-label">Occurrences</span>
-                                <span class="metric-value">{row.get('Total_Occurrences', 0)}</span>
+                                <span class="metric-value">{row.get("Total_Occurrences", 0)}</span>
                             </div>
                         </div>
 
@@ -490,11 +486,11 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
     for row in data_list:
         html_content += f"""
                             <tr>
-                                <td><strong>{row['Entity_Type']}</strong></td>
-                                <td><strong>{row['Templeability_Score']:.3f}</strong></td>
-                                <td>{row.get('Top_Pattern_Coverage', 0)*100:.1f}%</td>
-                                <td>{row.get('Diversity_Ratio', 0):.3f}</td>
-                                <td>{row.get('Total_Occurrences', 0)}</td>
+                                <td><strong>{row["Entity_Type"]}</strong></td>
+                                <td><strong>{row["Templeability_Score"]:.3f}</strong></td>
+                                <td>{row.get("Top_Pattern_Coverage", 0) * 100:.1f}%</td>
+                                <td>{row.get("Diversity_Ratio", 0):.3f}</td>
+                                <td>{row.get("Total_Occurrences", 0)}</td>
                             </tr>
         """
 

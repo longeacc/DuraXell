@@ -1,10 +1,11 @@
-﻿import sys
+import sys
 from unittest.mock import MagicMock
+
 # Mock eco2ai BEFORE importing E_creation_arbre_decision
 sys.modules["eco2ai"] = MagicMock()
 
-import pytest
 from ESMO2025.E_creation_arbre_decision import DecisionTreeBuilder
+
 
 def test_decision_tree_logic():
     # Setup builder with dummy path
@@ -26,7 +27,14 @@ def test_decision_tree_logic():
     assert res3["method"] == "FEUILLE NER TRANSFORMER BIDIRECTIONNEL"
 
     # Case 4: High LLM Necessity (0.8) -> FEUILLE NER LLM
-    metrics_llm = {"Te": 10.0, "He": 10.0, "R": 0.8, "Feas": 0.8, "DomainShift": 0.6, "LLM_Necessity": 0.8}
+    metrics_llm = {
+        "Te": 10.0,
+        "He": 10.0,
+        "R": 0.8,
+        "Feas": 0.8,
+        "DomainShift": 0.6,
+        "LLM_Necessity": 0.8,
+    }
     res4 = builder.analyze_entity("RiskyEntity", metrics_llm)
     assert res4["method"] == "FEUILLE NER LLM"
 
@@ -36,6 +44,11 @@ def test_decision_tree_logic():
     assert res5["method"] == "FEUILLE ML LÉGER PAR DÉFAUT"
 
     # Case 6: Default Rules Backoff -> FEUILLE RÈGLES PAR DÉFAUT (Freq < 0.001)
-    metrics_backoff_rules = {"Te": 10.0, "Feas": 0.0, "LLM_Necessity": 0.1, "Freq": 0.0001}
+    metrics_backoff_rules = {
+        "Te": 10.0,
+        "Feas": 0.0,
+        "LLM_Necessity": 0.1,
+        "Freq": 0.0001,
+    }
     res6 = builder.analyze_entity("RareSimple", metrics_backoff_rules)
     assert res6["method"] == "FEUILLE RÈGLES PAR DÉFAUT"

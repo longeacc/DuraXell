@@ -1,11 +1,10 @@
 import copy
 import glob
-import json
-import os
 import re
 
 import pandas as pd
 import spacy
+
 # from googletrans import Translator
 from Levenshtein import distance as lev
 from nltk.corpus import stopwords

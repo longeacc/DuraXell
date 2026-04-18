@@ -3,9 +3,7 @@ import re
 
 import numpy as np
 import pandas as pd
-from bqplot import ColorScale, LinearScale, OrdinalColorScale, OrdinalScale
-from ipydatagrid import (BarRenderer, CellRenderer, DataGrid, Expr,
-                         TextRenderer, VegaExpr)
+from ipydatagrid import DataGrid, Expr, TextRenderer
 from unidecode import unidecode
 
 from .regex import *
@@ -127,9 +125,7 @@ def calculate_location_metrics(
                         ):
                             add_to_FP = False
                             continue
-                        for (
-                            location
-                        ) in (
+                        for location in (
                             locations_found_currentfile
                         ):  # verification in already exist to current category
                             if location[0] == place_start and place_end == location[1]:

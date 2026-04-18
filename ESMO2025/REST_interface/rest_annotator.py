@@ -1,9 +1,8 @@
-import json
 import os
 import re
 import time
 from datetime import datetime
-from typing import Dict, List, Optional, Tuple
+from typing import List, Tuple
 
 
 class BratAnnotation:
@@ -165,9 +164,7 @@ class RESTAnnotator:
                     # Format BRAT: T1  Entity Start End  Text
                     # Note: BRAT entities cannot have spaces in type name (usually)
                     # We ensure tabs are correct
-                    line = (
-                        f"T{i+1}\t{ann.entity_type} {ann.start} {ann.end}\t{ann.text}\n"
-                    )
+                    line = f"T{i + 1}\t{ann.entity_type} {ann.start} {ann.end}\t{ann.text}\n"
                     f.write(line)
 
 

@@ -17,10 +17,9 @@ This metric is crucial for the Decision Tree:
 - Low Yield -> We need ML or LLM.
 """
 
-import os
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Tuple
 
 # Eco2AI for energy tracking
 try:
@@ -56,8 +55,12 @@ class AnnotationYieldScorer:
     peuvent capturer des bornes légèrement différentes du Gold Standard.
     """
 
-    def __init__(self, gs_dir: Path = None, pred_dir: Path = None,
-                 iou_threshold: float = DEFAULT_IOU_THRESHOLD):
+    def __init__(
+        self,
+        gs_dir: Path = None,
+        pred_dir: Path = None,
+        iou_threshold: float = DEFAULT_IOU_THRESHOLD,
+    ):
         self.gs_dir = gs_dir
         self.pred_dir = pred_dir
         self.iou_threshold = iou_threshold
@@ -114,8 +117,9 @@ class AnnotationYieldScorer:
         union = (e1 - s1) + (e2 - s2) - inter
         return inter / union if union > 0 else 0.0
 
-    def _match_iou(self, gs_spans: List[Tuple[int, int]],
-                   pred_spans: List[Tuple[int, int]]) -> Tuple[int, int, int]:
+    def _match_iou(
+        self, gs_spans: List[Tuple[int, int]], pred_spans: List[Tuple[int, int]]
+    ) -> Tuple[int, int, int]:
         """
         Greedy one-to-one IoU matching for spans of the SAME entity type.
         Returns (tp, fp, fn).
@@ -222,7 +226,9 @@ class AnnotationYieldScorer:
 
     def print_report(self):
         scores = self.get_scores()
-        print(f"\n=== ANNOTATION YIELD (F1-score Rules vs GS, IoU≥{self.iou_threshold}) ===")
+        print(
+            f"\n=== ANNOTATION YIELD (F1-score Rules vs GS, IoU≥{self.iou_threshold}) ==="
+        )
         print(
             f"{'Entity':<25} | {'Yield (F1)':<10} | {'Prec':<6} | {'Rec':<6} | {'TP':<4} | {'FP':<4} | {'FN':<4}"
         )

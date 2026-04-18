@@ -2,13 +2,8 @@
 Generate HTML report for Risk Context analysis.
 """
 
-import csv
 import json
 from pathlib import Path
-
-from eco2ai import Tracker, set_params
-
-
 
 
 def generate_html_report(json_file: str, csv_file: str, output_file: str):
@@ -307,29 +302,29 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
         metrics_html = f"""
             <div class="metric">
                 <span class="metric-label">Classe de Risque:</span>
-                <span class="metric-value">{row['Risk_Class']}</span>
+                <span class="metric-value">{row["Risk_Class"]}</span>
             </div>
             <div class="metric">
                 <span class="metric-label">Total Mentions:</span>
-                <span class="metric-value">{row['Total_Mentions']}</span>
+                <span class="metric-value">{row["Total_Mentions"]}</span>
             </div>
             <div class="metric">
                 <span class="metric-label">Taux de Polysémie:</span>
-                <span class="metric-value">{row['Polysemy_Rate']}</span>
+                <span class="metric-value">{row["Polysemy_Rate"]}</span>
             </div>
             <div class="metric">
                 <span class="metric-label">Ambiguïté Numérique:</span>
-                <span class="metric-value">{row['Numeric_Ambiguity_Rate']}</span>
+                <span class="metric-value">{row["Numeric_Ambiguity_Rate"]}</span>
             </div>
              <div class="metric">
                 <span class="metric-label">Taux d'Auto-Description:</span>
-                <span class="metric-value" style="color:#22c55e">{row['Self_Described_Rate']}</span>
+                <span class="metric-value" style="color:#22c55e">{row["Self_Described_Rate"]}</span>
             </div>
         """
 
         card_html = f"""
         <div class="entity-card {risk_class}">
-            <div class="entity-name">{row['Entity']}</div>
+            <div class="entity-name">{row["Entity"]}</div>
             
             <div class="score-bar">
                 <div class="score-bar-label">Score Risque</div>

@@ -3,7 +3,7 @@ import logging
 import os
 import sys
 import time
-from typing import Any, Dict, List, Optional, Union
+from typing import Dict, List
 
 import pandas as pd
 
@@ -14,8 +14,7 @@ from ESMO2025.structs import ExtractionResult
 
 # Conditional imports to avoid hard crashes if modules are missing during dev
 try:
-    from ESMO2025.Rules.src.Breast.rules_cascade_connector import \
-        RulesCascadeConnector
+    from ESMO2025.Rules.src.Breast.rules_cascade_connector import RulesCascadeConnector
 except ImportError:
     RulesCascadeConnector = None
 
@@ -36,9 +35,9 @@ class CascadeOrchestrator:
 
     # Mapping méthode recommandée → niveau max d'escalade dans la cascade
     METHOD_MAX_LEVEL = {
-        "RÈGLES": 1,        # Niveau 1 : Rules uniquement
-        "TBM": 2,           # Niveaux 1-2 : Rules puis Transformer (DrBERT)
-        "LLM": 3,           # Niveaux 1-2-3 : Rules puis Transformer puis LLM
+        "RÈGLES": 1,  # Niveau 1 : Rules uniquement
+        "TBM": 2,  # Niveaux 1-2 : Rules puis Transformer (DrBERT)
+        "LLM": 3,  # Niveaux 1-2-3 : Rules puis Transformer puis LLM
     }
 
     def __init__(
@@ -69,9 +68,9 @@ class CascadeOrchestrator:
 
         # Coûts énergétiques estimés par défaut si pas de tracker
         self.DEFAULT_ENERGY = {
-            "Rules": 1e-6,          # Clé interne consommée par _try_rules()
-            "Transformer": 1e-4,    # Clé interne consommée par _try_transformer()
-            "LLM": 1e-2,            # Clé interne consommée par _try_llm()
+            "Rules": 1e-6,  # Clé interne consommée par _try_rules()
+            "Transformer": 1e-4,  # Clé interne consommée par _try_transformer()
+            "LLM": 1e-2,  # Clé interne consommée par _try_llm()
         }
 
     def _load_config(self) -> Dict:
@@ -97,11 +96,15 @@ class CascadeOrchestrator:
 
         # 1. Déterminer la méthode recommandée par l'arbre de décision
         entity_cfg = self._get_entity_config(entity_type)
-        recommended_method = entity_cfg.get("method", "LLM")  # Fallback sûr : escalade maximale
+        recommended_method = entity_cfg.get(
+            "method", "LLM"
+        )  # Fallback sûr : escalade maximale
         max_level = self.METHOD_MAX_LEVEL.get(recommended_method, 3)
 
         result = None
-        logging.info(f"[Cascade] Entity={entity_type}, recommended={recommended_method}, max_level={max_level}")
+        logging.info(
+            f"[Cascade] Entity={entity_type}, recommended={recommended_method}, max_level={max_level}"
+        )
 
         # Niveau 1 : RÈGLES (toujours essayé en premier)
         result = self._try_rules(document, entity_type)
@@ -119,7 +122,11 @@ class CascadeOrchestrator:
                 ml_result.execution_time_ms = (time.time() - start_time) * 1000
                 return ml_result
             if ml_result and ml_result.value is not None:
-                if result is None or result.value is None or ml_result.confidence > result.confidence:
+                if (
+                    result is None
+                    or result.value is None
+                    or ml_result.confidence > result.confidence
+                ):
                     result = ml_result
 
         # Niveau 3 : LLM  [ANCIEN NIVEAU 4]
@@ -251,7 +258,7 @@ if __name__ == "__main__":
 
     print("\n--- Démarrage de l'extraction (Mode Cascade) ---")
     for i, doc in enumerate(test_docs):
-        print(f"\nDocument {i+1}: '{doc}'")
+        print(f"\nDocument {i + 1}: '{doc}'")
 
         # Test sur 2 entités
         for entity in ["Estrogen_receptor", "HER2"]:
