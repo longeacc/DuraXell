@@ -1,9 +1,0 @@
-T1	Estrogen_receptor 2010 2018	RO 100%,
-T2	Progesterone_receptor 2019 2025	RP 5%,
-T3	HER2_status 2036 2059	HER 2 score 1+ négatif.
-T4	Ki67 2026 2035	Ki67 30%,
-A1	RO_values T1 positive
-A2	RP_values T2 negative
-A3	HER2_status_values T3 negatif
-T5	HER2_IHC 2036 2050	HER 2 score 1+
-A4	HER2_values T5 1+

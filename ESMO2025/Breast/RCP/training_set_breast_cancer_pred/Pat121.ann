@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1248 1254	RO 60%
-A1	Value T1 positif
-T2	Ki67 1269 1275	KI 30%
-A2	Value T2 30%
-T3	HER2_IHC 1276 1290	 Her2 score 2 
-A3	Value T3 2+
-T4	HER2_FISH 1289 1303	 FISH amplifié
-A4	Value T4 positif

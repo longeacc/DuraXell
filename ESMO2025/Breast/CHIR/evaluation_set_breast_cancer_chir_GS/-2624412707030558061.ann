@@ -1,9 +1,0 @@
-T1	Estrogen_receptor 1502 1523	RE : marquage intense
-A1	RO_values T1 positive
-T2	Progesterone_receptor 1534 1544	RP négatif
-A2	RP_values T2 negative
-T3	HER2_status 1547 1560	HER2  négatif
-A3	HER2_status_values T3 negatif
-T4	HER2_IHC 1995 2024;2025 2099	HER2 ont été réexaminées  et  concluent à la négativité complète de l’immunomarquage qui est donc coté 0
-A4	HER2_values T4 0
-

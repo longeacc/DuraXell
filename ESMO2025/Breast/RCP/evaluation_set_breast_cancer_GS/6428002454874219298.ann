@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 3030 3037	RO 100%
-A1	RO_values T1 positive
-T2	Progesterone_receptor 3041 3048	RP 100%
-A2	RP_values T2 positive
-T3	Ki67 3050 3059	Ki67 10 %
-T4	HER2_status 3061 3080	HER2 non surexprimé
-A3	HER2_status_values T4 negatif
-

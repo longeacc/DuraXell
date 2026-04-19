@@ -1,6 +1,0 @@
-T1	Estrogen_receptor 1528 1531	RH-
-A1	RO_values T1 negative
-T2	HER2_status 1531 1536	HER2-
-A2	HER2_status_values T2 negatif
-T3	Ki67 1537 1544	Ki6780%
-

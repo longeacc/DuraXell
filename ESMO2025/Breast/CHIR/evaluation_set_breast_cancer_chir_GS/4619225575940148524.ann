@@ -1,9 +1,0 @@
-T1	Estrogen_receptor 1855 1858;1859 1862	RO  (0%
-A1	RO_values T1 negative
-T2	Progesterone_receptor 1865 1870	RP(0%
-A2	RP_values T2 negative
-T3	HER2_IHC 1873 1887	HER2 (score 0)
-A3	HER2_values T3 0
-T4	HER2_status 2013 2025	HER2 négatif
-A4	HER2_status_values T4 negatif
-

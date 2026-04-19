@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1968 1974	RE neg
-A1	RO_values T1 negative
-T2	Progesterone_receptor 1976 1982	RP neg
-A2	RP_values T2 negative
-T3	HER2_IHC 1984 1998	Her2 surexp 3+
-A3	HER2_values T3 3+
-T4	Ki67 2000 2009	Ki 67 80%
-

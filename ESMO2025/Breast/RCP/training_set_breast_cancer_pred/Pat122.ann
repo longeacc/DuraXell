@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1565 1572	RO 100 
-A1	Value T1 positif
-T2	Progesterone_receptor 1572 1578	RP 100
-A2	Value T2 positif
-T3	Ki67 1589 1599	Ki67 : 20%
-A3	Value T3 20%
-T4	HER2_status 3175 3190	 HER2 amplifié 
-A4	Value T4 positif

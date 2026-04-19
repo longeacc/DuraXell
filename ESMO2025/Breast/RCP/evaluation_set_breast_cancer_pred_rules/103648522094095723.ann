@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 2740 2748	RO 100% 
-A1	Value T1 positif
-T2	Progesterone_receptor 2748 2755	RP 40% 
-A2	Value T2 positif
-T3	Ki67 2755 2760	Ki 67
-A3	Value T3 67%
-T4	HER2_status 2775 2790	  HeR2 negatif 
-A4	Value T4 negatif

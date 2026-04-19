@@ -1,9 +1,0 @@
-T1	Estrogen_receptor 1501 1504	RE-
-A1	RO_values T1 negative
-T2	Progesterone_receptor 1506 1509	RP-
-A2	RP_values T2 negative
-T3	HER2_IHC 1511 1517	HER2++
-A3	HER2_values T3 2+
-T4	HER2_FISH 1519 1525	FISH -
-A4	FISH_values T4 negatif
-

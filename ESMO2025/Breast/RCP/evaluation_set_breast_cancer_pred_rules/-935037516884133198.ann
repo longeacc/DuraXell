@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1811 1818	RE 144 
-A1	Value T1 non_disponible
-T2	Progesterone_receptor 1841 1850	RP : 111 
-A2	Value T2 non_disponible
-T3	Estrogen_receptor 4024 4027	RE+
-A3	Value T3 positif
-T4	Progesterone_receptor 4029 4032	RP+
-A4	Value T4 positif

@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 2130 2137	RO 100%
-A1	Value T1 positif
-T2	Progesterone_receptor 2139 2145	RP 30%
-A2	Value T2 positif
-T3	Ki67 2147 2155	Ki67 15%
-A3	Value T3 15%
-T4	HER2_IHC 2155 2169	HER 2 score 0 
-A4	Value T4 0

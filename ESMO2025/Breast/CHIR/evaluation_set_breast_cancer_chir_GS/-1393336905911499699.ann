@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 3313 3351	Récepteurs aux œstrogènes : positivité
-A1	RO_values T1 positive
-T2	Progesterone_receptor 3435 3476	Récepteurs à la progestérone : positivité
-A2	RP_values T2 positive
-T3	Ki67 3552 3601	Ki67 : engagement dans le cycle cellulaire de 30%
-T4	HER2_status 3691 3752	HER2 : dans ces massifs épithéliaux intra-canalaires, absence
-A3	HER2_status_values T4 negatif
-

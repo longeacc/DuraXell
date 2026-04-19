@@ -1,7 +1,0 @@
-T1	Estrogen_receptor 1861 1864	RO-
-A1	RO_values T1 negative
-T2	Progesterone_receptor 1866 1869	RP-
-A2	RP_values T2 negative
-T3	HER2_status 1871 1876	HER2-
-A3	HER2_status_values T3 negatif
-

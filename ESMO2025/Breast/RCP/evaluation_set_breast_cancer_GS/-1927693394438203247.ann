@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1139 1153	oestrogène 90%
-A1	RO_values T1 positive
-T2	Progesterone_receptor 1157 1172	progesterone 5%
-A2	RP_values T2 negative
-T3	HER2_status 1174 1186	HER2 négatif
-A3	HER2_status_values T3 negatif
-T4	Ki67 1187 1193	Ki 35%
-

@@ -1,7 +1,0 @@
-T1	Estrogen_receptor 883 889	RO 90%
-T2	Progesterone_receptor 890 896	RP 95%
-T3	HER2_IHC 897 909	HER2 score 2
-T4	Ki67 910 918	Ki67 20%
-A1	HER2_values T3 2+
-A2	RP_values T2 positive
-A3	RO_values T1 positive

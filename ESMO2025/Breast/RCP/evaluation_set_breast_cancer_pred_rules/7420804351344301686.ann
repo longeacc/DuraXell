@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 1519 1522	RO-
-A1	Value T1 negatif
-T2	Progesterone_receptor 1524 1527	RP-
-A2	Value T2 negatif
-T3	HER2_IHC 1528 1543	 HER2 score 2, 
-A3	Value T3 2+
-T4	Ki67 1697 1707	Ki67 : 90%
-A4	Value T4 90%

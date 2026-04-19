@@ -1,5 +1,0 @@
-T1	Estrogen_receptor 1671 1675	RO +
-A1	RO_values T1 positive
-T2	Progesterone_receptor 1677 1680;1681 1683	RP  -,
-A2	RP_values T2 negative
-

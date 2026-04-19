@@ -1,6 +1,0 @@
-T1	HER2_IHC 755 774	. Cerb B2 : 0.     
-A1	Value T1 0
-T2	Estrogen_receptor 1596 1607	RO  3+ 100%
-A2	Value T2 positif
-T3	Progesterone_receptor 1609 1618	RP 3+ 80%
-A3	Value T3 positif

@@ -1,9 +1,0 @@
-T1	Estrogen_receptor 2208 2245	Récepteurs aux œstrogènes (RE) : 85 %
-A1	RO_values T1 positive
-T2	Progesterone_receptor 2268 2308	Récepteurs à la progestérone (RP) : 70 %
-A2	RP_values T2 positive
-T3	HER2_status 2344 2378	HER2 : absence d’une surexpression
-A3	HER2_status_values T3 negatif
-T4	HER2_IHC 2344 2387	HER2 : absence d’une surexpression, score 0
-A4	HER2_values T4 0
-

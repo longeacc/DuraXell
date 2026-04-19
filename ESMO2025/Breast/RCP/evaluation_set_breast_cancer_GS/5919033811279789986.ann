@@ -1,8 +1,0 @@
-T1	Estrogen_receptor 3250 3255	RO 75
-A1	RO_values T1 positive
-T2	Progesterone_receptor 3256 3260	RP 0
-A2	RP_values T2 negative
-T3	HER2_IHC 3263 3269	Her2 0
-A3	HER2_values T3 0
-T4	Ki67 3270 3275	Ki 25
-

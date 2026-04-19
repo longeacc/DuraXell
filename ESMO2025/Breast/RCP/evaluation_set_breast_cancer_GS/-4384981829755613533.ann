@@ -1,6 +1,0 @@
-T1	Estrogen_receptor 2203 2206	RE+
-A1	RO_values T1 positive
-T2	Progesterone_receptor 2208 2211	RP+
-A2	RP_values T2 positive
-T3	Ki67 2221 2229	Ki à 15%
-
