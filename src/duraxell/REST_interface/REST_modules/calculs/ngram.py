@@ -34,9 +34,9 @@ def calculate_n_grams(df, current_entity, df_tf_results, ban_words_tfidf):
     dfx = df.loc[(df["entity"] == current_entity)]
     dfx = dfx.filter(["text", "occurrences"])
     sentences = []
-    for l in dfx.values.tolist():
-        for _i in range(0, l[1]):
-            sentence = l[0].split()
+    for row in dfx.values.tolist():
+        for _i in range(0, row[1]):
+            sentence = row[0].split()
             sentences.append(sentence)
 
     n_grams = {}
