@@ -141,15 +141,14 @@ class MetricsCalculator:
             )
             h_norm = entropy / math.log(num_unique)
             
-        # Boost TE mathematically so that most simple variations end up > 0.70
-        structure_consistency = 1.0 - (h_norm * 0.7)  # Reduce entropy penalty
+        structure_consistency = 1.0 - h_norm
         bonus_semantic = (
-            0.2  # Increase base semantic bonus
+            0.1
             if any(c in p for p in set(normalized_patterns) for c in ["%", "+", "-", ">", "<"])
             else 0.0
         )
-        if any("D" in p for p in set(normalized_patterns)) and structure_consistency > 0.4:
-            bonus_semantic += 0.2
+        if any("D" in p for p in set(normalized_patterns)) and structure_consistency > 0.6:
+            bonus_semantic += 0.1
 
         te = min(1.0, max(0.0, structure_consistency + bonus_semantic))
 
@@ -163,13 +162,8 @@ class MetricsCalculator:
         else:
             n_total = len(all_tokens)
             n_unique = len(set(all_tokens))
-            if n_total > 1:
-                redundancy = (n_total - n_unique) / n_total
-            else:
-                redundancy = 1.0
-                
-            # Shift Sigmoid x0 lower so that even low redundancy triggers high He
-            k, x0 = 12, 0.2  
+            redundancy = (n_total - n_unique) / n_total if n_total > 0 else 0
+            k, x0 = 10, 0.5
             try:
                 he_raw = 1 / (1 + math.exp(-k * (redundancy - x0)))
             except OverflowError:
@@ -184,9 +178,9 @@ class MetricsCalculator:
         contradictory = sum(1 for t in text_to_search if self.has_contradiction(t))
 
         r_raw = (
-            (negated / total_texts) * 0.1
-            + (uncertain / total_texts) * 0.3
-            + (contradictory / total_texts) * 0.8
+            (negated / total_texts) * 0.2
+            + (uncertain / total_texts) * 0.5
+            + (contradictory / total_texts) * 1.0
             if total_texts > 0
             else 0.0
         )
