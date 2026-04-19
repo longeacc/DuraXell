@@ -87,3 +87,11 @@ NER/sweep_results (copie).csv
 ESMO2025/REST_interface/Results/
 ESMO2025/REST_interface/logo.png
 NER/sweep_results (copie).csv
+# Migrated paths from src layout
+src/duraxell/REST_interface/Results/
+src/duraxell/REST_interface/logo.png
+src/duraxell/Consumtion_of_Duraxell.csv
+
+src/duraxell/REST_interface/Results/
+src/duraxell/REST_interface/logo.png
+src/duraxell/Consumtion_of_Duraxell.csv
