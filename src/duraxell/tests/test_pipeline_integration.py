@@ -16,7 +16,7 @@ class MockRulesEngine:
 class MockNERModel:
     def predict(self, text, entity):
         if "Ki67" in text and entity == "Ki67":
-            return ExtractionResult(entity, "High", "Transformer", 0.85, 0, 2)
+            return ExtractionResult(entity, "High", "TBM", 0.85, 0, 2)
         return None
 
 
@@ -116,7 +116,7 @@ class TestPipelineIntegration:
         # Assertions to verify integration
         assert not df_results.empty
         assert "Rules" in method_group["Method"].values
-        assert "Transformer" in method_group["Method"].values
+        assert "TBM" in method_group["Method"].values
 
         # Verify energy was captured (simulated)
         assert df_results["Energy_kWh"].sum() > 0

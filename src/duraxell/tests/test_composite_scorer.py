@@ -7,7 +7,7 @@ def test_composite_scorer_logic():
     # Test 1: Rules (Perfect Expl, High Perf, Low Energy)
     # F1=0.9, Expl=1.0, Energy=0.0 -> Frugality=1.0
     # Composite = 0.4*0.9 + 0.3*1.0 + 0.3*1.0 = 0.36 + 0.3 + 0.3 = 0.96
-    res_rules = scorer.compute(f1=0.9, method="Rules", energy_kwh=0.0)
+    res_rules = scorer.compute(f1=0.9, method="RÈGLES", energy_kwh=0.0)
     assert abs(res_rules - 0.96) < 0.001
 
     # Test 2: LLM (Low Expl, High Perf, High Energy)
@@ -20,7 +20,7 @@ def test_composite_scorer_logic():
     # F1=0.92, Expl=0.3, Energy=HALF_MAX -> Frugality=0.5
     # Composite = 0.4*0.92 + 0.3*0.3 + 0.3*0.5 = 0.368 + 0.09 + 0.15 = 0.608
     res_bert = scorer.compute(
-        f1=0.92, method="Transformer", energy_kwh=scorer.MAX_ENERGY_KWH / 2
+        f1=0.92, method="TBM", energy_kwh=scorer.MAX_ENERGY_KWH / 2
     )
     assert abs(res_bert - 0.608) < 0.001
 
