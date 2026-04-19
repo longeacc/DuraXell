@@ -58,8 +58,8 @@ def generate_regex(words):
     """
     regex = "("
     connectors = ["+", "+?"]
-    inOr = False
-    lastIsWord = False
+    inor = False
+    lastisword = False
     list_spacing_regex = []
 
     for word in words:
@@ -68,33 +68,33 @@ def generate_regex(words):
         if spacing_word:
             max_spacing_word, max_word_len = generate_spacing_word(word, spacing=500)
             list_spacing_regex.append([max_spacing_word, max_word_len, word])
-            if lastIsWord:
+            if lastisword:
                 regex += "|"
             regex += spacing_word
-            lastIsWord = True
+            lastisword = True
 
         elif word in connectors:
             # a - closing
             regex += ")"
-            if inOr:
+            if inor:
                 regex += "?"
-                inOr = False
+                inor = False
             # b - creating
             if word == "+":
                 regex += r"\s"
             elif word == "+?":
                 regex += r"\s?"
-                inOr = True
+                inor = True
             regex += "("
-            lastIsWord = False
+            lastisword = False
 
         else:
-            if lastIsWord:
+            if lastisword:
                 regex += "|"
             regex += word
-            lastIsWord = True
+            lastisword = True
 
-    if inOr:
+    if inor:
         regex += ")?"
     if is_parenthese_diff(regex):
         regex += ")"

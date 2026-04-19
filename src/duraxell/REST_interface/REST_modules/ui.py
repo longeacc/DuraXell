@@ -16,8 +16,8 @@ from .visualization import *
 (
     path,
     ent_cat,
-    list_isNotFP,
-    list_isNotFN,
+    list_isnotfp,
+    list_isnotfn,
     ban_words_entities,
     df,
     df_tf_results,
@@ -56,7 +56,7 @@ from .visualization import *
     output_t1_visualization_category,
     output_t2_cat_infos,
     output_t2_donut,
-    output_t3_TEMP,
+    output_t3_temp,
 ) = initialize_outputs()
 
 ###########
@@ -134,9 +134,9 @@ def update_df_result(df_metrics, df, df_metrics_locations):
     df_metrics_locations (dataframe) : contains the locations of each categorized word, and whether they are true positive, false positive or false negative.
     """
     global df_results
-    Xdf = copy.deepcopy(df[df["entity"] == current_entity])
+    x_df = copy.deepcopy(df[df["entity"] == current_entity])
     bootstrap_results = estimate_confidence_intervals_bootstrap(
-        Xdf, current_entity, df_metrics_locations, draw_number=1000, alpha=5.0
+        x_df, current_entity, df_metrics_locations, draw_number=1000, alpha=5.0
     )
     df_results = update_df_results(
         df_results, df, current_entity, homogeneity_score, df_metrics, bootstrap_results
@@ -184,7 +184,7 @@ def initiate_button_save(button_save, button_results):
 
     def button_save_on_click(b):
         save_progress(
-            path, ent_cat, list_isNotFP, list_isNotFN, ban_words_entities, df_results
+            path, ent_cat, list_isnotfp, list_isnotfn, ban_words_entities, df_results
         )
         button_results.value = False
         button_save.button_style = "info"
@@ -220,7 +220,7 @@ def initiate_loading(file_path):
     global df, df_tf_results
     global ban_words_entities, ban_words_tfidf
     global homogeneity_score
-    global list_isNotFP, list_isNotFN, df_results
+    global list_isnotfp, list_isnotfn, df_results
 
     if file_path is None:
         with output_load:
@@ -243,8 +243,8 @@ def initiate_loading(file_path):
     ) = load_data_annotations(file_path)
     var = load_json(path, df, homogeneity_score, ent_cat)
     ent_cat = var.get("ent_cat", ent_cat)
-    list_isNotFP = var.get("list_isNotFP", list_isNotFP)
-    list_isNotFN = var.get("list_isNotFN", list_isNotFN)
+    list_isnotfp = var.get("list_isNotFP", list_isnotfp)
+    list_isnotfn = var.get("list_isNotFN", list_isnotfn)
     ban_words_entities = var.get("ban_words_entities", ban_words_entities)
     df_results = var.get("df_results", df_results)
 
@@ -479,13 +479,13 @@ def remove_ent_cat(i):
     Parameters :
     i (int) : number corresponding of the deleted category.
     """
-    global list_isNotFP, list_isNotFN, ent_cat
+    global list_isnotfp, list_isnotfn, ent_cat
     cat = getCat(current_entity, ent_cat)[i]
-    list_isNotFP = [
-        values_notFP for values_notFP in list_isNotFP if values_notFP[0] != cat
+    list_isnotfp = [
+        values_notFP for values_notFP in list_isnotfp if values_notFP[0] != cat
     ]
-    list_isNotFN = [
-        values_notFN for values_notFN in list_isNotFN if values_notFN[0] != cat
+    list_isnotfn = [
+        values_notFN for values_notFN in list_isnotfn if values_notFN[0] != cat
     ]
     ent_cat[current_entity].remove(ent_cat[current_entity][i])
     ent_cat = remove_empty_categories(ent_cat, current_entity)
@@ -504,8 +504,8 @@ def on_tag_change(change, i):
     change (Change) : contains the old and new values of the category name in the corresponding TagsInput widget.
     i (int) : number corresponding to the modified TagsInput widget.
     """
-    global list_isNotFP, ent_cat
-    list_isNotFP = modify_list_isNotFP(list_isNotFP, eval(repr(change["new"])))
+    global list_isnotfp, ent_cat
+    list_isnotfp = modify_list_isNotFP(list_isnotfp, eval(repr(change["new"])))
     ent_cat[current_entity][i] = repr(change["new"])
     button_categorization.button_style = "warning"
 
@@ -753,8 +753,8 @@ def change_visualization_metric(
     t3_output2_metrics_results,
     t3_output_text_highlight,
     df_metrics,
-    container_checkBox_isNotFPorFN,
-    output_t3_TEMP,
+    container_checkbox_isnotfporfn,
+    output_t3_temp,
     t3_output3_metrics_locations,
     create_grid_metrics_locations,
 ):
@@ -777,7 +777,7 @@ def change_visualization_metric(
     create_grid_metrics_locations (function): Function to create the grid for displaying metrics locations.
     """
     global current_entity
-    global list_isNotFP, list_isNotFN
+    global list_isnotfp, list_isnotfn
 
     text = df_metrics_locations.iloc[index]["text"]
     annotation = df_metrics_locations.iloc[index]["annotation"]
@@ -786,8 +786,8 @@ def change_visualization_metric(
     places = df_metrics_locations.iloc[index]["places"]
     motif = df_metrics_locations.iloc[index]["motif"]
     result = df_metrics_locations.iloc[index]["result"]
-    value_isNotFP = bool(df_metrics_locations.iloc[index]["isNotFP"])
-    value_isNotFN = bool(df_metrics_locations.iloc[index]["isNotFN"])
+    value_isnotfp = bool(df_metrics_locations.iloc[index]["isNotFP"])
+    value_isnotfn = bool(df_metrics_locations.iloc[index]["isNotFN"])
 
     # display Text + annotation + motif
     text2 = text
@@ -801,7 +801,7 @@ def change_visualization_metric(
     t3_output_text_highlight.value = text2
 
     # Checkbox
-    def on_checkBox_isNotFPorFN_clicked(change, instruction):
+    def on_checkbox_isnotfporfn_clicked(change, instruction):
         """
         Handles the click event for the 'isNotFP' or 'isNotFN' checkbox.
 
@@ -817,13 +817,13 @@ def change_visualization_metric(
 
         column = "isNotFP"
         result = ["TP(corr)", "FP"]
-        bool_FNorFP_value = [True, False]
-        target_list = list_isNotFP
+        bool_fnorfp_value = [True, False]
+        target_list = list_isnotfp
         if instruction == "FN":
             column = "isNotFN"
             result = ["Discarded", "FN"]
-            bool_FNorFP_value = [False, True]
-            target_list = list_isNotFN
+            bool_fnorfp_value = [False, True]
+            target_list = list_isnotfn
 
         df_metrics_locations.loc[index, column] = not df_metrics_locations.loc[
             index, column
@@ -834,8 +834,8 @@ def change_visualization_metric(
                 [
                     category,
                     result[0],
-                    bool_FNorFP_value[0],
-                    bool_FNorFP_value[1],
+                    bool_fnorfp_value[0],
+                    bool_fnorfp_value[1],
                     text,
                     file,
                     places,
@@ -849,8 +849,8 @@ def change_visualization_metric(
                 [
                     category,
                     result[0],
-                    bool_FNorFP_value[0],
-                    bool_FNorFP_value[1],
+                    bool_fnorfp_value[0],
+                    bool_fnorfp_value[1],
                     text,
                     file,
                     places,
@@ -870,8 +870,8 @@ def change_visualization_metric(
                 t3_output2_metrics_results,
                 t3_output_text_highlight,
                 df_metrics,
-                container_checkBox_isNotFPorFN,
-                output_t3_TEMP,
+                container_checkbox_isnotfporfn,
+                output_t3_temp,
                 t3_output3_metrics_locations,
                 create_grid_metrics_locations,
             ),
@@ -904,23 +904,23 @@ def change_visualization_metric(
         or result == "Discarded"
     ):
         description = "Consider this FP as a TP"
-        value = value_isNotFP
+        value = value_isnotfp
         instruction = "FP"
         if result == "FN" or result == "Discarded":
             description = "Disregard this FN as an annotation"
-            value = value_isNotFN
+            value = value_isnotfn
             instruction = "FN"
-        checkBox_isNotFPorFN = widgets.Checkbox(
+        checkbox_isnotfporfn = widgets.Checkbox(
             value=value, disabled=False, indent=False, description=description
         )
-        checkBox_isNotFPorFN.observe(
-            lambda change: on_checkBox_isNotFPorFN_clicked(change, instruction),
+        checkbox_isnotfporfn.observe(
+            lambda change: on_checkbox_isnotfporfn_clicked(change, instruction),
             names="value",
         )
-        container_checkBox_isNotFPorFN.children = [checkBox_isNotFPorFN, output_t3_TEMP]
+        container_checkbox_isnotfporfn.children = [checkbox_isnotfporfn, output_t3_temp]
 
     else:
-        container_checkBox_isNotFPorFN.children = [output_t3_TEMP, output_t3_TEMP]
+        container_checkbox_isnotfporfn.children = [output_t3_temp, output_t3_temp]
 
 
 def create_t3a1():
@@ -942,7 +942,7 @@ def create_t3a1():
     t3_output2_metrics_results = widgets.Output()
     t3_output3_metrics_locations = widgets.Output()
     t3_output_text_highlight = widgets.HTML()
-    container_checkBox_isNotFPorFN = widgets.VBox([output_t3_TEMP, output_t3_TEMP])
+    container_checkbox_isnotfporfn = widgets.VBox([output_t3_temp, output_t3_temp])
 
     title = "I - Entity metrics results"
     t3a1_title = widgets.HTML(
@@ -964,8 +964,8 @@ def create_t3a1():
         path,
         df,
         other_categories,
-        list_isNotFP,
-        list_isNotFN,
+        list_isnotfp,
+        list_isnotfn,
         ban_words_entities,
     )
     df_metrics_locations = pd.DataFrame(
@@ -993,8 +993,8 @@ def create_t3a1():
             t3_output2_metrics_results,
             t3_output_text_highlight,
             df_metrics,
-            container_checkBox_isNotFPorFN,
-            output_t3_TEMP,
+            container_checkbox_isnotfporfn,
+            output_t3_temp,
             t3_output3_metrics_locations,
             create_grid_metrics_locations,
         ),
@@ -1027,7 +1027,7 @@ def create_t3a1():
             t3_output2_metrics_results,
             t3a3_title,
             t3_output_text_highlight,
-            container_checkBox_isNotFPorFN,
+            container_checkbox_isnotfporfn,
             t3_output3_metrics_locations,
         ]
     )
@@ -1049,7 +1049,7 @@ def create_t3():
 ########
 
 
-def Launch_REST():
+def launch_rest():
     """
     Main fonction that initiate the tabs:
     -Sets the event fonction of the entity selection button, ban word InputTags, Categorization button.

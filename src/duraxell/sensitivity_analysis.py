@@ -42,7 +42,7 @@ def load_real_metrics(results_dir: Path) -> dict:
                         "templatability_score", 0
                     )
                     metrics_db[ent]["Te_count"] = vals.get("total_occurrences", 0)
-        except:
+        except Exception:
             pass
 
     risk_file = results_dir / "risk_context_analysis.csv"

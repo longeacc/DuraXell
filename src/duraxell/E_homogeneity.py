@@ -196,7 +196,7 @@ def load_brat_corpus_simple(data_dirs):
                                 etype = parts[1].split()[0]
                                 text = parts[2]
                                 anns.append({"entity_type": etype, "text": text})
-            except:
+            except Exception:
                 pass
 
             corpus.append({"file_id": ann.name, "annotations": anns})
@@ -209,14 +209,14 @@ def main():
     data_dirs = ["NER/data/Breast/train", "NER/data/Breast/val", "NER/data/Breast/test"]
     # Paths relative to workspace root
     root_dir = script_dir.parent
-    ABS_data_dirs = [root_dir / d for d in data_dirs]
+    abs_data_dirs = [root_dir / d for d in data_dirs]
 
     output_file = script_dir / "Rules/Results/homogeneity_analysis.csv"
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # 1. Load context
     print("Loading corpus...")
-    corpus = load_brat_corpus_simple(ABS_data_dirs)
+    corpus = load_brat_corpus_simple(abs_data_dirs)
 
     # 2. Compute
     scorer = HomogeneityScorer(corpus)

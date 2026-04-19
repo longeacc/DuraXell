@@ -142,7 +142,7 @@ class AnnotationYieldScorer:
         matched_g = set()
         matched_p = set()
         tp = 0
-        for score, gi, pi in pairs:
+        for _score, gi, pi in pairs:
             if gi in matched_g or pi in matched_p:
                 continue
             tp += 1

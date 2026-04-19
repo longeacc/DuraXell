@@ -15,8 +15,8 @@ def calculate_location_metrics(
     path,
     df,
     other_categories,
-    list_isNotFP,
-    list_isNotFN,
+    list_isnotfp,
+    list_isnotfn,
     ban_words_entities,
 ):
     """
@@ -77,7 +77,7 @@ def calculate_location_metrics(
                         ]
                         + "..."
                     )
-                    FP = True
+                    fp = True
                     for location in locations[file_name]:
                         if (
                             location[0] == place_start and place_end == location[1]
@@ -104,10 +104,10 @@ def calculate_location_metrics(
                                     motif,
                                 ]
                             )
-                            FP = False
+                            fp = False
                             break
 
-                    if FP:  # verification in other categories, if exist we add in 'FP'
+                    if fp:  # verification in other categories, if exist we add in 'FP'
                         df_other_categories = pd.DataFrame(
                             other_categories,
                             columns=["entity", "category", "text", "file", "places"],
@@ -117,19 +117,19 @@ def calculate_location_metrics(
                             & (df_other_categories["category"] == cat)
                             & (df_other_categories["file"] == file_name)
                         )
-                        add_to_FP = True
+                        add_to_fp = True
                         if any(
                             banword in long_motif
                             for banword in ban_words_entities[current_entity]
                             if banword != "None"
                         ):
-                            add_to_FP = False
+                            add_to_fp = False
                             continue
                         for location in (
                             locations_found_currentfile
                         ):  # verification in already exist to current category
                             if location[0] == place_start and place_end == location[1]:
-                                add_to_FP = False
+                                add_to_fp = False
 
                         for _index, row in df_other_categories[
                             filtre2
@@ -138,12 +138,12 @@ def calculate_location_metrics(
                                 row["places"][0] == place_start
                                 and place_end == row["places"][1]
                             ):
-                                add_to_FP = False
+                                add_to_fp = False
                                 break
 
-                        if add_to_FP:  # location not found (FP)
-                            is_notFP = False
-                            for v in list_isNotFP:
+                        if add_to_fp:  # location not found (FP)
+                            is_notfp = False
+                            for v in list_isnotfp:
                                 if [
                                     cat_striped,
                                     "TP(corr)",
@@ -155,9 +155,9 @@ def calculate_location_metrics(
                                     "no annotation",
                                     motif,
                                 ] == v:
-                                    is_notFP = True
+                                    is_notfp = True
                                     break
-                            if is_notFP:
+                            if is_notfp:
                                 location_metrics[current_entity].append(
                                     [
                                         cat_striped,
@@ -200,8 +200,8 @@ def calculate_location_metrics(
                             ]
                             + "..."
                         )
-                        is_notFN = False
-                        for v in list_isNotFN:
+                        is_notfn = False
+                        for v in list_isnotfn:
                             if [
                                 cat_striped,
                                 "Discarded",
@@ -213,9 +213,9 @@ def calculate_location_metrics(
                                 place[2],
                                 "no motif",
                             ] == v:
-                                is_notFN = True
+                                is_notfn = True
                                 break
-                        if is_notFN:
+                        if is_notfn:
                             location_metrics[current_entity].append(
                                 [
                                     cat_striped,
@@ -261,29 +261,29 @@ def calculate_df_metrics(df_location_metrics):
     print("DEBUG: Running updated calculate_df_metrics")
     metrics = []
     for cat in df_location_metrics["category"].unique():
-        TP = df_location_metrics[
+        tp = df_location_metrics[
             (df_location_metrics["category"] == cat)
             & (df_location_metrics["result"] == "TP")
         ].shape[0]
-        TPcorr = df_location_metrics[
+        tpcorr = df_location_metrics[
             (df_location_metrics["category"] == cat)
             & (df_location_metrics["result"] == "TP(corr)")
         ].shape[0]
-        FP = df_location_metrics[
+        fp = df_location_metrics[
             (df_location_metrics["category"] == cat)
             & (df_location_metrics["result"] == "FP")
         ].shape[0]
-        FN = df_location_metrics[
+        fn = df_location_metrics[
             (df_location_metrics["category"] == cat)
             & (df_location_metrics["result"] == "FN")
         ].shape[0]
         precision = 0
-        if TP + FP != 0:
-            precision = round((TP + TPcorr) / (TP + TPcorr + FP), 2)
+        if tp + fp != 0:
+            precision = round((tp + tpcorr) / (tp + tpcorr + fp), 2)
         recall = 0
-        if TP + FN != 0:
-            recall = round((TP + TPcorr) / (TP + TPcorr + FN), 2)
-        metrics.append([cat, TPcorr, TP, FP, FN, precision, recall])
+        if tp + fn != 0:
+            recall = round((tp + tpcorr) / (tp + tpcorr + fn), 2)
+        metrics.append([cat, tpcorr, tp, fp, fn, precision, recall])
 
     df_metrics = pd.DataFrame(
         metrics,
@@ -404,22 +404,22 @@ def generate_dg_metrics_results(df_metrics):
         columns=pd.MultiIndex.from_arrays([upper_index, lower_index]),
     )
 
-    TPcorr = [0] * len(df_metrics)
+    tpcorr = [0] * len(df_metrics)
     if "TP(corr)" in df_metrics.columns:
-        TPcorr = df_metrics["TP(corr)"].tolist()
+        tpcorr = df_metrics["TP(corr)"].tolist()
 
-    pre_FP = np.add(df_metrics["FP"].tolist(), TPcorr).tolist()
+    pre_fp = np.add(df_metrics["FP"].tolist(), tpcorr).tolist()
     precision = [
-        round(tp / (tp + fp), 2) for tp, fp in zip(df_metrics["TP"].tolist(), pre_FP, strict=False)
+        round(tp / (tp + fp), 2) for tp, fp in zip(df_metrics["TP"].tolist(), pre_fp, strict=False)
     ]
     # pre
     df_metrics_results["raw highlights", "TP"] = df_metrics["TP"].tolist()
-    df_metrics_results["raw highlights", "FP"] = pre_FP
+    df_metrics_results["raw highlights", "FP"] = pre_fp
     df_metrics_results["raw highlights", "FN"] = df_metrics["FN"].tolist()
     df_metrics_results["raw highlights", "precision"] = precision
     # post
     df_metrics_results["corrected highlights", "TP(corr)"] = np.add(
-        df_metrics["TP"].tolist(), TPcorr
+        df_metrics["TP"].tolist(), tpcorr
     ).tolist()
     df_metrics_results["corrected highlights", "FP(corr)"] = df_metrics["FP"].tolist()
     df_metrics_results["corrected highlights", "FN(corr)"] = df_metrics["FN"].tolist()

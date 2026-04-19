@@ -59,11 +59,11 @@ def update_df_results(
     (dataframe) : contains the summary of each entity's results (homogeneity,precision,recall).
 
     """
-    TP = df_metrics["TP"].sum()
+    tp = df_metrics["TP"].sum()
     if "TP(corr)" in df_metrics.columns:
-        TP += df_metrics["TP(corr)"].sum()
-    FP = df_metrics["FP"].sum()
-    FN = df.loc[
+        tp += df_metrics["TP(corr)"].sum()
+    fp = df_metrics["FP"].sum()
+    fn = df.loc[
         df["category"].str.contains(re.escape("category?"))
         & df["entity"].str.contains(entity),
         "occurrences",
@@ -71,10 +71,10 @@ def update_df_results(
     precision = 0
     recall = 0
     homogeneity_score[entity]
-    if TP + FP != 0:
-        precision = round(TP / (TP + FP), 2)
-    if TP + FN != 0:
-        recall = round(TP / (TP + FN), 2)
+    if tp + fp != 0:
+        precision = round(tp / (tp + fp), 2)
+    if tp + fn != 0:
+        recall = round(tp / (tp + fn), 2)
 
     precision_inter1 = round(
         bootstrap_results["precision"]["precision_conf_interval"][0], 2
@@ -97,9 +97,9 @@ def update_df_results(
     ]
 
     df_results.loc[df_results["entity"] == entity, col] = [
-        TP,
-        FP,
-        FN,
+        tp,
+        fp,
+        fn,
         precision,
         precision_inter1,
         precision_inter2,

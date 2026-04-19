@@ -23,7 +23,7 @@ def calculate_tfidf(ent_cat, df):
 
     for ent in ent_cat:
         tf_results[ent] = {}
-        for index, row in df.loc[df["entity"] == ent].iterrows():
+        for _index, row in df.loc[df["entity"] == ent].iterrows():
             text = row["text"]
             occurrences = row["occurrences"]
             for word in text.split(" "):
@@ -76,7 +76,7 @@ def attribution_tf(ent, nbr, df_tf_results, banwords):
     Return :
     (list) : List of the topwords with the highest tfidf for the current selected entity.
     """
-    categoryStopList = ["+", "%", ",", "'", "(", ")", ":"]
+    categorystoplist = ["+", "%", ",", "'", "(", ")", ":"]
     top_words = (
         df_tf_results.sort_values(by="tfidf", ascending=False)
         .reset_index(drop=True)
@@ -90,7 +90,7 @@ def attribution_tf(ent, nbr, df_tf_results, banwords):
         row["occurrences"]
         if (
             word != ""
-            and not re.search("[" + re.escape("".join(categoryStopList)) + "]", word)
+            and not re.search("[" + re.escape("".join(categorystoplist)) + "]", word)
             and not re.search(r"\d", word)
             and not word == "a"
             and word not in banwords

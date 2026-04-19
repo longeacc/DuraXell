@@ -29,11 +29,11 @@ def visualize_decision_tree(
         return
 
     # Création du graphe
-    G = nx.DiGraph()
+    g_graph = nx.DiGraph()
 
     # Nœud racine
     root = "DuraXELL\nDecision Node"
-    G.add_node(root, color="#2196F3", shape="box")
+    g_graph.add_node(root, color="#2196F3", shape="box")
 
     # Couleurs par méthode
     colors = {
@@ -61,8 +61,8 @@ def visualize_decision_tree(
 
         # Nœud entité
         entity_node = entity
-        G.add_node(entity_node, color="lightgrey", shape="ellipse")
-        G.add_edge(root, entity_node)
+        g_graph.add_node(entity_node, color="lightgrey", shape="ellipse")
+        g_graph.add_edge(root, entity_node)
 
         # Nœud méthode (Feuille)
         # Gestion des métriques pouvant être dans "metrics" ou à la racine
@@ -74,23 +74,23 @@ def visualize_decision_tree(
 
         # Pour éviter les doublons de nœuds méthodes identiques, on utilise un ID unique
         leaf_id = f"{entity}_{method}"
-        G.add_node(leaf_id, label=leaf_label, color=color, shape="box", style="filled")
-        G.add_edge(entity_node, leaf_id)
+        g_graph.add_node(leaf_id, label=leaf_label, color=color, shape="box", style="filled")
+        g_graph.add_edge(entity_node, leaf_id)
 
     # Dessin
     plt.figure(figsize=(12, 8))
-    pos = nx.spring_layout(G, seed=42)
+    pos = nx.spring_layout(g_graph, seed=42)
 
     # On peut utiliser une disposition hiérarchique plus propre si besoin
     # (nécessite graphviz souvent, donc on reste sur spring ou shell pour compatibilité)
 
     node_colors = [
-        nx.get_node_attributes(G, "color").get(n, "#FFFFFF") for n in G.nodes()
+        nx.get_node_attributes(g_graph, "color").get(n, "#FFFFFF") for n in g_graph.nodes()
     ]
-    labels = {n: G.nodes[n].get("label", n) for n in G.nodes()}
+    labels = {n: g_graph.nodes[n].get("label", n) for n in g_graph.nodes()}
 
     nx.draw(
-        G,
+        g_graph,
         pos,
         with_labels=True,
         labels=labels,

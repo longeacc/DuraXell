@@ -205,8 +205,8 @@ def bloc6_figures(df_perf, df_expl, df_energy, df_pareto):
     # 5. Radar Chart (Trilemme pour ER)
     # Simplification pour la démo
     categories = ["Performance (F1)", "Explicabilité", "Frugalité (1 - Energie Norm)"]
-    N = len(categories)
-    angles = [n / float(N) * 2 * np.pi for n in range(N)]
+    n_total = len(categories)
+    angles = [n / float(n_total) * 2 * np.pi for n in range(n_total)]
     angles += angles[:1]
 
     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))

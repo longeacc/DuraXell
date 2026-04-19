@@ -169,7 +169,7 @@ class TemplatabilityScorer:
             h_norm = h / math.log(num_unique)
 
         # Structure Score based on entropy (as per documentation: 1 - h_norm)
-        structure_consistency = 1.0 - H_norm
+        structure_consistency = 1.0 - h_norm
         pattern_counts = Counter(normalized_patterns)
 
         # Semantic Bonus for standard markers
@@ -190,19 +190,19 @@ class TemplatabilityScorer:
         raw_score = min(1.0, max(0.0, raw_score))
 
         # Convert to percentage [0-100]
-        Te = raw_score * 100.0
+        te_val = raw_score * 100.0
 
         # Store detailed stats for report
         self.results_cache[entity_type] = {
             "count": total_count,
             "unique_patterns": num_unique,
             "entropy_consistency": structure_consistency,
-            "entropy": H,
-            "templatability_score": Te,
+            "entropy": h,
+            "templatability_score": te_val,
             "top_patterns": pattern_counts.most_common(5),
         }
 
-        return Te
+        return te_val
 
     def compute_all(self) -> dict[str, float]:
         """Calcule Te pour toutes les entités du corpus (en %)."""
@@ -283,7 +283,7 @@ def load_brat_corpus(data_dirs: list[str]) -> list[dict[str, Any]]:
                                 file_id=ann_file.name,
                             )
                         )
-                    except:
+                    except Exception:
                         continue
 
             # Read text (optional, not strictly needed for Te but good for corpus object)
@@ -312,14 +312,14 @@ def main():
     script_dir = Path(__file__).parent
     root_dir = script_dir.parent
 
-    data_dirs_REL = [
+    data_dirs_rel = [
         "NER/data/Breast/train",
         "NER/data/Breast/val",
         "NER/data/Breast/test",
     ]
 
     # Construct absolute paths
-    data_dirs = [root_dir / d for d in data_dirs_REL]
+    data_dirs = [root_dir / d for d in data_dirs_rel]
 
     output_file = script_dir / "Rules/Results/templatability_analysis.json"
 

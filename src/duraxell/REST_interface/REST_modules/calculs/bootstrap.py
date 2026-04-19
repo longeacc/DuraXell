@@ -18,19 +18,19 @@ def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
     bootstrap_data = {}
     # Retrieve of TP, TP(corr) and FP
     for file in df_metrics_locations["file"].unique():
-        TP = df_metrics_locations[
+        tp = df_metrics_locations[
             (df_metrics_locations["file"] == file)
             & (df_metrics_locations["result"] == "TP")
         ].shape[0]
-        TPcorr = df_metrics_locations[
+        tpcorr = df_metrics_locations[
             (df_metrics_locations["file"] == file)
             & (df_metrics_locations["result"] == "TP(corr)")
         ].shape[0]
-        FP = df_metrics_locations[
+        fp = df_metrics_locations[
             (df_metrics_locations["file"] == file)
             & (df_metrics_locations["result"] == "FP")
         ].shape[0]
-        bootstrap_data[file] = {"TP": (TP + TPcorr), "FP": FP, "FN": 0}
+        bootstrap_data[file] = {"TP": (tp + tpcorr), "FP": fp, "FN": 0}
 
     # Retrieve of FN
     for _index, row in df.iterrows():
@@ -45,7 +45,7 @@ def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
     return bootstrap_data
 
 
-def calculate_metrics(TP, FP, FN):
+def calculate_metrics(tp, fp, fn):
     """
     Calculate the precision, recall and f1 from the metrics.
 
@@ -58,8 +58,8 @@ def calculate_metrics(TP, FP, FN):
     (list) : list containg the calculated precision, recall and f1 values.
 
     """
-    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0
     f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) else 0
     return precision, recall, f1
 
@@ -89,16 +89,16 @@ def estimate_confidence_intervals_bootstrap(
 
     for _ in range(draw_number):
         sample_files = random.choices(files, k=len(files))
-        total_TP = 0
-        total_FP = 0
-        total_FN = 0
+        total_tp = 0
+        total_fp = 0
+        total_fn = 0
 
         for file in sample_files:
-            total_TP += bootstrap_data[file]["TP"]
-            total_FP += bootstrap_data[file]["FP"]
-            total_FN += bootstrap_data[file]["FN"]
+            total_tp += bootstrap_data[file]["TP"]
+            total_fp += bootstrap_data[file]["FP"]
+            total_fn += bootstrap_data[file]["FN"]
 
-        precision, recall, f1 = calculate_metrics(total_TP, total_FP, total_FN)
+        precision, recall, f1 = calculate_metrics(total_tp, total_fp, total_fn)
         precisions.append(precision)
         recalls.append(recall)
         f1s.append(f1)

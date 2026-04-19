@@ -41,8 +41,8 @@ def load_json(path, df, homogeneity_score, ent_cat):
 
     (
         progress_ent_cat,
-        progress_isNotFP,
-        progress_isNotFN,
+        progress_isnotfp,
+        progress_isnotfn,
         progress_ban_words_entities,
         progress_df_results,
     ) = load_progress(path)
@@ -50,10 +50,10 @@ def load_json(path, df, homogeneity_score, ent_cat):
 
     if progress_ent_cat:
         result["ent_cat"] = progress_ent_cat
-    if progress_isNotFP:
-        result["list_isNotFP"] = progress_isNotFP
-    if progress_isNotFN:
-        result["list_isNotFN"] = progress_isNotFN
+    if progress_isnotfp:
+        result["list_isNotFP"] = progress_isnotfp
+    if progress_isnotfn:
+        result["list_isNotFN"] = progress_isnotfn
     if progress_ban_words_entities:
         result["ban_words_entities"] = progress_ban_words_entities
     if progress_df_results is not None and not progress_df_results.empty:

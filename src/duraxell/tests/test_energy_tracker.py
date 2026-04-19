@@ -38,14 +38,14 @@ class TestEnergyTracker:
             with patch("sys.argv", ["python"]):
                 try:
                     # Patch the Tracker class
-                    with patch("duraxell.energy_tracker.Tracker") as MockTracker:
+                    with patch("duraxell.energy_tracker.Tracker") as mock_tracker:
                         # Patch os.path.exists and pandas.read_csv to simulate reading the log file
                         with (
                             patch("os.path.exists") as mock_exists,
                             patch("pandas.read_csv") as mock_read_csv,
                         ):
                             # Setup mocks
-                            mock_instance = MockTracker.return_value
+                            mock_instance = mock_tracker.return_value
                             mock_exists.return_value = True
 
                             # Mock the CSV dataframe returned by pandas

@@ -33,10 +33,10 @@ def calculate_categorization(
                 if list_spacing_pattern and ent == current_entity:
                     list_spacing_regex.extend(list_spacing_pattern)
                 mask = (df["entity"] == ent) & df["text"].apply(
-                    lambda text: bool(re.search(pattern, text))
+                    lambda text, pat=pattern: bool(re.search(pat, text))
                 )
                 df.loc[mask, "category"] = df.loc[mask, "category"].apply(
-                    lambda x: x + "AND" + cat
+                    lambda x, c=cat: x + "AND" + c
                 )
 
     # Calculation of "other_categories"
@@ -74,12 +74,12 @@ def remove_empty_categories(dict_ent_cat, current_entity):
     return dict_ent_cat
 
 
-def modify_list_isNotFP(list_isNot, new_value):
-    list_isNot_temp = []
+def modify_list_isnotfp(list_isnot, new_value):
+    list_isnot_temp = []
     v0 = ", ".join(f"'{element}'" for element in new_value)
-    for values in list_isNot:
+    for values in list_isnot:
         if values[8] in new_value:
-            list_isNot_temp.append(
+            list_isnot_temp.append(
                 [
                     v0,
                     values[1],
@@ -92,4 +92,4 @@ def modify_list_isNotFP(list_isNot, new_value):
                     values[8],
                 ]
             )
-    return list_isNot_temp
+    return list_isnot_temp

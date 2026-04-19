@@ -59,10 +59,10 @@ def build_dataset(data_dir):
                             labels[i] = f"I-{etype}"
 
         x_seq = [word2features(tokens, i) for i in range(len(tokens))]
-        X.append(x_seq)
+        x.append(x_seq)
         y.append(labels)
 
-    return X, y
+    return x, y
 
 
 def word2features(sent, i):
@@ -105,11 +105,11 @@ def word2features(sent, i):
 
 def train_crf(train_dir, output_model="crf_model.crfsuite"):
     print(f"Loading data from {train_dir}...")
-    X_train, y_train = build_dataset(train_dir)
-    print(f"Loaded {len(X_train)} documents.")
+    x_train, y_train = build_dataset(train_dir)
+    print(f"Loaded {len(x_train)} documents.")
 
     trainer = pycrfsuite.Trainer(verbose=False)
-    for xseq, yseq in zip(X_train, y_train, strict=False):
+    for xseq, yseq in zip(x_train, y_train, strict=False):
         trainer.append(xseq, yseq)
 
     trainer.set_params(

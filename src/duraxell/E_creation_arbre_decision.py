@@ -299,7 +299,7 @@ def load_metrics_from_csv(results_dir: Path):
                         aggregated[ent] = {}
                     aggregated[ent]["Te"] = vals.get("templatability_score", 0)
                     aggregated[ent]["Te_count"] = vals.get("count", 0)
-        except:
+        except Exception:
             pass
 
     # 2. He (Homogeneity)

@@ -111,7 +111,7 @@ class RiskContextScorer:
 
             # Contrainte de poids positifs
             clf = LogisticRegression(fit_intercept=False, positive=True)
-            clf.fit(X, y)
+            clf.fit(x, y)
 
             self.weights["negation"] = float(clf.coef_[0][0])
             self.weights["uncertainty"] = float(clf.coef_[0][1])
@@ -271,20 +271,20 @@ class RiskContextScorer:
 
         # 2. Analyse Globale (Contradiction) par document
         for etype, docs in entity_docs.items():
-            for filename, entries in docs.items():
+            for _filename, entries in docs.items():
                 if self._check_contradiction(entries):
                     entity_stats[etype]["contradicted_docs"] += 1
 
         # 3. Calcul du Score R Final
         results = []
         for etype, stats in entity_stats.items():
-            N = stats["total"]
-            if N == 0:
+            n_total = stats["total"]
+            if n_total == 0:
                 continue
 
             # Fréquences relatives
-            f_neg = stats["negated"] / N
-            f_unc = stats["uncertain"] / N
+            f_neg = stats["negated"] / n_total
+            f_unc = stats["uncertain"] / n_total
 
             # Pour la contradiction, c'est le ratio de documents contradictoires
             # On approxime le nombre de docs total pour cette entité comme len(entity_docs[etype])
@@ -295,7 +295,7 @@ class RiskContextScorer:
             risk_score = self.compute_score_from_stats(
                 negated_count=stats["negated"],
                 uncertain_count=stats["uncertain"],
-                total_count=N,
+                total_count=n_total,
                 contradicted_rate=f_cont,
             )
 
@@ -306,7 +306,7 @@ class RiskContextScorer:
                     "Negation_Rate": round(f_neg, 2),
                     "Uncertainty_Rate": round(f_unc, 2),
                     "Contradiction_Rate": round(f_cont, 2),
-                    "Count": N,
+                    "Count": n_total,
                 }
             )
 
@@ -362,9 +362,9 @@ def main(learn_weights=False):
             x = []
             for ent in entities:
                 stats = scorer.entities_stats[ent]
-                X.append([stats["f_neg"], stats["f_unc"], stats["f_cont"]])
-            y = np.random.randint(0, 2, size=len(X))  # mockup labels
-            scorer._learn_weights(np.array(X), y)
+                x.append([stats["f_neg"], stats["f_unc"], stats["f_cont"]])
+            y = np.random.randint(0, 2, size=len(x))  # mockup labels
+            scorer._learn_weights(np.array(x), y)
             print(f"Nouveaux poids appris : {scorer.weights}")
 
     scorer.to_csv(output_file)

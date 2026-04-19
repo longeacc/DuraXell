@@ -54,9 +54,9 @@ def calculate_n_grams(df, current_entity, df_tf_results, ban_words_tfidf):
                             else:
                                 n_grams[word][res] += 1
     sorted_n_grams = {}
-    for keyword, n_grams in n_grams.items():
+    for keyword, ngram_dict in n_grams.items():
         sorted_n_grams[keyword] = dict(
-            sorted(n_grams.items(), key=lambda x: x[1], reverse=True)
+            sorted(ngram_dict.items(), key=lambda x: x[1], reverse=True)
         )
 
     return sorted_n_grams

@@ -22,8 +22,8 @@ def initialize_globals():
     """
     path = None
     ent_cat = {"entity1": ["category?"]}
-    list_isNotFP = []
-    list_isNotFN = []
+    list_isnotfp = []
+    list_isnotfn = []
     ban_words_entities = {"entity1": ["None"]}
     df = pd.DataFrame(
         [["entity1", "category?", "text1", 1, ["stem1"], [["text1", 1, 5]]]],
@@ -54,8 +54,8 @@ def initialize_globals():
     return (
         path,
         ent_cat,
-        list_isNotFP,
-        list_isNotFN,
+        list_isnotfp,
+        list_isnotfn,
         ban_words_entities,
         df,
         df_tf_results,
@@ -167,7 +167,7 @@ def initialize_outputs():
     output_t1_visualization_category = widgets.Output()
     output_t2_cat_infos = widgets.Output()
     output_t2_donut = widgets.Output()
-    output_t3_TEMP = widgets.Output()
+    output_t3_temp = widgets.Output()
 
     return (
         output_results,
@@ -175,5 +175,5 @@ def initialize_outputs():
         output_t1_visualization_category,
         output_t2_cat_infos,
         output_t2_donut,
-        output_t3_TEMP,
+        output_t3_temp,
     )

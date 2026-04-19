@@ -1,7 +1,6 @@
 import glob
 import os
 import re
-from collections import defaultdict
 
 REGEX_ENTITY = re.compile(r"^(T\d+)\t([^\s]+)([^\t]+)\t(.*)$")
 REGEX_NOTE = re.compile(r"^(#\d+)\tAnnotatorNotes ([^\t]+)\t(.*)$")
@@ -252,7 +251,15 @@ def export_to_brat(
 
         ann_filename = os.path.join(filename_prefix, doc["doc_id"] + ".ann")
         attribute_idx = 1
-        entities_ids = defaultdict(lambda: "T" + str(len(entities_ids) + 1))
+
+        class EntityIdDict(dict):
+            def __missing__(self, key):
+                val = "T" + str(len(self) + 1)
+                self[key] = val
+                return val
+
+        entities_ids = EntityIdDict()
+
         if not os.path.exists(ann_filename) or overwrite_ann:
             with open(ann_filename, "w") as f:
                 if "entities" in doc:
@@ -283,7 +290,7 @@ def export_to_brat(
                             file=f,
                         )
                         if "attributes" in entity:
-                            for i, attribute in enumerate(entity["attributes"]):
+                            for _i, attribute in enumerate(entity["attributes"]):
                                 if (
                                     "value" in attribute
                                     and attribute["value"] is not None

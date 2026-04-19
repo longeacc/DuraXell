@@ -14,7 +14,7 @@ import pandas as pd
 import spacy
 
 # from googletrans import Translator
-from Levenshtein import distance as lev
+from levenshtein import distance as lev
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 
@@ -23,7 +23,7 @@ stemmer = SnowballStemmer("french")
 sp = spacy.load("fr_core_news_sm")
 
 
-def getEnt(ent_cat):
+def getent(ent_cat):
     """
     Return the list of the entities in ent_cat.
 
@@ -39,7 +39,7 @@ def getEnt(ent_cat):
     return x
 
 
-def getCat(entity, ent_cat):
+def getcat(entity, ent_cat):
     """
     Return the categories of the entered entity.
 
@@ -170,7 +170,7 @@ def stemming(annotations):
 
 
 # Merge all the texts, depending on the Levenshtein distance
-def Levenshtein(annotations1, dist):
+def levenshtein(annotations1, dist):
     """
     Merge the annotations if their levenshtein distance is lower than the choosen distance in input.
 
@@ -229,7 +229,7 @@ def Levenshtein(annotations1, dist):
     return tempo_annotations, levenshtein_results
 
 
-def createData(annotations2):
+def createdata(annotations2):
     """
     Transform the 'annotations' dictionnary into a list, and create de ent_cat dictionnary.
 

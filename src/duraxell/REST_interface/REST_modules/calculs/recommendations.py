@@ -74,7 +74,7 @@ def compare_spacing_regex_locations(spacing_regex_results, current_entity, df):
         _value,
         distance,
     ) in spacing_regex_results:
-        add_to_TP = False
+        add_to_tp = False
         for _index, row in df[df["entity"] == current_entity].iterrows():
             for place in row["places"]:
                 if (
@@ -83,10 +83,10 @@ def compare_spacing_regex_locations(spacing_regex_results, current_entity, df):
                     and place_end <= place[2]
                     and re.finditer(regex, row["text"])
                 ):
-                    add_to_TP = True
+                    add_to_tp = True
                     break
 
-        if add_to_TP:
+        if add_to_tp:
             updated_spacing_regex_results.append(
                 [regex, filename, [place_start, place_end], "TP", distance]
             )
