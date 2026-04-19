@@ -8,12 +8,6 @@ import subprocess
 import time
 
 
-def setup_env():
-    """Ensure modules are in the PYTHONPATH"""
-    sys.path.append(os.path.join(os.getcwd(), "ESMO2025"))
-    sys.path.append(os.path.join(os.getcwd(), "NER", "src"))
-    sys.path.append(os.path.join(os.getcwd(), "Rules", "src"))
-
 
 # All entity types known to the decision tree
 ALL_ENTITIES = [
@@ -29,8 +23,7 @@ ALL_ENTITIES = [
 
 def cmd_extract(args):
     """Run cascade extract on a single document"""
-    setup_env()
-    from ESMO2025.cascade_orchestrator import CascadeOrchestrator
+    from duraxell.cascade_orchestrator import CascadeOrchestrator
 
     orchestrator = CascadeOrchestrator()
     print(f"Extraction for entity '{args.entity}':")
@@ -42,8 +35,7 @@ def cmd_extract(args):
 
 def cmd_extract_all(args):
     """Extract ALL known entities from a single document."""
-    setup_env()
-    from ESMO2025.cascade_orchestrator import CascadeOrchestrator
+    from duraxell.cascade_orchestrator import CascadeOrchestrator
 
     orchestrator = CascadeOrchestrator()
     entities = args.entities.split(",") if args.entities else ALL_ENTITIES
@@ -67,11 +59,10 @@ def cmd_batch(args):
     Produces a CSV file in Results/ with columns:
       fichier, entite, valeur, methode, confiance, energie_kwh, methode_recommandee
     """
-    setup_env()
     # Suppress noisy NER/eco2ai warnings during batch
     logging.basicConfig(level=logging.WARNING)
 
-    from ESMO2025.cascade_orchestrator import CascadeOrchestrator
+    from duraxell.cascade_orchestrator import CascadeOrchestrator
     import json
 
     orchestrator = CascadeOrchestrator()
@@ -175,24 +166,23 @@ def cmd_batch(args):
 
 def cmd_metrics(args):
     """Compute ESMO2025 metrics"""
-    print("Metrics running via specific scripts in ESMO2025/ ...")
-    subprocess.run([sys.executable, "ESMO2025/E_templatability.py"])
-    subprocess.run([sys.executable, "ESMO2025/E_homogeneity.py"])
+    print("Metrics running via specific scripts in src/duraxell/ ...")
+    subprocess.run([sys.executable, "src/duraxell/E_templatability.py"])
+    subprocess.run([sys.executable, "src/duraxell/E_homogeneity.py"])
 
 
 def cmd_tree(args):
     """Generate and visualize the decision tree"""
     print("Generating decision tree...")
-    subprocess.run([sys.executable, "ESMO2025/E_creation_arbre_decision.py"])
+    subprocess.run([sys.executable, "src/duraxell/E_creation_arbre_decision.py"])
     print("Visualizing tree...")
-    subprocess.run([sys.executable, "ESMO2025/visualize_decision_tree.py"])
+    subprocess.run([sys.executable, "src/duraxell/visualize_decision_tree.py"])
 
 
 def cmd_rest(args):
     """Launch REST demo or server"""
-    setup_env()
     print("Running REST Demo...")
-    subprocess.run([sys.executable, "ESMO2025/REST_interface/demo_rest.py"])
+    subprocess.run([sys.executable, "src/duraxell/REST_interface/demo_rest.py"])
 
 
 def cmd_evaluate(args):

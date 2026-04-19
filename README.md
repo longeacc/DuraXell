@@ -32,7 +32,7 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # Sur Windows : .venv\Scripts\activate
-   pip install -r requirements.txt
+   pip install -e .[dev,ner]
    ```
 
 3. **Exécuter le pipeline complet** :
@@ -50,8 +50,8 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
 
 ## Références et Citation
 
-Ce travail s'appuie sur les recherches de **Redjdal et al. 2024** concernant l'extraction d'informations en oncologie et l'évaluation de la frugalité des modèles de langage.
+Ce travail s'appuie sur les recherches de **Longeac et al. 2024** concernant l'extraction d'informations en oncologie et l'évaluation de la frugalité des modèles de langage.
 
 **Citation :**
-> Redjdal, C., et al. (2024). *Le juste usage des LLM et méthode NLP en cancérologie : Vers une approche frugale et explicable*. ESIEE Paris.
+> Longeac, C., et al. (2024). *Le juste usage des LLM et méthode NLP en cancérologie : Vers une approche frugale et explicable*. ESIEE Paris.
 

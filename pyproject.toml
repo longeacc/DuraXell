@@ -50,7 +50,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "ESMO2025/tests"]
+testpaths = ["tests", "src/duraxell/tests"]
 python_files = "test_*.py"
 addopts = "-v --tb=short"
 
