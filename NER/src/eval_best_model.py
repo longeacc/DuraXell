@@ -44,9 +44,7 @@ def build_dataset(data_dir):
         label_list.remove("O")
         label_list.insert(0, "O")
 
-    ds = DatasetDict(
-        {"test": Dataset.from_dict({"tokens": test_t, "ner_tags": test_y})}
-    )
+    ds = DatasetDict({"test": Dataset.from_dict({"tokens": test_t, "ner_tags": test_y})})
     return ds, label_list
 
 

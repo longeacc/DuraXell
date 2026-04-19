@@ -118,9 +118,7 @@ class RiskContextScorer:
             self.weights["contradiction"] = float(clf.coef_[0][2])
             print(f"Poids R recalibrés via RL : {self.weights}")
         except ImportError:
-            print(
-                "scikit-learn non disponible pour la R.L., utilisation des heuristiques."
-            )
+            print("scikit-learn non disponible pour la R.L., utilisation des heuristiques.")
         except Exception as e:
             print(f"Erreur lors de l'apprentissage des poids : {e}")
 
@@ -170,9 +168,7 @@ class RiskContextScorer:
         negated = sum(1 for t in texts if self.has_negation(t))
         uncertain = sum(1 for t in texts if self.has_uncertainty(t))
 
-        return self.compute_score_from_stats(
-            negated, uncertain, total, contradicted_rate=0.0
-        )
+        return self.compute_score_from_stats(negated, uncertain, total, contradicted_rate=0.0)
 
     def _load_data(self):
         """Lit les fichiers .ann ET .txt pour avoir le contexte."""
@@ -208,9 +204,7 @@ class RiskContextScorer:
 
                                     # Extraire le contexte (fenêtre)
                                     ctx_start = max(0, start - self.WINDOW_SIZE)
-                                    ctx_end = min(
-                                        len(full_text), end + self.WINDOW_SIZE
-                                    )
+                                    ctx_end = min(len(full_text), end + self.WINDOW_SIZE)
                                     context = full_text[
                                         ctx_start:ctx_end
                                     ].lower()  # Contexte normalisé

@@ -2,9 +2,7 @@ from .calculs import *
 from .extraction.normalisation import getEnt
 
 
-def calculate_categorization(
-    df, ent_cat, current_entity, other_categories, list_spacing_regex
-):
+def calculate_categorization(df, ent_cat, current_entity, other_categories, list_spacing_regex):
     """
     For each entered terms in the entity's category, this fonction creates a regex that will match with the annotations.
     If an annotation match with a category, it will return the updated df. Also,

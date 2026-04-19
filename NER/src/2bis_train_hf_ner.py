@@ -73,9 +73,7 @@ def load_conll_splits():
 
 
 def main():
-    tracker = Tracker(
-        project_name="DuraXELL_NER", experiment_description="Train HF NER"
-    )
+    tracker = Tracker(project_name="DuraXELL_NER", experiment_description="Train HF NER")
     tracker.start()
 
     ds = load_conll_splits()
@@ -97,9 +95,7 @@ def main():
     def encode_batch(ex):
         # ex["tokens"] est une liste de listes de tokens (batch)
         # ex["ner_tags_str"] est une liste de listes de tags (batch)
-        enc = tok(
-            ex["tokens"], is_split_into_words=True, truncation=True, max_length=256
-        )
+        enc = tok(ex["tokens"], is_split_into_words=True, truncation=True, max_length=256)
         all_labs = []
 
         for i, tags in enumerate(ex["ner_tags_str"]):
@@ -201,4 +197,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

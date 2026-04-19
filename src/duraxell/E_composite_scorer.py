@@ -69,9 +69,7 @@ class CompositeScorer:
         df = results.copy()
 
         # Ajouter colonne Explicabilité
-        df["Explainability"] = df["Method"].map(
-            lambda m: self.EXPLAINABILITY_SCORES.get(m, 0.1)
-        )
+        df["Explainability"] = df["Method"].map(lambda m: self.EXPLAINABILITY_SCORES.get(m, 0.1))
 
         # Ajouter colonne Énergie inversée (pour maximiser)
         df["Energy_Score"] = df["Energy_kWh"].map(

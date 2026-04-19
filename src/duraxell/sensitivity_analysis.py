@@ -18,9 +18,7 @@ def load_real_metrics(results_dir: Path) -> dict:
             for row in csv.DictReader(f):
                 ent = row.get("Entity") or row.get("Entity_Type")
                 if ent:
-                    metrics_db.setdefault(ent, {})["Freq"] = float(
-                        row.get("Frequency", 0)
-                    )
+                    metrics_db.setdefault(ent, {})["Freq"] = float(row.get("Frequency", 0))
 
     he_file = results_dir / "homogeneity_analysis.csv"
     if he_file.exists():
@@ -28,9 +26,7 @@ def load_real_metrics(results_dir: Path) -> dict:
             for row in csv.DictReader(f):
                 ent = row.get("Entity")
                 if ent:
-                    metrics_db.setdefault(ent, {})["He"] = float(
-                        row.get("He_Score_Percent", 0)
-                    )
+                    metrics_db.setdefault(ent, {})["He"] = float(row.get("He_Score_Percent", 0))
 
     te_file = results_dir / "templatability_analysis.json"
     if te_file.exists():
@@ -38,9 +34,7 @@ def load_real_metrics(results_dir: Path) -> dict:
             with open(te_file, encoding="utf-8") as f:
                 data = json.load(f)
                 for ent, vals in data.items():
-                    metrics_db.setdefault(ent, {})["Te"] = vals.get(
-                        "templatability_score", 0
-                    )
+                    metrics_db.setdefault(ent, {})["Te"] = vals.get("templatability_score", 0)
                     metrics_db[ent]["Te_count"] = vals.get("total_occurrences", 0)
         except Exception:
             pass
@@ -59,13 +53,9 @@ def load_real_metrics(results_dir: Path) -> dict:
             for row in csv.DictReader(f):
                 ent = row.get("Entity")
                 if ent:
-                    metrics_db.setdefault(ent, {})["Feas"] = float(
-                        row.get("Feas_Score", 0)
-                    )
+                    metrics_db.setdefault(ent, {})["Feas"] = float(row.get("Feas_Score", 0))
                     metrics_db[ent]["DomainShift"] = float(row.get("Domain_Shift", 0))
-                    metrics_db[ent]["LLM_Necessity"] = float(
-                        row.get("LLM_Necessity", 0)
-                    )
+                    metrics_db[ent]["LLM_Necessity"] = float(row.get("LLM_Necessity", 0))
 
     return metrics_db
 
@@ -78,7 +68,16 @@ def run_sensitivity_analysis(
     if perturbation_pct is None:
         perturbation_pct = [-0.2, -0.1, 0.1, 0.2]
     if thresholds_to_vary is None:
-        thresholds_to_vary = ["TE_MED", "TE_HIGH", "HE_HIGH", "RISK_HIGH", "YIELD_HIGH", "FEAS_NER", "DOMAIN_SHIFT_MAX", "LLM_NEC_HIGH"]
+        thresholds_to_vary = [
+            "TE_MED",
+            "TE_HIGH",
+            "HE_HIGH",
+            "RISK_HIGH",
+            "YIELD_HIGH",
+            "FEAS_NER",
+            "DOMAIN_SHIFT_MAX",
+            "LLM_NEC_HIGH",
+        ]
     builder = DecisionTreeBuilder("dummy.json")
     base_thresholds = dict(builder.THRESHOLDS)
 
@@ -103,9 +102,7 @@ def run_sensitivity_analysis(
                 new_decision = builder.analyze_entity(entity, metrics)["method"]
                 if new_decision != base_decisions[entity]:
                     changes += 1
-                    changed_entities.append(
-                        f"{entity} ({base_decisions[entity]}->{new_decision})"
-                    )
+                    changed_entities.append(f"{entity} ({base_decisions[entity]}->{new_decision})")
 
             results.append(
                 {
@@ -115,9 +112,7 @@ def run_sensitivity_analysis(
                     "new_value": new_val,
                     "n_changes": changes,
                     "changed_entities": ", ".join(changed_entities),
-                    "robustness": 1.0 - (changes / len(metrics_data))
-                    if metrics_data
-                    else 1.0,
+                    "robustness": 1.0 - (changes / len(metrics_data)) if metrics_data else 1.0,
                 }
             )
     return results

@@ -66,9 +66,7 @@ def cmd_batch(args):
 
     orchestrator = CascadeOrchestrator()
     input_dir = args.input_dir
-    entities = (
-        [e.strip() for e in args.entities.split(",")] if args.entities else ALL_ENTITIES
-    )
+    entities = [e.strip() for e in args.entities.split(",")] if args.entities else ALL_ENTITIES
     files = sorted(glob.glob(os.path.join(input_dir, "*.txt")))
     if not files:
         print(f"Aucun fichier .txt trouvÃ© dans {input_dir}")
@@ -93,9 +91,7 @@ def cmd_batch(args):
     done = 0
     t0 = time.time()
 
-    print(
-        f"Batch : {len(files)} fichiers Ã— {len(entities)} entitÃ©s = {total} extractions"
-    )
+    print(f"Batch : {len(files)} fichiers Ã— {len(entities)} entitÃ©s = {total} extractions")
     print(f"Sortie CSV : {out_path}")
     print("-" * 70)
 
@@ -197,9 +193,7 @@ def cmd_info(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="DuraXELL CLI - Central Hub for all commands"
-    )
+    parser = argparse.ArgumentParser(description="DuraXELL CLI - Central Hub for all commands")
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
     # Command: extract (single entity)
@@ -219,9 +213,7 @@ def main():
     parser_extract_all = subparsers.add_parser(
         "extract-all", help="Extract ALL known entities from a document"
     )
-    parser_extract_all.add_argument(
-        "--doc", type=str, required=True, help="Text document"
-    )
+    parser_extract_all.add_argument("--doc", type=str, required=True, help="Text document")
     parser_extract_all.add_argument(
         "--entities",
         type=str,
@@ -246,9 +238,7 @@ def main():
     parser_batch.set_defaults(func=cmd_batch)
 
     # Command: metrics
-    parser_metrics = subparsers.add_parser(
-        "metrics", help="Run duraxell metric pipelines"
-    )
+    parser_metrics = subparsers.add_parser("metrics", help="Run duraxell metric pipelines")
     parser_metrics.set_defaults(func=cmd_metrics)
 
     # Command: tree
@@ -262,23 +252,17 @@ def main():
     parser_rest.set_defaults(func=cmd_rest)
 
     # Command: evaluate
-    parser_evaluate = subparsers.add_parser(
-        "evaluate", help="Compute metrics and generate reports"
-    )
+    parser_evaluate = subparsers.add_parser("evaluate", help="Compute metrics and generate reports")
     parser_evaluate.set_defaults(func=cmd_evaluate)
 
     # Command: serve
     parser_serve = subparsers.add_parser(
         "serve", help="Serve DuraXELL model locally via HTTP (mock)"
     )
-    parser_serve.set_defaults(
-        func=lambda args: print("Serve mode is a work in progress.")
-    )
+    parser_serve.set_defaults(func=lambda args: print("Serve mode is a work in progress."))
 
     # Command: info
-    parser_info = subparsers.add_parser(
-        "info", help="Get basic configuration information"
-    )
+    parser_info = subparsers.add_parser("info", help="Get basic configuration information")
     parser_info.set_defaults(func=cmd_info)
 
     args = parser.parse_args()

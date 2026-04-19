@@ -19,11 +19,7 @@ def _resolve_model_dir(base_dir: str) -> str:
         best = json.load(open(state_path)).get("best_model_checkpoint")
         if best and os.path.exists(os.path.join(best, "config.json")):
             return best
-    cks = [
-        os.path.join(base_dir, d)
-        for d in os.listdir(base_dir)
-        if d.startswith("checkpoint-")
-    ]
+    cks = [os.path.join(base_dir, d) for d in os.listdir(base_dir) if d.startswith("checkpoint-")]
     cks = [d for d in cks if os.path.exists(os.path.join(d, "config.json"))]
     if cks:
         cks.sort(key=lambda p: int(p.rsplit("-", 1)[-1]))
@@ -67,9 +63,7 @@ def predict(text: str, model_dir: str):
     tok, model = load_model(model_dir)
     enc = tok(text, return_offsets_mapping=True, truncation=True, return_tensors="pt")
     inputs = {
-        k: v
-        for k, v in enc.items()
-        if k in ("input_ids", "attention_mask", "token_type_ids")
+        k: v for k, v in enc.items() if k in ("input_ids", "attention_mask", "token_type_ids")
     }
     with torch.no_grad():
         logits = model(**inputs).logits[0]
@@ -100,20 +94,16 @@ def predict(text: str, model_dir: str):
 
 
 if __name__ == "__main__":
-    base_run_dir = (
-        "NER/models/sweeps/DrBERT-7GB_lr2e-05_bs16_ep10_wd0.01_wr0.1_frz2_sd42"
-    )
+    base_run_dir = "NER/models/sweeps/DrBERT-7GB_lr2e-05_bs16_ep10_wd0.01_wr0.1_frz2_sd42"
     sample = "HER2 3+ ER négatif ; PR positif. Ki-67 30%."
     print(predict(sample, base_run_dir))
 
 try:
-    t = globals().get('tracker')
+    t = globals().get("tracker")
     if t:
         t.stop()
 except Exception as e:
     print(
         f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
     )
-    print(
-        "Carbon emission tracking data could not be saved, but analysis results are preserved."
-    )
+    print("Carbon emission tracking data could not be saved, but analysis results are preserved.")

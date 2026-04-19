@@ -28,9 +28,7 @@ def create_dg_results(df_results):
 
     df_temp = copy.deepcopy(df_results)
     df_temp.loc[:, "precision_confidence_interval"] = df_temp.apply(
-        lambda row: (
-            f"[{row['precision_conf_inter_down']}, {row['precision_conf_inter_up']}]"
-        ),
+        lambda row: (f"[{row['precision_conf_inter_down']}, {row['precision_conf_inter_up']}]"),
         axis=1,
     )
     df_temp.loc[:, "recall_confidence_interval"] = df_temp.apply(
@@ -77,21 +75,11 @@ def create_dg_results(df_results):
     )
 
     renderers = {
-        "TP": TextRenderer(
-            horizontal_alignment="center", bold=True, background_color="#90be6d"
-        ),
-        "FP": TextRenderer(
-            horizontal_alignment="center", bold=True, background_color="#f94144"
-        ),
-        "FN": TextRenderer(
-            horizontal_alignment="center", bold=True, background_color="#f9c74f"
-        ),
-        "precision_confidence_interval": TextRenderer(
-            horizontal_alignment="center", bold=True
-        ),
-        "recall_confidence_interval": TextRenderer(
-            horizontal_alignment="center", bold=True
-        ),
+        "TP": TextRenderer(horizontal_alignment="center", bold=True, background_color="#90be6d"),
+        "FP": TextRenderer(horizontal_alignment="center", bold=True, background_color="#f94144"),
+        "FN": TextRenderer(horizontal_alignment="center", bold=True, background_color="#f9c74f"),
+        "precision_confidence_interval": TextRenderer(horizontal_alignment="center", bold=True),
+        "recall_confidence_interval": TextRenderer(horizontal_alignment="center", bold=True),
         "precision": BarRenderer(
             bar_horizontal_alignment="center",
             horizontal_alignment="center",
@@ -177,9 +165,7 @@ def visualize_category_selection(change, df, current_entity):
             current_category = change["new"]
         else:
             current_category = "[" + change["new"] + "]"
-    df1 = df.loc[
-        (df["entity"] == current_entity) & (df["category"] == current_category)
-    ]
+    df1 = df.loc[(df["entity"] == current_entity) & (df["category"] == current_category)]
     df1 = df1.filter(["text", "occurrences"])
     height = min(250, len(df1) * 25 + 30)
     df1 = DataGrid(

@@ -17,9 +17,7 @@ def parse_ann(ann_content):
             parts = line.split("\t")
             if len(parts) >= 3:
                 info = parts[1].split()
-                if (
-                    len(info) >= 3 and ";" not in parts[1]
-                ):  # ignore discontinuous for simplicity
+                if len(info) >= 3 and ";" not in parts[1]:  # ignore discontinuous for simplicity
                     etype = info[0]
                     start = int(info[1])
                     end = int(info[-1])
@@ -49,11 +47,7 @@ def build_dataset(data_dir):
                 if t_start >= start and t_end <= end:
                     if labels[i] == "O":
                         # First token of entity or just in it
-                        if (
-                            i == 0
-                            or labels[i - 1] == "O"
-                            or labels[i - 1].split("-")[-1] != etype
-                        ):
+                        if i == 0 or labels[i - 1] == "O" or labels[i - 1].split("-")[-1] != etype:
                             labels[i] = f"B-{etype}"
                         else:
                             labels[i] = f"I-{etype}"

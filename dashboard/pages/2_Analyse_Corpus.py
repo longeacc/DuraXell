@@ -11,9 +11,7 @@ if "corpus" not in st.session_state or not st.session_state["corpus"]:
     st.warning("⚠️ Veuillez d'abord charger un corpus depuis le Dashboard Métriques.")
     st.stop()
 
-st.success(
-    f"✅ Corpus chargé avec succès: {len(st.session_state['corpus'])} documents."
-)
+st.success(f"✅ Corpus chargé avec succès: {len(st.session_state['corpus'])} documents.")
 
 st.markdown("---")
 
@@ -77,9 +75,7 @@ export_config = {
         entity: {
             "count": st.session_state["entity_stats"][entity]["count"],
             "metrics": {
-                k: v
-                for k, v in data.items()
-                if k not in ["Routing", "Justification", "Confidence"]
+                k: v for k, v in data.items() if k not in ["Routing", "Justification", "Confidence"]
             },
             "routing": data.get("Routing"),
             "confidence": data.get("Confidence"),

@@ -33,11 +33,7 @@ def resolve_model_dir(base_dir: str) -> str:
         best = json.load(open(state_path)).get("best_model_checkpoint")
         if best and os.path.exists(os.path.join(best, "config.json")):
             return best
-    cks = [
-        os.path.join(base_dir, d)
-        for d in os.listdir(base_dir)
-        if d.startswith("checkpoint-")
-    ]
+    cks = [os.path.join(base_dir, d) for d in os.listdir(base_dir) if d.startswith("checkpoint-")]
     cks = [d for d in cks if os.path.exists(os.path.join(d, "config.json"))]
     if cks:
         cks.sort(key=lambda p: int(p.rsplit("-", 1)[-1]))
@@ -111,9 +107,7 @@ def spans_from_chunk(pred_ids, probs, offsets, id2label, min_prob: float):
         #  - no current span exists (orphan I-)
         #  - entity type changed
         #  - there is a gap (new token starts after current end)
-        start_new = (
-            (pref == "B") or (cur is None) or (cur["label"] != ent) or (s > cur["end"])
-        )
+        start_new = (pref == "B") or (cur is None) or (cur["label"] != ent) or (s > cur["end"])
 
         if start_new:
             if cur:
@@ -215,9 +209,7 @@ def predict_text(
 def write_brat(txt_path: str, spans: list[dict], out_ann: str, text: str):
     os.makedirs(os.path.dirname(out_ann), exist_ok=True)
     with open(out_ann, "w", encoding="utf-8") as f:
-        for i, s in enumerate(
-            sorted(spans, key=lambda x: (x["start"], x["end"])), start=1
-        ):
+        for i, s in enumerate(sorted(spans, key=lambda x: (x["start"], x["end"])), start=1):
             frag = text[s["start"] : s["end"]].replace("\n", " ").replace("\t", " ")
             f.write(f"T{i}\t{s['label']} {s['start']} {s['end']}\t{frag}\n")
 
@@ -235,11 +227,7 @@ def _resolve_model_dir(base_dir: str) -> str:
         best = json.load(open(state_path)).get("best_model_checkpoint")
         if best and os.path.exists(os.path.join(best, "config.json")):
             return best
-    cks = [
-        os.path.join(base_dir, d)
-        for d in os.listdir(base_dir)
-        if d.startswith("checkpoint-")
-    ]
+    cks = [os.path.join(base_dir, d) for d in os.listdir(base_dir) if d.startswith("checkpoint-")]
     cks = [d for d in cks if os.path.exists(os.path.join(d, "config.json"))]
     if cks:
         cks.sort(key=lambda p: int(p.rsplit("-", 1)[-1]))
@@ -249,17 +237,11 @@ def _resolve_model_dir(base_dir: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument(
-        "--model_dir", required=True, help="Run root, /best, or checkpoint-*"
-    )
+    ap.add_argument("--model_dir", required=True, help="Run root, /best, or checkpoint-*")
     ap.add_argument("--input_dir", required=True, help="Folder of .txt files")
-    ap.add_argument(
-        "--out_dir", required=True, help="Where to write .ann (mirrors structure)"
-    )
+    ap.add_argument("--out_dir", required=True, help="Where to write .ann (mirrors structure)")
     ap.add_argument("--max_length", type=int, default=512, help="Tokenizer max length")
-    ap.add_argument(
-        "--stride", type=int, default=50, help="Token overlap between windows"
-    )
+    ap.add_argument("--stride", type=int, default=50, help="Token overlap between windows")
     ap.add_argument(
         "--min_prob", type=float, default=0.0, help="Min mean token prob to keep a span"
     )
@@ -315,13 +297,11 @@ if __name__ == "__main__":
     main()
 
 try:
-    t = globals().get('tracker')
+    t = globals().get("tracker")
     if t:
         t.stop()
 except Exception as e:
     print(
         f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
     )
-    print(
-        "Carbon emission tracking data could not be saved, but analysis results are preserved."
-    )
+    print("Carbon emission tracking data could not be saved, but analysis results are preserved.")

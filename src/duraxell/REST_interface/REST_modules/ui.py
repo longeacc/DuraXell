@@ -115,9 +115,7 @@ def create_button_results():
         icon="poll",
         layout=widgets.Layout(width="100px"),
     )
-    button_results.observe(
-        lambda change: change_value_button_results(change), names="value"
-    )
+    button_results.observe(lambda change: change_value_button_results(change), names="value")
     return button_results
 
 
@@ -183,9 +181,7 @@ def initiate_button_save(button_save, button_results):
     """
 
     def button_save_on_click(b):
-        save_progress(
-            path, ent_cat, list_isnotfp, list_isnotfn, ban_words_entities, df_results
-        )
+        save_progress(path, ent_cat, list_isnotfp, list_isnotfn, ban_words_entities, df_results)
         button_results.value = False
         button_save.button_style = "info"
         with output_results:
@@ -225,9 +221,7 @@ def initiate_loading(file_path):
     if file_path is None:
         with output_load:
             output_load.clear_output()
-            print(
-                "Please select a valid directory containing BRAT files before loading."
-            )
+            print("Please select a valid directory containing BRAT files before loading.")
         return
 
     # 1 - load data annotation and possible progress
@@ -360,12 +354,8 @@ def create_t1a2():
     """
     output_concordancer = widgets.Output()
     text_t1a2 = widgets.Text(value="", description="Word :")
-    button_search = widgets.Button(
-        description="Seach", button_style="primary", icon="search"
-    )
-    button_search.on_click(
-        lambda _: on_button_search_clicked(output_concordancer, text_t1a2.value)
-    )
+    button_search = widgets.Button(description="Seach", button_style="primary", icon="search")
+    button_search.on_click(lambda _: on_button_search_clicked(output_concordancer, text_t1a2.value))
     t1a2 = widgets.VBox([widgets.HBox([text_t1a2, button_search]), output_concordancer])
     return t1a2
 
@@ -412,22 +402,16 @@ def create_frequent_tfidf_texts(df, current_entity, df_tf_results, ban_words_tfi
     top_tfidf_words = attribution_tf(
         current_entity, 10, df_tf_results, ban_words_tfidf[current_entity]
     )
-    tf_occurrences = attribution_tf_occurrences(
-        top_tfidf_words, df_tf_results, current_entity
-    )
+    tf_occurrences = attribution_tf_occurrences(top_tfidf_words, df_tf_results, current_entity)
     tag_tf_occurrences = []
     for word, occurrence in tf_occurrences:
         tag_tf = widgets.TagsInput(value=word, disabled=True)
         tag_tf.observe(on_tfidf_removed, names="value")
-        tag_tf_occurrences.extend(
-            [tag_tf, widgets.HTML(value="(" + str(occurrence) + ")")]
-        )
+        tag_tf_occurrences.extend([tag_tf, widgets.HTML(value="(" + str(occurrence) + ")")])
     widgets_tf_words = widgets.HBox(tag_tf_occurrences)
 
     # Ngrams widgets
-    n_grams = calculate_n_grams(
-        df, current_entity, df_tf_results, ban_words_tfidf[current_entity]
-    )
+    n_grams = calculate_n_grams(df, current_entity, df_tf_results, ban_words_tfidf[current_entity])
     treated_n_grams = treate_n_grams(n_grams, 5)
 
     list_widgets_n_grams = []
@@ -447,9 +431,7 @@ def create_frequent_tfidf_texts(df, current_entity, df_tf_results, ban_words_tfi
         if add:
             list_widgets_n_grams.append(widgets.HBox(list_widget))
 
-    return widgets.VBox(
-        [widgets.VBox([widgets_tf_words]), widgets.VBox(list_widgets_n_grams)]
-    )
+    return widgets.VBox([widgets.VBox([widgets_tf_words]), widgets.VBox(list_widgets_n_grams)])
 
 
 def on_button_add_category_clicked(_):
@@ -481,12 +463,8 @@ def remove_ent_cat(i):
     """
     global list_isnotfp, list_isnotfn, ent_cat
     cat = getCat(current_entity, ent_cat)[i]
-    list_isnotfp = [
-        values_notFP for values_notFP in list_isnotfp if values_notFP[0] != cat
-    ]
-    list_isnotfn = [
-        values_notFN for values_notFN in list_isnotfn if values_notFN[0] != cat
-    ]
+    list_isnotfp = [values_notFP for values_notFP in list_isnotfp if values_notFP[0] != cat]
+    list_isnotfn = [values_notFN for values_notFN in list_isnotfn if values_notFN[0] != cat]
     ent_cat[current_entity].remove(ent_cat[current_entity][i])
     ent_cat = remove_empty_categories(ent_cat, current_entity)
     update_tabs()
@@ -611,9 +589,7 @@ def create_t2a1():
     """
     title1 = "I - Frequent terms"
     title2 = "II -  Category creation"
-    t2a1_texts = create_frequent_tfidf_texts(
-        df, current_entity, df_tf_results, ban_words_tfidf
-    )
+    t2a1_texts = create_frequent_tfidf_texts(df, current_entity, df_tf_results, ban_words_tfidf)
     t2a1_title1 = widgets.HTML(
         value=f"<h2 style='height: 20px; line-height: 20px; text-align: left; display: flex; align-items: center;'>{title1}</h2>"
     )
@@ -675,9 +651,7 @@ def display_categorization_results():
         """
         color_index = row.name % len(col)
         first_col_background = f"{col[color_index]}90"
-        return [f"background-color: {first_col_background}"] + [""] * (
-            len(row) - 1
-        )
+        return [f"background-color: {first_col_background}"] + [""] * (len(row) - 1)
 
     colors = [
         "#ced4da",
@@ -825,9 +799,7 @@ def change_visualization_metric(
             bool_fnorfp_value = [False, True]
             target_list = list_isnotfn
 
-        df_metrics_locations.loc[index, column] = not df_metrics_locations.loc[
-            index, column
-        ]
+        df_metrics_locations.loc[index, column] = not df_metrics_locations.loc[index, column]
         if df_metrics_locations.loc[index, column]:
             df_metrics_locations.loc[index, "result"] = result[0]
             target_list.append(
@@ -859,9 +831,7 @@ def change_visualization_metric(
                 ]
             )
 
-        dg_metrics_locations = create_grid_metrics_locations(
-            df_metrics_locations, current_entity
-        )
+        dg_metrics_locations = create_grid_metrics_locations(df_metrics_locations, current_entity)
         dg_metrics_locations.observe(
             lambda *_: change_visualization_metric(
                 dg_metrics_locations.selections[0]["r1"],
@@ -886,9 +856,7 @@ def change_visualization_metric(
         # Refresh of tab3 outputs
         with t3_output1_entity_results:
             t3_output1_entity_results.clear_output()
-            display(
-                create_dg_results(df_results[df_results["entity"] == current_entity])
-            )
+            display(create_dg_results(df_results[df_results["entity"] == current_entity]))
         with t3_output2_metrics_results:
             t3_output2_metrics_results.clear_output()
             display(dg_metrics_results)
@@ -897,12 +865,7 @@ def change_visualization_metric(
             display(dg_metrics_locations)
         button_save.button_style = "warning"
 
-    if (
-        result == "FP"
-        or result == "TP(corr)"
-        or result == "FN"
-        or result == "Discarded"
-    ):
+    if result == "FP" or result == "TP(corr)" or result == "FN" or result == "Discarded":
         description = "Consider this FP as a TP"
         value = value_isnotfp
         instruction = "FP"
@@ -982,9 +945,7 @@ def create_t3a1():
             "motif",
         ],
     )
-    dg_metrics_locations = create_grid_metrics_locations(
-        df_metrics_locations, current_entity
-    )
+    dg_metrics_locations = create_grid_metrics_locations(df_metrics_locations, current_entity)
     dg_metrics_locations.observe(
         lambda *_: change_visualization_metric(
             dg_metrics_locations.selections[0]["r1"],
@@ -1061,9 +1022,7 @@ def launch_rest():
     button_selection_entity.observe(on_selection_change_entity, names="value")
     ban_word_tag.observe(lambda change: on_ban_word_tag_change(change), names="value")
     button_categorization.on_click(on_button_categorization_clicked)
-    tabs = widgets.Tab(
-        [create_t0(), create_t1(), create_t2(), create_t3()], selected_index=0
-    )
+    tabs = widgets.Tab([create_t0(), create_t1(), create_t2(), create_t3()], selected_index=0)
 
     display(
         HTML(

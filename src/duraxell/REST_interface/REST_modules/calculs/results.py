@@ -19,9 +19,7 @@ def initiate_df_results(df, homogeneity_score, ent_cat):
     for entity in ent_cat:
         fn_rows = df[df["entity"] == entity]
         fn_value = fn_rows["occurrences"].sum()
-        df_values.append(
-            [entity, homogeneity_score[entity], 0, 0, fn_value, 0, 0, 0, 0, 0, 0]
-        )
+        df_values.append([entity, homogeneity_score[entity], 0, 0, fn_value, 0, 0, 0, 0, 0, 0])
     df_results = pd.DataFrame(
         df_values,
         columns=[
@@ -41,9 +39,7 @@ def initiate_df_results(df, homogeneity_score, ent_cat):
     return df_results
 
 
-def update_df_results(
-    df_results, df, entity, homogeneity_score, df_metrics, bootstrap_results
-):
+def update_df_results(df_results, df, entity, homogeneity_score, df_metrics, bootstrap_results):
     """
     Update and return the summary of each entity's results (homogeneity,precision,recall).
 
@@ -64,8 +60,7 @@ def update_df_results(
         tp += df_metrics["TP(corr)"].sum()
     fp = df_metrics["FP"].sum()
     fn = df.loc[
-        df["category"].str.contains(re.escape("category?"))
-        & df["entity"].str.contains(entity),
+        df["category"].str.contains(re.escape("category?")) & df["entity"].str.contains(entity),
         "occurrences",
     ].sum()
     precision = 0
@@ -76,12 +71,8 @@ def update_df_results(
     if tp + fn != 0:
         recall = round(tp / (tp + fn), 2)
 
-    precision_inter1 = round(
-        bootstrap_results["precision"]["precision_conf_interval"][0], 2
-    )
-    precision_inter2 = round(
-        bootstrap_results["precision"]["precision_conf_interval"][1], 2
-    )
+    precision_inter1 = round(bootstrap_results["precision"]["precision_conf_interval"][0], 2)
+    precision_inter2 = round(bootstrap_results["precision"]["precision_conf_interval"][1], 2)
     recall_inter1 = round(bootstrap_results["recall"]["recall_conf_interval"][0], 2)
     recall_inter2 = round(bootstrap_results["recall"]["recall_conf_interval"][1], 2)
     col = [
@@ -126,13 +117,11 @@ def create_categories_infos(df, ent_cat, current_entity):
     infos = []
     for cat in ent_cat[current_entity]:
         tot_occurrences = df.loc[
-            df["category"].str.contains(re.escape(cat))
-            & df["entity"].str.contains(current_entity),
+            df["category"].str.contains(re.escape(cat)) & df["entity"].str.contains(current_entity),
             "occurrences",
         ].sum()
         nbr_occurrences = df.loc[
-            df["category"].str.contains(re.escape(cat))
-            & df["entity"].str.contains(current_entity),
+            df["category"].str.contains(re.escape(cat)) & df["entity"].str.contains(current_entity),
             "occurrences",
         ].shape[0]
         infos.append([cat.strip("[]"), tot_occurrences, nbr_occurrences])

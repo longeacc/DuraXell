@@ -44,19 +44,13 @@ def get_matches(path, pattern):
     matches = []
     for file_name in os.listdir(path):
         if file_name.endswith(".txt"):
-            with open(
-                os.path.join(path, file_name), newline="", encoding="utf-8"
-            ) as file:
+            with open(os.path.join(path, file_name), newline="", encoding="utf-8") as file:
                 text = file.read().lower()
                 for match in re.finditer(pattern, text):
                     place_start = match.start()
                     place_end = match.end()
-                    sentence = (
-                        "..." + text[match.start() - 70 : match.end() + 60] + "..."
-                    )
-                    matches.append(
-                        (pattern, sentence, file_name, place_start, place_end)
-                    )
+                    sentence = "..." + text[match.start() - 70 : match.end() + 60] + "..."
+                    matches.append((pattern, sentence, file_name, place_start, place_end))
     return matches
 
 
@@ -114,22 +108,16 @@ def calculate_concordancer(pattern, current_entity, path, docs):
             if match[2] == annotation[0]:
                 if annotation[3] <= match[3] and match[4] <= annotation[4]:
                     if annotation[1].lower() == current_entity:
-                        res_concordancier.append(
-                            (res[0], res[1], res[2], current_entity)
-                        )
+                        res_concordancier.append((res[0], res[1], res[2], current_entity))
                     else:
-                        res_concordancier.append(
-                            (res[0], res[1], res[2], annotation[1])
-                        )
+                        res_concordancier.append((res[0], res[1], res[2], annotation[1]))
                     in_no_annotation = False
                     break
         if in_no_annotation:
             res_concordancier.append((res[0], res[1], res[2], "Not annotated"))
 
     dg_res_concordancer = DataGrid(
-        pd.DataFrame(
-            res_concordancier, columns=["words before", "word", "words after", "entity"]
-        ),
+        pd.DataFrame(res_concordancier, columns=["words before", "word", "words after", "entity"]),
         layout={"height": "350px", "width": "1165px"},
         base_row_size=25,
         column_widths={

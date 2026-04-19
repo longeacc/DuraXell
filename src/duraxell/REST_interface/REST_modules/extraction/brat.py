@@ -80,9 +80,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                         if line.startswith("T"):
                             match = REGEX_ENTITY.match(line)
                             if match is None:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             ann_id = match.group(1)
                             entity = match.group(2)
                             span = match.group(3)
@@ -98,10 +96,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                             last_end = None
                             fragment_i = 0
                             begins_ends = sorted(
-                                [
-                                    (int(s.split()[0]), int(s.split()[1]))
-                                    for s in span.split(";")
-                                ]
+                                [(int(s.split()[0]), int(s.split()[1])) for s in span.split(";")]
                             )
 
                             for begin, end in begins_ends:
@@ -125,9 +120,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                         elif line.startswith("A") or line.startswith("M"):
                             match = REGEX_ATTRIBUTE.match(line)
                             if match is None:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             ann_id = match.group(1)
                             parts = match.group(2).split(" ")
                             if len(parts) >= 3:
@@ -136,9 +129,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                                 entity, entity_id = parts
                                 value = None
                             else:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             (
                                 entities[entity_id]
                                 if entity_id.startswith("T")
@@ -153,9 +144,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                         elif line.startswith("R"):
                             match = REGEX_RELATION.match(line)
                             if match is None:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             ann_id = match.group(1)
                             ann_name = match.group(2)
                             arg1 = match.group(3)
@@ -171,9 +160,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                         elif line.startswith("E"):
                             match = REGEX_EVENT.match(line)
                             if match is None:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             ann_id = match.group(1)
                             arguments_txt = match.group(2)
                             arguments = []
@@ -192,9 +179,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                         elif line.startswith("#"):
                             match = REGEX_NOTE.match(line)
                             if match is None:
-                                raise ValueError(
-                                    f"File {ann_file}, unrecognized Brat line {line}"
-                                )
+                                raise ValueError(f"File {ann_file}, unrecognized Brat line {line}")
                             ann_id = match.group(1)
                             entity_id = match.group(2)
                             comment = match.group(3)
@@ -235,9 +220,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
         }
 
 
-def export_to_brat(
-    samples, filename_prefix="", overwrite_txt=False, overwrite_ann=False
-):
+def export_to_brat(samples, filename_prefix="", overwrite_txt=False, overwrite_ann=False):
     if filename_prefix:
         try:
             os.mkdir(filename_prefix)
@@ -268,9 +251,7 @@ def export_to_brat(
                         spans = []
                         brat_entity_id = entities_ids[entity["entity_id"]]
                         entity_text = []
-                        for fragment in sorted(
-                            entity["fragments"], key=lambda frag: frag["begin"]
-                        ):
+                        for fragment in sorted(entity["fragments"], key=lambda frag: frag["begin"]):
                             idx = fragment["begin"]
                             frag_text = doc["text"][fragment["begin"] : fragment["end"]]
                             entity_text.append(frag_text)
@@ -291,10 +272,7 @@ def export_to_brat(
                         )
                         if "attributes" in entity:
                             for _i, attribute in enumerate(entity["attributes"]):
-                                if (
-                                    "value" in attribute
-                                    and attribute["value"] is not None
-                                ):
+                                if "value" in attribute and attribute["value"] is not None:
                                     print(
                                         "A{}\t{} {} {}".format(
                                             attribute_idx,

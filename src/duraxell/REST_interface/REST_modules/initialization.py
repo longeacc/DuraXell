@@ -119,9 +119,7 @@ def initialize_widgets(ent_cat, current_entity, ban_words_entities, options):
         icon="save",
         layout=widgets.Layout(width="70px"),
     )
-    button_selection_entity = widgets.Dropdown(
-        options=getEnt(ent_cat), value=current_entity
-    )
+    button_selection_entity = widgets.Dropdown(options=getEnt(ent_cat), value=current_entity)
     button_selection_category = widgets.Dropdown(
         options=options,
         value=options[0],

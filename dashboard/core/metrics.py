@@ -79,9 +79,7 @@ class MetricsCalculator:
     def has_contradiction(self, text: str) -> bool:
         return any(re.search(pat, text) for pat in self.CONTRADICTION_PATTERNS)
 
-    def compute_all_metrics(
-        self, documents: list[Any], entity_type: str
-    ) -> dict[str, float]:
+    def compute_all_metrics(self, documents: list[Any], entity_type: str) -> dict[str, float]:
         annotations = []
         doc_count = 0
         for doc in documents:
@@ -104,9 +102,11 @@ class MetricsCalculator:
 
         values = [a.value.strip() for a in annotations if a.value]
         contexts = [
-            a.context.lower().strip()
-            if hasattr(a, "context") and a.context
-            else a.value.lower().strip()
+            (
+                a.context.lower().strip()
+                if hasattr(a, "context") and a.context
+                else a.value.lower().strip()
+            )
             for a in annotations
         ]
 
@@ -144,17 +144,10 @@ class MetricsCalculator:
         structure_consistency = 1.0 - h_norm
         bonus_semantic = (
             0.1
-            if any(
-                c in p
-                for p in set(normalized_patterns)
-                for c in ["%", "+", "-", ">", "<"]
-            )
+            if any(c in p for p in set(normalized_patterns) for c in ["%", "+", "-", ">", "<"])
             else 0.0
         )
-        if (
-            any("D" in p for p in set(normalized_patterns))
-            and structure_consistency > 0.6
-        ):
+        if any("D" in p for p in set(normalized_patterns)) and structure_consistency > 0.6:
             bonus_semantic += 0.1
 
         te = min(1.0, max(0.0, structure_consistency + bonus_semantic))
@@ -162,9 +155,7 @@ class MetricsCalculator:
         # 2. He [0.0 - 1.0] - Sigmoid mapping over Token Redundancy
         all_tokens = []
         for val in values:
-            all_tokens.extend(
-                [w.lower() for w in re.split(r"[^a-zA-Z0-9%]+", val) if w.strip()]
-            )
+            all_tokens.extend([w.lower() for w in re.split(r"[^a-zA-Z0-9%]+", val) if w.strip()])
 
         if not all_tokens:
             he = 0.0
@@ -218,12 +209,7 @@ class MetricsCalculator:
         min(1.0, max(0.0, base_shift + he_penalty + te_penalty))
 
         # 8. LLM Necessity
-        necessity = (
-            0.30 * (1.0 - y)
-            + 0.25 * (r * 4.0)
-            + 0.25 * (1.0 - feas)
-            + 0.20 * (1.0 - he)
-        )
+        necessity = 0.30 * (1.0 - y) + 0.25 * (r * 4.0) + 0.25 * (1.0 - feas) + 0.20 * (1.0 - he)
         min(1.0, max(0.0, necessity))
 
         return {

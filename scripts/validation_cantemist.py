@@ -25,9 +25,7 @@ print("Loading CRF model...")
 tagger = pycrfsuite.Tagger()
 tagger.open("crf_model.crfsuite")
 
-cantemist_files = glob.glob("src/duraxell/REST_interface/cantemist-fr/cantemist-fr/*.txt")[
-    :5
-]
+cantemist_files = glob.glob("src/duraxell/REST_interface/cantemist-fr/cantemist-fr/*.txt")[:5]
 print(f"\nEvaluating on {len(cantemist_files)} CANTEMIST-FR documents...")
 
 for filepath in cantemist_files:

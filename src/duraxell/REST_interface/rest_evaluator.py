@@ -1,7 +1,5 @@
 class RESTEntityReport:
-    def __init__(
-        self, entity_type, empirical_te, empirical_he, empirical_r, n_patterns
-    ):
+    def __init__(self, entity_type, empirical_te, empirical_he, empirical_r, n_patterns):
         self.entity_type = entity_type
         self.empirical_te = empirical_te
         self.empirical_he = empirical_he

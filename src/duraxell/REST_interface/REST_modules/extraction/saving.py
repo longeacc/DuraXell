@@ -4,9 +4,7 @@ import os
 import pandas as pd
 
 
-def save_progress(
-    path, ent_cat, list_isnotfp, list_isnotfn, ban_words_entities, df_results
-):
+def save_progress(path, ent_cat, list_isnotfp, list_isnotfn, ban_words_entities, df_results):
     """
     Save the current progress of the user on a json file called "REST_progress.json" in the corpus directory.
 
@@ -73,9 +71,7 @@ def load_progress(path):
                 df_results_list = data.get("df_results")
                 df_columns_list = data.get("df_columns")
                 if df_results_list and df_columns_list:
-                    progress_df_results = pd.DataFrame(
-                        df_results_list, columns=df_columns_list
-                    )
+                    progress_df_results = pd.DataFrame(df_results_list, columns=df_columns_list)
             except (json.JSONDecodeError, FileNotFoundError):
                 pass
 

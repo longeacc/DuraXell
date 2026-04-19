@@ -103,9 +103,7 @@ class TestPipelineIntegration:
             .reset_index()
         )
 
-        method_group.rename(
-            columns={"IsCorrect": "F1"}, inplace=True
-        )  # Renaming for scorer
+        method_group.rename(columns={"IsCorrect": "F1"}, inplace=True)  # Renaming for scorer
 
         # 5. Composite Scoring
         scorer = CompositeScorer()

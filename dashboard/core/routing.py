@@ -1,10 +1,7 @@
 """Routage simplifié DuraXell — Arbre à 4 nœuds, 3 sorties."""
 
 
-
-def compute_routing(
-    metrics: dict[str, float], thresholds: dict[str, float]
-) -> tuple[str, str]:
+def compute_routing(metrics: dict[str, float], thresholds: dict[str, float]) -> tuple[str, str]:
     """Arbre de décision simplifié : Te++ → He++ → R− → RÈGLES | Feas++ → TBM | LLM.
 
     Args:

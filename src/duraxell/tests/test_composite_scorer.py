@@ -19,9 +19,7 @@ def test_composite_scorer_logic():
     # Test 3: Transformer (Med Expl, High Perf, Med Energy)
     # F1=0.92, Expl=0.3, Energy=HALF_MAX -> Frugality=0.5
     # Composite = 0.4*0.92 + 0.3*0.3 + 0.3*0.5 = 0.368 + 0.09 + 0.15 = 0.608
-    res_bert = scorer.compute(
-        f1=0.92, method="TBM", energy_kwh=scorer.MAX_ENERGY_KWH / 2
-    )
+    res_bert = scorer.compute(f1=0.92, method="TBM", energy_kwh=scorer.MAX_ENERGY_KWH / 2)
     assert abs(res_bert - 0.608) < 0.001
 
 

@@ -36,15 +36,11 @@ def main() -> None:
     for i, entity in enumerate(corpus_entities):
         with cols[i % 4]:
             # Initialiser à True par défaut si non défini
-            is_sel = (
-                entity in selected if "selected_entities" in st.session_state else True
-            )
+            is_sel = entity in selected if "selected_entities" in st.session_state else True
             checks[entity] = st.checkbox(entity, value=is_sel)
 
     # Mise à jour list session
-    st.session_state.selected_entities = [
-        ent for ent, checked in checks.items() if checked
-    ]
+    st.session_state.selected_entities = [ent for ent, checked in checks.items() if checked]
     st.info(
         f"{len(st.session_state.selected_entities)}/{len(corpus_entities)} entités sélectionnées."
     )
@@ -93,9 +89,7 @@ def main() -> None:
             if ent in st.session_state.selected_entities:
                 st.markdown(f"- **{ent}** : {rtg}")
     else:
-        st.write(
-            "Aucun routage disponible. Rendez-vous dans le Dashboard Metrics pour générer."
-        )
+        st.write("Aucun routage disponible. Rendez-vous dans le Dashboard Metrics pour générer.")
 
 
 if __name__ == "__main__":

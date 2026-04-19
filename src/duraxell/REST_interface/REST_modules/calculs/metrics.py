@@ -61,9 +61,7 @@ def calculate_location_metrics(
         pattern, list_spacing_pattern = generate_regex(eval(cat))
         for file_name in txt_files:
             locations_found_currentfile = []
-            with open(
-                os.path.join(path, file_name), newline="", encoding="utf-8"
-            ) as file:
+            with open(os.path.join(path, file_name), newline="", encoding="utf-8") as file:
                 text = file.read().lower()
                 # text_decode = unidecode(text)
                 for match in re.finditer(pattern, text):
@@ -72,9 +70,7 @@ def calculate_location_metrics(
                     motif = text[place_start : match.end()]
                     long_motif = (
                         "..."
-                        + text[
-                            max(place_start - 70, 0) : min(place_end + 70, len(text))
-                        ]
+                        + text[max(place_start - 70, 0) : min(place_end + 70, len(text))]
                         + "..."
                     )
                     fp = True
@@ -125,7 +121,9 @@ def calculate_location_metrics(
                         ):
                             add_to_fp = False
                             continue
-                        for location in (
+                        for (
+                            location
+                        ) in (
                             locations_found_currentfile
                         ):  # verification in already exist to current category
                             if location[0] == place_start and place_end == location[1]:
@@ -134,10 +132,7 @@ def calculate_location_metrics(
                         for _index, row in df_other_categories[
                             filtre2
                         ].iterrows():  # verification in other categories
-                            if (
-                                row["places"][0] == place_start
-                                and place_end == row["places"][1]
-                            ):
+                            if row["places"][0] == place_start and place_end == row["places"][1]:
                                 add_to_fp = False
                                 break
 
@@ -187,17 +182,13 @@ def calculate_location_metrics(
                                 )
 
             if len(locations[file_name]) != 0:  # locations left (FN)
-                with open(
-                    os.path.join(path, file_name), newline="", encoding="utf-8"
-                ) as file:
+                with open(os.path.join(path, file_name), newline="", encoding="utf-8") as file:
                     text = file.read().lower()
                     text = unidecode(text)
                     for place in locations[file_name]:
                         long_motif = (
                             "..."
-                            + text[
-                                max(place[0] - 70, 0) : min(place[1] + 70, len(text))
-                            ]
+                            + text[max(place[0] - 70, 0) : min(place[1] + 70, len(text))]
                             + "..."
                         )
                         is_notfn = False
@@ -262,20 +253,16 @@ def calculate_df_metrics(df_location_metrics):
     metrics = []
     for cat in df_location_metrics["category"].unique():
         tp = df_location_metrics[
-            (df_location_metrics["category"] == cat)
-            & (df_location_metrics["result"] == "TP")
+            (df_location_metrics["category"] == cat) & (df_location_metrics["result"] == "TP")
         ].shape[0]
         tpcorr = df_location_metrics[
-            (df_location_metrics["category"] == cat)
-            & (df_location_metrics["result"] == "TP(corr)")
+            (df_location_metrics["category"] == cat) & (df_location_metrics["result"] == "TP(corr)")
         ].shape[0]
         fp = df_location_metrics[
-            (df_location_metrics["category"] == cat)
-            & (df_location_metrics["result"] == "FP")
+            (df_location_metrics["category"] == cat) & (df_location_metrics["result"] == "FP")
         ].shape[0]
         fn = df_location_metrics[
-            (df_location_metrics["category"] == cat)
-            & (df_location_metrics["result"] == "FN")
+            (df_location_metrics["category"] == cat) & (df_location_metrics["result"] == "FN")
         ].shape[0]
         precision = 0
         if tp + fp != 0:
@@ -356,13 +343,9 @@ def create_grid_metrics_locations(df_metrics_locations, current_entity):
 
 def background_color_tp(cell):
     # post
-    if (
-        cell.column == 4 and cell.value > cell.metadata.data["('raw highlights', 'TP')"]
-    ):  # TP
+    if cell.column == 4 and cell.value > cell.metadata.data["('raw highlights', 'TP')"]:  # TP
         return "green"
-    elif (
-        cell.column == 5 and cell.value < cell.metadata.data["('raw highlights', 'FP')"]
-    ):  # FP
+    elif cell.column == 5 and cell.value < cell.metadata.data["('raw highlights', 'FP')"]:  # FP
         return "green"
 
     # pre
@@ -423,9 +406,7 @@ def generate_dg_metrics_results(df_metrics):
     ).tolist()
     df_metrics_results["corrected highlights", "FP(corr)"] = df_metrics["FP"].tolist()
     df_metrics_results["corrected highlights", "FN(corr)"] = df_metrics["FN"].tolist()
-    df_metrics_results["corrected highlights", "precision"] = df_metrics[
-        "precision"
-    ].tolist()
+    df_metrics_results["corrected highlights", "precision"] = df_metrics["precision"].tolist()
 
     height = len(df_metrics_results) * 25 + 48
     dg_metrics_results = DataGrid(
@@ -472,12 +453,8 @@ def generate_dg_metrics_results(df_metrics):
             bold=True,
             horizontal_alignment="center",
         ),
-        "('raw highlights', 'FN')": TextRenderer(
-            bold=True, horizontal_alignment="center"
-        ),
-        "('raw highlights', 'precision')": TextRenderer(
-            bold=True, horizontal_alignment="center"
-        ),
+        "('raw highlights', 'FN')": TextRenderer(bold=True, horizontal_alignment="center"),
+        "('raw highlights', 'precision')": TextRenderer(bold=True, horizontal_alignment="center"),
     }
 
     dg_metrics_results.renderers = renderers

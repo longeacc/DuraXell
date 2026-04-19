@@ -4,6 +4,7 @@ import glob
 load_cantemist = False
 try:
     from googletrans import Translator
+
     translator = Translator()
 except ImportError:
     translator = None
@@ -130,15 +131,13 @@ def extract_annotations(docs, need_translation):
             for text in annotations[entity]["category?"]:
                 text_fr = translator.translate(text, src="es", dest="fr").text
                 if text_fr in temp[entity_fr]["category?"]:
-                    temp[entity_fr]["category?"][text_fr]["occurrences"] += annotations[
-                        entity
-                    ]["category?"][text]["occurrences"]
+                    temp[entity_fr]["category?"][text_fr]["occurrences"] += annotations[entity][
+                        "category?"
+                    ][text]["occurrences"]
                     for place in annotations[entity]["category?"][text]["places"]:
                         temp[entity_fr]["category?"][text_fr]["places"].append(place)
                 else:
-                    temp[entity_fr]["category?"][text_fr] = annotations[entity][
-                        "category?"
-                    ][text]
+                    temp[entity_fr]["category?"][text_fr] = annotations[entity]["category?"][text]
         annotations = temp
     return annotations
 
@@ -192,9 +191,7 @@ def levenshtein(annotations1, dist):
             ajout = True
             stems = " ".join(current_annotations[entity]["category?"][text]["stems"])
             for tempo_text in tempo_annotations[entity]["category?"]:
-                tempo_stems = " ".join(
-                    tempo_annotations[entity]["category?"][tempo_text]["stems"]
-                )
+                tempo_stems = " ".join(tempo_annotations[entity]["category?"][tempo_text]["stems"])
                 dist_leven = lev(stems, tempo_stems)
                 if (
                     dist_leven < dist
@@ -205,27 +202,21 @@ def levenshtein(annotations1, dist):
                     tempo_annotations[entity]["category?"][tempo_text][
                         "occurrences"
                     ] += current_annotations[entity]["category?"][text]["occurrences"]
-                    for place in current_annotations[entity]["category?"][text][
-                        "places"
-                    ]:
-                        tempo_annotations[entity]["category?"][tempo_text][
-                            "places"
-                        ].append(place)
+                    for place in current_annotations[entity]["category?"][text]["places"]:
+                        tempo_annotations[entity]["category?"][tempo_text]["places"].append(place)
                     ajout = False
 
                     # MAJ leven
                     if dist_leven > 0 and (tempo_stems not in levenshtein_results):
                         levenshtein_results[tempo_stems] = []
                         levenshtein_results[tempo_stems].append(stems)
-                    elif dist_leven > 0 and (
-                        stems not in levenshtein_results[tempo_stems]
-                    ):
+                    elif dist_leven > 0 and (stems not in levenshtein_results[tempo_stems]):
                         levenshtein_results[tempo_stems].append(stems)
                     break
             if ajout:
-                tempo_annotations[entity]["category?"][text] = current_annotations[
-                    entity
-                ]["category?"][text]
+                tempo_annotations[entity]["category?"][text] = current_annotations[entity][
+                    "category?"
+                ][text]
     return tempo_annotations, levenshtein_results
 
 

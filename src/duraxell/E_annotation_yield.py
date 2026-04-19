@@ -225,17 +225,13 @@ class AnnotationYieldScorer:
 
     def print_report(self):
         scores = self.get_scores()
-        print(
-            f"\n=== ANNOTATION YIELD (F1-score Rules vs GS, IoU≥{self.iou_threshold}) ==="
-        )
+        print(f"\n=== ANNOTATION YIELD (F1-score Rules vs GS, IoU≥{self.iou_threshold}) ===")
         print(
             f"{'Entity':<25} | {'Yield (F1)':<10} | {'Prec':<6} | {'Rec':<6} | {'TP':<4} | {'FP':<4} | {'FN':<4}"
         )
         print("-" * 80)
 
-        for etype, metas in sorted(
-            scores.items(), key=lambda x: x[1]["F1-Yield"], reverse=True
-        ):
+        for etype, metas in sorted(scores.items(), key=lambda x: x[1]["F1-Yield"], reverse=True):
             f1 = metas["F1-Yield"]
             p = metas["Precision"]
             r = metas["Recall"]
@@ -258,10 +254,7 @@ def main():
     # If using from root
     if not gs_dir.exists():
         gs_dir = script_dir / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_GS"
-        pred_dir = (
-            script_dir
-            / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_pred_rules"
-        )
+        pred_dir = script_dir / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_pred_rules"
 
     if not gs_dir.exists():
         print("Datasets for Yield calculation not found.")

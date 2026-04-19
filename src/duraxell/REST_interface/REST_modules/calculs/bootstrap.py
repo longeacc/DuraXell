@@ -19,16 +19,13 @@ def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
     # Retrieve of TP, TP(corr) and FP
     for file in df_metrics_locations["file"].unique():
         tp = df_metrics_locations[
-            (df_metrics_locations["file"] == file)
-            & (df_metrics_locations["result"] == "TP")
+            (df_metrics_locations["file"] == file) & (df_metrics_locations["result"] == "TP")
         ].shape[0]
         tpcorr = df_metrics_locations[
-            (df_metrics_locations["file"] == file)
-            & (df_metrics_locations["result"] == "TP(corr)")
+            (df_metrics_locations["file"] == file) & (df_metrics_locations["result"] == "TP(corr)")
         ].shape[0]
         fp = df_metrics_locations[
-            (df_metrics_locations["file"] == file)
-            & (df_metrics_locations["result"] == "FP")
+            (df_metrics_locations["file"] == file) & (df_metrics_locations["result"] == "FP")
         ].shape[0]
         bootstrap_data[file] = {"TP": (tp + tpcorr), "FP": fp, "FN": 0}
 

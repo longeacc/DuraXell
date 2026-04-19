@@ -31,9 +31,7 @@ class RESTPipeline:
         self.yield_calc.stop_timing("Estrogen_receptor")
 
         report = self.evaluator.evaluate_entity("Estrogen_receptor", annotations)
-        print(
-            f"Empirical Evaluation done for 'Estrogen_receptor': Te={report.empirical_te}"
-        )
+        print(f"Empirical Evaluation done for 'Estrogen_receptor': Te={report.empirical_te}")
         return report
 
 

@@ -235,16 +235,13 @@ def main():
     test_corpus = [
         {
             "annotations": [
-                {"entity_type": "TEST_CANONIQUE", "text": "ER positif 80%"}
-                for _ in range(100)
+                {"entity_type": "TEST_CANONIQUE", "text": "ER positif 80%"} for _ in range(100)
             ]
         }
     ]
     test_scorer = HomogeneityScorer(test_corpus)
     score_canon = test_scorer.compute("TEST_CANONIQUE")
-    print(
-        f"Test 'ER positif 80%' x 100 -> Score: {score_canon:.2f}% (Attendu: proche de 100%)"
-    )
+    print(f"Test 'ER positif 80%' x 100 -> Score: {score_canon:.2f}% (Attendu: proche de 100%)")
 
     if HAS_ECO2AI:
         tracker.stop()

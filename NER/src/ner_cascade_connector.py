@@ -31,14 +31,9 @@ class NERCascadeConnector:
 
         if not model_dir:
             # Attempt to auto-discover best model
-            base_models_dir = os.path.join(
-                os.path.dirname(__file__), "../models/sweeps"
-            )
+            base_models_dir = os.path.join(os.path.dirname(__file__), "../models/sweeps")
             if os.path.exists(base_models_dir):
-                candidates = [
-                    os.path.join(base_models_dir, d)
-                    for d in os.listdir(base_models_dir)
-                ]
+                candidates = [os.path.join(base_models_dir, d) for d in os.listdir(base_models_dir)]
                 candidates = [d for d in candidates if os.path.isdir(d)]
                 if candidates:
                     # Pick most recent
@@ -74,9 +69,7 @@ class NERCascadeConnector:
 
         logging.info(f"Loading NER model from {effective_dir} on {self.device}...")
         self.tokenizer = AutoTokenizer.from_pretrained(effective_dir, use_fast=True)
-        self.model = AutoModelForTokenClassification.from_pretrained(effective_dir).to(
-            self.device
-        )
+        self.model = AutoModelForTokenClassification.from_pretrained(effective_dir).to(self.device)
         self.model.eval()
 
     def predict(self, text: str, entity_type: str) -> ExtractionResult:
@@ -86,9 +79,7 @@ class NERCascadeConnector:
         """
         if not self.model or not self.tokenizer:
             # Fallback mock if model failed to load
-            return ExtractionResult(
-                entity_type, None, "Transformer (Mock)", 0.0, 0.0, 2
-            )
+            return ExtractionResult(entity_type, None, "Transformer (Mock)", 0.0, 0.0, 2)
 
         # 1. Tokenize (max_length=512 to avoid BERT overflow on long clinical docs)
         inputs = self.tokenizer(

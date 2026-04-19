@@ -27,16 +27,12 @@ class BratCorpusParser:
     def __init__(self) -> None:
         self.logger = logging.getLogger(__name__)
 
-    def _extract_context(
-        self, text: str, start: int, end: int, window: int = 50
-    ) -> str:
+    def _extract_context(self, text: str, start: int, end: int, window: int = 50) -> str:
         ctx_start = max(0, start - window)
         ctx_end = min(len(text), end + window)
         return text[ctx_start:ctx_end]
 
-    def _parse_ann_content(
-        self, ann_content: str, text_content: str
-    ) -> list[BratAnnotation]:
+    def _parse_ann_content(self, ann_content: str, text_content: str) -> list[BratAnnotation]:
         annotations = []
         for line in ann_content.splitlines():
             line = line.strip()
@@ -92,9 +88,7 @@ class BratCorpusParser:
                 text_content = parts.get(".txt", "")
                 annotations = self._parse_ann_content(ann_content, text_content)
                 documents.append(
-                    BratDocument(
-                        filename=base_name, text=text_content, annotations=annotations
-                    )
+                    BratDocument(filename=base_name, text=text_content, annotations=annotations)
                 )
 
         return documents
@@ -118,9 +112,7 @@ class BratCorpusParser:
                         with open(file_path, encoding="utf-8") as f:
                             content = f.read()
                     except UnicodeDecodeError:
-                        with open(
-                            file_path, encoding="latin-1", errors="replace"
-                        ) as f:
+                        with open(file_path, encoding="latin-1", errors="replace") as f:
                             content = f.read()
 
                     files_by_base[base_name][ext.lower()] = content
@@ -131,16 +123,12 @@ class BratCorpusParser:
                 text_content = parts.get(".txt", "")
                 annotations = self._parse_ann_content(ann_content, text_content)
                 documents.append(
-                    BratDocument(
-                        filename=base_name, text=text_content, annotations=annotations
-                    )
+                    BratDocument(filename=base_name, text=text_content, annotations=annotations)
                 )
 
         return documents
 
-    def get_entity_statistics(
-        self, documents: list[BratDocument]
-    ) -> dict[str, dict[str, Any]]:
+    def get_entity_statistics(self, documents: list[BratDocument]) -> dict[str, dict[str, Any]]:
         stats: dict[str, dict[str, Any]] = {}
 
         for doc in documents:

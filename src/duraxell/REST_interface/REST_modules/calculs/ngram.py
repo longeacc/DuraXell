@@ -55,9 +55,7 @@ def calculate_n_grams(df, current_entity, df_tf_results, ban_words_tfidf):
                                 n_grams[word][res] += 1
     sorted_n_grams = {}
     for keyword, ngram_dict in n_grams.items():
-        sorted_n_grams[keyword] = dict(
-            sorted(ngram_dict.items(), key=lambda x: x[1], reverse=True)
-        )
+        sorted_n_grams[keyword] = dict(sorted(ngram_dict.items(), key=lambda x: x[1], reverse=True))
 
     return sorted_n_grams
 
@@ -87,8 +85,7 @@ def treate_n_grams(n_grams, maximum_n_gram):
                         existing_keyword
                     ].items():
                         if (
-                            current_gram in existing_gram
-                            or existing_gram in current_gram
+                            current_gram in existing_gram or existing_gram in current_gram
                         ) and existing_occurrence == current_occurrence:
                             if len(current_gram) > len(existing_gram):
                                 to_remove = [existing_keyword, existing_gram]
@@ -98,9 +95,7 @@ def treate_n_grams(n_grams, maximum_n_gram):
                 if to_remove:
                     if to_remove != current_gram:
                         del treated_n_grams[to_remove[0]][to_remove[1]]
-                        treated_n_grams[current_keyword][current_gram] = (
-                            current_occurrence
-                        )
+                        treated_n_grams[current_keyword][current_gram] = current_occurrence
                 elif i < maximum_n_gram:
                     treated_n_grams[current_keyword][current_gram] = current_occurrence
                     i += 1

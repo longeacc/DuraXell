@@ -176,9 +176,7 @@ class TemplatabilityScorer:
         bonus_semantic = 0.0
         # Check for numeric patterns, symbols
         has_digit = any("D" in p for p in unique_patterns)
-        has_symbol = any(
-            c in p for p in unique_patterns for c in ["%", "+", "-", ">", "<"]
-        )
+        has_symbol = any(c in p for p in unique_patterns for c in ["%", "+", "-", ">", "<"])
         if has_symbol:
             bonus_semantic += 0.1
         if has_digit and structure_consistency > 0.6:

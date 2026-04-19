@@ -32,9 +32,7 @@ def check_spacing_regex_locations(spacing_regex, path, len_constant):
             txt_files.append(filename)
 
     for filename in txt_files:
-        with open(
-            os.path.join(path, filename), newline="", encoding="utf-8"
-        ) as file:
+        with open(os.path.join(path, filename), newline="", encoding="utf-8") as file:
             text = file.read().lower()
             for match in re.finditer(regex, text):
                 place_start = match.start()
@@ -182,9 +180,7 @@ def create_accordion_recommendations(list_spacing_regex, path, current_entity, d
                 spacing_regex_values = df_spacing_regex_results[
                     ["value", "distance"]
                 ].values.tolist()
-                fig = create_fig_recommandation(
-                    spacing_regex_values, str(spacing_regex[2])
-                )
+                fig = create_fig_recommandation(spacing_regex_values, str(spacing_regex[2]))
                 import io
 
                 import IPython.display as display

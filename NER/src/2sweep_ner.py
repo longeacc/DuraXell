@@ -47,9 +47,7 @@ def build_dataset(data_dir: str) -> tuple[DatasetDict, list[str]]:
     train_t, train_y = read_conll(os.path.join(data_dir, "train.conll"))
     dev_t, dev_y = read_conll(os.path.join(data_dir, "dev.conll"))
     test_t, test_y = read_conll(os.path.join(data_dir, "test.conll"))
-    labels = sorted(
-        set(tag for seqs in [train_y, dev_y, test_y] for s in seqs for tag in s)
-    )
+    labels = sorted(set(tag for seqs in [train_y, dev_y, test_y] for s in seqs for tag in s))
     ds = DatasetDict(
         {
             "train": Dataset.from_dict({"tokens": train_t, "ner_tags_str": train_y}),
@@ -113,9 +111,7 @@ def _norm_eval(metrics: dict) -> dict:
     """Normalize Trainer.evaluate() metrics to plain keys."""
     return {
         "f1": float(metrics.get("f1", metrics.get("eval_f1", 0.0))),
-        "precision": float(
-            metrics.get("precision", metrics.get("eval_precision", 0.0))
-        ),
+        "precision": float(metrics.get("precision", metrics.get("eval_precision", 0.0))),
         "recall": float(metrics.get("recall", metrics.get("eval_recall", 0.0))),
         # keep others if you like:
         "loss": float(metrics.get("loss", metrics.get("eval_loss", 0.0))),
@@ -249,12 +245,8 @@ def main():
         "weight_decay": [0.01],
         "warmup_ratio": [0.1],
         "freeze_layers": [0, 2],
-        "gradient_accumulation_steps": [
-            4
-        ],  # Increased to 4 to keep effective batch size = 16
-        "per_device_eval_batch_size": [
-            4
-        ],  # Reduced from 16 to 4 to prevent OOM during evaluation
+        "gradient_accumulation_steps": [4],  # Increased to 4 to keep effective batch size = 16
+        "per_device_eval_batch_size": [4],  # Reduced from 16 to 4 to prevent OOM during evaluation
     }
 
     fieldnames = [
@@ -335,12 +327,8 @@ def main():
                                         newline="",
                                         encoding="utf-8",
                                     ) as f:
-                                        csv.DictWriter(
-                                            f, fieldnames=fieldnames
-                                        ).writerow(row)
-                                    if (best is None) or (
-                                        row["dev_f1"] > best["dev_f1"]
-                                    ):
+                                        csv.DictWriter(f, fieldnames=fieldnames).writerow(row)
+                                    if (best is None) or (row["dev_f1"] > best["dev_f1"]):
                                         best = row
                                     print(
                                         f"[RUN] {model_id} sd{seed} lr={lr} bs={bs} ep={ep} wd={wd} wr={wr} frz={frz} "
@@ -355,13 +343,11 @@ def main():
 if __name__ == "__main__":
     main()
 try:
-    t = globals().get('tracker')
+    t = globals().get("tracker")
     if t:
         t.stop()
 except Exception as e:
     print(
         f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
     )
-    print(
-        "Carbon emission tracking data could not be saved, but analysis results are preserved."
-    )
+    print("Carbon emission tracking data could not be saved, but analysis results are preserved.")

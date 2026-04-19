@@ -67,9 +67,7 @@ def test_extract_rules_success(orchestrator):
 
     # Patch eco2ai check to ensure simulation
     with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
-        res = orchestrator.extract(
-            "Patient has ER positive tumor.", "Estrogen_receptor"
-        )
+        res = orchestrator.extract("Patient has ER positive tumor.", "Estrogen_receptor")
 
     assert res.value == "Positive"
     assert res.method_used == "Rules"

@@ -31,9 +31,7 @@ def test_templatability_scores():
         "RO neg",
     ] * 10
     score_chaotic = scorer.compute_from_list(data_chaotic)
-    assert score_chaotic < 60.0, (
-        f"Expected < 60.0 for chaotic data, got {score_chaotic}"
-    )
+    assert score_chaotic < 60.0, f"Expected < 60.0 for chaotic data, got {score_chaotic}"
 
     # Cas 3 : Normalisation Regex
     # "HER2 3+" et "HER2 2+" devraient être vus comme similaires après normalisation "D+"

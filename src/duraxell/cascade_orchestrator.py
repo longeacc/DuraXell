@@ -95,9 +95,7 @@ class CascadeOrchestrator:
 
         # 1. Déterminer la méthode recommandée par l'arbre de décision
         entity_cfg = self._get_entity_config(entity_type)
-        recommended_method = entity_cfg.get(
-            "method", "LLM"
-        )  # Fallback sûr : escalade maximale
+        recommended_method = entity_cfg.get("method", "LLM")  # Fallback sûr : escalade maximale
         max_level = self.METHOD_MAX_LEVEL.get(recommended_method, 3)
 
         result = None
@@ -180,9 +178,7 @@ class CascadeOrchestrator:
         if self.ner_model:
             try:
                 if self.energy_tracker:
-                    with self.energy_tracker.measure(
-                        "Transformer", entity_type
-                    ) as metrics:
+                    with self.energy_tracker.measure("Transformer", entity_type) as metrics:
                         res = self.ner_model.predict(text, entity_type)
                     if res and metrics:
                         res.energy_kwh = metrics.get("kwh", 0.0)
@@ -215,9 +211,7 @@ class CascadeOrchestrator:
         # Mock
         return ExtractionResult(entity_type, None, "LLM", 0.0, energy, 4)
 
-    def extract_batch(
-        self, documents: list[str], entity_types: list[str]
-    ) -> pd.DataFrame:
+    def extract_batch(self, documents: list[str], entity_types: list[str]) -> pd.DataFrame:
         """Traitement par lot."""
         results = []
         for i, doc in enumerate(documents):
@@ -235,9 +229,7 @@ if __name__ == "__main__":
         def predict(self, text, entity):
             # Simulation simple : si le mot clé est présent, on renvoie un succès
             if entity == "Estrogen_receptor" and "Estrogen Receptor" in text:
-                return ExtractionResult(
-                    entity, "positive (100%)", "Rules", 0.95, 1e-6, 1
-                )
+                return ExtractionResult(entity, "positive (100%)", "Rules", 0.95, 1e-6, 1)
             if entity == "HER2" and "HER2" in text:
                 return ExtractionResult(entity, "negative", "Rules", 0.95, 1e-6, 1)
             return ExtractionResult(entity, None, "Rules", 0.0, 1e-6, 1)
@@ -264,9 +256,7 @@ if __name__ == "__main__":
             result = orch.extract(doc, entity)
 
             print(f"  > Entité: {entity}")
-            print(
-                f"    - Méthode choisie : {result.method_used} (Niveau {result.cascade_level})"
-            )
+            print(f"    - Méthode choisie : {result.method_used} (Niveau {result.cascade_level})")
             print(f"    - Valeur extraite : {result.value}")
             print(f"    - Énergie estimée : {result.energy_kwh:.8f} kWh")
 

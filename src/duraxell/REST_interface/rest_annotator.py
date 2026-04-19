@@ -131,15 +131,11 @@ class RESTAnnotator:
                     ctx_right = text[end : min(len(text), end + 50)]
 
                     anns.append(
-                        BratAnnotation(
-                            doc_id, ent_type, start, end, span_text, ctx_left, ctx_right
-                        )
+                        BratAnnotation(doc_id, ent_type, start, end, span_text, ctx_left, ctx_right)
                     )
         return anns
 
-    def export_to_brat(
-        self, annotations: list[BratAnnotation], output_dir: str = None
-    ) -> None:
+    def export_to_brat(self, annotations: list[BratAnnotation], output_dir: str = None) -> None:
         """Exporte en format .ann (BRAT)."""
         out = output_dir or self.output_dir
 

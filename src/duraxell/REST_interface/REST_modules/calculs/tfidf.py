@@ -44,9 +44,7 @@ def calculate_tfidf(ent_cat, df):
     for entity, words in tf_results.items():
         for word, occurrence in words.items():
             df_tf_results.append((entity, word, occurrence, 0))
-    df_tf_results = pd.DataFrame(
-        df_tf_results, columns=["entity", "word", "occurrences", "tfidf"]
-    )
+    df_tf_results = pd.DataFrame(df_tf_results, columns=["entity", "word", "occurrences", "tfidf"])
 
     # Calculation of b,c,d and tfidf
     nbr_entities = len(ent_cat)  # c
@@ -54,9 +52,9 @@ def calculate_tfidf(ent_cat, df):
         current_df = df_tf_results.loc[df_tf_results["entity"] == ent]
         tot_nbr_words_in_entity = current_df["occurrences"].sum()  # b
         for index, row in current_df.iterrows():
-            tot_apparition_word_in_entities = df_tf_results[
-                df_tf_results["word"] == row["word"]
-            ]["word"].count()
+            tot_apparition_word_in_entities = df_tf_results[df_tf_results["word"] == row["word"]][
+                "word"
+            ].count()
             idf = math.log(nbr_entities / tot_apparition_word_in_entities)
             tf = row["occurrences"] / tot_nbr_words_in_entity
             df_tf_results.at[index, "tfidf"] = tf * idf
@@ -115,8 +113,7 @@ def attribution_tf_occurrences(top_tfidf_words, df_tf_results, current_entity):
     (list) : List of the topwords with the highest tfidf for the current selected entity paired with their occurrences.
     """
     tab = df_tf_results[
-        (df_tf_results["entity"] == current_entity)
-        & (df_tf_results["word"].isin(top_tfidf_words))
+        (df_tf_results["entity"] == current_entity) & (df_tf_results["word"].isin(top_tfidf_words))
     ]
     tab = tab.sort_values(by="tfidf", ascending=False)
     tf_occurrences = tab[["word", "occurrences"]].values.tolist()

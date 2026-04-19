@@ -129,15 +129,7 @@ def generate_spacing_word(word, spacing):
             x = spacing
 
         spacing_word = (
-            "("
-            + words1
-            + ")"
-            + "((?!"
-            + words1
-            + f")[^.?!]){{0,{x}}}?"
-            + "("
-            + words2
-            + ")"
+            "(" + words1 + ")" + "((?!" + words1 + f")[^.?!]){{0,{x}}}?" + "(" + words2 + ")"
         )
         len_spacing_word = len(word1) + len(word2)
         return spacing_word, len_spacing_word

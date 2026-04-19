@@ -86,12 +86,8 @@ else:
     entity_metrics = {}
     calculator = MetricsCalculator()
     for entity_type in st.session_state["entity_stats"].keys():
-        metrics = calculator.compute_all_metrics(
-            st.session_state["corpus"], entity_type
-        )
-        routing, justification = compute_routing(
-            metrics, st.session_state["thresholds"]
-        )
+        metrics = calculator.compute_all_metrics(st.session_state["corpus"], entity_type)
+        routing, justification = compute_routing(metrics, st.session_state["thresholds"])
 
         # Composant Composite Mathématique "Pur" (score C de la page 20 appliqué en data-driven)
         f1_proxy = metrics.get("Feas", 0.0)
@@ -99,9 +95,7 @@ else:
         energy_norm = metrics.get("He", 0.0)
         risk_score = metrics.get("R", 0.0)
 
-        c_score = ((0.4 * f1_proxy) + (0.3 * expl_score) + (0.3 * energy_norm)) * (
-            1.0 - risk_score
-        )
+        c_score = ((0.4 * f1_proxy) + (0.3 * expl_score) + (0.3 * energy_norm)) * (1.0 - risk_score)
 
         entity_metrics[entity_type] = {
             **metrics,
@@ -125,9 +119,7 @@ else:
     with col1:
         st.subheader("Radar Chart")
         if not df.empty:
-            selected_entity = st.selectbox(
-                "Sélectionner une entité", df["Entity"].tolist()
-            )
+            selected_entity = st.selectbox("Sélectionner une entité", df["Entity"].tolist())
             if selected_entity:
                 entity_data = df[df["Entity"] == selected_entity].iloc[0]
                 metrics_radar = ["Te", "He", "R", "Feas", "C"]
@@ -135,16 +127,12 @@ else:
                 # Fermer le polygone du radar chart
                 r_vals.append(r_vals[0])
                 theta_vals = metrics_radar + [metrics_radar[0]]
-                fig = go.Figure(
-                    data=go.Scatterpolar(r=r_vals, theta=theta_vals, fill="toself")
-                )
+                fig = go.Figure(data=go.Scatterpolar(r=r_vals, theta=theta_vals, fill="toself"))
                 fig.update_layout(
                     polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
                     showlegend=False,
                 )
-                st.plotly_chart(
-                    fig, use_container_width=True, key=f"radar_{selected_entity}"
-                )
+                st.plotly_chart(fig, use_container_width=True, key=f"radar_{selected_entity}")
         else:
             st.info("Aucune donnée extraite pour le moment.")
 
@@ -168,9 +156,7 @@ else:
     st.subheader("Heatmap Métriques")
     if not df.empty:
         heatmap_df = df.set_index("Entity")[["Te", "He", "R", "Feas", "C"]]
-        fig_heat = px.imshow(
-            heatmap_df.T, color_continuous_scale="RdYlGn", aspect="auto"
-        )
+        fig_heat = px.imshow(heatmap_df.T, color_continuous_scale="RdYlGn", aspect="auto")
         st.plotly_chart(fig_heat, use_container_width=True)
     else:
         st.info("Aucune entité détectée dans le corpus pour afficher les graphiques.")
@@ -185,6 +171,4 @@ else:
         }.get(val, "")
 
     if not df.empty:
-        st.dataframe(
-            df.style.map(color_routing, subset=["Routing"]), use_container_width=True
-        )
+        st.dataframe(df.style.map(color_routing, subset=["Routing"]), use_container_width=True)

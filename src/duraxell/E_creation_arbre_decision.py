@@ -64,9 +64,7 @@ class DecisionTreeBuilder:
     # Nombre minimum d'occurrences pour que Te soit fiable (Aligné avec THRESHOLDS_JUSTIFICATION.md)
     MIN_TE_SAMPLES = 10
 
-    def validate_thresholds_kfold(
-        self, entities_metrics: dict[str, dict[str, float]], k: int = 5
-    ):
+    def validate_thresholds_kfold(self, entities_metrics: dict[str, dict[str, float]], k: int = 5):
         """
         Validation croisée k-fold sur les seuils : partitionner le corpus en k plis,
         calibrer les seuils sur k-1 plis, mesurer la stabilité des décisions sur le pli restant.
@@ -91,16 +89,12 @@ class DecisionTreeBuilder:
             train_entities = [ent for j, f in enumerate(folds) if j != i for ent in f]
 
             # Simulation d'une calibration : modification mineure d'un seuil basée sur le train set
-            train_te_vals = sorted(
-                [entities_metrics[ent].get("Te", 0.0) for ent in train_entities]
-            )
+            train_te_vals = sorted([entities_metrics[ent].get("Te", 0.0) for ent in train_entities])
             if train_te_vals:
                 # 75e percentile manuel
                 idx = int(len(train_te_vals) * 0.75)
                 calibrated_te_high = (
-                    train_te_vals[idx]
-                    if idx < len(train_te_vals)
-                    else self.THRESHOLDS["TE_HIGH"]
+                    train_te_vals[idx] if idx < len(train_te_vals) else self.THRESHOLDS["TE_HIGH"]
                 )
             else:
                 calibrated_te_high = self.THRESHOLDS["TE_HIGH"]
@@ -173,13 +167,9 @@ class DecisionTreeBuilder:
                         f"Non (R={r_score:.3f} > {self.THRESHOLDS['R_MAX']}) → Feas++ ?"
                     )
             else:
-                path_trace.append(
-                    f"Non (He={he:.1f} < {self.THRESHOLDS['HE_HIGH']}) → Feas++ ?"
-                )
+                path_trace.append(f"Non (He={he:.1f} < {self.THRESHOLDS['HE_HIGH']}) → Feas++ ?")
         else:
-            path_trace.append(
-                f"Non (Te={te:.1f} < {self.THRESHOLDS['TE_HIGH']}) → Feas++ ?"
-            )
+            path_trace.append(f"Non (Te={te:.1f} < {self.THRESHOLDS['TE_HIGH']}) → Feas++ ?")
 
         # NOEUD 4 : Faisabilité TBM ?
         if feas >= self.THRESHOLDS["FEAS_TBM"]:
@@ -190,9 +180,7 @@ class DecisionTreeBuilder:
                 "trace": path_trace,
             }
         else:
-            path_trace.append(
-                f"Non (Feas={feas:.3f} < {self.THRESHOLDS['FEAS_TBM']}) → [LLM]"
-            )
+            path_trace.append(f"Non (Feas={feas:.3f} < {self.THRESHOLDS['FEAS_TBM']}) → [LLM]")
             return {
                 "method": "LLM",
                 "justification": f"Feas={feas:.3f}<{self.THRESHOLDS['FEAS_TBM']} — Escalade vers LLM nécessaire.",
@@ -272,9 +260,7 @@ def load_metrics_from_csv(results_dir: Path):
                 reader = csv.DictReader(f)
                 for row in reader:
                     # Try different column headers for Entity name
-                    ent = (
-                        row.get("Entity") or row.get("Entity_Type") or row.get("Entité")
-                    )
+                    ent = row.get("Entity") or row.get("Entity_Type") or row.get("Entité")
                     if not ent:
                         continue
 
@@ -355,13 +341,9 @@ def main():
                     metrics_db[ent] = {"Yield": f1}  # If missing in other stats
             print("Annotation Yield computed.")
         except NameError:
-            print(
-                "AnnotationYieldScorer class not found (import failed). Skipping Yield."
-            )
+            print("AnnotationYieldScorer class not found (import failed). Skipping Yield.")
     else:
-        print(
-            f"Warning: GS/Pred folders not found for Yield calculation.\nScan path: {gs_dir}"
-        )
+        print(f"Warning: GS/Pred folders not found for Yield calculation.\nScan path: {gs_dir}")
 
     # 3. Build Tree
     builder = DecisionTreeBuilder(config_file)

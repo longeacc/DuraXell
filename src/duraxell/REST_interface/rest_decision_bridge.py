@@ -47,9 +47,7 @@ class RESTDecisionBridge:
                         "rest_decision": rest_decision,
                         "metrics_delta": {
                             "empirical_te": report.empirical_te,
-                            "theoretical_te": top_down_entry.get("metrics", {}).get(
-                                "Te", "N/A"
-                            ),
+                            "theoretical_te": top_down_entry.get("metrics", {}).get("Te", "N/A"),
                         },
                     }
                 )
@@ -67,11 +65,7 @@ class RESTDecisionBridge:
         m = method.upper()
         if m in ["RULES", "REGLES"] or "RÈGLES" in m:
             return "REGLES"
-        if (
-            m in ["ML", "ML_NER", "ML_CRF", "TRANSFORMER"]
-            or "ML" in m
-            or "TRANSFORMER" in m
-        ):
+        if m in ["ML", "ML_NER", "ML_CRF", "TRANSFORMER"] or "ML" in m or "TRANSFORMER" in m:
             return "ML"
         if "LLM" in m:
             return "LLM"

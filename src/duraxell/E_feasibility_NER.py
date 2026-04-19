@@ -147,9 +147,7 @@ def compute_feasibility():
         from E_annotation_yield import AnnotationYieldScorer
 
         gs_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_GS"
-        pred_dir = (
-            script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"
-        )
+        pred_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"
         if gs_dir.exists() and pred_dir.exists():
             scorer = AnnotationYieldScorer(gs_dir, pred_dir)
             raw_scores = scorer.compute_all()
@@ -197,9 +195,7 @@ def compute_feasibility():
         te_penalty = max(0, (100.0 - te) / 300.0)  # 0 when Te=100, 0.33 when Te=0
 
         # Combiner MMD calculé et heuristiques
-        domain_shift = round(
-            min(1.0, base_shift + he_penalty + te_penalty + mmd_val * 0.1), 3
-        )
+        domain_shift = round(min(1.0, base_shift + he_penalty + te_penalty + mmd_val * 0.1), 3)
 
         # -- LLM Necessity: when do we NEED an LLM? --
         # High when: low yield, high risk, low feasibility, low homogeneity
@@ -220,9 +216,7 @@ def compute_feasibility():
                 "LLM_Necessity": llm_necessity,
             }
         )
-        print(
-            f"  {ent}: Feas={feas}, DS={domain_shift}, LLM_N={llm_necessity}, Yield={yld:.3f}"
-        )
+        print(f"  {ent}: Feas={feas}, DS={domain_shift}, LLM_N={llm_necessity}, Yield={yld:.3f}")
 
     out_file = results_dir / "ner_feasibility_analysis.csv"
     out_file.parent.mkdir(parents=True, exist_ok=True)

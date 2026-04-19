@@ -17,18 +17,14 @@ class ConvergenceAnalyzer:
         Génère un rapport texte et des graphiques simples.
         """
         print("\n--- RAPPORT DE CONVERGENCE DURAXELL ---")
-        print(
-            f"Taux de concordance global : {bridge_report['concordance_rate'] * 100:.1f}%"
-        )
+        print(f"Taux de concordance global : {bridge_report['concordance_rate'] * 100:.1f}%")
 
         divs = bridge_report.get("divergences", [])
         print(f"Nombre de divergences : {len(divs)}")
 
         if divs:
             print("\nDétail des divergences (Top-Down vs Bottom-Up):")
-            print(
-                f"{'ENTITE':<25} | {'ARBRE':<15} | {'REST (EMPIRIQUE)':<15} | {'DELTA Te'}"
-            )
+            print(f"{'ENTITE':<25} | {'ARBRE':<15} | {'REST (EMPIRIQUE)':<15} | {'DELTA Te'}")
             print("-" * 75)
             for div in divs:
                 ent = div["entity"]

@@ -111,9 +111,7 @@ def bloc4_pareto(df_perf, df_expl, df_energy):
             else 0.01
         )
 
-        score = scorer.compute(
-            f1=row["F1_Score"], method=method_key, energy_kwh=energy_val
-        )
+        score = scorer.compute(f1=row["F1_Score"], method=method_key, energy_kwh=energy_val)
         results.append(
             {
                 "Biomarqueur": row["Biomarqueur"],
@@ -152,9 +150,7 @@ def bloc6_figures(df_perf, df_expl, df_energy, df_pareto):
 
     # 1. Heatmap des performances
     plt.figure(figsize=(8, 6))
-    pivot_perf = df_perf.pivot(
-        index="Biomarqueur", columns="Méthode", values="F1_Score"
-    )
+    pivot_perf = df_perf.pivot(index="Biomarqueur", columns="Méthode", values="F1_Score")
     sns.heatmap(pivot_perf, annot=True, cmap="YlGnBu", vmin=0, vmax=1)
     plt.title("Performance (F1-Score) par Biomarqueur et Méthode")
     plt.tight_layout()
