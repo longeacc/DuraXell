@@ -25,6 +25,6 @@ def test_decision_tree_logic():
     res4 = builder.analyze_entity("RiskyEntity", metrics_risky)
     assert res4["method"] == "TBM"
 
-    metrics_low_count = {"Te": 90.0, "Te_count": 5, "He": 80.0, "R": 0.1, "Feas": 0.8}
+    metrics_low_count = {"Te": 90.0, "Te_count": 1, "He": 80.0, "R": 0.1, "Feas": 0.8}
     res5 = builder.analyze_entity("RareRisky", metrics_low_count)
     assert res5["method"] == "TBM"
