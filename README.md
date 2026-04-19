@@ -1,5 +1,9 @@
 # DuraXELL : Sustainable Information Extraction for LLM en Cancérologie
 
+[![CI](https://github.com/longeacc/DuraXell/actions/workflows/ci.yml/badge.svg)](https://github.com/longeacc/DuraXell/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://python.org)
+
 DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) conçu pour optimiser le **Trilemme : Performance, Explicabilité, Frugalité**. Au lieu d'utiliser systématiquement des LLM très coûteux en énergie, DuraXELL utilise un arbre de décision pour router chaque entité vers la méthode la plus légère possible (Règles > ML > Transformer > LLM).
 
 ## Architecture arbre de décision
@@ -12,14 +16,14 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
 | Biomarqueur | Méthode Recommandée | F1-Score | Énergie (kWh) | Score Composite |
 |-------------|---------------------|----------|---------------|-----------------|
 | ER          | Règles              | 0.95     | 0.000001      | 0.98            |
-| Ki67        | ML_CRF              | 0.82     | 0.000050      | 0.85            |
+| Ki67        | TBM                 | 0.82     | 0.000050      | 0.85            |
 
 ## Installation et Exécution Reproductible
 
 1. **Cloner le dépôt** :
 
    ```bash
-   git clone <url_du_repo>
+   git clone https://github.com/longeacc/DuraXell.git
    cd DuraXELL
    ```
 
@@ -41,7 +45,7 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
    Ou exécutez le script de rapport :
 
    ```bash
-   python run_full_pipeline_report.py
+   python scripts/run_full_pipeline_report.py
    ```
 
 ## Références et Citation

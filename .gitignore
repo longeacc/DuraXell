@@ -45,7 +45,8 @@ ESMO2025/REST_interface/cantemist-fr.rar
 NER/models/
 **/Breast/*
 ESMO2025/Breast/*
-data/
+data/*
+!data/README.md
 # Fichiers générés
 decision_config.json
 output_decision.txt
