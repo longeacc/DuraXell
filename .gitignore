@@ -63,3 +63,11 @@ models/sweeps/
 
 # Scripts de maintenance
 modifications.ps1
+
+# Artefacts runtime
+logs/*
+!logs/.gitkeep
+config/jupyter_server_config.json
+# Typos à ne jamais re-tracker
+ESMO2025/Consumtion_of_Duraxell.csv
+breast_cancer_biomarker_eval_summary.csv
