@@ -1,4 +1,4 @@
-﻿# Changelog
+# Changelog
 
 ## [0.3.0] - 2026-04-19
 ### Changed
@@ -11,4 +11,4 @@
 - CITATION.cff, CHANGELOG.md, data/README.md
 
 ### Fixed
-- Régression (fichiers réajoutés)
+- Régression du commit c0d5795 (4 fichiers réajoutés)

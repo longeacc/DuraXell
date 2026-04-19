@@ -1,36 +1,3 @@
-﻿Set-StrictMode -Version Latest
-$ErrorActionPreference = "Continue"
-
-Write-Host "=== PHASE 3A : PURGE DES RÉGRESSIONS ===" -ForegroundColor Cyan
-
-$toUntrack = @(
-    "ESMO2025/REST_interface/Results/figures/convergence_pie_chart.png",
-    "ESMO2025/REST_interface/logo.png",
-    "NER/sweep_results (copie).csv",
-    "breast_cancer_biomarker_eval_summary.csv",
-    "ESMO2025/REST_interface/Présentation Oral de stage.pptx",
-    "ESMO2025/Consumtion_of_Duraxell.csv",
-    "logs/output_decision.txt",
-    "config/jupyter_server_config.json"
-)
-foreach ($f in $toUntrack) {
-    git rm --cached -- "$f" 2>$null
-    if ($LASTEXITCODE -eq 0) { Write-Host "   Retiré: $f" -ForegroundColor DarkGray }
-}
-
-git ls-files -z "*.pptx" "*.pdf" "*.rar" | ForEach-Object {
-    if ($_) { git rm --cached -- $_ 2>$null }
-}
-
-Write-Host "
-=== PHASE 3B : REQUIREMENTS.TXT SYNCHRONISÉ ===" -ForegroundColor Cyan
-git rm --cached requirements.txt 2>$null
-Remove-Item requirements.txt -ErrorAction SilentlyContinue
-Write-Host "   requirements.txt supprimé" -ForegroundColor Green
-
-Write-Host "
-=== PHASE 3C : CITATION.cff + CHANGELOG.md ===" -ForegroundColor Cyan
-@"
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "DuraXELL: Sustainable Information Extraction for Oncology NLP"
