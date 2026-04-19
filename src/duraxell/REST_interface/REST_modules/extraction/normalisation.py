@@ -1,5 +1,13 @@
 import copy
 import glob
+
+load_cantemist = False
+try:
+    from googletrans import Translator
+    translator = Translator()
+except ImportError:
+    translator = None
+
 import re
 
 import pandas as pd

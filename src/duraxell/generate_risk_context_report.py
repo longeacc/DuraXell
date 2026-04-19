@@ -373,7 +373,7 @@ if __name__ == "__main__":
         print(f"Error: {e}")
 
 try:
-    tracker.stop()
+    t = globals().get('tracker'); t and t.stop()
 except Exception as e:
     print(
         f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
