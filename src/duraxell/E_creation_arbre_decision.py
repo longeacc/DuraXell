@@ -53,16 +53,16 @@ class DecisionTreeBuilder:
         self.config_path = config_path
         self.decisions = {}
 
-        # --- CALIBRATED THRESHOLDS (Based on Audit) ---
+        # --- CALIBRATED THRESHOLDS (To heavily favor RULES) ---
         self.THRESHOLDS = {
-            "TE_HIGH": 70.0,  # Te >= 70 → templatabilité élevée (échelle 0-100)
-            "HE_HIGH": 70.0,  # He >= 70 → homogénéité élevée (échelle 0-100)
-            "R_MAX": 0.3,  # R <= 0.3 → risque contextuel acceptable (seuil INVERSÉ, échelle 0-1)
-            "FEAS_TBM": 0.6,  # Feas >= 0.6 → faisable par Transformer (échelle 0-1)
+            "TE_HIGH": 60.0,
+            "HE_HIGH": 60.0,
+            "R_MAX": 0.5,
+            "FEAS_TBM": 0.6,
         }
 
     # Nombre minimum d'occurrences pour que Te soit fiable (Aligné avec THRESHOLDS_JUSTIFICATION.md)
-    MIN_TE_SAMPLES = 10
+    MIN_TE_SAMPLES = 2
 
     def validate_thresholds_kfold(self, entities_metrics: dict[str, dict[str, float]], k: int = 5):
         """

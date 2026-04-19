@@ -11,10 +11,10 @@ def compute_routing(metrics: dict[str, float], thresholds: dict[str, float]) -> 
     Returns:
         Tuple (méthode, justification).
     """
-    te: float = metrics.get("te", 0)
-    he: float = metrics.get("he", 0)
-    r: float = metrics.get("r", 0)
-    feas: float = metrics.get("feas", 0)
+    te: float = metrics.get("Te", metrics.get("te", 0.0))
+    he: float = metrics.get("He", metrics.get("he", 0.0))
+    r: float = metrics.get("R", metrics.get("r", 0.0))
+    feas: float = metrics.get("Feas", metrics.get("feas", 0.0))
 
     # Seuils par défaut (échelle 0-1, cohérent avec metrics.py)
     t_te: float = thresholds.get("Te", 0.70)
