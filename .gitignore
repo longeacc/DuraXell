@@ -78,4 +78,12 @@ logs/*
 config/jupyter_server_config.json
 # Typos Ã  ne jamais re-tracker
 ESMO2025/Consumtion_of_Duraxell.csv
-breast_cancer_biomarker_eval_summary.csv
+breast_cancer_biomarker_eval_summary.csv# Fichiers purgés manuellement
+ESMO2025/REST_interface/Results/
+ESMO2025/REST_interface/logo.png
+NER/sweep_results (copie).csv
+
+# Fichiers ignores
+ESMO2025/REST_interface/Results/
+ESMO2025/REST_interface/logo.png
+NER/sweep_results (copie).csv
