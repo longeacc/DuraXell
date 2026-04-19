@@ -42,7 +42,7 @@ def get_real_embeddings_mmd(script_dir: Path, n_samples: int = 50) -> float:
     """
     try:
         import torch
-        from transformers import AutoTokenizer, AutoModel
+        from transformers import AutoModel, AutoTokenizer
 
         # Load texts
         source_texts = []
@@ -96,7 +96,6 @@ def get_real_embeddings_mmd(script_dir: Path, n_samples: int = 50) -> float:
 def compute_feasibility():
     print("Computing NER Feasibility per entity...")
     script_dir = Path(__file__).parent
-    root_dir = script_dir.parent
     results_dir = script_dir / "Rules/Results"
 
     # 1. Load Frequencies
@@ -104,7 +103,7 @@ def compute_feasibility():
     frequencies = {}
 
     if freq_file.exists():
-        with open(freq_file, "r", encoding="utf-8") as f:
+        with open(freq_file, encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ent = row.get("Entity") or row.get("Entity_Type") or row.get("Entité")
@@ -115,7 +114,7 @@ def compute_feasibility():
     he_file = results_dir / "homogeneity_analysis.csv"
     homogeneity = {}
     if he_file.exists():
-        with open(he_file, "r", encoding="utf-8") as f:
+        with open(he_file, encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ent = row.get("Entity")
@@ -126,7 +125,7 @@ def compute_feasibility():
     risk_file = results_dir / "risk_context_analysis.csv"
     risk_scores = {}
     if risk_file.exists():
-        with open(risk_file, "r", encoding="utf-8") as f:
+        with open(risk_file, encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ent = row.get("Entity")
@@ -137,7 +136,7 @@ def compute_feasibility():
     te_file = results_dir / "templatability_analysis.json"
     templatability = {}
     if te_file.exists():
-        with open(te_file, "r", encoding="utf-8") as f:
+        with open(te_file, encoding="utf-8") as f:
             data = json.load(f)
             for ent, vals in data.items():
                 templatability[ent] = vals.get("templatability_score", 0.0)
@@ -244,9 +243,12 @@ if __name__ == "__main__":
         if HAS_ECO2AI:
             tracker.stop()
     except Exception as e:
-        print(
-            f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
+        msg = (
+            "\nWarning: Generalized error in Eco2AI tracking "
+            "(likely 'N/A' vs float dtype issue): "
+            f"{e}"
         )
+        print(msg)
         print(
             "Carbon emission tracking data could not be saved, but analysis results are preserved."
         )

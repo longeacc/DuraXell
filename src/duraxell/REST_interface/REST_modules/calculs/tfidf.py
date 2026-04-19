@@ -85,9 +85,9 @@ def attribution_tf(ent, nbr, df_tf_results, banwords):
     words = []
     i = 0
 
-    for index, row in top_words.get_group(ent).iterrows():
+    for _index, row in top_words.get_group(ent).iterrows():
         word = row["word"]
-        occurrences = row["occurrences"]
+        row["occurrences"]
         if (
             word != ""
             and not re.search("[" + re.escape("".join(categoryStopList)) + "]", word)
@@ -154,7 +154,7 @@ def calculate_homogeneity_score(df, ent_cat, k_sigmoid):
 
     for entity in ent_cat:
         total_words = []
-        for index, row in df[df["entity"] == entity].iterrows():
+        for _index, row in df[df["entity"] == entity].iterrows():
             for stem in row["stems"]:
                 total_words.extend([stem] * row["occurrences"])
         score = (len(total_words) - len(set(total_words))) / len(total_words)

@@ -1,9 +1,9 @@
 import copy
+import csv
 import json
 import os
 import sys
 from pathlib import Path
-import csv
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from E_creation_arbre_decision import DecisionTreeBuilder
@@ -14,7 +14,7 @@ def load_real_metrics(results_dir: Path) -> dict:
 
     freq_file = results_dir / "frequency_analysis.csv"
     if freq_file.exists():
-        with open(freq_file, "r", encoding="utf-8") as f:
+        with open(freq_file, encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 ent = row.get("Entity") or row.get("Entity_Type")
                 if ent:
@@ -24,7 +24,7 @@ def load_real_metrics(results_dir: Path) -> dict:
 
     he_file = results_dir / "homogeneity_analysis.csv"
     if he_file.exists():
-        with open(he_file, "r", encoding="utf-8") as f:
+        with open(he_file, encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 ent = row.get("Entity")
                 if ent:
@@ -35,7 +35,7 @@ def load_real_metrics(results_dir: Path) -> dict:
     te_file = results_dir / "templatability_analysis.json"
     if te_file.exists():
         try:
-            with open(te_file, "r", encoding="utf-8") as f:
+            with open(te_file, encoding="utf-8") as f:
                 data = json.load(f)
                 for ent, vals in data.items():
                     metrics_db.setdefault(ent, {})["Te"] = vals.get(
@@ -47,7 +47,7 @@ def load_real_metrics(results_dir: Path) -> dict:
 
     risk_file = results_dir / "risk_context_analysis.csv"
     if risk_file.exists():
-        with open(risk_file, "r", encoding="utf-8") as f:
+        with open(risk_file, encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 ent = row.get("Entity")
                 if ent:
@@ -55,7 +55,7 @@ def load_real_metrics(results_dir: Path) -> dict:
 
     feas_file = results_dir / "ner_feasibility_analysis.csv"
     if feas_file.exists():
-        with open(feas_file, "r", encoding="utf-8") as f:
+        with open(feas_file, encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 ent = row.get("Entity")
                 if ent:
@@ -72,18 +72,13 @@ def load_real_metrics(results_dir: Path) -> dict:
 
 def run_sensitivity_analysis(
     metrics_data: dict,
-    thresholds_to_vary: list = [
-        "TE_MED",
-        "TE_HIGH",
-        "HE_HIGH",
-        "RISK_HIGH",
-        "YIELD_HIGH",
-        "FEAS_NER",
-        "DOMAIN_SHIFT_MAX",
-        "LLM_NEC_HIGH",
-    ],
-    perturbation_pct: list = [-0.2, -0.1, 0.1, 0.2],
+    thresholds_to_vary: list = None,
+    perturbation_pct: list = None,
 ):
+    if perturbation_pct is None:
+        perturbation_pct = [-0.2, -0.1, 0.1, 0.2]
+    if thresholds_to_vary is None:
+        thresholds_to_vary = ["TE_MED", "TE_HIGH", "HE_HIGH", "RISK_HIGH", "YIELD_HIGH", "FEAS_NER", "DOMAIN_SHIFT_MAX", "LLM_NEC_HIGH"]
     builder = DecisionTreeBuilder("dummy.json")
     base_thresholds = dict(builder.THRESHOLDS)
 

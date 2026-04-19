@@ -13,7 +13,7 @@ import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 # eco2ai dependencies
 try:
@@ -41,7 +41,7 @@ class BratAnnotation:
     end: int
     text: str
     entity_type: str
-    file_id: Optional[str] = None
+    file_id: str | None = None
 
 
 class TemplatabilityScorer:
@@ -50,7 +50,7 @@ class TemplatabilityScorer:
     Te mesure le degré de prédictibilité structurelle des patterns d'expression.
     """
 
-    def __init__(self, corpus: List[Dict[str, Any]]):
+    def __init__(self, corpus: list[dict[str, Any]]):
         """
         Initialize the scorer with a corpus of annotated documents.
 
@@ -82,7 +82,7 @@ class TemplatabilityScorer:
         # Cache for compute results
         self.results_cache = {}
 
-    def compute_from_list(self, values: List[str]) -> float:
+    def compute_from_list(self, values: list[str]) -> float:
         """
         Calcule le score Te directement depuis une liste de chaînes.
         """
@@ -115,7 +115,7 @@ class TemplatabilityScorer:
 
         return pattern
 
-    def _calculate_entropy(self, patterns: List[str]) -> float:
+    def _calculate_entropy(self, patterns: list[str]) -> float:
         """Calculate Shannon entropy of pattern distribution."""
         if not patterns:
             return 0.0
@@ -204,7 +204,7 @@ class TemplatabilityScorer:
 
         return Te
 
-    def compute_all(self) -> Dict[str, float]:
+    def compute_all(self) -> dict[str, float]:
         """Calcule Te pour toutes les entités du corpus (en %)."""
         scores = {}
         for entity_type in self.entities_values.keys():
@@ -235,7 +235,7 @@ class TemplatabilityScorer:
 # ==================================================================================
 
 
-def load_brat_corpus(data_dirs: List[str]) -> List[Dict[str, Any]]:
+def load_brat_corpus(data_dirs: list[str]) -> list[dict[str, Any]]:
     """
     Load annotations from BRAT files (.ann + .txt) into a corpus list.
     """
@@ -255,7 +255,7 @@ def load_brat_corpus(data_dirs: List[str]) -> List[Dict[str, Any]]:
 
             # Read annotations
             annotations = []
-            with open(ann_file, "r", encoding="utf-8") as f:
+            with open(ann_file, encoding="utf-8") as f:
                 for line in f:
                     line = line.strip()
                     if not line.startswith("T"):
@@ -290,7 +290,7 @@ def load_brat_corpus(data_dirs: List[str]) -> List[Dict[str, Any]]:
             txt_file = ann_file.with_suffix(".txt")
             text_content = ""
             if txt_file.exists():
-                with open(txt_file, "r", encoding="utf-8") as f:
+                with open(txt_file, encoding="utf-8") as f:
                     text_content = f.read()
 
             corpus.append(

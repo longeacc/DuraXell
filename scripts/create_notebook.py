@@ -148,7 +148,7 @@ cells.append(
 try:
     df_pareto = pd.read_csv('../Results/benchmark_pareto.csv')
     display(df_pareto.head())
-    
+
     plt.figure(figsize=(10, 6))
     sns.scatterplot(data=df_pareto, x="Energie_kWh", y="F1_Score", hue="Méthode", style="Biomarqueur", s=150)
     plt.xscale("log")

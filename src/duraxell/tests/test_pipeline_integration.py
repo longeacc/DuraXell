@@ -1,9 +1,10 @@
-import pandas as pd
 from unittest.mock import patch
 
+import pandas as pd
+
 from duraxell.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
-from duraxell.energy_tracker import EnergyTracker
 from duraxell.E_composite_scorer import CompositeScorer
+from duraxell.energy_tracker import EnergyTracker
 
 
 class MockRulesEngine:

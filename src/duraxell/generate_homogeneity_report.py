@@ -18,7 +18,7 @@ def generate_html_report(csv_file: str, output_file: str):
     # Load data from CSV
     data = []
     try:
-        with open(csv_file, "r", encoding="utf-8") as f:
+        with open(csv_file, encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 # Convert numeric fields back to float/int where possible
@@ -51,39 +51,39 @@ def generate_html_report(csv_file: str, output_file: str):
             body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; padding: 40px; color: #333; }
             .container { max-width: 1200px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
             h1 { color: #334155; text-align: center; margin-bottom: 20px; }
-            
+
             .method-box { background: #e0f2fe; border-left: 5px solid #0ea5e9; padding: 20px; margin-bottom: 30px; }
             .formula { font-family: monospace; font-weight: bold; font-size: 1.1em; color: #0369a1; background: rgba(255,255,255,0.5); padding: 5px; border-radius: 4px; display: inline-block; margin: 5px 0; }
-            
+
             table { width: 100%; border-collapse: collapse; margin-top: 20px; }
             th { background: #475569; color: white; padding: 12px; text-align: left; }
             td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
             tr:hover { background: #f8fafc; }
-            
+
             .badge { padding: 4px 10px; border-radius: 15px; font-weight: bold; color: white; font-size: 0.9em; }
             .high { background: #22c55e; }
             .medium { background: #f59e0b; }
             .low { background: #b91c1c; }
-            
+
             .footer { margin-top: 40px; text-align: center; font-size: 0.9em; color: #888; }
         </style>
     </head>
     <body>
         <div class="container">
             <h1>Homogénéité Linguistique (He) vs Templeabilité (Te)</h1>
-            
+
             <div class="method-box">
                 <h3>Méthodologie & Définitions</h3>
                 <p><strong>Homogénéité Linguistique (He):</strong> Mesure la redondance lexicale, c'est-à-dire la fréquence à laquelle le même vocabulaire est réutilisé pour une entité donnée.</p>
                 <p>Une homogénéité élevée indique un vocabulaire très contrôlé et répétitif (peu de variation dans les mots utilisés).</p>
-                
+
                 <p><strong>Formules:</strong></p>
                 <div class="formula">He = (TotalMots - MotsUniques) / TotalMots</div>
                 <br>
                 <div class="formula">Score = Sigmoïde(He)</div>
                 <p style="font-size: 0.9em; margin-top: 10px;"><em>Le score est normalisé par une fonction sigmoïde pour accentuer les différences proches de 0.5.</em></p>
             </div>
-            
+
             <table>
                 <thead>
                     <tr>
@@ -114,7 +114,7 @@ def generate_html_report(csv_file: str, output_file: str):
     html_content += """
                 </tbody>
             </table>
-            
+
             <div style="margin-top: 30px; font-size: 0.9em; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 20px;">
                 <p><strong>Note d'Interprétation:</strong></p>
                 <ul style="margin-top: 5px;">
@@ -123,7 +123,7 @@ def generate_html_report(csv_file: str, output_file: str):
                     <li>Ces deux métriques corrèlent souvent mais mesurent deux aspects distincts de la qualité des données (Lexical vs Structurel).</li>
                 </ul>
             </div>
-            
+
             <div class="footer">Rapport généré automatiquement - ESMO 2025</div>
         </div>
     </body>

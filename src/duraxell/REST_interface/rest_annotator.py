@@ -2,7 +2,6 @@ import os
 import re
 import time
 from datetime import datetime
-from typing import List, Tuple
 
 
 class BratAnnotation:
@@ -61,15 +60,10 @@ class RESTAnnotator:
 
     def annotate_batch(
         self,
-        documents: List[Tuple[str, str]],  # List of (doc_id, text) tuples
-        entity_types: List[str] = [
-            "Estrogen_receptor",
-            "Progesterone_receptor",
-            "HER2",
-            "Ki67",
-        ],
+        documents: list[tuple[str, str]],  # List of (doc_id, text) tuples
+        entity_types: list[str] = None,
         mode: str = "highlighting",
-    ) -> List[BratAnnotation]:
+    ) -> list[BratAnnotation]:
         """
         Simulation d'une session d'annotation.
 
@@ -78,6 +72,8 @@ class RESTAnnotator:
         - 'automated_test': Utilise des regex prédéfinies pour simuler un expert rapide
         - 'highlighting': (Futur) Interface graphique
         """
+        if entity_types is None:
+            entity_types = ["Estrogen_receptor", "Progesterone_receptor", "HER2", "Ki67"]
         annotations = []
 
         print(f"--- Démarrage Session REST ({mode}) ---")
@@ -106,7 +102,7 @@ class RESTAnnotator:
             annotations.extend(doc_anns)
 
             # Log de performance de l'annotateur
-            log_entry = {
+            {
                 "doc_id": doc_id,
                 "n_annotations": len(doc_anns),
                 "duration_sec": duration,
@@ -120,8 +116,8 @@ class RESTAnnotator:
         return annotations
 
     def _auto_annotate(
-        self, doc_id: str, text: str, entity_types: List[str]
-    ) -> List[BratAnnotation]:
+        self, doc_id: str, text: str, entity_types: list[str]
+    ) -> list[BratAnnotation]:
         """Méthode interne pour simuler l'annotation via patterns regex."""
         anns = []
         for ent_type in entity_types:
@@ -142,7 +138,7 @@ class RESTAnnotator:
         return anns
 
     def export_to_brat(
-        self, annotations: List[BratAnnotation], output_dir: str = None
+        self, annotations: list[BratAnnotation], output_dir: str = None
     ) -> None:
         """Exporte en format .ann (BRAT)."""
         out = output_dir or self.output_dir

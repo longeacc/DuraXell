@@ -1,6 +1,7 @@
-import streamlit as st
 import json
 from datetime import datetime
+
+import streamlit as st
 
 st.set_page_config(page_title="Analyse Corpus", page_icon="🎯", layout="wide")
 

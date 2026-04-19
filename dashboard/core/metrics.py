@@ -1,7 +1,7 @@
 import math
-from typing import Dict, Any, List
 import re
 from collections import Counter
+from typing import Any
 
 ENTITIES = [
     "ER",
@@ -80,8 +80,8 @@ class MetricsCalculator:
         return any(re.search(pat, text) for pat in self.CONTRADICTION_PATTERNS)
 
     def compute_all_metrics(
-        self, documents: List[Any], entity_type: str
-    ) -> Dict[str, float]:
+        self, documents: list[Any], entity_type: str
+    ) -> dict[str, float]:
         annotations = []
         doc_count = 0
         for doc in documents:
@@ -215,7 +215,7 @@ class MetricsCalculator:
         base_shift = 0.15
         he_penalty = max(0.0, (1.0 - he) / 2.0)
         te_penalty = max(0.0, (1.0 - te) / 3.0)
-        domain_shift = min(1.0, max(0.0, base_shift + he_penalty + te_penalty))
+        min(1.0, max(0.0, base_shift + he_penalty + te_penalty))
 
         # 8. LLM Necessity
         necessity = (
@@ -224,7 +224,7 @@ class MetricsCalculator:
             + 0.25 * (1.0 - feas)
             + 0.20 * (1.0 - he)
         )
-        llm_n = min(1.0, max(0.0, necessity))
+        min(1.0, max(0.0, necessity))
 
         return {
             "Te": round(te, 4),

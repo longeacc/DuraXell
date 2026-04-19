@@ -540,7 +540,7 @@ def create_categories_tags():
     (widgets.VBox) : merges the following widgets : categories TagsInput (modifies categories), delete buttons (delete categories), add button (add a new category), banwords TagsInput (modify the banwords list).
     """
     tags = []
-    output_test = widgets.Output()
+    widgets.Output()
     for i, category in enumerate(ent_cat[current_entity]):
         if category == "category?":
             continue
@@ -674,8 +674,8 @@ def display_categorization_results():
         (row) the styled row.
         """
         color_index = row.name % len(col)
-        first_col_background = "{}90".format(col[color_index])
-        return ["background-color: {}".format(first_col_background)] + [""] * (
+        first_col_background = f"{col[color_index]}90"
+        return [f"background-color: {first_col_background}"] + [""] * (
             len(row) - 1
         )
 
@@ -719,7 +719,7 @@ def create_t2a2():
     Return :
     (widgets.VBox) : widget composed of the title of the section, and the outputs displaying the categorization results (table and donut figure).
     """
-    cat_infos = create_categories_infos(df, ent_cat, current_entity)
+    create_categories_infos(df, ent_cat, current_entity)
     title = "III - Categorization distribution"
     t2a2_title = widgets.HTML(
         value=f"<h2 style='height: 30px; line-height: 30px; text-align: left; display: flex; align-items: center;'>{title}</h2>"

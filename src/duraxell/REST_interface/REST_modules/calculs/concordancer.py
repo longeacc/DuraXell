@@ -45,7 +45,7 @@ def get_matches(path, pattern):
     for file_name in os.listdir(path):
         if file_name.endswith(".txt"):
             with open(
-                os.path.join(path, file_name), "r", newline="", encoding="utf-8"
+                os.path.join(path, file_name), newline="", encoding="utf-8"
             ) as file:
                 text = file.read().lower()
                 for match in re.finditer(pattern, text):

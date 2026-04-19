@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../duraxell"))
 
@@ -10,20 +10,20 @@ def test_negation_detection():
     scorer = RiskContextScorer()
 
     # Cas clairs de négation
-    assert scorer.has_negation("HER2 non surexprimé", "HER2") == True
-    assert scorer.has_negation("Absence de récepteurs œstrogènes", "récepteurs") == True
-    assert scorer.has_negation("Pas de mutation détectée", "mutation") == True
+    assert scorer.has_negation("HER2 non surexprimé", "HER2")
+    assert scorer.has_negation("Absence de récepteurs œstrogènes", "récepteurs")
+    assert scorer.has_negation("Pas de mutation détectée", "mutation")
 
     # Cas positif
-    assert scorer.has_negation("HER2 surexprimé (3+)", "HER2") == False
+    assert not scorer.has_negation("HER2 surexprimé (3+)", "HER2")
 
 
 def test_uncertainty_detection():
     scorer = RiskContextScorer()
 
-    assert scorer.has_uncertainty("Possible amplification", "amplification") == True
-    assert scorer.has_uncertainty("Statut à confirmer", "Statut") == True
-    assert scorer.has_uncertainty("Biopsie franche", "Biopsie") == False
+    assert scorer.has_uncertainty("Possible amplification", "amplification")
+    assert scorer.has_uncertainty("Statut à confirmer", "Statut")
+    assert not scorer.has_uncertainty("Biopsie franche", "Biopsie")
 
 
 def test_risk_score():

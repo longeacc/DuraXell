@@ -3,11 +3,9 @@ import csv
 import glob
 import logging
 import os
-import sys
 import subprocess
+import sys
 import time
-
-
 
 # All entity types known to the decision tree
 ALL_ENTITIES = [
@@ -62,8 +60,9 @@ def cmd_batch(args):
     # Suppress noisy NER/eco2ai warnings during batch
     logging.basicConfig(level=logging.WARNING)
 
-    from duraxell.cascade_orchestrator import CascadeOrchestrator
     import json
+
+    from duraxell.cascade_orchestrator import CascadeOrchestrator
 
     orchestrator = CascadeOrchestrator()
     input_dir = args.input_dir
@@ -81,7 +80,7 @@ def cmd_batch(args):
         os.path.dirname(os.path.abspath(__file__)), "data", "decision_config.json"
     )
     if os.path.exists(cfg_path):
-        with open(cfg_path, "r", encoding="utf-8") as f:
+        with open(cfg_path, encoding="utf-8") as f:
             raw = json.load(f)
             decision_cfg = raw.get("entities", raw)
 
@@ -101,7 +100,7 @@ def cmd_batch(args):
     print("-" * 70)
 
     for fpath in files:
-        text = open(fpath, "r", encoding="utf-8").read()
+        text = open(fpath, encoding="utf-8").read()
         fname = os.path.basename(fpath)
         for ent in entities:
             res = orchestrator.extract(text, ent)

@@ -1,8 +1,9 @@
-import sys
-import os
-import torch
 import logging
-from transformers import AutoTokenizer, AutoModelForTokenClassification
+import os
+import sys
+
+import torch
+from transformers import AutoModelForTokenClassification, AutoTokenizer
 
 # Ensure imports work from project root (assuming standard placement)
 # Expected structure: root/NER/src/ner_cascade_connector.py
@@ -112,7 +113,7 @@ class NERCascadeConnector:
 
         current_entity = None
 
-        for idx, (label_id, (start, end)) in enumerate(zip(pred_ids, offsets)):
+        for idx, (label_id, (start, end)) in enumerate(zip(pred_ids, offsets, strict=False)):
             if start == end:
                 continue  # Special tokens
 

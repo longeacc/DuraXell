@@ -62,7 +62,7 @@ def main() -> None:
         import os
 
         readme_path = os.path.join(os.path.dirname(__file__), "README.md")
-        with open(readme_path, "r", encoding="utf-8", errors="replace") as f:
+        with open(readme_path, encoding="utf-8", errors="replace") as f:
             st.markdown(f.read())
     except FileNotFoundError:
         st.warning("Fichier README.md introuvable pour affichage.")

@@ -1,7 +1,8 @@
-import streamlit as st
+import os
 import subprocess
 import time
-import os
+
+import streamlit as st
 
 st.set_page_config(page_title="Notebook & API Server", page_icon="📓", layout="wide")
 
@@ -12,8 +13,8 @@ def launch_jupyter() -> None:
         # On définit le répertoire où Jupyter sera exécuté (à la racine)
         work_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-        import sys
         import json
+        import sys
 
         # Trouver l'exécutable Python du .venv
         venv_python = os.path.join(work_dir, ".venv", "Scripts", "python.exe")

@@ -22,7 +22,7 @@ def save_progress(
     json_file_path = os.path.join(path, "REST_progress.json")
 
     if os.path.isfile(json_file_path):
-        with open(json_file_path, "r", encoding="utf-8") as file:
+        with open(json_file_path, encoding="utf-8") as file:
             try:
                 data = json.load(file)
             except json.JSONDecodeError:
@@ -63,7 +63,7 @@ def load_progress(path):
     progress_df_results = None
 
     if os.path.isfile(json_file_path):
-        with open(json_file_path, "r", encoding="utf-8") as file:
+        with open(json_file_path, encoding="utf-8") as file:
             try:
                 data = json.load(file)
                 progress_ent_cat = data.get("ent_cat")

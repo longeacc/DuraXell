@@ -87,7 +87,6 @@ def extract_annotations(docs, need_translation):
     (dict) : Return a dictionnary containing the annotations, and their associated caracteristics (occurrences, places, text).
     """
     list_stem = []
-    list_text = {}
     annotations = {}
 
     # 1) Extraction from docs to a dict, and calculation of occurrences
@@ -263,7 +262,7 @@ def get_all_sentences(path):
     txt_files = glob.glob(path + "/*.txt")
 
     for file_path in txt_files:
-        with open(file_path, "r", newline="", encoding="utf-8") as file:
+        with open(file_path, newline="", encoding="utf-8") as file:
             text = file.read()
             start = 0
             segments = text.split(".")
@@ -295,7 +294,7 @@ def print_annotations_caracteristics(dict_annotations):
         for category in categories:
             for text in dict_annotations[entity][category]:
                 n += dict_annotations[entity][category][text]["occurrences"]
-                for place in dict_annotations[entity][category][text]["places"]:
+                for _place in dict_annotations[entity][category][text]["places"]:
                     m += 1
 
             print("   Category :", category)

@@ -75,7 +75,7 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
             continue
 
         for ann_file in files["ann"]:
-            with open(ann_file, "r", encoding="utf-8") as f:
+            with open(ann_file, encoding="utf-8") as f:
                 for line_idx, line in enumerate(f):
                     try:
                         if line.startswith("T"):
@@ -205,12 +205,12 @@ def load_from_brat(path, merge_spaced_fragments=True, merge_all_fragments=False)
                                     "comment": comment,
                                 }
                             )
-                    except:
-                        raise Exception(
+                    except Exception as err:
+                        raise ValueError(
                             "Could not parse line {} from {}: {}".format(
                                 line_idx, filename.replace(".txt", ".ann"), repr(line)
                             )
-                        )
+                        ) from err
         if merge_all_fragments:
             merged_entities = []
             for entity in entities.values():

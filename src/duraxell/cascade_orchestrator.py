@@ -3,7 +3,6 @@ import logging
 import os
 import sys
 import time
-from typing import Dict, List
 
 import pandas as pd
 
@@ -73,16 +72,16 @@ class CascadeOrchestrator:
             "LLM": 1e-2,  # Clé interne consommée par _try_llm()
         }
 
-    def _load_config(self) -> Dict:
+    def _load_config(self) -> dict:
         """Charge la configuration de décision générée par l'arbre."""
         if os.path.exists(self.config_path):
-            with open(self.config_path, "r", encoding="utf-8") as f:
+            with open(self.config_path, encoding="utf-8") as f:
                 return json.load(f)
         else:
             print(f"Warning: {self.config_path} not found. Using defaults.")
             return {}
 
-    def _get_entity_config(self, entity_type: str) -> Dict:
+    def _get_entity_config(self, entity_type: str) -> dict:
         """Récupère la config d'une entité depuis decision_config.json (gestion nesting 'entities')."""
         entities = self.decision_config.get("entities", self.decision_config)
         return entities.get(entity_type, {})
@@ -217,7 +216,7 @@ class CascadeOrchestrator:
         return ExtractionResult(entity_type, None, "LLM", 0.0, energy, 4)
 
     def extract_batch(
-        self, documents: List[str], entity_types: List[str]
+        self, documents: list[str], entity_types: list[str]
     ) -> pd.DataFrame:
         """Traitement par lot."""
         results = []

@@ -14,7 +14,7 @@ def visualize_decision_tree(
     """
     # Chargement de la config
     try:
-        with open(decision_config_path, "r", encoding="utf-8") as f:
+        with open(decision_config_path, encoding="utf-8") as f:
             config = json.load(f)
 
         # Adaptation au format JSON

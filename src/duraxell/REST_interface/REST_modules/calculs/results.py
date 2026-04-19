@@ -70,7 +70,7 @@ def update_df_results(
     ].sum()
     precision = 0
     recall = 0
-    homogeneity = homogeneity_score[entity]
+    homogeneity_score[entity]
     if TP + FP != 0:
         precision = round(TP / (TP + FP), 2)
     if TP + FN != 0:

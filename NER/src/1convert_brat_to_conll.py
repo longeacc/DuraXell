@@ -4,12 +4,10 @@
 #       --labels BIOMARKER STATUS VALUE METHOD --dev_ratio 0.1 --test_ratio 0.1 --seed 42
 import argparse
 import pathlib
-import re
 import random
+import re
 import sys
 from collections import Counter
-from typing import List, Tuple
-
 
 TOKEN_PATTERN = re.compile(r"\w+|[^\w\s]", re.UNICODE)
 
@@ -18,7 +16,7 @@ def read_text(p: pathlib.Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
-def tokenize(text: str) -> List[Tuple[str, int, int]]:
+def tokenize(text: str) -> list[tuple[str, int, int]]:
     return [(m.group(), m.start(), m.end()) for m in TOKEN_PATTERN.finditer(text)]
 
 
@@ -57,7 +55,7 @@ def assign_bio(tokens, spans, text):
     tags = ["O"] * len(tokens)
     # simple conflict resolver: prefer longest span first
     spans = sorted(spans, key=lambda x: -(x[1] - x[0]))
-    used = [False] * len(tokens)
+    [False] * len(tokens)
     for s, e, lab, orig_text in spans:
         # sanity check
         slice_txt = text[s:e]
@@ -88,7 +86,7 @@ def sentence_break(prev_end: int, next_start: int, text: str) -> bool:
 
 def doc_to_conll(tokens, tags, text):
     lines = []
-    for i, ((tok, s, e), tag) in enumerate(zip(tokens, tags)):
+    for i, ((tok, _s, e), tag) in enumerate(zip(tokens, tags, strict=False)):
         lines.append(f"{tok} {tag}")
         # sentence boundary between token i and i+1
         if i < len(tokens) - 1:

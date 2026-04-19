@@ -15,7 +15,7 @@ Outputs:
 import csv
 import json
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 
 # Eco2AI tracking
 try:
@@ -65,7 +65,7 @@ class DecisionTreeBuilder:
     MIN_TE_SAMPLES = 10
 
     def validate_thresholds_kfold(
-        self, entities_metrics: Dict[str, Dict[str, float]], k: int = 5
+        self, entities_metrics: dict[str, dict[str, float]], k: int = 5
     ):
         """
         Validation croisée k-fold sur les seuils : partitionner le corpus en k plis,
@@ -131,7 +131,7 @@ class DecisionTreeBuilder:
         avg_stability = sum(stabilities) / len(stabilities)
         print(f"Stabilité moyenne des décisions (K-Fold, k={k}): {avg_stability:.2%}")
 
-    def analyze_entity(self, entity: str, metrics: Dict[str, float]) -> Dict[str, Any]:
+    def analyze_entity(self, entity: str, metrics: dict[str, float]) -> dict[str, Any]:
         """Arbre de décision simplifié : Te++ → He++ → R− → RÈGLES | Feas++ → TBM | LLM.
 
         Args:
@@ -199,7 +199,7 @@ class DecisionTreeBuilder:
                 "trace": path_trace,
             }
 
-    def build_full_config(self, metrics_data: Dict[str, Dict]):
+    def build_full_config(self, metrics_data: dict[str, dict]):
         """Compile all decisions into the config dict."""
         config = {
             "version": "2.1",
@@ -268,7 +268,7 @@ def load_metrics_from_csv(results_dir: Path):
         if not p.exists():
             return
         try:
-            with open(p, "r", encoding="utf-8") as f:
+            with open(p, encoding="utf-8") as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     # Try different column headers for Entity name

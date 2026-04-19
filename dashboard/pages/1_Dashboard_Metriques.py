@@ -1,7 +1,7 @@
-import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import streamlit as st
 from core import BratCorpusParser, MetricsCalculator, compute_routing
 
 st.set_page_config(page_title="Dashboard Métriques", page_icon="📊", layout="wide")

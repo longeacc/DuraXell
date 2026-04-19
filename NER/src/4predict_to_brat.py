@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Predict NER on .txt files and write BRAT .ann files.
 
@@ -11,13 +10,13 @@ Usage:
       --min_prob 0.0 --stride 50 --max_length 512
 """
 
-import os
-import json
 import argparse
-from typing import List
-import torch
+import json
+import os
+
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForTokenClassification
+import torch
+from transformers import AutoModelForTokenClassification, AutoTokenizer
 
 
 # ---------- model resolution ----------
@@ -67,7 +66,7 @@ def label_lookup(id2label, i: int) -> str:
 
 
 # ---------- span utilities ----------
-def merge_adjacent(spans: List[dict]) -> List[dict]:
+def merge_adjacent(spans: list[dict]) -> list[dict]:
     """Merge overlapping/contiguous spans of the same label."""
     if not spans:
         return []
@@ -91,7 +90,7 @@ def spans_from_chunk(pred_ids, probs, offsets, id2label, min_prob: float):
     cur = None
     cur_probs = []
 
-    for pid, (s, e), pvec in zip(pred_ids, offsets, probs):
+    for pid, (s, e), pvec in zip(pred_ids, offsets, probs, strict=False):
         if s == e:  # special tokens
             continue
 
@@ -143,7 +142,7 @@ def predict_text(
     max_length: int,
     stride: int,
     min_prob: float,
-    keep_labels: List[str] = None,
+    keep_labels: list[str] = None,
 ):
     enc = tok(
         text,
@@ -162,7 +161,7 @@ def predict_text(
     id2label = model.config.id2label
     device = next(model.parameters()).device
     for input_ids, attn_mask, offsets in zip(
-        input_ids_list, attn_masks_list, offsets_list
+        input_ids_list, attn_masks_list, offsets_list, strict=False
     ):
         tens = {
             "input_ids": torch.tensor([input_ids], device=device),
@@ -170,7 +169,7 @@ def predict_text(
         }
         # Some models want token_type_ids; add if tokenizer provided it
         if "token_type_ids" in enc:
-            idx = len(spans_all)  # not used, just to ensure consistent indexing
+            len(spans_all)  # not used, just to ensure consistent indexing
         with torch.no_grad():
             logits = model(**tens).logits[0]  # [seq, labels]
             probs = torch.softmax(logits, dim=-1).cpu().numpy()
@@ -180,7 +179,7 @@ def predict_text(
         offsets_no_special = []
         pred_ids_no_special = []
         probs_no_special = []
-        for pid, (s, e), p in zip(pred_ids, offsets, probs):
+        for pid, (s, e), p in zip(pred_ids, offsets, probs, strict=False):
             if s == 0 and e == 0:
                 continue
             offsets_no_special.append((s, e))
@@ -213,7 +212,7 @@ def predict_text(
     return uniq
 
 
-def write_brat(txt_path: str, spans: List[dict], out_ann: str, text: str):
+def write_brat(txt_path: str, spans: list[dict], out_ann: str, text: str):
     os.makedirs(os.path.dirname(out_ann), exist_ok=True)
     with open(out_ann, "w", encoding="utf-8") as f:
         for i, s in enumerate(

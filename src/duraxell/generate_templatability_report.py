@@ -18,7 +18,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
 
     # Chargement des données
     try:
-        with open(json_file, "r", encoding="utf-8") as f:
+        with open(json_file, encoding="utf-8") as f:
             raw_data = json.load(f)
 
         # Conversion JSON->Liste pour éviter les problèmes de parsing CSV
@@ -60,7 +60,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 padding: 0;
                 box-sizing: border-box;
             }
-            
+
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -68,7 +68,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 padding: 20px;
                 color: #333;
             }
-            
+
             .container {
                 max-width: 1400px;
                 margin: 0 auto;
@@ -77,24 +77,24 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 box-shadow: 0 10px 40px rgba(0,0,0,0.2);
                 overflow: hidden;
             }
-            
+
             .header {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 color: white;
                 padding: 40px;
                 text-align: center;
             }
-            
+
             .header h1 {
                 font-size: 2.5em;
                 margin-bottom: 10px;
             }
-            
+
             .header p {
                 font-size: 1.1em;
                 opacity: 0.9;
             }
-            
+
             .content {
                 padding: 40px;
             }
@@ -139,14 +139,14 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 font-weight: bold;
                 color: #1e293b;
             }
-            
+
             .tech-details {
                 margin-top: 15px;
                 padding-top: 15px;
                 border-top: 1px solid #cbd5e1;
                 font-size: 0.95em;
             }
-            
+
             .metrics {
                display: grid;
                grid-template-columns: 1fr 1fr;
@@ -156,24 +156,24 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                border-radius: 6px;
                margin-bottom: 10px;
             }
-            
+
             .metric {
                 display: flex;
                 flex-direction: column;
                 font-size: 0.85em;
                 color: #555;
             }
-            
+
             .metric-label { font-weight: normal; margin-bottom: 2px; }
             .metric-value { font-weight: bold; color: #333; font-size: 1.1em; }
-            
+
             .summary {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 20px;
                 margin-bottom: 40px;
             }
-            
+
             .summary-card {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 color: white;
@@ -181,25 +181,25 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 border-radius: 8px;
                 text-align: center;
             }
-            
+
             .summary-card h3 {
                 font-size: 0.9em;
                 opacity: 0.9;
                 margin-bottom: 10px;
             }
-            
+
             .summary-card .value {
                 font-size: 2em;
                 font-weight: bold;
             }
-            
+
             .entity-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
                 gap: 20px;
                 margin-bottom: 40px;
             }
-            
+
             .entity-card {
                 border: 2px solid #ddd;
                 border-radius: 8px;
@@ -207,16 +207,16 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 transition: all 0.3s ease;
                 background: white;
             }
-            
+
             .entity-card:hover {
                 box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
                 border-color: #667eea;
             }
-            
+
             .entity-card.high { border-left: 5px solid #22c55e; }
             .entity-card.medium { border-left: 5px solid #f59e0b; }
             .entity-card.low { border-left: 5px solid #ef4444; }
-            
+
             .entity-header {
                 display: flex;
                 justify-content: space-between;
@@ -240,13 +240,13 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
             .status-badge.high { background: #22c55e; }
             .status-badge.medium { background: #f59e0b; }
             .status-badge.low { background: #ef4444; }
-            
+
             .score-bar {
                 display: flex;
                 align-items: center;
                 margin: 15px 0;
             }
-            
+
             .score-bar-fill {
                 flex: 1;
                 height: 15px;
@@ -255,12 +255,12 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 overflow: hidden;
                 margin-right: 10px;
             }
-            
+
             .score-bar-value {
                 height: 100%;
                 background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
             }
-            
+
             .metric {
                 display: flex;
                 justify-content: space-between;
@@ -268,12 +268,12 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 font-size: 0.9em;
                 color: #555;
             }
-            
+
             .metric-value {
                 font-weight: bold;
                 color: #333;
             }
-            
+
             .patterns-section {
                 margin-top: 15px;
                 border-top: 1px solid #eee;
@@ -323,7 +323,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 background-color: #f8f9fa;
                 color: #667eea;
             }
-            
+
             .footer {
                 margin-top: 50px;
                 text-align: center;
@@ -340,11 +340,11 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                 <p>Analyse de la structure et de la régularité des entités biomédicales</p>
                 <p style="margin-top:5px; font-size:0.9em">Jeu de données: Cancer du Sein (ESMO 2025)</p>
             </div>
-            
+
             <div class="content">
                 <div class="method-box">
                     <h3>Méthodologie & Définitions Complètes</h3>
-                    
+
                     <h4>1. Templeabilité (Te)</h4>
                     <p>La <strong>Templeabilité</strong> mesure à quel point les valeurs d'une entité suivent une structure rigide et prévisible (Regex/Templates).</p>
                     <ul>
@@ -384,7 +384,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                         <div class="value">{high_temp}</div>
                     </div>
                 </div>
-                
+
                 <h2 style="color: #667eea; margin-bottom: 20px;">Détail par Entité</h2>
                 <div class="entity-grid">
     """
@@ -424,14 +424,14 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
                             <div class="entity-name">{entity}</div>
                             <span class="status-badge {cls}">{status}</span>
                         </div>
-                        
+
                         <div class="score-bar">
                             <div class="score-bar-fill">
                                 <div class="score-bar-value" style="width: {width_pct}%"></div>
                             </div>
                             <strong style="color: #667eea;">{score:.2f}</strong>
                         </div>
-                        
+
                         <div class="metrics">
                             <div class="metric">
                                 <span class="metric-label">Couverture Motif</span>
@@ -467,7 +467,7 @@ def generate_html_report(json_file: str, csv_file: str, output_file: str):
 
     html_content += """
                 </div>
-                
+
                 <h2 style="color: #667eea; margin-top: 40px;">Tableau Récapitulatif</h2>
                 <div class="table-wrapper">
                     <table>

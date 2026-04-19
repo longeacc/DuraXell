@@ -58,7 +58,7 @@ def test_pareto_analysis():
     res = scorer.pareto_analysis(df)
 
     # A should be Pareto (True)
-    assert res.loc[0, "Is_Pareto"] == True
+    assert res.loc[0, "Is_Pareto"]
     # B should be Dominated (False)
     # F1(B) < F1(A) AND Expl(B) < Expl(A) AND Energy(B) > Energy(A)
-    assert res.loc[1, "Is_Pareto"] == False
+    assert not res.loc[1, "Is_Pareto"]

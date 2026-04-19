@@ -67,8 +67,8 @@ def main():
     print("\n[ETAPE 4] Comparaison avec l'Arbre de Décision (Top-Down)...")
     config_path = "data/decision_config.json"
     if os.path.exists(config_path):
-        with open(config_path, "r", encoding="utf-8") as f:
-            decision_config = json.load(f)
+        with open(config_path, encoding="utf-8") as f:
+            json.load(f)
     else:
         print("   (Fichier data/decision_config.json absent, utilisation mock)")
         tree_config = {

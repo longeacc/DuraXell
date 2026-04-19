@@ -14,7 +14,7 @@ import math
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any
 
 # Eco2AI for energy tracking
 try:
@@ -40,7 +40,7 @@ class HomogeneityScorer:
     He mesure la répétition du vocabulaire.
     """
 
-    def __init__(self, corpus: List[Dict[str, Any]]):
+    def __init__(self, corpus: list[dict[str, Any]]):
         """
         Args:
             corpus: List of documents containing text and annotations.
@@ -67,7 +67,7 @@ class HomogeneityScorer:
         self.k = 10
         self.x0 = 0.5
 
-    def compute_from_list(self, values: List[str]) -> float:
+    def compute_from_list(self, values: list[str]) -> float:
         """
         Calcule le score He directement depuis une liste de valeurs textuelles.
         """
@@ -76,7 +76,7 @@ class HomogeneityScorer:
         res = self.compute("TEMP_LIST")
         return res
 
-    def _tokenize(self, text: str) -> List[str]:
+    def _tokenize(self, text: str) -> list[str]:
         """Split text into words, lowercase, remove noise."""
         return [w.lower() for w in re.split(r"[^a-zA-Z0-9%]+", text) if w.strip()]
 
@@ -123,7 +123,7 @@ class HomogeneityScorer:
 
         return he_final * 100.0
 
-    def compute_all(self) -> Dict[str, float]:
+    def compute_all(self) -> dict[str, float]:
         """Compute He for all entities."""
         scores = {}
         for entity in self.entities_values:
@@ -188,7 +188,7 @@ def load_brat_corpus_simple(data_dirs):
             # Simplified parsing
             anns = []
             try:
-                with open(ann, "r", encoding="utf-8") as f:
+                with open(ann, encoding="utf-8") as f:
                     for line in f:
                         if line.startswith("T"):
                             parts = line.strip().split("\t")

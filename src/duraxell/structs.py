@@ -1,17 +1,16 @@
 from dataclasses import dataclass, field
-from typing import Dict, Optional, Tuple
 
 
 @dataclass
 class ExtractionResult:
     entity_type: str
-    value: Optional[str]
+    value: str | None
     method_used: str
     confidence: float
     energy_kwh: float = 0.0
     cascade_level: int = 0
-    span: Optional[Tuple[int, int]] = None
-    metadata: Dict = field(default_factory=dict)
+    span: tuple[int, int] | None = None
+    metadata: dict = field(default_factory=dict)
     execution_time_ms: float = 0.0
 
     def to_dict(self):

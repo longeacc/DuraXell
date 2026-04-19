@@ -13,7 +13,6 @@ import csv
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 # Eco2AI for energy tracking
 try:
@@ -42,7 +41,7 @@ class RiskContextScorer:
     3. Contradiction (R maximal)
     """
 
-    def __init__(self, data_dirs: List[Path] = None):
+    def __init__(self, data_dirs: list[Path] = None):
         self.data_dirs = data_dirs or []
         self.document_data = defaultdict(list)
 
@@ -97,15 +96,15 @@ class RiskContextScorer:
         # Poids appris ou heuristiques (peuvent être calibrés via _learn_weights)
         self.weights = {"negation": 0.2, "uncertainty": 0.5, "contradiction": 1.0}
 
-    def _learn_weights(self, annotated_data: List[Tuple[int, int, int, int]]):
+    def _learn_weights(self, annotated_data: list[tuple[int, int, int, int]]):
         """
         Apprend les poids R via Régression Logistique sur un ensemble de validation
         (Chapman et al., 2001 - approche type NegEx pondéré).
         annotated_data : list de tuples (has_neg, has_uncert, has_contradiction, is_risky_ground_truth)
         """
         try:
-            from sklearn.linear_model import LogisticRegression
             import numpy as np
+            from sklearn.linear_model import LogisticRegression
 
             X = np.array([[d[0], d[1], d[2]] for d in annotated_data])
             y = np.array([d[3] for d in annotated_data])
@@ -159,7 +158,7 @@ class RiskContextScorer:
         )
         return min(1.0, raw_risk)
 
-    def compute_score(self, texts: List[str], entity_type: str) -> float:
+    def compute_score(self, texts: list[str], entity_type: str) -> float:
         """
         Calcule un score R sur une liste de courtes phrases (sans analyse document-level).
         Fait désormais appel à compute_score_from_stats.
@@ -190,11 +189,11 @@ class RiskContextScorer:
 
                 try:
                     # Lire le texte complet
-                    with open(txt_file, "r", encoding="utf-8") as f:
+                    with open(txt_file, encoding="utf-8") as f:
                         full_text = f.read()
 
                     # Lire les annotations
-                    with open(ann_file, "r", encoding="utf-8") as f:
+                    with open(ann_file, encoding="utf-8") as f:
                         for line in f:
                             if line.startswith("T"):
                                 parts = line.strip().split("\t")
@@ -227,7 +226,7 @@ class RiskContextScorer:
                     # print(f"Erreur lecture {ann_file}: {e}")
                     pass
 
-    def _check_contradiction(self, entries: List[Dict]) -> bool:
+    def _check_contradiction(self, entries: list[dict]) -> bool:
         """Détecte si une entité a des valeurs contradictoires dans le MEME document."""
         has_pos = False
         has_neg = False
@@ -243,7 +242,7 @@ class RiskContextScorer:
 
         return has_pos and has_neg
 
-    def compute_all(self) -> List[Dict]:
+    def compute_all(self) -> list[dict]:
         """Calcule le score R agrégé par Type d'Entité."""
         self._load_data()
 

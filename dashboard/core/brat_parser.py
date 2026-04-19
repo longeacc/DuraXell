@@ -1,7 +1,8 @@
 import logging
 import os
 from dataclasses import dataclass
-from typing import Dict, List, Any
+from typing import Any
+
 import streamlit as st
 
 
@@ -19,7 +20,7 @@ class BratAnnotation:
 class BratDocument:
     filename: str
     text: str
-    annotations: List[BratAnnotation]
+    annotations: list[BratAnnotation]
 
 
 class BratCorpusParser:
@@ -35,7 +36,7 @@ class BratCorpusParser:
 
     def _parse_ann_content(
         self, ann_content: str, text_content: str
-    ) -> List[BratAnnotation]:
+    ) -> list[BratAnnotation]:
         annotations = []
         for line in ann_content.splitlines():
             line = line.strip()
@@ -70,7 +71,7 @@ class BratCorpusParser:
                     )
         return annotations
 
-    def parse_uploaded_files(self, uploaded_files: List[Any]) -> List[BratDocument]:
+    def parse_uploaded_files(self, uploaded_files: list[Any]) -> list[BratDocument]:
         documents = []
         files_by_base = {}
         for f in uploaded_files:
@@ -98,7 +99,7 @@ class BratCorpusParser:
 
         return documents
 
-    def parse_directory(self, path: str) -> List[BratDocument]:
+    def parse_directory(self, path: str) -> list[BratDocument]:
         documents = []
         if not os.path.isdir(path):
             st.error(f"Le dossier spécifié n'existe pas : {path}")
@@ -114,11 +115,11 @@ class BratCorpusParser:
 
                     file_path = os.path.join(root, file)
                     try:
-                        with open(file_path, "r", encoding="utf-8") as f:
+                        with open(file_path, encoding="utf-8") as f:
                             content = f.read()
                     except UnicodeDecodeError:
                         with open(
-                            file_path, "r", encoding="latin-1", errors="replace"
+                            file_path, encoding="latin-1", errors="replace"
                         ) as f:
                             content = f.read()
 
@@ -138,9 +139,9 @@ class BratCorpusParser:
         return documents
 
     def get_entity_statistics(
-        self, documents: List[BratDocument]
-    ) -> Dict[str, Dict[str, Any]]:
-        stats: Dict[str, Dict[str, Any]] = {}
+        self, documents: list[BratDocument]
+    ) -> dict[str, dict[str, Any]]:
+        stats: dict[str, dict[str, Any]] = {}
 
         for doc in documents:
             for ann in doc.annotations:

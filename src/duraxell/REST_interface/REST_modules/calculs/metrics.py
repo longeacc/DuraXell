@@ -50,7 +50,7 @@ def calculate_location_metrics(
         cat_striped = cat.strip("[]")
         # cat sans parenthèse
         filtre = (df["entity"] == current_entity) & (df["category"] == cat)
-        for index, row in df[filtre].iterrows():
+        for _index, row in df[filtre].iterrows():
             for place in row["places"]:
                 name_document = place[0] + ".txt"
                 place_document = [place[1], place[2], row["text"]]
@@ -62,7 +62,7 @@ def calculate_location_metrics(
         for file_name in txt_files:
             locations_found_currentfile = []
             with open(
-                os.path.join(path, file_name), "r", newline="", encoding="utf-8"
+                os.path.join(path, file_name), newline="", encoding="utf-8"
             ) as file:
                 text = file.read().lower()
                 # text_decode = unidecode(text)
@@ -131,7 +131,7 @@ def calculate_location_metrics(
                             if location[0] == place_start and place_end == location[1]:
                                 add_to_FP = False
 
-                        for index, row in df_other_categories[
+                        for _index, row in df_other_categories[
                             filtre2
                         ].iterrows():  # verification in other categories
                             if (
@@ -188,7 +188,7 @@ def calculate_location_metrics(
 
             if len(locations[file_name]) != 0:  # locations left (FN)
                 with open(
-                    os.path.join(path, file_name), "r", newline="", encoding="utf-8"
+                    os.path.join(path, file_name), newline="", encoding="utf-8"
                 ) as file:
                     text = file.read().lower()
                     text = unidecode(text)
@@ -410,7 +410,7 @@ def generate_dg_metrics_results(df_metrics):
 
     pre_FP = np.add(df_metrics["FP"].tolist(), TPcorr).tolist()
     precision = [
-        round(tp / (tp + fp), 2) for tp, fp in zip(df_metrics["TP"].tolist(), pre_FP)
+        round(tp / (tp + fp), 2) for tp, fp in zip(df_metrics["TP"].tolist(), pre_FP, strict=False)
     ]
     # pre
     df_metrics_results["raw highlights", "TP"] = df_metrics["TP"].tolist()

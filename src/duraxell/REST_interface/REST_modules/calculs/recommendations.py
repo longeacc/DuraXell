@@ -33,7 +33,7 @@ def check_spacing_regex_locations(spacing_regex, path, len_constant):
 
     for filename in txt_files:
         with open(
-            os.path.join(path, filename), "r", newline="", encoding="utf-8"
+            os.path.join(path, filename), newline="", encoding="utf-8"
         ) as file:
             text = file.read().lower()
             for match in re.finditer(regex, text):
@@ -71,11 +71,11 @@ def compare_spacing_regex_locations(spacing_regex_results, current_entity, df):
         regex,
         filename,
         [place_start, place_end],
-        value,
+        _value,
         distance,
     ) in spacing_regex_results:
         add_to_TP = False
-        for index, row in df[df["entity"] == current_entity].iterrows():
+        for _index, row in df[df["entity"] == current_entity].iterrows():
             for place in row["places"]:
                 if (
                     place[0] + ".txt" == filename
@@ -125,7 +125,7 @@ def create_fig_recommandation(spacing_regex_values, title):
         legend=False,
     )
 
-    for index, row in df.iterrows():
+    for _index, row in df.iterrows():
         if row["Type"] == "TP":
             color = "blue"
         elif row["Type"] == "FP":
@@ -168,7 +168,7 @@ def create_accordion_recommendations(list_spacing_regex, path, current_entity, d
     if list_spacing_regex:
         output_recommendations = widgets.Output()
         with output_recommendations:
-            for index, spacing_regex in enumerate(list_spacing_regex):
+            for _index, spacing_regex in enumerate(list_spacing_regex):
                 spacing_regex_results = check_spacing_regex_locations(
                     spacing_regex[0], path, spacing_regex[1]
                 )
@@ -185,8 +185,9 @@ def create_accordion_recommendations(list_spacing_regex, path, current_entity, d
                 fig = create_fig_recommandation(
                     spacing_regex_values, str(spacing_regex[2])
                 )
-                import IPython.display as display
                 import io
+
+                import IPython.display as display
                 import matplotlib.pyplot as plt
 
                 buf = io.BytesIO()

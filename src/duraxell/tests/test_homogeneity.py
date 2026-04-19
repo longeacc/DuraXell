@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../duraxell"))
 
@@ -13,7 +13,7 @@ def test_homogeneity_limits():
     # Si redondance = (1-1)/1 = 0.
     # Mais une entité unique est techniquement "homogène" (pas de variation).
     # Vérifions le comportement actuel.
-    score_single = scorer.compute_from_list(["ER"])
+    scorer.compute_from_list(["ER"])
     # Si le code gère le cas N=1 -> 1.0, sinon c'est 0.
     # On adaptera le test fonction du code.
 

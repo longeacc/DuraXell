@@ -33,7 +33,7 @@ def retrieve_bootstrap_data(df, current_entity, df_metrics_locations):
         bootstrap_data[file] = {"TP": (TP + TPcorr), "FP": FP, "FN": 0}
 
     # Retrieve of FN
-    for index, row in df.iterrows():
+    for _index, row in df.iterrows():
         if "category?" in row["category"]:
             for place in row["places"]:
                 file = place[0] + ".txt"

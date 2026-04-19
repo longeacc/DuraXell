@@ -19,7 +19,6 @@ This metric is crucial for the Decision Tree:
 
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 # Eco2AI for energy tracking
 try:
@@ -73,7 +72,7 @@ class AnnotationYieldScorer:
     # Parsing
     # ------------------------------------------------------------------
 
-    def _parse_ann(self, file_path: Path) -> List[Tuple[str, int, int]]:
+    def _parse_ann(self, file_path: Path) -> list[tuple[str, int, int]]:
         """
         Extract simplified annotations: [(Entity, Start, End), ...]
         """
@@ -81,14 +80,14 @@ class AnnotationYieldScorer:
             return []
 
         try:
-            with open(file_path, "r", encoding="utf-8") as f:
+            with open(file_path, encoding="utf-8") as f:
                 content = f.read()
                 return self._parse_ann_content(content)
         except Exception:
             pass
         return []
 
-    def _parse_ann_content(self, content: str) -> List[Tuple[str, int, int]]:
+    def _parse_ann_content(self, content: str) -> list[tuple[str, int, int]]:
         """Parses annotation content string into list of (Type, Start, End)."""
         anns = []
         for line in content.splitlines():
@@ -118,8 +117,8 @@ class AnnotationYieldScorer:
         return inter / union if union > 0 else 0.0
 
     def _match_iou(
-        self, gs_spans: List[Tuple[int, int]], pred_spans: List[Tuple[int, int]]
-    ) -> Tuple[int, int, int]:
+        self, gs_spans: list[tuple[int, int]], pred_spans: list[tuple[int, int]]
+    ) -> tuple[int, int, int]:
         """
         Greedy one-to-one IoU matching for spans of the SAME entity type.
         Returns (tp, fp, fn).
@@ -164,8 +163,8 @@ class AnnotationYieldScorer:
         pred_anns = self._parse_ann_content(pred_content)
 
         # Group by entity type
-        gs_by_type: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
-        pred_by_type: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
+        gs_by_type: dict[str, list[tuple[int, int]]] = defaultdict(list)
+        pred_by_type: dict[str, list[tuple[int, int]]] = defaultdict(list)
 
         for etype, s, e in gs_anns:
             gs_by_type[etype].append((s, e))
@@ -206,7 +205,7 @@ class AnnotationYieldScorer:
 
         return self.get_scores()
 
-    def get_scores(self) -> Dict[str, Dict[str, float]]:
+    def get_scores(self) -> dict[str, dict[str, float]]:
         """Calculate Precision, Recall, F1 per entity."""
         scores = {}
         all_types = set(self.tp.keys()) | set(self.fp.keys()) | set(self.fn.keys())

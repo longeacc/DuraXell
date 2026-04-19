@@ -1,6 +1,7 @@
-import sys
 import os
+import sys
 from unittest.mock import MagicMock, patch
+
 import pytest
 
 # Ensure root path
@@ -9,12 +10,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 # Pre-mock eco2ai to prevent import side effects
 sys.modules["eco2ai"] = MagicMock()
 
-from duraxell.structs import ExtractionResult
-from duraxell.cascade_orchestrator import CascadeOrchestrator
-from duraxell.energy_tracker import EnergyTracker
-
 # FORCE HAS_ECO2AI to False for all tests in this file
 import duraxell.energy_tracker
+from duraxell.cascade_orchestrator import CascadeOrchestrator
+from duraxell.energy_tracker import EnergyTracker
+from duraxell.structs import ExtractionResult
 
 duraxell.energy_tracker.HAS_ECO2AI = False
 

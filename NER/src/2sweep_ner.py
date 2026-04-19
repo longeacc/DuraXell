@@ -1,28 +1,28 @@
 # src/sweep_ner.py
 # pip install "transformers>=4.41" datasets seqeval accelerate
-import os
 import argparse
-import json
 import csv
-from typing import List, Tuple, Dict
+import json
+import os
+
+import numpy as np
 from datasets import Dataset, DatasetDict
+from seqeval.metrics import f1_score, precision_score, recall_score
 from transformers import (
-    AutoTokenizer,
     AutoModelForTokenClassification,
+    AutoTokenizer,
     DataCollatorForTokenClassification,
-    TrainingArguments,
-    Trainer,
     EarlyStoppingCallback,
+    Trainer,
+    TrainingArguments,
     set_seed,
 )
-import numpy as np
-from seqeval.metrics import precision_score, recall_score, f1_score
 
 
 # -------------------------
 # Data loading (CoNLL BIO)
 # -------------------------
-def read_conll(path: str) -> Tuple[List[List[str]], List[List[str]]]:
+def read_conll(path: str) -> tuple[list[list[str]], list[list[str]]]:
     toks, tags, cur_t, cur_y = [], [], [], []
     with open(path, encoding="utf-8") as f:
         for line in f:
@@ -43,7 +43,7 @@ def read_conll(path: str) -> Tuple[List[List[str]], List[List[str]]]:
     return toks, tags
 
 
-def build_dataset(data_dir: str) -> Tuple[DatasetDict, List[str]]:
+def build_dataset(data_dir: str) -> tuple[DatasetDict, list[str]]:
     train_t, train_y = read_conll(os.path.join(data_dir, "train.conll"))
     dev_t, dev_y = read_conll(os.path.join(data_dir, "dev.conll"))
     test_t, test_y = read_conll(os.path.join(data_dir, "test.conll"))
@@ -63,7 +63,7 @@ def build_dataset(data_dir: str) -> Tuple[DatasetDict, List[str]]:
 # -------------------------
 # Tokenization + alignment
 # -------------------------
-def encode_with_labels(ds: DatasetDict, model_id: str, label2id: Dict[str, int]):
+def encode_with_labels(ds: DatasetDict, model_id: str, label2id: dict[str, int]):
     tok = AutoTokenizer.from_pretrained(model_id, use_fast=True)
     id2label = {i: l for l, i in label2id.items()}
 
@@ -126,9 +126,9 @@ def seqeval_metrics(eval_pred, id2label):
     logits, labels = eval_pred
     preds = np.argmax(logits, axis=2)
     y_true, y_pred = [], []
-    for pred, lab in zip(preds, labels):
+    for pred, lab in zip(preds, labels, strict=False):
         t_seq, p_seq = [], []
-        for p_i, l_i in zip(pred, lab):
+        for p_i, l_i in zip(pred, lab, strict=False):
             if l_i == -100:
                 continue
             t_seq.append(id2label[l_i])

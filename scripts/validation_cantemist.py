@@ -1,4 +1,5 @@
 import glob
+
 import pycrfsuite
 
 
@@ -30,7 +31,7 @@ cantemist_files = glob.glob("src/duraxell/REST_interface/cantemist-fr/cantemist-
 print(f"\nEvaluating on {len(cantemist_files)} CANTEMIST-FR documents...")
 
 for filepath in cantemist_files:
-    with open(filepath, "r", encoding="utf-8") as f:
+    with open(filepath, encoding="utf-8") as f:
         text = f.read()
 
     # Tokenize roughly
@@ -46,7 +47,7 @@ for filepath in cantemist_files:
     current_entity = []
     current_label = None
 
-    for word, label in zip(words, y_pred):
+    for word, label in zip(words, y_pred, strict=False):
         if label != "O":
             if label.startswith("B-"):
                 if current_entity:

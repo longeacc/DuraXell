@@ -60,7 +60,6 @@ def generate_regex(words):
     connectors = ["+", "+?"]
     inOr = False
     lastIsWord = False
-    len_constant_parts = 0
     list_spacing_regex = []
 
     for word in words:

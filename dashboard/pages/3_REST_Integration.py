@@ -1,5 +1,6 @@
-import streamlit as st
 import json
+
+import streamlit as st
 
 st.set_page_config(page_title="REST Integration", page_icon="🔧", layout="wide")
 

@@ -1,7 +1,7 @@
-import subprocess
 import os
+import subprocess
 import sys
-from typing import Iterator, Dict
+from collections.abc import Iterator
 
 
 class CLIRunner:
@@ -37,15 +37,14 @@ class CLIRunner:
             text=True,
         )
         if process.stdout:
-            for line in process.stdout:
-                yield line
+            yield from process.stdout
         process.wait()
 
 
 class MockCLIRunner:
     """Wrapper mock pour simuler des commandes CLI sans exécution pure."""
 
-    MOCK_RESPONSES: Dict[str, list[str]] = {
+    MOCK_RESPONSES: dict[str, list[str]] = {
         "extract": [
             "Initialisation du pipeline...",
             "Chargement du module RULES...",

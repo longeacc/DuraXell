@@ -5,6 +5,7 @@ sys.modules['eco2ai'] = MagicMock()
 
 from duraxell.E_creation_arbre_decision import DecisionTreeBuilder
 
+
 def test_decision_tree_logic():
     builder = DecisionTreeBuilder(config_path='dummy.json')
 

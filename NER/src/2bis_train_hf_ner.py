@@ -1,19 +1,19 @@
 # src/train_hf_ner.py
 # pip install "transformers>=4.41" datasets seqeval accelerate
-from datasets import Dataset, DatasetDict
-from transformers import (
-    AutoTokenizer,
-    AutoModelForTokenClassification,
-    DataCollatorForTokenClassification,
-    TrainingArguments,
-    Trainer,
-    EarlyStoppingCallback,
-)
-import numpy as np
-from seqeval.metrics import precision_score, recall_score, f1_score
 import os
-from eco2ai import Tracker
 
+import numpy as np
+from datasets import Dataset, DatasetDict
+from eco2ai import Tracker
+from seqeval.metrics import f1_score, precision_score, recall_score
+from transformers import (
+    AutoModelForTokenClassification,
+    AutoTokenizer,
+    DataCollatorForTokenClassification,
+    EarlyStoppingCallback,
+    Trainer,
+    TrainingArguments,
+)
 
 MODEL_ID = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"
 
@@ -25,7 +25,7 @@ def read_conll_file(file_path):
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
-    with open(file_path, "r", encoding="utf-8") as f:
+    with open(file_path, encoding="utf-8") as f:
         lines = f.readlines()
 
     sentences = []
@@ -152,9 +152,9 @@ def main():
     def compute_metrics(p):
         preds = np.argmax(p.predictions, axis=2)
         y_true, y_pred = [], []
-        for pred, lab in zip(preds, p.label_ids):
+        for pred, lab in zip(preds, p.label_ids, strict=False):
             t_seq, p_seq = [], []
-            for p_i, l_i in zip(pred, lab):
+            for p_i, l_i in zip(pred, lab, strict=False):
                 if l_i == -100:
                     continue
                 t_seq.append(id2label[l_i])
@@ -201,8 +201,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-# try:
-#     tracker.stop()
-# except Exception as e:
-#     print(f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}")
-#     print("Carbon emission tracking data could not be saved, but analysis results are preserved.")
+

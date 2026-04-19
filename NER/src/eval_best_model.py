@@ -1,14 +1,15 @@
 import os
+
 import numpy as np
+from datasets import Dataset, DatasetDict
+from seqeval.metrics import classification_report
 from transformers import (
     AutoModelForTokenClassification,
     AutoTokenizer,
+    DataCollatorForTokenClassification,
     Trainer,
     TrainingArguments,
-    DataCollatorForTokenClassification,
 )
-from datasets import Dataset, DatasetDict
-from seqeval.metrics import classification_report
 
 
 def read_conll(path):
@@ -106,9 +107,9 @@ def main():
     preds = np.argmax(predictions, axis=2)
 
     y_true, y_pred = [], []
-    for pred, lab in zip(preds, labels):
+    for pred, lab in zip(preds, labels, strict=False):
         t_seq, p_seq = [], []
-        for p_i, l_i in zip(pred, lab):
+        for p_i, l_i in zip(pred, lab, strict=False):
             if l_i == -100:
                 continue
             t_seq.append(id2label[l_i])

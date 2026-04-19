@@ -1,8 +1,9 @@
 # src/infer.py
-import os
 import json
+import os
+
 import torch
-from transformers import AutoTokenizer, AutoModelForTokenClassification
+from transformers import AutoModelForTokenClassification, AutoTokenizer
 
 
 def _resolve_model_dir(base_dir: str) -> str:
@@ -77,7 +78,7 @@ def predict(text: str, model_dir: str):
     id2label = model.config.id2label
 
     spans, cur = [], None
-    for lab_id, (s, e) in zip(pred_ids, offsets):
+    for lab_id, (s, e) in zip(pred_ids, offsets, strict=False):
         if s == e:  # special tokens like CLS/SEP
             continue
         tag = _label_lookup(id2label, lab_id)

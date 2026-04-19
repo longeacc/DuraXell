@@ -1,6 +1,7 @@
-import pycrfsuite
 import re
 from pathlib import Path
+
+import pycrfsuite
 
 
 def tokenize_with_spans(text):
@@ -44,7 +45,7 @@ def build_dataset(data_dir):
         labels = ["O"] * len(tokens)
 
         for start, end, etype in spans:
-            for i, (tok, t_start, t_end) in enumerate(tokens):
+            for i, (_tok, t_start, t_end) in enumerate(tokens):
                 if t_start >= start and t_end <= end:
                     if labels[i] == "O":
                         # First token of entity or just in it
@@ -71,9 +72,9 @@ def word2features(sent, i):
         "word.lower=" + word.lower(),
         "word[-3:]=" + word[-3:],
         "word[-2:]=" + word[-2:],
-        "word.isupper=%s" % word.isupper(),
-        "word.istitle=%s" % word.istitle(),
-        "word.isdigit=%s" % word.isdigit(),
+        f"word.isupper={word.isupper()}",
+        f"word.istitle={word.istitle()}",
+        f"word.isdigit={word.isdigit()}",
     ]
     if i > 0:
         word1 = sent[i - 1][0]
@@ -108,7 +109,7 @@ def train_crf(train_dir, output_model="crf_model.crfsuite"):
     print(f"Loaded {len(X_train)} documents.")
 
     trainer = pycrfsuite.Trainer(verbose=False)
-    for xseq, yseq in zip(X_train, y_train):
+    for xseq, yseq in zip(X_train, y_train, strict=False):
         trainer.append(xseq, yseq)
 
     trainer.set_params(
