@@ -137,11 +137,11 @@ def generate_html_report(csv_file: str, output_file: str):
 
 
 if __name__ == "__main__":
-    # Determine the project root (ESMO2025_Clement)
-    # Assuming this script is in ESMO2025/generate_homogeneity_report.py
+    # Determine the project root (duraxell_Clement)
+    # Assuming this script is in src/duraxell/generate_homogeneity_report.py
     current_dir = Path(__file__).parent
 
-    # The output CSV is likely in ESMO2025/Results or ESMO2025/Rules/src/Results (based on workspace info)
+    # The output CSV is likely in src/duraxell/Results or src/duraxell/Rules/src/Results (based on workspace info)
     # Let's check a few likely locations
     possible_csv_paths = [
         current_dir / "Results/homogeneity_analysis.csv",

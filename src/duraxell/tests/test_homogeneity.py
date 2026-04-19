@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "../ESMO2025"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "../duraxell"))
 
 from E_homogeneity import HomogeneityScorer
 

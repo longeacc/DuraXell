@@ -1,8 +1,8 @@
 import sys
 import os
 
-# Add ESMO2025 to path
-sys.path.append(os.path.join(os.path.dirname(__file__), "../ESMO2025"))
+# Add duraxell to path
+sys.path.append(os.path.join(os.path.dirname(__file__), "../duraxell"))
 
 from E_templatability import TemplatabilityScorer
 

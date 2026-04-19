@@ -9,14 +9,14 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 # Pre-mock eco2ai to prevent import side effects
 sys.modules["eco2ai"] = MagicMock()
 
-from ESMO2025.structs import ExtractionResult
-from ESMO2025.cascade_orchestrator import CascadeOrchestrator
-from ESMO2025.energy_tracker import EnergyTracker
+from duraxell.structs import ExtractionResult
+from duraxell.cascade_orchestrator import CascadeOrchestrator
+from duraxell.energy_tracker import EnergyTracker
 
 # FORCE HAS_ECO2AI to False for all tests in this file
-import ESMO2025.energy_tracker
+import duraxell.energy_tracker
 
-ESMO2025.energy_tracker.HAS_ECO2AI = False
+duraxell.energy_tracker.HAS_ECO2AI = False
 
 
 # Mock Connectors
@@ -50,7 +50,7 @@ class MockNERConnector:
 def orchestrator():
     # Patch HAS_ECO2AI to False globally for the orchestrator fixture
     # This prevents the real eco2ai Tracker from initializing and starting threads
-    with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+    with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
         tracker = EnergyTracker()
 
     return CascadeOrchestrator(
@@ -66,7 +66,7 @@ def test_extract_rules_success(orchestrator):
     orchestrator.decision_config = {"Estrogen_receptor": {"method": "REGLES"}}
 
     # Patch eco2ai check to ensure simulation
-    with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+    with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
         res = orchestrator.extract(
             "Patient has ER positive tumor.", "Estrogen_receptor"
         )
@@ -82,7 +82,7 @@ def test_extract_transformer_fallback(orchestrator):
     # Case: Entity configured for Transformer
     orchestrator.decision_config = {"Ki67": {"method": "Transformer"}}
 
-    with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+    with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
         res = orchestrator.extract("Ki67 index is 20%.", "Ki67")
 
     assert res.value == "20%"
@@ -127,7 +127,7 @@ def test_batch_extraction(orchestrator):
         "Ki67": {"method": "Transformer"},
     }
 
-    with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+    with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
         df = orchestrator.extract_batch(docs, ents)
 
     assert len(df) == 4  # 2 docs * 2 entities

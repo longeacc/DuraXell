@@ -251,7 +251,7 @@ def main():
     SCRIPT_DIR = Path(__file__).parent
 
     # Paths to comparison sets
-    # NOTE: Assuming standard DuraXELL/ESMO2025 folder structure relative to this script
+    # NOTE: Assuming standard DuraXELL/duraxell folder structure relative to this script
     # Adjust as needed or use arguments
     GS_DIR = SCRIPT_DIR / "Breast" / "RCP" / "evaluation_set_breast_cancer_GS"
     PRED_DIR = SCRIPT_DIR / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"

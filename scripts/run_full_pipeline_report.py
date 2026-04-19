@@ -6,21 +6,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Configuration des chemins
-sys.path.append(os.path.join(os.getcwd(), "ESMO2025"))
-sys.path.append(os.path.join(os.getcwd(), "ESMO2025", "REST_interface"))
+sys.path.append(os.path.join(os.getcwd(), "duraxell"))
+sys.path.append(os.path.join(os.getcwd(), "duraxell", "REST_interface"))
 sys.path.append(os.path.join(os.getcwd(), "NER", "src"))
 sys.path.append(os.path.join(os.getcwd(), "Rules", "src"))
 
 # Import des modules DuraXELL
 try:
-    from ESMO2025.E_composite_scorer import CompositeScorer
-    from ESMO2025.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
-    from ESMO2025.energy_tracker import EnergyTracker
-    from ESMO2025.visualize_decision_tree import visualize_decision_tree
-    from ESMO2025.sensitivity_analysis import run_sensitivity_analysis
-    from ESMO2025.REST_interface.rest_annotator import RESTAnnotator
-    from ESMO2025.REST_interface.rest_evaluator import RESTEvaluator, RESTEntityReport
-    from ESMO2025.REST_interface.rest_decision_bridge import RESTDecisionBridge
+    from duraxell.E_composite_scorer import CompositeScorer
+    from duraxell.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
+    from duraxell.energy_tracker import EnergyTracker
+    from duraxell.visualize_decision_tree import visualize_decision_tree
+    from duraxell.sensitivity_analysis import run_sensitivity_analysis
+    from duraxell.REST_interface.rest_annotator import RESTAnnotator
+    from duraxell.REST_interface.rest_evaluator import RESTEvaluator, RESTEntityReport
+    from duraxell.REST_interface.rest_decision_bridge import RESTDecisionBridge
 except ImportError as e:
     print(f"Erreur d'import : {e}")
     print("Vérifiez que vous exécutez le script depuis la racine du projet DuraXELL.")

@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 # Mock eco2ai BEFORE importing E_frequency to avoid any import-time side effects or delays
 sys.modules["eco2ai"] = MagicMock()
 
-from ESMO2025.E_frequency import FrequencyScorer
+from duraxell.E_frequency import FrequencyScorer
 
 
 def test_frequency_calculation():

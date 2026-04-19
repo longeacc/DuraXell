@@ -48,7 +48,7 @@ def launch_jupyter() -> None:
             venv_python,
             "-m",
             "voila",
-            "ESMO2025/REST_interface/REST.ipynb",
+            "src/duraxell/REST_interface/REST.ipynb",
             "--no-browser",
             "--port=8888",
             "--Voila.ip=127.0.0.1",
@@ -67,7 +67,7 @@ def launch_rest_api() -> None:
     if "api_process" not in st.session_state:
         # Lancement depuis le répertoire REST_interface
         root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        work_dir = os.path.join(root_dir, "ESMO2025", "REST_interface")
+        work_dir = os.path.join(root_dir, "duraxell", "REST_interface")
 
         import sys
 

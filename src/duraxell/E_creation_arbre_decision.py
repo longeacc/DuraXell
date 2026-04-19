@@ -40,7 +40,7 @@ try:
     from E_annotation_yield import AnnotationYieldScorer
 except ImportError:
     try:
-        from ESMO2025.E_annotation_yield import AnnotationYieldScorer
+        from duraxell.E_annotation_yield import AnnotationYieldScorer
     except ImportError:
         try:
             from .E_annotation_yield import AnnotationYieldScorer

@@ -1,14 +1,14 @@
 import pandas as pd
 from unittest.mock import patch
 
-from ESMO2025.energy_tracker import EnergyTracker
+from duraxell.energy_tracker import EnergyTracker
 
 
 class TestEnergyTracker:
     def test_simulation_fallback(self):
         """Test behavior when eco2ai is not installed (simulated context)."""
         # Patch HAS_ECO2AI to False for this test
-        with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+        with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
             tracker = EnergyTracker()
             assert tracker.tracker is None
 
@@ -26,7 +26,7 @@ class TestEnergyTracker:
     def test_eco2ai_execution(self):
         """Test behavior when eco2ai is installed and working."""
         # Patch HAS_ECO2AI to True
-        with patch("ESMO2025.energy_tracker.HAS_ECO2AI", True):
+        with patch("duraxell.energy_tracker.HAS_ECO2AI", True):
             # Temporarily remove pytest and unittest from sys.modules
             import sys
 
@@ -37,7 +37,7 @@ class TestEnergyTracker:
             with patch("sys.argv", ["python"]):
                 try:
                     # Patch the Tracker class
-                    with patch("ESMO2025.energy_tracker.Tracker") as MockTracker:
+                    with patch("duraxell.energy_tracker.Tracker") as MockTracker:
                         # Patch os.path.exists and pandas.read_csv to simulate reading the log file
                         with (
                             patch("os.path.exists") as mock_exists,
@@ -78,7 +78,7 @@ class TestEnergyTracker:
 
     def test_access_yielded_metrics(self):
         """Test accessing the mutable energy metrics yielded by the context manager."""
-        with patch("ESMO2025.energy_tracker.HAS_ECO2AI", False):
+        with patch("duraxell.energy_tracker.HAS_ECO2AI", False):
             tracker = EnergyTracker()
 
             with tracker.measure(method="Rules", entity_type="Gene") as metrics:

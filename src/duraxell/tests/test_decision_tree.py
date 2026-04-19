@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 # Mock eco2ai BEFORE importing E_creation_arbre_decision
 sys.modules["eco2ai"] = MagicMock()
 
-from ESMO2025.E_creation_arbre_decision import DecisionTreeBuilder
+from duraxell.E_creation_arbre_decision import DecisionTreeBuilder
 
 
 def test_decision_tree_logic():

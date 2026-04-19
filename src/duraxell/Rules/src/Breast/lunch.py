@@ -12,8 +12,8 @@ import os
 import sys
 
 # Calcul du chemin racine du projet pour obtenir les vrais chemins de données
-# _current_file = ESMO2025/Rules/src/Breast/lunch.py
-_base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../ESMO2025"))
+# _current_file = src/duraxell/Rules/src/Breast/lunch.py
+_base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../duraxell"))
 
 # New scheme (with Value attributes)
 annotate_txt_folder_new_scheme(

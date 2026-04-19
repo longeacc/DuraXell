@@ -5,9 +5,9 @@ import sys
 # Add project root to path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 
-from ESMO2025.Rules.src.Breast.biomarker_brat_annotator import \
+from duraxell.Rules.src.Breast.biomarker_brat_annotator import \
     brat_annotate_biomarkers
-from ESMO2025.structs import ExtractionResult
+from duraxell.structs import ExtractionResult
 
 # English-to-abbreviation normalization patterns for compatibility
 # with the French regex engine

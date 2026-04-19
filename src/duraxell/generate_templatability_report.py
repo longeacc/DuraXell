@@ -522,7 +522,7 @@ if __name__ == "__main__":
     if not base_dir.exists():
         # Essai d'un chemin alternatif basé sur la structure connue du workspace
         potential_path = Path(
-            "d:/CLEM/ESIEE SCHOOL/PARCOURS RECHERCHE/Le juste usage des LLM et méthode NLP en cancélorlogie/ESMO2025_Clement/ESMO2025/Rules/src/Results"
+            "d:/CLEM/ESIEE SCHOOL/PARCOURS RECHERCHE/Le juste usage des LLM et méthode NLP en cancélorlogie/duraxell_Clement/src/duraxell/Rules/src/Results"
         )
         if potential_path.exists():
             base_dir = potential_path

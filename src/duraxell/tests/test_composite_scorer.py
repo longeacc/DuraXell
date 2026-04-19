@@ -1,4 +1,4 @@
-from ESMO2025.E_composite_scorer import CompositeScorer
+from duraxell.E_composite_scorer import CompositeScorer
 
 
 def test_composite_scorer_logic():

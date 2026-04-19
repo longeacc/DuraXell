@@ -30,8 +30,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Configuration des chemins pour importer les modules locaux
-sys.path.append(os.path.abspath('../ESMO2025'))
-sys.path.append(os.path.abspath('../ESMO2025/REST_interface'))
+sys.path.append(os.path.abspath('../duraxell'))
+sys.path.append(os.path.abspath('../src/duraxell/REST_interface'))
 sys.path.append(os.path.abspath('../NER/src'))
 sys.path.append(os.path.abspath('../Rules/src'))
 
@@ -45,7 +45,7 @@ os.makedirs('../Results/REST_results', exist_ok=True)
 
 # Section 2
 cells.append(
-    nbf.v4.new_markdown_cell("""## Section 2 : Calcul des Métriques ESMO2025 (Te, He, Risk, Freq, Yield)
+    nbf.v4.new_markdown_cell("""## Section 2 : Calcul des Métriques duraxell (Te, He, Risk, Freq, Yield)
 Nous simulons ici l'appel aux scripts `E_*.py` et affichons une heatmap des 5 métriques pour nos biomarqueurs.""")
 )
 
@@ -82,7 +82,7 @@ cells.append(
 print("✅ Arbre de décision généré (data/decision_config.json).")
 
 # 3.2 Visualisation de l'arbre
-from ESMO2025.visualize_decision_tree import visualize_decision_tree
+from duraxell.visualize_decision_tree import visualize_decision_tree
 try:
     visualize_decision_tree('../data/decision_config.json', '../Results/figures/decision_tree.png')
     from IPython.display import Image, display

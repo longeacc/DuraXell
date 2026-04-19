@@ -1,9 +1,9 @@
 import pandas as pd
 from unittest.mock import patch
 
-from ESMO2025.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
-from ESMO2025.energy_tracker import EnergyTracker
-from ESMO2025.E_composite_scorer import CompositeScorer
+from duraxell.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
+from duraxell.energy_tracker import EnergyTracker
+from duraxell.E_composite_scorer import CompositeScorer
 
 
 class MockRulesEngine:
@@ -21,7 +21,7 @@ class MockNERModel:
 
 
 class TestPipelineIntegration:
-    @patch("ESMO2025.energy_tracker.HAS_ECO2AI", False)
+    @patch("duraxell.energy_tracker.HAS_ECO2AI", False)
     def test_full_validation_loop(self):
         """
         Simulate a full validation run:

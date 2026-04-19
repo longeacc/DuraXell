@@ -345,7 +345,7 @@ def main(learn_weights=False):
         ROOT_DIR / "NER/data/Breast/val",
         ROOT_DIR / "NER/data/Breast/test",
         # Fallback old paths if needed
-        ROOT_DIR / "ESMO2025/Rules/src/Breast/RCP/training_set_breast_cancer",
+        ROOT_DIR / "src/duraxell/Rules/src/Breast/RCP/training_set_breast_cancer",
     ]
 
     OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"

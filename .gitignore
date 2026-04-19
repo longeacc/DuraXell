@@ -39,12 +39,12 @@ desktop.ini
 # Fichiers spécifiques 
 DuraXELL_Guide_Execution_Ordre_Lancement (1).pdf
 DuraXELL_Niveau2_Metriques_Formalismes (1).pdf
-ESMO2025/REST_interface/Rapport_de_stage_Guillaume_Bazin_E4_APHP_LIMICS.pdf
-ESMO2025/REST_interface/Présentation Oral de stage.pptx
-ESMO2025/REST_interface/cantemist-fr.rar
+src/duraxell/REST_interface/Rapport_de_stage_Guillaume_Bazin_E4_APHP_LIMICS.pdf
+src/duraxell/REST_interface/Présentation Oral de stage.pptx
+src/duraxell/REST_interface/cantemist-fr.rar
 NER/models/
 **/Breast/*
-ESMO2025/Breast/*
+src/duraxell/Breast/*
 data/*
 !data/README.md
 # Fichiers générés
@@ -69,29 +69,29 @@ logs/*
 !logs/.gitkeep
 config/jupyter_server_config.json
 # Typos à ne jamais re-tracker
-ESMO2025/Consumtion_of_Duraxell.csv
-breast_cancer_biomarker_eval_summary.csv
-
-# Artefacts runtime
-logs/*
-!logs/.gitkeep
-config/jupyter_server_config.json
-# Typos à ne jamais re-tracker
-ESMO2025/Consumtion_of_Duraxell.csv
-breast_cancer_biomarker_eval_summary.csv# Fichiers purg�s manuellement
-ESMO2025/REST_interface/Results/
-ESMO2025/REST_interface/logo.png
-NER/sweep_results (copie).csv
-
-# Fichiers ignores
-ESMO2025/REST_interface/Results/
-ESMO2025/REST_interface/logo.png
-NER/sweep_results (copie).csv
+src/duraxell/Consumtion_of_Duraxell.csv
+breast_cancer_biomarker_eval_summary.csv
+
+# Artefacts runtime
+logs/*
+!logs/.gitkeep
+config/jupyter_server_config.json
+# Typos à ne jamais re-tracker
+src/duraxell/Consumtion_of_Duraxell.csv
+breast_cancer_biomarker_eval_summary.csv# Fichiers purgs manuellement
+src/duraxell/REST_interface/Results/
+src/duraxell/REST_interface/logo.png
+NER/sweep_results (copie).csv
+
+# Fichiers ignores
+src/duraxell/REST_interface/Results/
+src/duraxell/REST_interface/logo.png
+NER/sweep_results (copie).csv
 # Migrated paths from src layout
 src/duraxell/REST_interface/Results/
 src/duraxell/REST_interface/logo.png
-src/duraxell/Consumtion_of_Duraxell.csv
-
-src/duraxell/REST_interface/Results/
-src/duraxell/REST_interface/logo.png
-src/duraxell/Consumtion_of_Duraxell.csv
+src/duraxell/Consumtion_of_Duraxell.csv
+
+src/duraxell/REST_interface/Results/
+src/duraxell/REST_interface/logo.png
+src/duraxell/Consumtion_of_Duraxell.csv

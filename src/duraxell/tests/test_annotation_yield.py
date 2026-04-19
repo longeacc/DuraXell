@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 
 sys.modules["eco2ai"] = MagicMock()
 
-from ESMO2025.E_annotation_yield import AnnotationYieldScorer
+from duraxell.E_annotation_yield import AnnotationYieldScorer
 
 
 def test_yield_metrics():

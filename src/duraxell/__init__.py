@@ -1,5 +1,5 @@
 """
-DuraXELL / ESMO2025
+DuraXELL / duraxell
 ===================
 Module principal d'extraction de biomarqueurs oncologiques
 par cascade intelligente Rules→ML→LLM.

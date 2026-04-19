@@ -10,11 +10,11 @@ import pandas as pd
 # Ensure root path is available
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from ESMO2025.structs import ExtractionResult
+from duraxell.structs import ExtractionResult
 
 # Conditional imports to avoid hard crashes if modules are missing during dev
 try:
-    from ESMO2025.Rules.src.Breast.rules_cascade_connector import RulesCascadeConnector
+    from duraxell.Rules.src.Breast.rules_cascade_connector import RulesCascadeConnector
 except ImportError:
     RulesCascadeConnector = None
 
