@@ -11,7 +11,7 @@ sys.path.append(
 )  # Go up to DuraXELL root
 
 try:
-    from ESMO2025.structs import ExtractionResult
+    from duraxell.structs import ExtractionResult
 except ImportError:
     # Fallback if path is weird
     from structs import ExtractionResult

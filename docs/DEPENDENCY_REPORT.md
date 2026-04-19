@@ -10,17 +10,17 @@
 |---|---|---|
 | `main.py` | CLI hub | Central CLI dispatcher (`extract`, `metrics`, `tree`, `rest`, `evaluate`) |
 | `run_full_pipeline_report.py` | Pipeline | Full evaluation pipeline with figures |
-| `ESMO2025/REST_interface/demo_rest.py` | Demo | REST interface demonstration |
-| `ESMO2025/REST_interface/rest_pipeline.py` | Pipeline | REST annotation pipeline driver |
-| `ESMO2025/E_creation_arbre_decision.py` | Script | Decision tree builder (also importable) |
-| `ESMO2025/E_templatability.py` | Script | templatability scorer (also importable) |
-| `ESMO2025/E_homogeneity.py` | Script | Homogeneity scorer (also importable) |
-| `ESMO2025/E_risk_context.py` | Script | Risk context scorer (also importable) |
-| `ESMO2025/E_frequency.py` | Script | Frequency scorer (also importable) |
-| `ESMO2025/E_annotation_yield.py` | Script | Annotation yield scorer (also importable) |
-| `ESMO2025/E_feasibility_NER.py` | Script | NER feasibility calculator |
-| `ESMO2025/generate_*_report.py` (Ã—3) | Script | HTML report generators |
-| `ESMO2025/Rules/src/Breast/lunch.py` | Script | Rule-based annotation runner |
+| `src/duraxell/REST_interface/demo_rest.py` | Demo | REST interface demonstration |
+| `src/duraxell/REST_interface/rest_pipeline.py` | Pipeline | REST annotation pipeline driver |
+| `src/duraxell/E_creation_arbre_decision.py` | Script | Decision tree builder (also importable) |
+| `src/duraxell/E_templatability.py` | Script | templatability scorer (also importable) |
+| `src/duraxell/E_homogeneity.py` | Script | Homogeneity scorer (also importable) |
+| `src/duraxell/E_risk_context.py` | Script | Risk context scorer (also importable) |
+| `src/duraxell/E_frequency.py` | Script | Frequency scorer (also importable) |
+| `src/duraxell/E_annotation_yield.py` | Script | Annotation yield scorer (also importable) |
+| `src/duraxell/E_feasibility_NER.py` | Script | NER feasibility calculator |
+| `src/duraxell/generate_*_report.py` (Ã—3) | Script | HTML report generators |
+| `src/duraxell/Rules/src/Breast/lunch.py` | Script | Rule-based annotation runner |
 | `NER/src/2bis_train_hf_ner.py` | Script | NER training |
 | `NER/src/2sweep_ner.py` | Script | NER hyperparameter sweep |
 | `NER/src/3infer.py` | Script | NER inference |
@@ -38,21 +38,21 @@ These are the foundational modules with zero internal dependencies:
 
 | Module | Imported By |
 |---|---|
-| `ESMO2025/structs.py` | `cascade_orchestrator`, `rules_cascade_connector`, `ner_cascade_connector`, tests |
-| `ESMO2025/energy_tracker.py` | `__init__`, `run_full_pipeline_report`, tests |
-| `ESMO2025/E_composite_scorer.py` | `__init__`, `run_full_pipeline_report`, tests |
-| `ESMO2025/E_annotation_yield.py` | `__init__`, `E_creation_arbre_decision`, tests |
-| `ESMO2025/E_frequency.py` | `__init__`, `debug_freq`, tests |
-| `ESMO2025/E_homogeneity.py` | `__init__`, tests |
-| `ESMO2025/E_risk_context.py` | `__init__`, tests |
-| `ESMO2025/E_templatability.py` | `__init__`, tests |
-| `ESMO2025/visualize_decision_tree.py` | `run_full_pipeline_report` |
-| `ESMO2025/REST_interface/rest_annotator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
-| `ESMO2025/REST_interface/rest_evaluator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
-| `ESMO2025/REST_interface/rest_decision_bridge.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
-| `ESMO2025/REST_interface/convergence_analyzer.py` | `__init__`, `demo_rest` |
-| `ESMO2025/REST_interface/yield_calculator.py` | `rest_pipeline` |
-| `ESMO2025/Rules/src/Breast/biomarker_brat_annotator.py` | `rules_cascade_connector`, `lunch.py` |
+| `src/duraxell/structs.py` | `cascade_orchestrator`, `rules_cascade_connector`, `ner_cascade_connector`, tests |
+| `src/duraxell/energy_tracker.py` | `__init__`, `run_full_pipeline_report`, tests |
+| `src/duraxell/E_composite_scorer.py` | `__init__`, `run_full_pipeline_report`, tests |
+| `src/duraxell/E_annotation_yield.py` | `__init__`, `E_creation_arbre_decision`, tests |
+| `src/duraxell/E_frequency.py` | `__init__`, `debug_freq`, tests |
+| `src/duraxell/E_homogeneity.py` | `__init__`, tests |
+| `src/duraxell/E_risk_context.py` | `__init__`, tests |
+| `src/duraxell/E_templatability.py` | `__init__`, tests |
+| `src/duraxell/visualize_decision_tree.py` | `run_full_pipeline_report` |
+| `src/duraxell/REST_interface/rest_annotator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `src/duraxell/REST_interface/rest_evaluator.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `src/duraxell/REST_interface/rest_decision_bridge.py` | `__init__`, `rest_pipeline`, `demo_rest`, `run_full_pipeline_report` |
+| `src/duraxell/REST_interface/convergence_analyzer.py` | `__init__`, `demo_rest` |
+| `src/duraxell/REST_interface/yield_calculator.py` | `rest_pipeline` |
+| `src/duraxell/Rules/src/Breast/biomarker_brat_annotator.py` | `rules_cascade_connector`, `lunch.py` |
 | All `REST_modules/calculs/*.py` | via `calculs/__init__` |
 | All `REST_modules/extraction/*.py` | via `extraction/__init__` |
 | `REST_modules/visualization.py` | `__init__`, `ui.py` |
@@ -65,22 +65,22 @@ These are the top-level entry points or standalone scripts:
 |---|---|
 | `main.py` | `cascade_orchestrator` (+ subprocess calls to many scripts) |
 | `run_full_pipeline_report.py` | `E_composite_scorer`, `cascade_orchestrator`, `energy_tracker`, `visualize_decision_tree`, `sensitivity_analysis`, REST interface modules |
-| `ESMO2025/REST_interface/demo_rest.py` | REST interface modules |
-| `ESMO2025/REST_interface/rest_pipeline.py` | REST interface modules + `yield_calculator` |
-| `ESMO2025/Rules/src/Breast/lunch.py` | `biomarker_brat_annotator` |
+| `src/duraxell/REST_interface/demo_rest.py` | REST interface modules |
+| `src/duraxell/REST_interface/rest_pipeline.py` | REST interface modules + `yield_calculator` |
+| `src/duraxell/Rules/src/Breast/lunch.py` | `biomarker_brat_annotator` |
 | `debug_freq.py` | `E_frequency` |
-| All `ESMO2025/tests/*.py` | Various ESMO2025 modules |
+| All `src/duraxell/tests/*.py` | Various duraxell modules |
 | All `NER/src/*.py` (except `ner_cascade_connector`) | External only |
 
 #### HUB MODULES (both imported and import others)
 
 | Module | Imports | Imported By |
 |---|---|---|
-| `ESMO2025/__init__.py` | 9 internal modules | All external `ESMO2025.*` imports |
-| `ESMO2025/cascade_orchestrator.py` | `structs`, `rules_cascade_connector`, `ner_cascade_connector` | `__init__`, `main`, `run_full_pipeline_report`, tests |
-| `ESMO2025/E_creation_arbre_decision.py` | `E_annotation_yield` | `__init__`, `sensitivity_analysis`, tests |
-| `ESMO2025/sensitivity_analysis.py` | `E_creation_arbre_decision` | `run_full_pipeline_report` |
-| `ESMO2025/Rules/src/Breast/rules_cascade_connector.py` | `biomarker_brat_annotator`, `structs` | `cascade_orchestrator` |
+| `src/duraxell/__init__.py` | 9 internal modules | All external `duraxell.*` imports |
+| `src/duraxell/cascade_orchestrator.py` | `structs`, `rules_cascade_connector`, `ner_cascade_connector` | `__init__`, `main`, `run_full_pipeline_report`, tests |
+| `src/duraxell/E_creation_arbre_decision.py` | `E_annotation_yield` | `__init__`, `sensitivity_analysis`, tests |
+| `src/duraxell/sensitivity_analysis.py` | `E_creation_arbre_decision` | `run_full_pipeline_report` |
+| `src/duraxell/Rules/src/Breast/rules_cascade_connector.py` | `biomarker_brat_annotator`, `structs` | `cascade_orchestrator` |
 | `NER/src/ner_cascade_connector.py` | `structs` | `cascade_orchestrator` |
 | `REST_modules/ui.py` | all other REST_modules | `__init__` |
 | `REST_modules/loading.py` | `calculs`, `categorization`, `extraction` | `__init__`, `ui` |
@@ -95,8 +95,8 @@ These are the top-level entry points or standalone scripts:
 **No true circular import dependencies found.**
 
 The closest potential issue:
-- `ESMO2025/__init__.py` imports `cascade_orchestrator`, which imports `rules_cascade_connector`, which imports `ESMO2025.structs`. But `structs` is loaded first by `__init__.py` order, so there's no cycle.
-- `ESMO2025/__init__.py` imports both `E_creation_arbre_decision` and `E_annotation_yield`. `E_creation_arbre_decision` also imports `E_annotation_yield`, but this is a DAG, not a cycle.
+- `src/duraxell/__init__.py` imports `cascade_orchestrator`, which imports `rules_cascade_connector`, which imports `duraxell.structs`. But `structs` is loaded first by `__init__.py` order, so there's no cycle.
+- `src/duraxell/__init__.py` imports both `E_creation_arbre_decision` and `E_annotation_yield`. `E_creation_arbre_decision` also imports `E_annotation_yield`, but this is a DAG, not a cycle.
 - `REST_modules/__init__.py` â†’ `categorization` â†’ `.calculs` â†’ (submodules). No back-references.
 
 **All dependency graphs are DAGs (Directed Acyclic Graphs). No circular imports exist.**
@@ -164,7 +164,7 @@ run_full_pipeline_report.py
 
 1. **Hard eco2ai imports** in `generate_*_report.py` (Ã—3) and `biomarker_brat_annotator.py` and `lunch.py` â€” these will crash if `eco2ai` is not installed (no try/except guard).
 
-2. **Inconsistent import styles** in tests: `test_homogeneity.py`, `test_risk_context.py`, and `test_templatability.py` use `sys.path.append` + bare module imports (`from E_homogeneity import ...`) instead of package-qualified imports (`from ESMO2025.E_homogeneity import ...`).
+2. **Inconsistent import styles** in tests: `test_homogeneity.py`, `test_risk_context.py`, and `test_templatability.py` use `sys.path.append` + bare module imports (`from E_homogeneity import ...`) instead of package-qualified imports (`from duraxell.E_homogeneity import ...`).
 
 3. **REST_interface/__init__.py** uses bare module imports (`from convergence_analyzer import ...`) instead of relative imports (`from .convergence_analyzer import ...`), which will fail when imported as a package from outside the directory.
 

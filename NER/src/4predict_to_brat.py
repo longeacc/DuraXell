@@ -5,9 +5,9 @@ Predict NER on .txt files and write BRAT .ann files.
 
 Usage:
   python src/predict_to_brat.py \
-      --model_dir "ESMO2025/NER/models/sweeps/DrBERT-7GB_lr2e-05_bs16_ep10_wd0.01_wr0.1_frz0_sd42" \
-      --input_dir "ESMO2025/Breast/RCP/evaluation_set_breast_cancer" \
-      --out_dir "ESMO2025/Breast/RCP/evaluation_set_breast_cancer_pred_ner" \
+      --model_dir "src/duraxell/NER/models/sweeps/DrBERT-7GB_lr2e-05_bs16_ep10_wd0.01_wr0.1_frz0_sd42" \
+      --input_dir "src/duraxell/Breast/RCP/evaluation_set_breast_cancer" \
+      --out_dir "src/duraxell/Breast/RCP/evaluation_set_breast_cancer_pred_ner" \
       --min_prob 0.0 --stride 50 --max_length 512
 """
 

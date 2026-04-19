@@ -193,7 +193,7 @@ DuraXELL/
 â”œâ”€â”€ commandes.ipynb                          # Notebook de commandes rapides
 â”‚
 â”‚
-â”œâ”€â”€ ESMO2025/                                # â•â•â•â•â•â• MOTEUR SCIENTIFIQUE PRINCIPAL â•â•â•â•â•â•
+â”œâ”€â”€ src/duraxell/                                # â•â•â•â•â•â• MOTEUR SCIENTIFIQUE PRINCIPAL â•â•â•â•â•â•
 â”‚   â”œâ”€â”€ __init__.py                          # Initialisation du package Python
 â”‚   â”‚
 â”‚   â”œâ”€â”€ structs.py                           # DataClass ExtractionResult (structure de donnÃ©es centrale)
@@ -216,7 +216,7 @@ DuraXELL/
 â”‚   â”œâ”€â”€ generate_risk_context_report.py      # GÃ©nÃ¨re le rapport HTML de risque contextuel
 â”‚   â”œâ”€â”€ generate_templatability_report.py     # GÃ©nÃ¨re le rapport HTML de templatabilitÃ©
 â”‚   â”‚
-â”‚   â”œâ”€â”€ Consumtion_of_Duraxell.csv           # Log Eco2AI local au module ESMO2025
+â”‚   â”œâ”€â”€ Consumtion_of_Duraxell.csv           # Log Eco2AI local au module duraxell
 â”‚   â”‚
 â”‚   â”œâ”€â”€ Breast/                              # â•â• CORPUS CLINIQUES (cancer du sein) â•â•
 â”‚   â”‚   â”œâ”€â”€ CHIR/                            # Comptes-rendus de chirurgie
@@ -824,11 +824,11 @@ python main.py extract-all --doc "ER positif" --entities "Estrogen_receptor,HER2
 # â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # 3. EXTRACTION PAR LOT : dossier de fichiers Ã— toutes les entitÃ©s
 # â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-python main.py batch --input_dir ESMO2025/Breast/RCP/evaluation_set_breast_cancer_GS
+python main.py batch --input_dir src/duraxell/Breast/RCP/evaluation_set_breast_cancer_GS
 # Traite tous les .txt du dossier, extrait les 7 entitÃ©s pour chacun
 
 # Variante : lot restreint Ã  certaines entitÃ©s
-python main.py batch --input_dir ESMO2025/Breast/RCP --entities "Estrogen_receptor,Ki67"
+python main.py batch --input_dir src/duraxell/Breast/RCP --entities "Estrogen_receptor,Ki67"
 
 # â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # 4. ARBRE DE DÃ‰CISION : rÃ©gÃ©nÃ©ration + visualisation
@@ -866,9 +866,9 @@ python main.py info
 
 ```powershell
 # --- GÃ©nÃ©ration isolÃ©e de rapports HTML ---
-python ESMO2025/generate_homogeneity_report.py
-python ESMO2025/generate_risk_context_report.py
-python ESMO2025/generate_templatability_report.py
+python src/duraxell/generate_homogeneity_report.py
+python src/duraxell/generate_risk_context_report.py
+python src/duraxell/generate_templatability_report.py
 
 # --- Ã‰valuation complÃ¨te avec toutes les figures ---
 python run_full_pipeline_report.py
@@ -889,13 +889,13 @@ python NER/src/5evaluate_ner.py           # Ã‰valuation F1
 $env:PYTHONPATH="."
 
 # Lancement de la suite complÃ¨te (25 tests)
-pytest -v ESMO2025/tests/
+pytest -v src/duraxell/tests/
 
 # Lancement ciblÃ©
-pytest -v ESMO2025/tests/test_cascade.py          # Teste l'orchestrateur
-pytest -v ESMO2025/tests/test_decision_tree.py     # Teste la logique de l'arbre
-pytest -v ESMO2025/tests/test_composite_scorer.py  # Teste le scoring
-pytest -v ESMO2025/tests/test_pipeline_integration.py  # Tests d'intÃ©gration
+pytest -v src/duraxell/tests/test_cascade.py          # Teste l'orchestrateur
+pytest -v src/duraxell/tests/test_decision_tree.py     # Teste la logique de l'arbre
+pytest -v src/duraxell/tests/test_composite_scorer.py  # Teste le scoring
+pytest -v src/duraxell/tests/test_pipeline_integration.py  # Tests d'intÃ©gration
 ```
 
 ---

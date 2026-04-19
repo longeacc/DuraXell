@@ -165,7 +165,7 @@ def cmd_batch(args):
 
 
 def cmd_metrics(args):
-    """Compute ESMO2025 metrics"""
+    """Compute duraxell metrics"""
     print("Metrics running via specific scripts in src/duraxell/ ...")
     subprocess.run([sys.executable, "src/duraxell/E_templatability.py"])
     subprocess.run([sys.executable, "src/duraxell/E_homogeneity.py"])
@@ -248,7 +248,7 @@ def main():
 
     # Command: metrics
     parser_metrics = subparsers.add_parser(
-        "metrics", help="Run ESMO2025 metric pipelines"
+        "metrics", help="Run duraxell metric pipelines"
     )
     parser_metrics.set_defaults(func=cmd_metrics)
 
