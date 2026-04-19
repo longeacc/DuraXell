@@ -140,7 +140,7 @@ class MetricsCalculator:
                 for p in counter.values()
             )
             h_norm = entropy / math.log(num_unique)
-            
+
         structure_consistency = 1.0 - h_norm
         bonus_semantic = (
             0.1

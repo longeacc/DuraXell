@@ -8,15 +8,12 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
 
 ## Architecture arbre de décision
 
-![Pipeline de Décision LEAF NER](https://github.com/user-attachments/assets/a1eb2d82-b719-4ee3-9703-ca913cb9bef2)
+![Pipeline de Décision](Results\figures\Graph_decision_bis.png)
 *Arbre de Décision pour la Sélection Optimale de Méthodes d'Extraction d'Entités*
 
 ## Résultats Principaux (Front de Pareto)
 
-| Biomarqueur | Méthode Recommandée | F1-Score | Énergie (kWh) | Score Composite |
-|-------------|---------------------|----------|---------------|-----------------|
-| ER          | Règles              | 0.95     | 0.000001      | 0.98            |
-| Ki67        | TBM                 | 0.82     | 0.000050      | 0.85            |
+![Exemple de résultats principaux](Results\figures\front_pareto_exemple.png)
 
 ## Installation et Exécution Reproductible
 
@@ -50,8 +47,8 @@ DuraXELL est un pipeline d'extraction d'informations médicales (biomarqueurs) c
 
 ## Références et Citation
 
-Ce travail s'appuie sur les recherches de **Longeac et al. 2024** concernant l'extraction d'informations en oncologie et l'évaluation de la frugalité des modèles de langage.
+Ce travail s'appuie sur les recherches de **Akram REDJDAL et al. 2024** concernant l'extraction d'informations en oncologie et l'évaluation de la frugalité des modèles de langage.
 
 **Citation :**
-> Longeac, C., et al. (2024). *Le juste usage des LLM et méthode NLP en cancérologie : Vers une approche frugale et explicable*. ESIEE Paris.
+> Akram REDJDAL et al. 2024. *Le juste usage des LLM et méthode NLP en cancérologie : Vers une approche frugale et explicable*. ESIEE Paris.
 
