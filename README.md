@@ -51,4 +51,3 @@ Ce travail s'appuie sur les recherches de **Akram REDJDAL et al. 2024** concerna
 
 **Citation :**
 > Akram REDJDAL et al. 2024. *Le juste usage des LLM et méthode NLP en cancérologie : Vers une approche frugale et explicable*. ESIEE Paris.
-
