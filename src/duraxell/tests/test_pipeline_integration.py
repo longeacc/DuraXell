@@ -9,7 +9,7 @@ from duraxell.E_composite_scorer import CompositeScorer
 class MockRulesEngine:
     def predict(self, text, entity):
         if "HER2 negative" in text and entity == "HER2":
-            return ExtractionResult(entity, "Negative", "Rules", 1.0, 0, 1)
+            return ExtractionResult(entity, "Negative", "RÈGLES", 1.0, 0, 1)
         return None
 
 
@@ -115,7 +115,7 @@ class TestPipelineIntegration:
 
         # Assertions to verify integration
         assert not df_results.empty
-        assert "Rules" in method_group["Method"].values
+        assert "RÈGLES" in method_group["Method"].values
         assert "TBM" in method_group["Method"].values
 
         # Verify energy was captured (simulated)
