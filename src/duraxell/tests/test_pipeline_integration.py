@@ -16,8 +16,8 @@ class MockRulesEngine:
 
 class MockNERModel:
     def predict(self, text, entity):
-        if "Ki67" in text and entity == "Ki67":
-            return ExtractionResult(entity, "High", "TBM", 0.85, 0, 2)
+        if "HER2 is negative" in text and entity == "HER2_status":
+            return ExtractionResult(entity, "Negative", "TBM", 0.85, 0, 2)
         return None
 
 
@@ -48,7 +48,11 @@ class TestPipelineIntegration:
                 "entity": "HER2",
                 "gt": "Negative",
             },
-            {"text": "Ki67 labelling index is High.", "entity": "Ki67", "gt": "High"},
+            {
+                "text": "Patient has HER2 is negative tumor.",
+                "entity": "HER2_status",
+                "gt": "Negative",
+            },
             {
                 "text": "Unknown entity.",
                 "entity": "ER",
