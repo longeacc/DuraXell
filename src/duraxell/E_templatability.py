@@ -137,7 +137,7 @@ class TemplatabilityScorer:
         1. Extraire toutes les mentions de entity_type dans le corpus
         2. Normaliser les patterns : "HER2 3+" → "XXXX D+" (regex abstraction)
         3. Calculer l'entropie de la distribution des patterns normalisés (H)
-        4. Normaliser l'entropie par rapport au maximum possible (H_norm = H / ln(N_unique))
+        4. Normaliser l'entropie par rapport au maximum possible (H_norm = h / ln(n_unique))
         5. Calculer la cohérence structurelle: 1.0 - H_norm
         6. Ajouter un bonus sémantique si présence de marqueurs standards (+ / - / % / > / <)
         7. Te = (cohérence_structurelle + bonus_sémantique) * 100
@@ -150,7 +150,7 @@ class TemplatabilityScorer:
         normalized_patterns = [self.normalize_pattern(v) for v in values]
 
         # Entropy calculation
-        H = self._calculate_entropy(normalized_patterns)
+        h = self._calculate_entropy(normalized_patterns)
 
         # Normalize entropy: H_max = log(N) where N is number of unique patterns observed
         # Or better: N is count of items? No, entropy is maximized when uniform distribution over unique patterns
@@ -164,11 +164,11 @@ class TemplatabilityScorer:
         num_unique = len(unique_patterns)
 
         if num_unique <= 1:
-            H_norm = 0.0
+            h_norm = 0.0
         else:
-            H_norm = H / math.log(num_unique)
+            h_norm = h / math.log(num_unique)
 
-        # Structure Score based on entropy (as per documentation: 1 - H_norm)
+        # Structure Score based on entropy (as per documentation: 1 - h_norm)
         structure_consistency = 1.0 - H_norm
         pattern_counts = Counter(normalized_patterns)
 
@@ -309,25 +309,25 @@ def main():
     # Configuration
     # Paths relative to workspace root (where script is executed)
     # But for robustness, we use path relative to this script
-    SCRIPT_DIR = Path(__file__).parent
-    ROOT_DIR = SCRIPT_DIR.parent
+    script_dir = Path(__file__).parent
+    root_dir = script_dir.parent
 
-    DATA_DIRS_REL = [
+    data_dirs_REL = [
         "NER/data/Breast/train",
         "NER/data/Breast/val",
         "NER/data/Breast/test",
     ]
 
     # Construct absolute paths
-    DATA_DIRS = [ROOT_DIR / d for d in DATA_DIRS_REL]
+    data_dirs = [root_dir / d for d in data_dirs_REL]
 
-    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/templatability_analysis.json"
+    output_file = script_dir / "Rules/Results/templatability_analysis.json"
 
     # Ensure output directory exists
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # 1. Load Data
-    corpus = load_brat_corpus([str(p) for p in DATA_DIRS])
+    corpus = load_brat_corpus([str(p) for p in data_dirs])
 
     # 2. Initialize Scorer
     scorer = TemplatabilityScorer(corpus)
@@ -336,7 +336,7 @@ def main():
     scores = scorer.compute_all()
 
     # 4. Print & Save
-    scorer.to_json(OUTPUT_FILE)
+    scorer.to_json(output_file)
 
     # Optional: Print Top 5
     print("\nTop 5 Templatability Scores:")

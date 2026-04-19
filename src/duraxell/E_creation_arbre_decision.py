@@ -318,21 +318,21 @@ def load_metrics_from_csv(results_dir: Path):
 
 
 def main():
-    SCRIPT_DIR = Path(__file__).parent
+    script_dir = Path(__file__).parent
     # Standard DuraXELL directory structure
-    RESULTS_DIR = SCRIPT_DIR / "Rules/Results"
-    ROOT_DIR = SCRIPT_DIR.parent
-    CONFIG_FILE = ROOT_DIR / "data" / "decision_config.json"
-    REPORT_FILE = ROOT_DIR / "logs" / "output_decision.txt"
+    results_dir = script_dir / "Rules/Results"
+    root_dir = script_dir.parent
+    config_file = root_dir / "data" / "decision_config.json"
+    report_file = root_dir / "logs" / "output_decision.txt"
 
     # 1. Load existing metrics
     print("Loading metrics from Results folder...")
-    metrics_db = load_metrics_from_csv(RESULTS_DIR)
+    metrics_db = load_metrics_from_csv(results_dir)
 
     # 2. Compute Yield on the fly (Hybrid approach)
     # We define paths to GS and Pred
-    gs_dir = SCRIPT_DIR / "Breast/RCP/evaluation_set_breast_cancer_GS"
-    pred_dir = SCRIPT_DIR / "Breast/RCP/evaluation_set_breast_cancer_pred_rules"
+    gs_dir = script_dir / "Breast/RCP/evaluation_set_breast_cancer_GS"
+    pred_dir = script_dir / "Breast/RCP/evaluation_set_breast_cancer_pred_rules"
 
     # If using CHIR as well? For now stick to RCP as primary benchmark
 
@@ -364,13 +364,13 @@ def main():
         )
 
     # 3. Build Tree
-    builder = DecisionTreeBuilder(CONFIG_FILE)
+    builder = DecisionTreeBuilder(config_file)
     builder.validate_thresholds_kfold(metrics_db, k=3)
     builder.build_full_config(metrics_db)
 
     # 4. Save Outputs
     builder.save_config()
-    builder.export_text_report(REPORT_FILE)
+    builder.export_text_report(report_file)
     if HAS_ECO2AI:
         try:
             tracker.stop()

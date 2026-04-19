@@ -106,7 +106,7 @@ class RiskContextScorer:
             import numpy as np
             from sklearn.linear_model import LogisticRegression
 
-            X = np.array([[d[0], d[1], d[2]] for d in annotated_data])
+            x = np.array([[d[0], d[1], d[2]] for d in annotated_data])
             y = np.array([d[3] for d in annotated_data])
 
             # Contrainte de poids positifs
@@ -288,8 +288,8 @@ class RiskContextScorer:
 
             # Pour la contradiction, c'est le ratio de documents contradictoires
             # On approxime le nombre de docs total pour cette entité comme len(entity_docs[etype])
-            N_docs = len(entity_docs[etype])
-            f_cont = stats["contradicted_docs"] / N_docs if N_docs > 0 else 0
+            n_docs = len(entity_docs[etype])
+            f_cont = stats["contradicted_docs"] / n_docs if n_docs > 0 else 0
 
             # Utilisation de la méthode unifiée
             risk_score = self.compute_score_from_stats(
@@ -336,22 +336,22 @@ class RiskContextScorer:
 # ==================================================================================
 def main(learn_weights=False):
     # RELATIVE PATHS
-    SCRIPT_DIR = Path(__file__).parent
-    ROOT_DIR = SCRIPT_DIR.parent
+    script_dir = Path(__file__).parent
+    root_dir = script_dir.parent
 
-    DATA_DIRS = [
-        ROOT_DIR / "NER/data/Breast/train",
-        ROOT_DIR / "NER/data/Breast/val",
-        ROOT_DIR / "NER/data/Breast/test",
+    data_dirs = [
+        root_dir / "NER/data/Breast/train",
+        root_dir / "NER/data/Breast/val",
+        root_dir / "NER/data/Breast/test",
         # Fallback old paths if needed
-        ROOT_DIR / "src/duraxell/Rules/src/Breast/RCP/training_set_breast_cancer",
+        root_dir / "src/duraxell/Rules/src/Breast/RCP/training_set_breast_cancer",
     ]
 
-    OUTPUT_FILE = SCRIPT_DIR.parent / "Results/risk_context_analysis.csv"
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    output_file = script_dir.parent / "Results/risk_context_analysis.csv"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
     print("=== Démarrage de l'analyse Risk Context (R) ===")
-    scorer = RiskContextScorer(DATA_DIRS)
+    scorer = RiskContextScorer(data_dirs)
 
     if learn_weights:
         print("--- Mode apprentissage des poids (Calibration RL) ---")
@@ -359,7 +359,7 @@ def main(learn_weights=False):
 
         entities = list(scorer.entities_stats.keys())
         if entities:
-            X = []
+            x = []
             for ent in entities:
                 stats = scorer.entities_stats[ent]
                 X.append([stats["f_neg"], stats["f_unc"], stats["f_cont"]])
@@ -367,7 +367,7 @@ def main(learn_weights=False):
             scorer._learn_weights(np.array(X), y)
             print(f"Nouveaux poids appris : {scorer.weights}")
 
-    scorer.to_csv(OUTPUT_FILE)
+    scorer.to_csv(output_file)
 
     # === TESTS CRITIQUES (Demandés par l'utilisateur) ===
     print("\n=== VERIFICATION TESTS CRITIQUES ===")

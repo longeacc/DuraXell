@@ -247,25 +247,25 @@ class AnnotationYieldScorer:
 
 
 def main():
-    SCRIPT_DIR = Path(__file__).parent
+    script_dir = Path(__file__).parent
 
     # Paths to comparison sets
     # NOTE: Assuming standard DuraXELL/duraxell folder structure relative to this script
     # Adjust as needed or use arguments
-    GS_DIR = SCRIPT_DIR / "Breast" / "RCP" / "evaluation_set_breast_cancer_GS"
-    PRED_DIR = SCRIPT_DIR / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"
+    gs_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_GS"
+    pred_dir = script_dir / "Breast" / "RCP" / "evaluation_set_breast_cancer_pred_rules"
 
     # If using from root
-    if not GS_DIR.exists():
-        GS_DIR = SCRIPT_DIR / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_GS"
-        PRED_DIR = (
-            SCRIPT_DIR
+    if not gs_dir.exists():
+        gs_dir = script_dir / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_GS"
+        pred_dir = (
+            script_dir
             / "../Rules/src/Breast/RCP/evaluation_set_breast_cancer_pred_rules"
         )
 
-    if not GS_DIR.exists():
+    if not gs_dir.exists():
         print("Datasets for Yield calculation not found.")
-        print(f"GS Search Path: {GS_DIR}")
+        print(f"GS Search Path: {gs_dir}")
 
         # Fallback simulation
         print("\n[SIMULATION MODE] Generating dummy Yield scores...")
@@ -281,7 +281,7 @@ def main():
             print(f"{k:<25} | {v:.4f} (Simulated)")
         return
 
-    scorer = AnnotationYieldScorer(GS_DIR, PRED_DIR)
+    scorer = AnnotationYieldScorer(gs_dir, pred_dir)
     scorer.compute_all()
     scorer.print_report()
 

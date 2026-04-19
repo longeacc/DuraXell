@@ -29,7 +29,7 @@ def parse_ann(ann_content):
 
 def build_dataset(data_dir):
     data_dir = Path(data_dir)
-    X = []
+    x = []
     y = []
 
     for txt_file in data_dir.glob("*.txt"):

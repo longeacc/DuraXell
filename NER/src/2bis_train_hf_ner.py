@@ -89,8 +89,8 @@ def main():
         }
     )
 
-    label2id = {l: i for i, l in enumerate(labels)}
-    id2label = {i: l for l, i in label2id.items()}
+    label2id = {lbl: i for i, lbl in enumerate(labels)}
+    id2label = {i: lbl for lbl, i in label2id.items()}
 
     tok = AutoTokenizer.from_pretrained(MODEL_ID)
 

@@ -116,9 +116,9 @@ class CompositeScorer:
         'results' doit être agrégé par méthode (moyenne des entités).
         """
         categories = ["Performance (F1)", "Explicabilité", "Frugalité (1-Energy)"]
-        N = len(categories)
+        n = len(categories)
 
-        angles = [n / float(N) * 2 * pi for n in range(N)]
+        angles = [n / float(n) * 2 * pi for n in range(n)]
         angles += angles[:1]
 
         fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))

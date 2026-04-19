@@ -14,10 +14,10 @@ def compute_routing(
     Returns:
         Tuple (méthode, justification).
     """
-    Te: float = metrics.get("Te", 0)
-    He: float = metrics.get("He", 0)
-    R: float = metrics.get("R", 0)
-    Feas: float = metrics.get("Feas", 0)
+    te: float = metrics.get("te", 0)
+    he: float = metrics.get("he", 0)
+    r: float = metrics.get("r", 0)
+    feas: float = metrics.get("feas", 0)
 
     # Seuils par défaut (échelle 0-1, cohérent avec metrics.py)
     t_te: float = thresholds.get("Te", 0.70)
@@ -26,12 +26,12 @@ def compute_routing(
     t_feas: float = thresholds.get("Feas", 0.60)
 
     # Branche RÈGLES : Te élevée + He élevée + R faible
-    if Te >= t_te and He >= t_he and R <= t_r:
-        return "RÈGLES", f"Te={Te:.2f}≥{t_te}, He={He:.2f}≥{t_he}, R={R:.3f}≤{t_r}"
+    if te >= t_te and he >= t_he and r <= t_r:
+        return "RÈGLES", f"Te={te:.2f}≥{t_te}, He={he:.2f}≥{t_he}, R={r:.3f}≤{t_r}"
 
     # Branche TBM : Faisabilité suffisante
-    if Feas >= t_feas:
-        return "TBM", f"Feas={Feas:.3f}≥{t_feas}"
+    if feas >= t_feas:
+        return "TBM", f"Feas={feas:.3f}≥{t_feas}"
 
     # Branche LLM : fallback
     return "LLM", "Conditions RÈGLES et TBM non satisfaites"

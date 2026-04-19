@@ -173,25 +173,25 @@ class FrequencyScorer:
 # MAIN EXECUTION
 # ==================================================================================
 def main():
-    SCRIPT_DIR = Path(__file__).parent
-    ROOT_DIR = SCRIPT_DIR.parent
+    script_dir = Path(__file__).parent
+    root_dir = script_dir.parent
 
     # Même sources de données pour cohérence
-    DATA_DIRS = [
-        ROOT_DIR / "NER/data/Breast/train",
-        ROOT_DIR / "NER/data/Breast/val",
-        ROOT_DIR / "NER/data/Breast/test",
+    data_dirs = [
+        root_dir / "NER/data/Breast/train",
+        root_dir / "NER/data/Breast/val",
+        root_dir / "NER/data/Breast/test",
     ]
 
-    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/frequency_analysis.csv"
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    output_file = script_dir / "Rules/Results/frequency_analysis.csv"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
-    scorer = FrequencyScorer(DATA_DIRS)
+    scorer = FrequencyScorer(data_dirs)
     scorer.compute_all()
 
     stats = scorer.get_stats()
     scorer.draw_histogram(stats)
-    scorer.to_csv(OUTPUT_FILE)
+    scorer.to_csv(output_file)
 
     if HAS_ECO2AI:
         tracker.stop()

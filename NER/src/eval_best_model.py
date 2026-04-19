@@ -85,7 +85,7 @@ def main():
         return
 
     ds, label_list = build_dataset(data_dir)
-    label2id = {l: i for i, l in enumerate(label_list)}
+    label2id = {lbl: i for i, lbl in enumerate(label_list)}
 
     tok, enc, id2label = encode_with_labels(ds, model_dir, label2id)
 

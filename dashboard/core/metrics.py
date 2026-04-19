@@ -132,16 +132,16 @@ class MetricsCalculator:
 
         num_unique = len(set(normalized_patterns))
         if num_unique <= 1:
-            H_norm = 0.0
+            h_norm = 0.0
         else:
             counter = Counter(normalized_patterns)
             entropy = -sum(
                 (p / len(normalized_patterns)) * math.log(p / len(normalized_patterns))
                 for p in counter.values()
             )
-            H_norm = entropy / math.log(num_unique)
+            h_norm = entropy / math.log(num_unique)
 
-        structure_consistency = 1.0 - H_norm
+        structure_consistency = 1.0 - h_norm
         bonus_semantic = (
             0.1
             if any(
@@ -169,9 +169,9 @@ class MetricsCalculator:
         if not all_tokens:
             he = 0.0
         else:
-            N_total = len(all_tokens)
-            N_unique = len(set(all_tokens))
-            redundancy = (N_total - N_unique) / N_total if N_total > 0 else 0
+            n_total = len(all_tokens)
+            n_unique = len(set(all_tokens))
+            redundancy = (n_total - n_unique) / n_total if n_total > 0 else 0
             k, x0 = 10, 0.5
             try:
                 he_raw = 1 / (1 + math.exp(-k * (redundancy - x0)))

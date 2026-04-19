@@ -27,10 +27,10 @@ def _compute_mmd(source_emb, target_emb, gamma=1.0):
     try:
         from sklearn.metrics.pairwise import rbf_kernel
 
-        K_SS = rbf_kernel(source_emb, source_emb, gamma=gamma)
-        K_TT = rbf_kernel(target_emb, target_emb, gamma=gamma)
-        K_ST = rbf_kernel(source_emb, target_emb, gamma=gamma)
-        mmd = K_SS.mean() + K_TT.mean() - 2 * K_ST.mean()
+        k_ss = rbf_kernel(source_emb, source_emb, gamma=gamma)
+        k_tt = rbf_kernel(target_emb, target_emb, gamma=gamma)
+        k_st = rbf_kernel(source_emb, target_emb, gamma=gamma)
+        mmd = k_ss.mean() + k_tt.mean() - 2 * k_st.mean()
         return min(1.0, max(0.0, float(mmd)))
     except ImportError:
         return 0.5  # Fallback si scikit-learn non dispo

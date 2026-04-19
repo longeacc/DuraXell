@@ -65,7 +65,7 @@ def build_dataset(data_dir: str) -> tuple[DatasetDict, list[str]]:
 # -------------------------
 def encode_with_labels(ds: DatasetDict, model_id: str, label2id: dict[str, int]):
     tok = AutoTokenizer.from_pretrained(model_id, use_fast=True)
-    id2label = {i: l for l, i in label2id.items()}
+    id2label = {i: lbl for lbl, i in label2id.items()}
 
     def _encode(batch):
         enc = tok(batch["tokens"], is_split_into_words=True, truncation=True)
@@ -239,7 +239,7 @@ def main():
     args = ap.parse_args()
 
     ds, label_list = build_dataset(args.data_dir)
-    label2id = {l: i for i, l in enumerate(label_list)}
+    label2id = {lbl: i for i, lbl in enumerate(label_list)}
 
     # Small grid (safe for ~50 notes) - ADJUSTED FOR GTX 1650 (4GB VRAM)
     grid = {

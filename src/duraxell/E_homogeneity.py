@@ -104,11 +104,11 @@ class HomogeneityScorer:
         for val in values:
             all_tokens.extend(self._tokenize(val))
 
-        N_total = len(all_tokens)  # Te_words
-        N_unique = len(set(all_tokens))  # Ue_words
+        n_total = len(all_tokens)  # Te_words
+        n_unique = len(set(all_tokens))  # Ue_words
 
         # Edge case: Single occurrence or No words
-        if N_total <= 1:
+        if n_total <= 1:
             # Convention: If seen only once, predictability is unknown/null for rules.
             # We assume He=0 because we have no evidence of redundancy.
             return 0.0
@@ -116,7 +116,7 @@ class HomogeneityScorer:
         # Raw Redundancy (Compactness)
         # If I say "ER+" 100 times: Total=100, Unique=1. Raw = 99/100 = 0.99
         # If I say 100 different things: Total=100, Unique=100. Raw = 0/100 = 0.0
-        he_raw = (N_total - N_unique) / N_total
+        he_raw = (n_total - n_unique) / n_total
 
         # Apply Sigmoid polarization
         he_final = self._sigmoid(he_raw)
@@ -205,18 +205,18 @@ def load_brat_corpus_simple(data_dirs):
 
 def main():
     # RELATIVE PATHS
-    SCRIPT_DIR = Path(__file__).parent
-    DATA_DIRS = ["NER/data/Breast/train", "NER/data/Breast/val", "NER/data/Breast/test"]
+    script_dir = Path(__file__).parent
+    data_dirs = ["NER/data/Breast/train", "NER/data/Breast/val", "NER/data/Breast/test"]
     # Paths relative to workspace root
-    ROOT_DIR = SCRIPT_DIR.parent
-    ABS_DATA_DIRS = [ROOT_DIR / d for d in DATA_DIRS]
+    root_dir = script_dir.parent
+    ABS_data_dirs = [root_dir / d for d in data_dirs]
 
-    OUTPUT_FILE = SCRIPT_DIR / "Rules/Results/homogeneity_analysis.csv"
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    output_file = script_dir / "Rules/Results/homogeneity_analysis.csv"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # 1. Load context
     print("Loading corpus...")
-    corpus = load_brat_corpus_simple(ABS_DATA_DIRS)
+    corpus = load_brat_corpus_simple(ABS_data_dirs)
 
     # 2. Compute
     scorer = HomogeneityScorer(corpus)
@@ -228,7 +228,7 @@ def main():
         print(f"{entity}: {score:.1f}%")
 
     # 4. Save
-    scorer.to_csv(OUTPUT_FILE)
+    scorer.to_csv(output_file)
 
     # 5. Canonical Test Verification
     print("\n=== VERIFICATION TEST CANONIQUE ===")

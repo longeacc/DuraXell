@@ -14,14 +14,7 @@ sys.path.append(os.path.join(os.getcwd(), "Rules", "src"))
 
 # Import des modules DuraXELL
 try:
-    from duraxell.cascade_orchestrator import CascadeOrchestrator, ExtractionResult
     from duraxell.E_composite_scorer import CompositeScorer
-    from duraxell.energy_tracker import EnergyTracker
-    from duraxell.REST_interface.rest_annotator import RESTAnnotator
-    from duraxell.REST_interface.rest_decision_bridge import RESTDecisionBridge
-    from duraxell.REST_interface.rest_evaluator import RESTEntityReport, RESTEvaluator
-    from duraxell.sensitivity_analysis import run_sensitivity_analysis
-    from duraxell.visualize_decision_tree import visualize_decision_tree
 except ImportError as e:
     print(f"Erreur d'import : {e}")
     print("Vérifiez que vous exécutez le script depuis la racine du projet DuraXELL.")
