@@ -540,7 +540,9 @@ if __name__ == "__main__":
         print("ATTENTION: Fichiers de données (JSON/CSV) introuvables.")
         print("Veuillez d'abord exécuter le script d'analyse 'templatability.py'.")
 try:
-    t = globals().get('tracker'); t and t.stop()
+    t = globals().get('tracker')
+    if t:
+        t.stop()
 except Exception as e:
     print(
         f"\nWarning: Generalized error in Eco2AI tracking (likely 'N/A' vs float dtype issue): {e}"
